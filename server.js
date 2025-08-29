@@ -4,7 +4,7 @@ const path = require("path");
 const dotenv = require("dotenv");
 const authRouter = require("./routes/auth.routes");
 const db = require("./utils/database");
-dotenv.config();
+dotenv.config({ path: ".env.local" });
 
 const app = express();
 
