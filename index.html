@@ -631,93 +631,155 @@
     </article>
   </main>
 
-  <!--
-    - #FOOTER
-  -->
-  <footer data-aos="fade-up" class="footer" style="width:100vw">
-    <div data-aos="fade-up" class="container" style="max-width: 1200px; margin: auto">
-      <!-- Top Section -->
-      <div class="footer-top" style="
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 2.5rem;
-          ">
-        <!-- Brand Section -->
-        <div class="footer-brand" style="flex: 1 1 300px">
-          <a href="#" class="logo">
-            <img data-aos="fade-up" src="./assets/images/vehigologo.png" alt="VehiGo logo" style="width: 160px" />
-          </a>
-          <p data-aos="fade-up" class="footer-text" style="margin-top: 1rem; line-height: 1.6">
-            🚗 <strong>Find affordable rental cars across Madhya Pradesh!</strong><br />
-            Choose from a wide range of vehicles, or rent out your own when
-            not in use. We make car rental easy, accessible, and efficient for
-            everyone.
-          </p>
-        </div>
-
-        <!-- Company Section -->
-        <ul class="footer-list">
-          <li>
-            <p data-aos="fade-up" class="footer-list-title">Company</p>
-          </li>
-          <li>
-            <a data-aos="fade-up" href="./src/pages/about.html" class="footer-link">About Us</a>
-          </li>
-          <li>
-            <a data-aos="fade-up" href="./src/pages/pricing.html" class="footer-link">Pricing Plans</a>
-          </li>
-          <li><a data-aos="fade-up" href="./blog.html" class="footer-link">Our Blog</a></li>
-          <li>
-            <a data-aos="fade-up" href="./ContactUs.html" class="footer-link">Contact Us</a>
-          </li>
-        </ul>
-
-        <!-- Support Section -->
-        <ul class="footer-list">
-          <li>
-            <p data-aos="fade-up" class="footer-list-title">Support</p>
-          </li>
-          <li>
-            <a data-aos="fade-up" href="./src/pages/help-center.html" class="footer-link">Help Center</a>
-          </li>
-          <li>
-            <a data-aos="fade-up" href="./src/pages/Askaques.html" class="footer-link">Ask a Question</a>
-          </li>
-          <li>
-            <a data-aos="fade-up" href="./privacypolicy.html" class="footer-link">Privacy Policy</a>
-          </li>
-          <li>
-            <a data-aos="fade-up" href="./tandc.html" class="footer-link">Terms & Conditions</a>
-          </li>
-        </ul>
+<!-- FOOTER -->
+<footer data-aos="fade-up" class="footer" style="width:100vw">
+  <div data-aos="fade-up" class="container" style="max-width: 1200px; margin: auto">
+    
+    <!-- Top Section -->
+    <div class="footer-top" style="
+          display: flex;
+          flex-wrap: nowrap; 
+          justify-content: space-between;
+          align-items: flex-start;
+          gap: 2rem;
+        ">
+      
+      <!-- Brand Section -->
+      <div class="footer-brand" style="flex: 1">
+        <a href="#" class="logo">
+          <img src="./assets/images/vehigologo.png" alt="VehiGo logo" style="width: 160px" />
+        </a>
+        <p style="margin-top: 1rem; line-height: 1.6">
+          🚗 <strong>Find affordable rental cars across Madhya Pradesh!</strong><br />
+          Choose from a wide range of vehicles, or rent out your own when
+          not in use. We make car rental easy, accessible, and efficient for
+          everyone.
+        </p>
       </div>
 
-      <!-- Bottom Section -->
-      <div class="footer-bottom" style="display: flex;flex-direction:row;gap:2px;">
-        <div data-aos="fade-up" class="social-icons" style="text-align: center; margin-bottom: 10px;display: flex;flex-direction:row;gap:2px;">
-          <a href="https://www.linkedin.com" target="_blank" style="margin: 0 10px; font-size: 24px; color: #0077b5"><i
-              class="fab fa-linkedin"></i></a>
-          <a href="https://www.twitter.com" target="_blank" style="margin: 0 10px; font-size: 24px; color: #1da1f2"><i
-              class="fab fa-twitter"></i></a>
-          <a href="https://www.instagram.com" target="_blank" style="margin: 0 10px; font-size: 24px; color: #e1306c"><i
-              class="fab fa-instagram"></i></a>
-          <a href="https://www.facebook.com" target="_blank" style="margin: 0 10px; font-size: 24px; color: #3b5998"><i
-              class="fab fa-facebook"></i></a>
-        </div>
-        <p style="text-align: center; font-size: 14px; color: white">
-          © <span id="copyright-year">2023</span> Vehigo — All rights
-          reserved.
-        </p>
+      <!-- Company Section -->
+      <ul class="footer-list" style="flex: 0 0 180px; list-style: none; padding: 0;">
+        <li><p class="footer-list-title">Company</p></li>
+        <li><a href="./src/pages/about.html" class="footer-link">About Us</a></li>
+        <li><a href="./src/pages/pricing.html" class="footer-link">Pricing Plans</a></li>
+        <li><a href="./blog.html" class="footer-link">Our Blog</a></li>
+        <li><a href="./ContactUs.html" class="footer-link">Contact Us</a></li>
+      </ul>
 
-        <!-- logic for dynamic year -->
-        <script>
-          document.getElementById("copyright-year").textContent = new Date().getFullYear();
-        </script>
-        
+      <!-- Support Section -->
+      <ul class="footer-list" style="flex: 0 0 180px; list-style: none; padding: 0;">
+        <li><p class="footer-list-title">Support</p></li>
+        <li><a href="./src/pages/help-center.html" class="footer-link">Help Center</a></li>
+        <li><a href="./src/pages/Askaques.html" class="footer-link">Ask a Question</a></li>
+        <li><a href="./privacypolicy.html" class="footer-link">Privacy Policy</a></li>
+        <li><a href="./tandc.html" class="footer-link">Terms & Conditions</a></li>
+      </ul>
+      
+      <!-- Newsletter Section (Right Side) -->
+      <div class="footer-newsletter" style="flex: 1; margin-left: auto; max-width: 300px;">
+        <p class="footer-list-title">Subscribe to our Newsletter</p>
+        <p style="margin-bottom: 1rem;">
+          Get the latest updates, offers, and travel tips directly in your inbox.
+        </p>
+        <form id="newsletter-form" style="display: flex; flex-direction: column; gap: 10px;">
+          <input 
+            type="email" 
+            id="newsletter-email" 
+            placeholder="Enter your email address" 
+            required 
+            style="padding: 12px; border-radius: 6px; border: 1px solid #ddd; font-size: 14px;"
+          >
+          <button 
+            type="submit" 
+            style="background-color: #2563eb; color: white; padding: 12px; border: none; border-radius: 6px; cursor: pointer; font-weight: bold;"
+            onmouseover="this.style.backgroundColor='#1d4ed8'" 
+            onmouseout="this.style.backgroundColor='#2563eb'"
+          >
+            Subscribe
+          </button>
+        </form>
       </div>
     </div>
-  </footer>
+
+    <!-- Bottom Section -->
+    <div class="footer-bottom" style="display: flex; justify-content: space-between; align-items: center; padding-top: 20px; border-top: 1px solid #374151; margin-top: 30px;">
+      <div class="social-icons" style="display: flex; gap: 15px;">
+        <a href="https://www.linkedin.com" target="_blank" style="font-size: 24px; color: #0077b5"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.twitter.com" target="_blank" style="font-size: 24px; color: #1da1f2"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com" target="_blank" style="font-size: 24px; color: #e1306c"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com" target="_blank" style="font-size: 24px; color: #3b5998"><i class="fab fa-facebook"></i></a>
+      </div>
+      <p style="font-size: 14px; color: white; margin: 0;">
+        © <span id="copyright-year">2023</span> Vehigo — All rights reserved
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+<!-- Toast Notification Container -->
+<div id="toast" style="position: fixed; bottom: 30px; right: 30px; background-color: #4ade80; color: white; padding: 16px 24px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); z-index: 1000; display: none; align-items: center; justify-content: space-between; min-width: 300px;">
+  <span id="toast-message">Successfully subscribed to our newsletter!</span>
+  <button onclick="hideToast()" style="background: none; border: none; color: white; cursor: pointer; margin-left: 15px; font-weight: bold;">X</button>
+</div>
+
+<!-- logic for dynamic year -->
+<script>
+  document.getElementById("copyright-year").textContent = new Date().getFullYear();
+  
+  // Newsletter form handling
+  document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const email = document.getElementById('newsletter-email').value;
+    
+    // Basic email validation
+    if (!validateEmail(email)) {
+      showToast('Please enter a valid email address', 'error');
+      return;
+    }
+    
+    // Here you would typically send the data to your server
+    // For demonstration, we'll just show a success message
+    console.log('Subscription email:', email);
+    
+    // Show success toast
+    showToast('Successfully subscribed to our newsletter!', 'success');
+    
+    // Reset form
+    document.getElementById('newsletter-form').reset();
+  });
+  
+  function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  }
+  
+  function showToast(message, type = 'success') {
+    const toast = document.getElementById('toast');
+    const toastMessage = document.getElementById('toast-message');
+    
+    // Set message and style based on type
+    toastMessage.textContent = message;
+    
+    if (type === 'error') {
+      toast.style.backgroundColor = '#ef4444';
+    } else {
+      toast.style.backgroundColor = '#4ade80';
+    }
+    
+    // Show toast
+    toast.style.display = 'flex';
+    
+    // Auto hide after 5 seconds
+    setTimeout(hideToast, 5000);
+  }
+  
+  function hideToast() {
+    document.getElementById('toast').style.display = 'none';
+  }
+</script>
+
   </div>
 
   <script src="./assets/js/script.js"></script>
