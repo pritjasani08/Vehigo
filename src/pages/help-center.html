@@ -4,53 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Help Center | VehiGo</title>
-    <link rel="stylesheet" href="../../assets/styles/main.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/styles/pricing-help.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        /* Hero */
         .help-hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 80px 0;
+            background: linear-gradient(135deg, #4e7fb4 0%, #764ba2 100%);
+            color: #ffffff;
+            padding: 110px 0 70px; /* room for fixed header */
             text-align: center;
         }
-        
         .help-hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 2.6rem;
+            margin-bottom: 10px;
+            letter-spacing: .5px;
         }
-        
         .help-hero p {
-            font-size: 1.2rem;
-            opacity: 0.9;
+            font-size: 1.1rem;
+            opacity: 0.95;
         }
 
-        .search-box {
-            max-width: 600px;
-            margin: 2rem auto;
-            position: relative;
-        }
-
+        /* Search */
+        .search-box { max-width: 680px; margin: 1.8rem auto 0; position: relative; }
         .search-box input {
             width: 100%;
-            padding: 15px 20px;
-            border: none;
-            border-radius: 50px;
+            padding: 16px 52px 16px 20px;
+            border: 0;
+            border-radius: 14px;
             font-size: 16px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+        .search-box button {
+            position: absolute; right: 8px; top: 8px;
+            background: #2563eb; color: #fff; border: 0; padding: 10px 14px;
+            border-radius: 10px; cursor: pointer;
         }
 
-        .search-box button {
-            position: absolute;
-            right: 5px;
-            top: 5px;
-            background: #007BFF;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 50px;
-            cursor: pointer;
+        /* Categories */
+        .help-categories { background: #f7fbff; padding: 50px 0; }
+        .category-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 18px;
         }
+        .category-card {
+            background: linear-gradient(180deg, #ffffff, #eef6ff);
+            border: 1px solid #dbeafe;
+            border-radius: 16px; padding: 18px; text-align: left; cursor: pointer;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+            transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+        }
+        .category-card i { color: #2563eb; font-size: 24px; margin-bottom: 10px; }
+        .category-card h3 { margin: 6px 0; font-size: 1.05rem; color: #0f172a; }
+        .category-card p { color: #475569; font-size: .92rem; }
+        .category-card:hover { transform: translateY(-4px); box-shadow: 0 14px 28px rgba(0,0,0,0.10); background:#e9f2ff; }
+
+        /* FAQ */
+        .faq-section { padding: 40px 0; }
+        .faq-category { margin-bottom: 30px; }
+        .faq-category h2 { margin: 8px 0 16px; color: #0f172a; }
+        .faq-list { display: grid; gap: 12px; }
+        .faq-item { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 14px; overflow: hidden; box-shadow: 0 6px 16px rgba(0,0,0,.06); }
+        .faq-question { display:flex; align-items:center; justify-content: space-between; gap:10px; padding: 14px 16px; cursor: pointer; }
+        .faq-question h3 { font-size: 1rem; color: #111827; }
+        .faq-answer { display:none; padding: 0 16px 14px; color: #374151; }
+        .faq-item.active .faq-answer { display:block; }
+
+        /* Support */
+        .contact-support { background: linear-gradient(180deg, #f8fafc, #eef2ff); padding: 54px 0; }
+        .support-options { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:18px; }
+        .support-card { background:#ffffff; border:1px solid #e5e7eb; border-radius:16px; padding:18px; text-align:center; box-shadow:0 8px 16px rgba(0,0,0,.06); }
+        .support-card i { color:#2563eb; font-size:26px; margin-bottom:8px; }
+        .support-card h3 { margin:6px 0 4px; }
+
+        @media (max-width: 640px) { .help-hero h1 { font-size: 2.1rem; } }
     </style>
 </head>
 <body>
@@ -91,6 +118,20 @@
             </div>
         </div>
     </header>
+    <!-- Quick Links Bar -->
+    <nav aria-label="Section links" style="background:#ffffff; border-bottom:1px solid #e5e7eb; position:sticky; top:70px; z-index:3;">
+        <div class="container" style="display:flex; flex-wrap:wrap; gap:36px; align-items:center; justify-content:center; padding:12px 20px;">
+            <a href="../../index.html" class="navbar-link" style="text-decoration:none; color:#29465b; font-weight:600; padding:6px 10px; border-radius:8px;">Home</a>
+            <a href="../../index.html#featured-car" class="navbar-link" style="text-decoration:none; color:#29465b; font-weight:600; padding:6px 10px; border-radius:8px;">Explore cars</a>
+            <a href="about.html" class="navbar-link" style="text-decoration:none; color:#29465b; font-weight:600; padding:6px 10px; border-radius:8px;">About us</a>
+            <a href="../../blog.html" class="navbar-link" style="text-decoration:none; color:#29465b; font-weight:600; padding:6px 10px; border-radius:8px;">Blog</a>
+            <a href="../../offline.html" class="navbar-link" style="text-decoration:none; color:#29465b; font-weight:600; padding:6px 10px; border-radius:8px;">Offline Centers</a>
+            <a href="../../rentcar.html" class="navbar-link" style="text-decoration:none; color:#29465b; font-weight:600; padding:6px 10px; border-radius:8px;">Rent Your Car</a>
+        </div>
+        <style>
+            nav[aria-label="Section links"] a:hover { background:#e9f2ff; color:#1f3a56; }
+        </style>
+    </nav>
 
     <!-- Hero Section -->
     <section class="help-hero">
@@ -410,16 +451,10 @@
         }
 
         function toggleFAQ(element) {
-            const answer = element.nextElementSibling;
-            const icon = element.querySelector('i');
-            
-            if (answer.style.display === 'block') {
-                answer.style.display = 'none';
-                icon.className = 'fas fa-chevron-down';
-            } else {
-                answer.style.display = 'block';
-                icon.className = 'fas fa-chevron-up';
-            }
+            const item = element.parentElement;
+            const isActive = item.classList.contains('active');
+            document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('active'));
+            if (!isActive) item.classList.add('active');
         }
 
         function searchFAQ() {
