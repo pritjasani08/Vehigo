@@ -274,7 +274,7 @@ body.dark-mode .contact-link {
 } */
 
 body.dark-mode .header-contact .contact-time {
-  color: #bbbbbb;
+  color: white;
 }
 
 body.dark-mode .slider {
@@ -1499,12 +1499,13 @@ font-weight: bolder;
     line-height: 1.3;
   }
 
-  .header-contact .contact-link:is(:hover, :focus) {
+  .header-contact .contact-link{
     color: white;
   }
 
   .header-contact .contact-time {
     font-size: var(--fs-7);
+    color: white;
   }
 
   .hero {
