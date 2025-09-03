@@ -1500,7 +1500,7 @@ font-weight: bolder;
   }
 
   .header-contact .contact-link:is(:hover, :focus) {
-    color: var(--carolina-blue);
+    color: white;
   }
 
   .header-contact .contact-time {
