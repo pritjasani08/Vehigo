@@ -219,7 +219,7 @@ body.dark-mode .footer-link {
 
 .about-content p {
   /* color: var(--independence); */
-  color: green;
+  color: #6a6a6a;
   font-size: var(--fs-6);
   line-height: 1.8;
   margin-bottom: 20px;
