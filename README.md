@@ -84,7 +84,7 @@ With a sleek, mobile-first design, VehiGo ensures a delightful experience across
   <b>This project is now OFFICIALLY accepted for:</b>
 </p>
 
-![GSSoC Logo](/Vehigo/assets/images/gssoc%20logo.png)
+![GSSoC Logo](assets/images/gssoc_logo.png)
 
 🌟 **Exciting News...**
 
