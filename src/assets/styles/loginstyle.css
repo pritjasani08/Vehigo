@@ -9,7 +9,7 @@
     /* background:url(../images/blog-3.jpg); */
 }
 .body_tag {
-  background:linear-gradient(rgb(0,0,0,0.5),rgba(0, 0, 0, 0.5)) ,url(../images/hero_banner_mustang.png) no-repeat center center;
+  background:linear-gradient(rgba(0, 0, 0, 0.884),rgba(0, 0, 0, 0.719)) ,url(../images/hero_banner_mustang.png) no-repeat center center;
   background-size: cover;
   min-height: 100vh;
 }
@@ -22,26 +22,66 @@
     align-items: center;
     justify-content: center;
     /* background-color: hsl(216, 38%, 95%); */
-    column-gap: 30px;
+    /* column-gap: 30px; */
+    /* border-radius: 90px; */
     
 }
+.message{
+    text-align: center;
+    color: #0171d3;
+    padding: 5px;
+    background: #f8f9fb;  
+    /* background-color: ; */
+    border-radius: 1rem;
+    max-width: 400px;
+    /* justify-content: center; */
+    margin:auto;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+    gap: 10px;
+}
 
+
+.title{
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #0171d3;
+}
+
+.subtitle{
+    font-size: 1.1rem;
+    color: #555;
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    justify-content: center;
+}
+
+.brand{
+    font-weight: 600;
+    color: #0077ff;
+}
 .form {
     position: absolute;
     max-width: 430px;
     width: 100%;
     padding: 30px;
-    
-    border-radius: 6px;
-    background: #ffffff;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background: #f8f9fb;  
+    border-radius: 20px;
+    /* background: #ffffff; */
+    border: #3232f8 solid 2px;
+    box-shadow: rgba(7, 62, 225, 0.808) 0px 7px 29px 0px;
     margin: 50px;
     border: 2px black solid;
     
 }
 .form:hover{
     /* transform: translateY(8px) */
-    transform: scale(1.2);
+    /* transform: scale(1.2); */
 }
 
 .form.signup {
@@ -67,11 +107,20 @@ header {
     /* color: #232836; */
     color: #0171d3;
     text-align: center;
-    background-color: white;
 }
+/* header::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 120%;
+    height:3px;
+    background: black;
+} */
+
 
 form {
-    margin-top: 30px;
+    /* margin-top: 30px; */
 }
 
 .form .field {
@@ -80,6 +129,10 @@ form {
     width: 100%;
     margin-top: 20px;
     border-radius: 6px;
+    border: #3842c7 1px solid;
+}
+.header-contact{
+    text-decoration: none;
 }
 
 .field input,
@@ -245,3 +298,89 @@ a.google span {
     }
 
 }
+
+/* style for forgot password */
+#resetpass-body {
+    display: flex;
+    background:linear-gradient(rgba(0, 0, 0, 0.884),rgba(0, 0, 0, 0.719)) ,url(../images/hero_banner_mustang.png) no-repeat center center;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f6f9;
+  }
+
+  #resetpass-form {
+    background: #fff;
+    padding: 35px 30px;
+    border-radius: 15px;
+    box-shadow:  rgba(7, 62, 225, 0.808) 0px 7px 29px 0px;
+    width: 380px;
+    text-align: center;
+  }
+
+  #resetpass-heading {
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #0171d3;
+  }
+
+  #resetpass-form label {
+    display: block;
+    text-align: left;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 6px;
+  }
+
+  .resetpass-email-wrapper,
+  .resetpass-password-wrapper {
+    position: relative;
+    margin-bottom: 18px;
+  }
+
+  #resetpass-form input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 0.95rem;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  #resetpass-form input:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.4);
+  }
+
+  .resetpass-toggle-password {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 1.1rem;
+    user-select: none;
+    color: #666;
+  }
+
+  #resetpass-button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #4a90e2;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+  
+  #resetpass-button:hover {
+    background: #357abd;
+    transform: scale(1.02);
+  }
