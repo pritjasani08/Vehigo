@@ -225,14 +225,16 @@
     }
     .btn-vehigo:hover{ transform: translateY(-2px); box-shadow: var(--shadow-2); filter: saturate(110%); }
 
-    /* Skeleton */
+    /* Skeleton loader */
     .skeleton{
       background: linear-gradient(90deg, rgba(0,0,0,.06), rgba(0,0,0,.12), rgba(0,0,0,.06));
       animation: shimmer 1.2s linear infinite;
       border-radius: 8px;
+      background-size: 200px 100%;
     }
     .dark-theme .skeleton{
       background: linear-gradient(90deg, rgba(255,255,255,.05), rgba(255,255,255,.09), rgba(255,255,255,.05));
+      background-size: 200px 100%;
     }
     @keyframes shimmer{
       0%{ background-position: -200px 0; }
@@ -282,7 +284,6 @@
     }
     .blog-card:hover{ transform: translateY(-6px); box-shadow: var(--shadow-2); }
     .blog-card .card-banner img{ height:180px; object-fit:cover; width:100%; }
-
     @media (max-width: 992px){ .blog-card{ flex-basis: 280px; } }
     @media (max-width: 576px){
       .blog-card{ flex-basis: 85vw; }   /* fills viewport nicely on phones */
@@ -359,7 +360,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <button id="logoutBtn" class="btn btn-outline-light d-none">
+            <button id="logoutBtn" class="btn btn-outline-light d-none" aria-label="Logout">
               <i class="fa-solid fa-right-from-bracket"></i>
             </button>
           </li>
@@ -603,6 +604,7 @@
               </div>
             </div>
           </li>
+
           <li>
             <div class="blog-card" data-aos="fade-up" data-aos-delay="50">
               <figure class="card-banner">
@@ -622,6 +624,7 @@
               </div>
             </div>
           </li>
+
           <li>
             <div class="blog-card" data-aos="fade-up" data-aos-delay="80">
               <figure class="card-banner">
@@ -641,6 +644,7 @@
               </div>
             </div>
           </li>
+
           <li>
             <div class="blog-card" data-aos="fade-up" data-aos-delay="110">
               <figure class="card-banner">
@@ -660,6 +664,7 @@
               </div>
             </div>
           </li>
+
           <li>
             <div class="blog-card" data-aos="fade-up" data-aos-delay="140">
               <figure class="card-banner">
@@ -916,7 +921,7 @@
       });
 
       // Preloader
-      setTimeout(()=> $('#preloader').classList.add('hidden'), 500);
+      setTimeout(()=> document.getElementById('preloader').classList.add('hidden'), 500);
 
       // AOS
       AOS.init({ duration: 650, easing: 'ease-in-out', once: true });
@@ -926,37 +931,39 @@
       setTimeout(()=> renderCars(cars.sort(sorters.recommended)), 450);
 
       // Form submit
-      $('#searchForm').addEventListener('submit', (e)=>{ e.preventDefault(); filterCars(); });
+      document.getElementById('searchForm').addEventListener('submit', (e)=>{ e.preventDefault(); filterCars(); });
 
       // Clear
-      $('#clearBtn').addEventListener('click', ()=>{
-        $('#input-1').value=''; $('#input-2').value=''; $('#car-type').value=''; $('#fuel-type').value='';
+      document.getElementById('clearBtn').addEventListener('click', ()=>{
+        document.getElementById('input-1').value='';
+        document.getElementById('input-2').value='';
+        document.getElementById('car-type').value='';
+        document.getElementById('fuel-type').value='';
         state.activeChip='';
-        $$('#quickChips .chip').forEach(c=>c.classList.remove('active'));
-        state.sort='recommended'; $('#sortBy').value='recommended';
+        document.querySelectorAll('#quickChips .chip').forEach(c=>c.classList.remove('active'));
+        state.sort='recommended'; document.getElementById('sortBy').value='recommended';
         renderCars(cars.sort(sorters.recommended), state.view);
       });
 
       // Sort
-      $('#sortBy').addEventListener('change', (e)=>{ state.sort = e.target.value; filterCars(); });
+      document.getElementById('sortBy').addEventListener('change', (e)=>{ state.sort = e.target.value; filterCars(); });
 
       // View toggle
-      $('#btnGrid').addEventListener('click', ()=>{ state.view='grid'; filterCars(); });
-      $('#btnList').addEventListener('click', ()=>{ state.view='list'; filterCars(); });
+      document.getElementById('btnGrid').addEventListener('click', ()=>{ state.view='grid'; filterCars(); });
+      document.getElementById('btnList').addEventListener('click', ()=>{ state.view='list'; filterCars(); });
 
       // Chips
-      $$('#quickChips .chip').forEach(ch=>{
+      document.querySelectorAll('#quickChips .chip').forEach(ch=>{
         ch.addEventListener('click', ()=>{
           const val = ch.dataset.chip;
           if(state.activeChip===val){ state.activeChip=''; ch.classList.remove('active'); }
-          else { state.activeChip=val; $$('#quickChips .chip').forEach(c=>c.classList.remove('active')); ch.classList.add('active'); }
+          else { state.activeChip=val; document.querySelectorAll('#quickChips .chip').forEach(c=>c.classList.remove('active')); ch.classList.add('active'); }
           filterCars();
         });
       });
 
       // Footer year
-      const yearSpan = document.getElementById('copyright-year');
-      yearSpan.textContent = new Date().getFullYear();
+      document.getElementById('copyright-year').textContent = new Date().getFullYear();
 
       // Alerts via query params (?message=&type=)
       const urlParams = new URLSearchParams(window.location.search);
