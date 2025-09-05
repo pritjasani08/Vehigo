@@ -390,7 +390,7 @@ color: white;
 .container {
   width: 100%;
   padding-inline: 15px;
-  background-color: #121212;
+  /* background-color: #121212; */
 }
 
 button,
@@ -642,7 +642,7 @@ font-weight: bolder;
 
 .hero-form {
   background: var(--gradient);
-  border: 1px solid var(--white);
+  border: 1px solid grey;
   box-shadow: var(--shadow-1);
   border-radius: var(--radius-18);
   font-family: var(--ff-nunito);
