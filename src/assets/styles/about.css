@@ -370,7 +370,7 @@ body.dark-mode .why-card p{
 }
 
 .team-member:hover {
-  background: var(--alice-blue-2);
+  /* background: var(--alice-blue-2); */
   box-shadow: var(--shadow-2);
 }
 
@@ -451,10 +451,10 @@ body.dark-mode .team-member .card-title{
   text-decoration: none;
 }
 
-.location-card:hover {
+/* .location-card:hover {
   background: var(--alice-blue-2);
   box-shadow: var(--shadow-2);
-}
+} */
 
 .location-card-content {
   display: flex;
@@ -480,7 +480,7 @@ body.dark-mode .location-card .card-title{
 }
 
 .location-card .card-link {
-  color: var(--carolina-blue);
+  /* color: var(--carolina-blue); */
   font-family: var(--ff-nunito);
   font-size: var(--fs-6);
   font-weight: var(--fw-600);
