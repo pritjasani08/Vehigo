@@ -236,13 +236,13 @@ body.dark-mode .footer-link {
   border-radius: var(--radius-14);
   overflow: hidden;
   max-height: 400px;
-  margin-left: 104px;
+  margin-left: 14px;
 }
 
 .about-banner img {
-  width: 120%;
-  height: 100%;
-
+  width: 105%;
+  height: 105%;
+  margin-top: -50px;
 }
 
 /*-----------------------------------*\
