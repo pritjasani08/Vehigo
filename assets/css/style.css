@@ -244,6 +244,40 @@ body.dark-mode {
   background-color: #121212;
   color: #f5f5f5;
 }
+body.dark-mode .get-start-card{
+  background-color: black;
+  border: 1px solid white;
+
+}
+body.dark-mode .get-start-card .card-title {
+  color: white;
+  position:relative;
+  width:max-width;
+
+}
+
+body.dark-mode .get-start-card .card-title::before{
+  content:"";
+  position: absolute;
+  bottom:0;
+  left:0;
+  width:0;
+  height:2px;
+  background-color: white;
+  transition: var(--transition);
+
+}
+
+body.dark-mode .get-start-card .card-title:is(:hover,:focus)::before {
+  width: 100%;
+}
+
+
+body.dark-mode .get-start-card .card-text {
+  color: white;
+
+}
+
 
 body.dark-mode .header {
   background-color: #4e7fb4;
@@ -913,11 +947,16 @@ font-weight: bolder;
 
 .get-start-card {
   background: var(--white);
+  /* background-color: green; */
   padding: 20px;
   border-radius: var(--radius-18);
   border: 1px solid var(--white);
   transition: var(--transition);
 }
+body.dark-theme.get-start-card {
+  background-color: pink;
+}
+
 
 .get-start-card:hover {
   background: var(--alice-blue-2);
@@ -933,6 +972,9 @@ font-weight: bolder;
   place-items: center;
   border-radius: var(--radius-14);
   margin-bottom: 20px;
+}
+body.dark-theme.get-start-card .card-icon {
+  background-color: #0e0e0e;
 }
 
 .get-start-card .icon-1 {
@@ -957,6 +999,7 @@ font-weight: bolder;
 
 .get-start-card .card-title {
   color: var(--text-primary-dark);
+  /* color: green; */
   font-family: var(--ff-nunito);
   font-weight: var(--fw-400);
   margin-bottom: 15px;
