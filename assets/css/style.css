@@ -642,7 +642,7 @@ font-weight: bolder;
 
 .hero-form {
   background: var(--gradient);
-  border: 1px solid grey;
+  border: 1px solid rgb(216, 215, 215);
   box-shadow: var(--shadow-1);
   border-radius: var(--radius-18);
   font-family: var(--ff-nunito);
