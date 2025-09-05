@@ -27,7 +27,7 @@ body {
 }
 
 body.dark-mode header{
-  background-color: black;
+  background-color:#357dca;
   color: white;
 }
 body.dark-mode .container1{
@@ -908,7 +908,8 @@ input:checked + .slider:before {
 
 .btn_explore{
   position: relative;
-  background: var(--background, var(--carolina-blue));
+  /* background: var(--background, var(--carolina-blue)); */
+  /* background-color: blue; */
   color: var(--color, var(--white));
   /* min-width: var(--width, 40px); */
   min-height: var(--height, 40px);
