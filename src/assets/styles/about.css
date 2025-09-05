@@ -360,7 +360,7 @@ body.dark-mode .why-card p{
 }
 
 .team-member {
-  background: var(--white);
+  /* background: var(--white); */
   border: 1px solid var(--white);
   border-radius: var(--radius-14);
   padding: 20px;
@@ -389,17 +389,16 @@ body.dark-mode .why-card p{
   margin-bottom: 10px;
 }
 
+body.dark-mode .team-member .card-title{
+  color: white;
+}
+
 .team-member p {
   /* color: var(--independence); */
   font-size: var(--fs-6);
   line-height: 1.8;
 }
-body.dark-mode.team-member p{
-  color: #111;
-}
-body.dark-mode.team-bio {
-  color: black;
-}
+
 
 
 .team-member .team-bio {
@@ -441,7 +440,7 @@ body.dark-mode.team-bio {
 }
 
 .location-card {
-  background: var(--white);
+  /* background: var(--white); */
   border: 1px solid var(--white);
   border-radius: var(--radius-14);
   padding: 20px;
@@ -468,6 +467,8 @@ body.dark-mode.team-bio {
   font-family: var(--ff-nunito);
   margin-bottom: 10px;
 }
+
+body
 
 .location-card p {
   color: var(--independence);
