@@ -98,19 +98,19 @@
     /* NAVBAR FIXES */
     .navbar .nav-link{
       font-weight:600; letter-spacing:.2px; color:var(--vehigo-text);
-      white-space: nowrap;                 /* prevent line breaks */
-      padding: .75rem .5rem;               /* tighter rhythm */
+      white-space: nowrap;
+      padding: .75rem .5rem;
       line-height: 1.1;
     }
     .navbar .nav-link:hover{ color:var(--vehigo-primary); }
     .navbar-brand img{height:36px;}
     .navbar-nav{
-      flex-wrap: nowrap;                   /* keep items on one line */
-      gap: 16px;                           /* consistent spacing */
+      flex-wrap: nowrap;
+      gap: 16px;
       align-items: center;
     }
     .navbar .btn,
-    .theme-switch{ white-space: nowrap; }  /* keep buttons on one line */
+    .theme-switch{ white-space: nowrap; }
     @media (max-width: 1200px){
       .navbar-nav{ gap: 12px; }
     }
@@ -257,7 +257,7 @@
     .blog-list::-webkit-scrollbar{ height:8px; }
     .blog-list::-webkit-scrollbar-thumb{ background: rgba(0,0,0,.15); border-radius:999px; }
     .blog-card{
-      flex: 0 0 310px;                   /* base width */
+      flex: 0 0 310px;
       scroll-snap-align:start;
       background: var(--vehigo-card); border:1px solid var(--vehigo-border); border-radius: var(--radius-lg);
       overflow:hidden; box-shadow: var(--shadow-1); transition: transform .2s ease, box-shadow .25s ease;
@@ -266,7 +266,7 @@
     .blog-card .card-banner img{ height:180px; object-fit:cover; width:100%; }
     @media (max-width: 992px){ .blog-card{ flex-basis: 280px; } }
     @media (max-width: 576px){
-      .blog-card{ flex-basis: 85vw; }   /* fills viewport nicely on phones */
+      .blog-card{ flex-basis: 85vw; }
       .blog-card .card-banner img{ height: 160px; }
     }
 
@@ -493,7 +493,6 @@
         <span class="badge-soft"><i class="fa-solid fa-shield-heart"></i> Verified customers</span>
       </div>
       <div class="row g-3 mt-1">
-        <!-- Review items ... (same as above in your paste) -->
         <div class="col-12 col-lg-6" data-aos="fade-up">
           <div class="p-3 rounded-4" style="background:var(--vehigo-card); border:1px solid var(--vehigo-border); box-shadow: var(--shadow-1);">
             <div class="d-flex align-items-center gap-3">
@@ -507,6 +506,7 @@
             <p class="mb-0 opacity-80">Highly recommend Vehigo for a reliable, hassle-free rental experience.</p>
           </div>
         </div>
+
         <div class="col-12 col-lg-6" data-aos="fade-up" data-aos-delay="60">
           <div class="p-3 rounded-4" style="background:var(--vehigo-card); border:1px solid var(--vehigo-border); box-shadow: var(--shadow-1);">
             <div class="d-flex align-items-center gap-3">
@@ -520,6 +520,7 @@
             <p class="mb-0 opacity-80">Will definitely rent from Vehigo again.</p>
           </div>
         </div>
+
         <div class="col-12 col-lg-6" data-aos="fade-up">
           <div class="p-3 rounded-4" style="background:var(--vehigo-card); border:1px solid var(--vehigo-border); box-shadow: var(--shadow-1);">
             <div class="d-flex align-items-center gap-3">
@@ -533,6 +534,7 @@
             <p class="mb-0 opacity-80">Flexible pickup/drop, professional staff — perfect for corporate travel.</p>
           </div>
         </div>
+
         <div class="col-12 col-lg-6" data-aos="fade-up" data-aos-delay="60">
           <div class="p-3 rounded-4" style="background:var(--vehigo-card); border:1px solid var(--vehigo-border); box-shadow: var(--shadow-1);">
             <div class="d-flex align-items-center gap-3">
