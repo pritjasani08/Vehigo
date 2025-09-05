@@ -468,7 +468,9 @@ body.dark-mode .team-member .card-title{
   margin-bottom: 10px;
 }
 
-body
+body.dark-mode .location-card .card-title{
+  color: white;
+}
 
 .location-card p {
   color: var(--independence);
