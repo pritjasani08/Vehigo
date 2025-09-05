@@ -908,7 +908,7 @@ input:checked + .slider:before {
 
 .btn_explore{
   position: relative;
-  /* background: var(--background, var(--carolina-blue)); */
+  background: var(--background, var(--carolina-blue));
   /* background-color: blue; */
   color: var(--color, var(--white));
   /* min-width: var(--width, 40px); */
