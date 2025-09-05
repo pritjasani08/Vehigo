@@ -15,12 +15,22 @@
 
 /* Enhanced Section Title */
 .blog .section-title {
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   text-align: center;
   font-size: var(--fs-1);
   color: inherit; /* Use inherited color from existing theme */
   font-weight: var(--fw-600);
   position: relative;
+}
+
+.blog .section-subtitle {
+  text-align: center;
+  font-size: var(--fs-6);
+  color: var(--manatee);
+  margin-bottom: 50px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .blog .section-title::after {
@@ -35,16 +45,16 @@
   border-radius: 2px;
 }
 
-/* Enhanced Blog Wrapper with Grid Layout */
+/* Enhanced Blog Wrapper - Removed Navigation Arrows */
 .blog-wrapper {
   position: relative;
-  padding: 0 60px; /* Space for arrows */
+  padding: 0; /* Remove padding for arrows since we're removing them */
 }
 
-/* Modern Grid Layout for Blog Cards */
+/* Modern Grid Layout for Blog Cards - Show All Posts */
 .blog-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 30px;
   padding: 0;
   margin: 0;
@@ -179,49 +189,10 @@
   padding: 0;
 }
 
-/* Enhanced Navigation Arrows */
-.left-arrow,
-.right-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: var(--white);
-  color: var(--carolina-blue);
-  border: 2px solid var(--carolina-blue);
-  font-size: 1.2rem;
-  cursor: pointer;
-  border-radius: 50%;
-  padding: 15px;
-  z-index: 10;
-  box-shadow: 0 5px 15px rgba(74, 144, 226, 0.2);
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.left-arrow:hover,
-.right-arrow:hover {
-  background: var(--carolina-blue);
-  color: var(--white);
-  transform: translateY(-50%) scale(1.1);
-  box-shadow: 0 8px 25px rgba(74, 144, 226, 0.3);
-}
-
-.left-arrow {
-  left: 0;
-}
-
-.right-arrow {
-  right: 0;
-}
-
 /* Mobile Responsive Enhancements */
 @media (max-width: 768px) {
   .blog-wrapper {
-    padding: 0 20px;
+    padding: 0;
   }
   
   .blog-list {
@@ -233,14 +204,14 @@
     padding: 20px;
   }
   
-  .left-arrow,
-  .right-arrow {
-    display: none; /* Hide arrows on mobile for cleaner grid view */
-  }
-  
   .blog .section-title {
     font-size: var(--fs-2);
+    margin-bottom: 15px;
+  }
+
+  .blog .section-subtitle {
     margin-bottom: 30px;
+    font-size: var(--fs-7);
   }
 }
 
@@ -273,11 +244,21 @@
   }
 }
 
-/* Large Desktop */
-@media (min-width: 1200px) {
+/* Large Desktop - Show 3 columns for better layout with 5 posts */
+@media (min-width: 1025px) and (max-width: 1399px) {
   .blog-list {
     grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+}
+
+/* Extra Large Desktop - Show all 5 posts in optimal layout */
+@media (min-width: 1400px) {
+  .blog-list {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 35px;
+    max-width: 1600px;
+    margin: 0 auto;
   }
 }
 
