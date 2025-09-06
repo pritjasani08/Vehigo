@@ -6,7 +6,7 @@
   <title>Add Your Car for Rent - Vehigo</title>
   
   <!-- Fonts & Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
   <link rel="icon" href="favicon.svg">
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
@@ -79,7 +79,7 @@
       display: flex;
       align-items: center;
       cursor: pointer;
-      margin-right: 1rem;
+      margin-left: 1rem;
     }
     .theme-switch input { display: none; }
     .slider {
@@ -94,9 +94,16 @@
       max-width: 900px;
       margin: auto;
     }
-    h1, h2 {
+    h1{
+      
       text-align: center;
       margin-bottom: 1rem;
+      font-size:40px;
+    } 
+    h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+      
     }
 
     /* ---------- FORM ---------- */
@@ -196,6 +203,96 @@
       background: var(--secondary);
     }
 
+    /* ---------- FOOTER ---------- */
+    .footer {
+      background: linear-gradient(135deg, #4e6ef2, #4c9be5);
+      color: #fff;
+      border-top-left-radius: 18px;
+      border-top-right-radius: 18px;
+      padding: 3rem 1.5rem 2rem;
+      margin-top: 3rem;
+    }
+    body.dark-theme .footer {
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .footer-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-col h6 {
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-col a {
+      color: #fff;
+      opacity: 0.9;
+      text-decoration: none;
+      transition: opacity 0.3s;
+    }
+
+    .footer-col a:hover {
+      opacity: 1;
+    }
+
+    .footer .brand img {
+      height: 45px;
+      margin-bottom: 1rem;
+    }
+
+    .footer .brand p {
+      margin: 0.3rem 0;
+      opacity: 0.95;
+    }
+
+    /* Socials */
+    .socials {
+      display: flex;
+      gap: 1rem;
+      font-size: 1.3rem;
+    }
+    .socials a {
+      color: #fff;
+      opacity: 0.85;
+    }
+    .socials a:hover {
+      opacity: 1;
+    }
+
+    /* Bottom Section */
+    .footer-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      font-size: 0.9rem;
+      border-top: 1px solid rgba(255,255,255,0.35);
+      padding-top: 1rem;
+      opacity: 0.9;
+    }
+    .footer-bottom a {
+      color: #fff;
+      text-decoration: none;
+    }
+
     /* ---------- RESPONSIVE ---------- */
     @media(max-width:768px) {
       .navbar-list { flex-direction: column; }
@@ -232,7 +329,7 @@
 
   <!-- MAIN -->
   <main class="rentcar-main-content">
-    <h1>🚗 Rent your Car</h1>
+    <h1>Rent your Car</h1>
 
     <form id="carForm">
       <input type="text" id="carName" placeholder="Car Make & Model" required />
@@ -244,9 +341,7 @@
     </form>
 
     <h2>Available Cars</h2>
-    <div id="carList" class="car-list">
-      <!-- JS inserts cars here -->
-    </div>
+    <div id="carList" class="car-list"></div>
 
     <h2>💼 Buy or Sell</h2>
     <div class="buy-sell">
@@ -254,6 +349,61 @@
       <button class="btns" onclick="window.location.href='sell.html'">💸 Sell Your Car</button>
     </div>
   </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-row">
+        <!-- Brand -->
+        <div class="footer-col brand">
+          <a href="#" class="logo">
+            <img src="./assets/images/vehigologo.png" alt="Vehigo logo">
+          </a>
+          <p>🚗 <strong>Affordable rentals across Madhya Pradesh</strong></p>
+          <p>Choose from a wide range of vehicles — or rent your own when it’s idle.</p>
+        </div>
+
+        <!-- Company -->
+        <div class="footer-col">
+          <h6>Company</h6>
+          <ul>
+            <li><a href="./src/pages/about.html">About Us</a></li>
+            <li><a href="./src/pages/pricing.html">Pricing Plans</a></li>
+            <li><a href="./blog.html">Our Blog</a></li>
+            <li><a href="./ContactUs.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Support -->
+        <div class="footer-col">
+          <h6>Support</h6>
+          <ul>
+            <li><a href="./src/pages/help-center.html">Help Center</a></li>
+            <li><a href="./src/pages/Askaques.html">Ask a Question</a></li>
+            <li><a href="./privacypolicy.html">Privacy Policy</a></li>
+            <li><a href="./tandc.html">Terms & Conditions</a></li>
+          </ul>
+        </div>
+
+        <!-- Follow -->
+        <div class="footer-col">
+          <h6>Follow</h6>
+          <div class="socials">
+            <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom -->
+      <div class="footer-bottom">
+        <div>© <span id="copyright-year">2025</span> Vehigo — All rights reserved.</div>
+        <div><i class="fa-solid fa-phone"></i> <a href="tel:1800100100">1800-100-100</a> · Mon–Sat: 9:00am–6:00pm</div>
+      </div>
+    </div>
+  </footer>
 
   <!-- Floating Scroll Button -->
   <a href="#" class="floating-btn" onclick="window.scrollTo({top:0, behavior:'smooth'}); return false;">
