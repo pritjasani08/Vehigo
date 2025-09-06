@@ -43,7 +43,7 @@
       <nav class="navbar" data-navbar>
         <ul class="navbar-list" style="height: 4rem;">
           <li>
-            <a href="src/index.html" class="navbar-link" data-nav-link>Home</a>
+            <a href="index.html" class="navbar-link" data-nav-link>Home</a>
           </li>
 
           <li>
@@ -131,6 +131,29 @@
     <div class="container">
       <h1>Rent you Car</h1>
 
+      <!-- Home Button -->
+      <div class="home-button-container" style="text-align: center; margin-bottom: 2rem;">
+        <a href="index.html" class="home-btn" style="
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          color: white;
+          text-decoration: none;
+          padding: 12px 24px;
+          border-radius: 25px;
+          font-weight: 600;
+          font-size: 1.1rem;
+          transition: all 0.3s ease;
+          box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+          border: none;
+          cursor: pointer;
+        ">
+          <ion-icon name="home-outline" style="font-size: 20px;"></ion-icon>
+          🏠 Go to Home
+        </a>
+      </div>
+
       <div id="message" class="message">
         <div class="message-items"><h3>⚠️ BEFORE ADDING CAR PLEASE CHECK AVAILABILITY OF OUR OFFLINE CENTERS : </h3>
         <button class="btn pulse" onclick="window.location.href='offline.html'">🏢 Check Availability</button></div>
@@ -198,12 +221,28 @@
       z-index: 1002 !important;
     }
 
+    /* Home Button Styles */
+    .home-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+      background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+    }
+
+    .home-btn:active {
+      transform: translateY(0);
+    }
+
     /* Responsive adjustments for smaller screens */
     @media (max-width: 768px) {
       .rentcar-main-content {
         padding-top: 100px;
         /* Slightly less padding on mobile */
         padding: 20px 15px;
+      }
+      
+      .home-btn {
+        padding: 10px 20px;
+        font-size: 1rem;
       }
     }
   </style>
