@@ -20,21 +20,33 @@
 
   <!-- Styles -->
   <style>
-    :root{
-      --vehigo-primary:#2563eb;
-      --vehigo-primary-2:#4e7fb4;
-      --vehigo-primary-3:#1e40af;
-      --vehigo-accent:#ffd700;
-      --vehigo-bg:#f6f8fa;
-      --vehigo-text:#0f172a;
-      --vehigo-card:#ffffff;
+  :root {
+      --vehigo-primary: #2563eb;
+      --vehigo-primary-2: #4e7fb4;
+      --vehigo-primary-3: #1e40af;
+      --vehigo-accent: #ffd700;
+      --vehigo-bg: #f6f8fa;
+      --vehigo-text: #0f172a;
+      --vehigo-card: #ffffff;
       --vehigo-border: #e5e7eb;
       --shadow-1: 0 6px 20px rgba(37,99,235,.18);
       --shadow-2: 0 14px 40px rgba(37,99,235,.20);
+      --shadow-3: 0 -18px 50px rgba(37,99,235,.25);
       --radius-xl: 18px;
       --radius-lg: 14px;
       --radius-md: 12px;
     }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--vehigo-bg);
+      color: var(--vehigo-text);
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
     /* Dark theme */
     .dark-theme{
       --vehigo-bg:#0b1220;
@@ -282,15 +294,285 @@
     .blog-arrow.left{ left:-6px; } .blog-arrow.right{ right:-6px; }
     @media (max-width:576px){ .blog-arrow{ width:36px; height:36px; } }
 
-    /* Footer */
-    .footer{
-      background: linear-gradient(90deg,#4e7fb4 0%, #2563eb 100%); color:white;
-      margin-top: 48px; padding-top: 32px; border-top-left-radius: 18px; border-top-right-radius: 18px;
-      box-shadow: 0 -18px 50px rgba(37,99,235,.25);
+    .modern-footer {
+      background: linear-gradient(135deg, #4e7fb4 0%, #2563eb 50%, #1e40af 100%);
+      color: white;
+      margin-top: auto;
+      border-top-left-radius: var(--radius-xl);
+      border-top-right-radius: var(--radius-xl);
+      box-shadow: var(--shadow-3);
+      position: relative;
+      overflow: hidden;
     }
-    .footer a{ color: #fff; opacity:.9; text-decoration:none; }
-    .footer a:hover{ opacity:1; text-decoration: underline; }
 
+    .modern-footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    }
+
+    .footer-top {
+      padding: 3rem 0 2rem;
+      position: relative;
+    }
+
+    .footer-brand-section {
+      margin-bottom: 2.5rem;
+    }
+
+    .footer-logo {
+      height: 48px;
+      margin-bottom: 1rem;
+      filter: brightness(0) invert(1);
+    }
+
+    .footer-tagline {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .footer-description {
+      opacity: 0.9;
+      line-height: 1.6;
+      max-width: 400px;
+    }
+
+    .footer-links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-column h6 {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: white;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+
+    .footer-column h6::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 30px;
+      height: 2px;
+      background: var(--vehigo-accent);
+      border-radius: 1px;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .footer-links a:hover {
+      color: white;
+      transform: translateX(5px);
+    }
+
+    .footer-links a i {
+      width: 16px;
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
+    }
+
+    .footer-links a:hover i {
+      opacity: 1;
+    }
+
+    .social-section h6 {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: white;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      background: rgba(255,255,255,0.1);
+      color: white;
+      text-decoration: none;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .social-link:hover {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+
+    .contact-info {
+      background: rgba(255,255,255,0.08);
+      padding: 1.5rem;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .contact-icon {
+      width: 20px;
+      opacity: 0.8;
+    }
+
+    .contact-text {
+      color: rgba(255,255,255,0.9);
+      font-weight: 500;
+    }
+
+    .contact-text a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .contact-text a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      padding: 1.5rem 0;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      background: rgba(0,0,0,0.1);
+    }
+
+    .footer-bottom-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .copyright {
+      opacity: 0.8;
+      font-size: 0.9rem;
+    }
+
+    .footer-bottom-links {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-bottom-links a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s ease;
+    }
+
+    .footer-bottom-links a:hover {
+      color: white;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .footer-links-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+      }
+      
+      .social-links {
+        justify-content: center;
+      }
+      
+      .footer-bottom-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .footer-bottom-links {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .footer-links-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .footer-top {
+        padding: 2rem 0 1.5rem;
+      }
+      
+      .social-link {
+        width: 42px;
+        height: 42px;
+      }
+    }
+
+    /* Floating elements animation */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .floating-icon {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .floating-icon:nth-child(2) {
+      animation-delay: 0.5s;
+    }
+
+    .floating-icon:nth-child(3) {
+      animation-delay: 1s;
+    }
+
+    .floating-icon:nth-child(4) {
+      animation-delay: 1.5s;
+    }
     /* Utility */
     .tilt{ transform-style: preserve-3d; }
     .no-results{
@@ -670,48 +952,114 @@
   </section>
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="container py-3">
-      <div class="row g-4">
-        <div class="col-md-5">
-          <a href="#" class="logo d-inline-block mb-2">
-            <img src="./assets/images/vehigologo.png" alt="Vehigo logo" style="height:40px;">
-          </a>
-          <p class="mb-2">🚗 <strong>Affordable rentals across Madhya Pradesh</strong></p>
-          <p class="mb-0 opacity-90">Choose from a wide range of vehicles — or rent your own when it’s idle.</p>
+  <!-- <footer class="modern-footer"> -->
+    <div class="footer-top">
+      <div class="container">
+        <!-- Brand Section -->
+        <div class="footer-brand-section">
+          <div class="row">
+            <div class="col-lg-6">
+              <img src="./assets/images/vehigologo.png" alt="Vehigo" class="footer-logo mb-3">
+              <div class="footer-tagline">
+                <i class="fa-solid fa-car"></i>
+                <strong>Affordable rentals across Madhya Pradesh</strong>
+              </div>
+              <p class="footer-description">
+                Choose from a wide range of vehicles — or rent your own when it's idle. Experience seamless rentals with endless adventures across Bhopal, Indore, and Ujjain.
+              </p>
+            </div>
+            <div class="col-lg-6">
+              <div class="contact-info">
+                <div class="contact-item">
+                  <i class="fa-solid fa-phone contact-icon"></i>
+                  <div class="contact-text">
+                    <a href="tel:1800100100">1800-100-100</a> • Mon–Sat: 9:00am–6:00pm
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <i class="fa-solid fa-envelope contact-icon"></i>
+                  <div class="contact-text">
+                    <a href="mailto:support@vehigo.com">support@vehigo.com</a>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <i class="fa-solid fa-location-dot contact-icon"></i>
+                  <div class="contact-text">Bhopal, Indore & Ujjain, MP</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="col-6 col-md-2">
-          <h6 class="fw-bold">Company</h6>
-          <ul class="list-unstyled m-0">
-            <li><a href="./src/pages/about.html">About Us</a></li>
-            <li><a href="./src/pages/pricing.html">Pricing Plans</a></li>
-            <li><a href="./blog.html">Our Blog</a></li>
-            <li><a href="./ContactUs.html">Contact Us</a></li>
-          </ul>
-        </div>
-        <div class="col-6 col-md-2">
-          <h6 class="fw-bold">Support</h6>
-          <ul class="list-unstyled m-0">
-            <li><a href="./src/pages/help-center.html">Help Center</a></li>
-            <li><a href="./src/pages/Askaques.html">Ask a Question</a></li>
-            <li><a href="./privacypolicy.html">Privacy Policy</a></li>
-            <li><a href="./tandc.html">Terms & Conditions</a></li>
-          </ul>
-        </div>
-        <div class="col-md-3">
-          <h6 class="fw-bold">Follow</h6>
-          <div class="d-flex gap-3 fs-4">
-            <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
-            <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+
+        <!-- Links Grid -->
+        <div class="footer-links-grid">
+          <div class="footer-column">
+            <h6>Company</h6>
+            <ul class="footer-links">
+              <li><a href="./src/pages/about.html"><i class="fa-solid fa-building"></i>About Us</a></li>
+              <li><a href="./src/pages/pricing.html"><i class="fa-solid fa-tags"></i>Pricing Plans</a></li>
+              <li><a href="./blog.html"><i class="fa-solid fa-blog"></i>Our Blog</a></li>
+              <li><a href="./ContactUs.html"><i class="fa-solid fa-envelope"></i>Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h6>Support</h6>
+            <ul class="footer-links">
+              <li><a href="./src/pages/help-center.html"><i class="fa-solid fa-circle-question"></i>Help Center</a></li>
+              <li><a href="./src/pages/Askaques.html"><i class="fa-solid fa-comments"></i>Ask a Question</a></li>
+              <li><a href="./privacypolicy.html"><i class="fa-solid fa-shield-halved"></i>Privacy Policy</a></li>
+              <li><a href="./tandc.html"><i class="fa-solid fa-file-contract"></i>Terms & Conditions</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h6>Services</h6>
+            <ul class="footer-links">
+              <li><a href="#featured-car"><i class="fa-solid fa-car-side"></i>Explore Cars</a></li>
+              <li><a href="./rentcar.html"><i class="fa-solid fa-handshake"></i>Rent Your Car</a></li>
+              <li><a href="./offline.html"><i class="fa-solid fa-map-location-dot"></i>Offline Centers</a></li>
+              <li><a href="./src/pages/login.html"><i class="fa-solid fa-user-plus"></i>Sign Up</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <div class="social-section">
+              <h6>Follow Us</h6>
+              <div class="social-links">
+                <a href="https://www.linkedin.com" target="_blank" class="social-link floating-icon" aria-label="LinkedIn">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://www.twitter.com" target="_blank" class="social-link floating-icon" aria-label="Twitter">
+                  <i class="fab fa-x-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com" target="_blank" class="social-link floating-icon" aria-label="Instagram">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com" target="_blank" class="social-link floating-icon" aria-label="Facebook">
+                  <i class="fab fa-facebook"></i>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="d-flex flex-wrap align-items-center justify-content-between pt-3 mt-3 border-top" style="border-color:rgba(255,255,255,.35)!important;">
-        <div class="small">© <span id="copyright-year">2025</span> Vehigo — All rights reserved.</div>
-        <div class="small"><i class="fa-solid fa-phone"></i> <a href="tel:1800100100" class="text-white">1800-100-100</a> · Mon–Sat: 9:00am–6:00pm</div>
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="footer-bottom-content">
+          <div class="copyright">
+            © <span id="copyright-year">2025</span> Vehigo — All rights reserved.
+          </div>
+          <div class="footer-bottom-links">
+            <a href="./privacypolicy.html">Privacy</a>
+            <a href="./tandc.html">Terms</a>
+            <a href="./src/pages/help-center.html">Support</a>
+            <a href="./sitemap.html">Sitemap</a>
+          </div>
+        </div>
       </div>
     </div>
   </footer>
