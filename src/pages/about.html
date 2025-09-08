@@ -12,8 +12,6 @@
   <link rel="shortcut icon" href="../../public/favicon.svg" type="image/svg+xml" />
 
   <!-- custom css link -->
-  <!-- <link rel="stylesheet" href="../assets/styles/style.css" /> -->
-  <link rel="stylesheet" href="../assets/styles/about.css" />
   <link rel="stylesheet" href="../../modern-improvements.css" />
   <link rel="stylesheet" href="../../about-animations.css" />
 
@@ -27,12 +25,13 @@
   <!-- ionicon link -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  
+
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">  
-  <!-- Custom Navbar and Theme Toggle Styles -->
+
+  <!-- Custom Navbar, Theme Toggle, and Dark Mode Styles -->
   <style>
     /* Navbar Styling */
     .header {
@@ -44,418 +43,154 @@
       top: 0 !important;
       z-index: 1000 !important;
     }
-    
     .dark-theme .header {
       background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%) !important;
       box-shadow: 0 2px 20px rgba(0,0,0,0.3) !important;
       border-bottom: 1px solid rgba(255,255,255,0.1) !important;
     }
-    
-    .navbar-brand img {
-      height: 40px !important;
-      transition: transform 0.3s ease !important;
-    }
-    
-    .navbar-brand:hover img {
-      transform: scale(1.05) !important;
-    }
-    
+    .navbar-brand img { height: 40px !important; transition: transform 0.3s ease !important; }
+    .navbar-brand:hover img { transform: scale(1.05) !important; }
     .nav-link {
-      color: #374151 !important;
-      font-weight: 500 !important;
-      padding: 10px 15px !important;
-      border-radius: 8px !important;
-      transition: all 0.3s ease !important;
-      position: relative !important;
+      color: #374151 !important; font-weight: 500 !important; padding: 10px 15px !important;
+      border-radius: 8px !important; transition: all 0.3s ease !important; position: relative !important;
     }
-    
-    .nav-link:hover {
-      color: #2563eb !important;
-      background: rgba(37, 100, 235, 0.1) !important;
-      transform: translateY(-1px) !important;
-    }
-    
-    .dark-theme .nav-link {
-      color: #e5e7eb !important;
-    }
-    
-    .dark-theme .nav-link:hover {
-      color: #60a5fa !important;
-      background: rgba(96, 165, 250, 0.1) !important;
-    }
-    
+    .nav-link:hover { color: #2563eb !important; background: rgba(37,100,235,0.1) !important; transform: translateY(-1px) !important; }
+    .dark-theme .nav-link { color: #e5e7eb !important; }
+    .dark-theme .nav-link:hover { color: #60a5fa !important; background: rgba(96,165,250,0.1) !important; }
+
     /* Theme Toggle Button */
     .theme-toggle-btn {
-      border-radius: 25px !important;
-      padding: 10px 20px !important;
-      font-size: 14px !important;
-      font-weight: 600 !important;
-      transition: all 0.3s ease !important;
-      border: 2px solid #e5e7eb !important;
-      background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%) !important;
-      color: #374151 !important;
+      border-radius: 25px !important; padding: 10px 20px !important; font-size: 14px !important; font-weight: 600 !important;
+      transition: all 0.3s ease !important; border: 2px solid #e5e7eb !important;
+      background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%) !important; color: #374151 !important;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
     }
-    
     .theme-toggle-btn:hover {
-      transform: translateY(-2px) !important;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.15) !important;
-      border-color: #2563eb !important;
-      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%) !important;
-      color: #2563eb !important;
+      transform: translateY(-2px) !important; box-shadow: 0 4px 15px rgba(0,0,0,0.15) !important;
+      border-color: #2563eb !important; background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%) !important; color: #2563eb !important;
     }
-    
     .theme-toggle-btn.btn-outline-light {
-      border-color: rgba(255,255,255,0.3) !important;
-      background: rgba(255,255,255,0.1) !important;
-      color: white !important;
-      backdrop-filter: blur(10px) !important;
+      border-color: rgba(255,255,255,0.3) !important; background: rgba(255,255,255,0.1) !important;
+      color: white !important; backdrop-filter: blur(10px) !important;
     }
-    
     .theme-toggle-btn.btn-outline-light:hover {
-      background: rgba(255,255,255,0.2) !important;
-      border-color: rgba(255,255,255,0.5) !important;
-      color: white !important;
+      background: rgba(255,255,255,0.2) !important; border-color: rgba(255,255,255,0.5) !important; color: white !important;
     }
-    
+
     /* Login Button */
     .btn-vehigo {
-      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
-      border: none !important;
-      border-radius: 25px !important;
-      padding: 10px 20px !important;
-      font-weight: 600 !important;
-      color: white !important;
-      transition: all 0.3s ease !important;
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important; border: none !important; border-radius: 25px !important;
+      padding: 10px 20px !important; font-weight: 600 !important; color: white !important; transition: all 0.3s ease !important;
       box-shadow: 0 2px 8px rgba(37, 100, 235, 0.3) !important;
     }
-    
-    .btn-vehigo:hover {
-      transform: translateY(-2px) !important;
-      box-shadow: 0 4px 15px rgba(37, 100, 235, 0.4) !important;
-      background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%) !important;
-    }
-    
+    .btn-vehigo:hover { transform: translateY(-2px) !important; box-shadow: 0 4px 15px rgba(37,100,235,0.4) !important;
+      background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%) !important; }
+
     /* Mobile Menu */
-    .navbar-toggler {
-      border: none !important;
-      padding: 8px !important;
-      border-radius: 8px !important;
-      background: rgba(0,0,0,0.05) !important;
+    .navbar-toggler { border: none !important; padding: 8px !important; border-radius: 8px !important; background: rgba(0,0,0,0.05) !important; }
+    .dark-theme .navbar-toggler { background: rgba(255,255,255,0.1) !important; }
+    .navbar-toggler:focus { box-shadow: 0 0 0 0.2rem rgba(37,100,235,0.25) !important; }
+
+    /* Comprehensive Dark Mode Styles (sections, cards, etc.) */
+    .dark-theme { background-color: #0f0f0f !important; color: #e5e7eb !important; }
+    .dark-theme body { background-color: #0f0f0f !important; color: #e5e7eb !important; }
+    .dark-theme .hero-section { background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%) !important; color: #e5e7eb !important; }
+    .dark-theme .hero-title { color: #ffffff !important; }
+    .dark-theme .hero-subtitle { color: #d1d5db !important; }
+    .dark-theme .card { background-color: #1f2937 !important; border: 1px solid #374151 !important; color: #e5e7eb !important; }
+    .dark-theme .card-header { background-color: #111827 !important; border-bottom: 1px solid #374151 !important; color: #ffffff !important; }
+    .dark-theme .card-body { background-color: #1f2937 !important; color: #e5e7eb !important; }
+    .dark-theme h1, .dark-theme h2, .dark-theme h3, .dark-theme h4, .dark-theme h5, .dark-theme h6 { color: #ffffff !important; }
+    .dark-theme p { color: #d1d5db !important; }
+    .dark-theme .text-muted { color: #9ca3af !important; }
+    .dark-theme .btn-primary { background-color: #2563eb !important; border-color: #2563eb !important; color: #ffffff !important; }
+    .dark-theme .btn-primary:hover { background-color: #1d4ed8 !important; border-color: #1d4ed8 !important; }
+    .dark-theme .btn-outline-primary { color: #60a5fa !important; border-color: #60a5fa !important; }
+    .dark-theme .btn-outline-primary:hover { background-color: #60a5fa !important; color: #1f2937 !important; }
+    .dark-theme .section { background-color: #111827 !important; }
+    .dark-theme .section-alt { background-color: #0f0f0f !important; }
+    .dark-theme .testimonial-card { background-color: #1f2937 !important; border: 1px solid #374151 !important; color: #e5e7eb !important; }
+    .dark-theme .testimonial-author { color: #ffffff !important; }
+    .dark-theme .testimonial-role { color: #9ca3af !important; }
+    .dark-theme .footer { background-color: #111827 !important; color: #e5e7eb !important; }
+    .dark-theme .footer h5 { color: #ffffff !important; }
+    .dark-theme .footer-link { color: #d1d5db !important; }
+    .dark-theme .footer-link:hover { color: #60a5fa !important; }
+    .dark-theme .form-control { background-color: #374151 !important; border-color: #4b5563 !important; color: #e5e7eb !important; }
+    .dark-theme .form-control:focus { background-color: #374151 !important; border-color: #60a5fa !important; color: #e5e7eb !important; box-shadow: 0 0 0 0.2rem rgba(96,165,250,0.25) !important; }
+    .dark-theme .badge { background-color: #374151 !important; color: #e5e7eb !important; }
+    .dark-theme .badge-primary { background-color: #2563eb !important; color: #ffffff !important; }
+    .dark-theme .alert { background-color: #1f2937 !important; border-color: #374151 !important; color: #e5e7eb !important; }
+    .dark-theme .table { color: #e5e7eb !important; }
+    .dark-theme .progress { background-color: #374151 !important; }
+    .dark-theme .progress-bar { background-color: #2563eb !important; }
+    .dark-theme .list-group-item { background-color: #1f2937 !important; border-color: #374151 !important; color: #e5e7eb !important; }
+    .dark-theme .modal-content { background-color: #1f2937 !important; border-color: #374151 !important; color: #e5e7eb !important; }
+    .dark-theme .dropdown-menu { background-color: #1f2937 !important; border-color: #374151 !important; }
+    .dark-theme .dropdown-item { color: #e5e7eb !important; }
+    .dark-theme .dropdown-item:hover { background-color: #374151 !important; color: #ffffff !important; }
+    .dark-theme .nav-pills .nav-link { color: #d1d5db !important; }
+    .dark-theme .nav-pills .nav-link.active { background-color: #2563eb !important; color: #ffffff !important; }
+    .dark-theme .breadcrumb { background-color: #1f2937 !important; }
+    .dark-theme .breadcrumb-item a { color: #60a5fa !important; }
+    .dark-theme .breadcrumb-item.active { color: #9ca3af !important; }
+    .dark-theme .page-link { background-color: #1f2937 !important; border-color: #374151 !important; color: #e5e7eb !important; }
+    .dark-theme .page-link:hover { background-color: #374151 !important; border-color: #4b5563 !important; color: #ffffff !important; }
+    .dark-theme .page-item.active .page-link { background-color: #2563eb !important; border-color: #2563eb !important; color: #ffffff !important; }
+
+    /* About/Why styles (from the improved design) */
+    .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px; }
+    .why-card {
+      background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); border: 1px solid #e2e8f0; border-radius: 20px; padding: 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); position: relative; overflow: hidden;
     }
-    
-    .dark-theme .navbar-toggler {
-      background: rgba(255,255,255,0.1) !important;
+    .why-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #2563eb, #3b82f6, #60a5fa); transform: scaleX(0); transition: transform 0.4s ease; }
+    .why-card:hover::before { transform: scaleX(1); }
+    .why-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); border-color: #3b82f6; }
+    .why-card-header { display: flex; align-items: center; gap: 20px; margin-bottom: 20px; }
+    .why-card .card-icon { background: linear-gradient(135deg, #3b82f6, #1d4ed8); color: white; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 16px; box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3); transition: all 0.3s ease; }
+    .why-card:hover .card-icon { transform: scale(1.1) rotate(5deg); box-shadow: 0 12px 25px rgba(59,130,246,0.4); }
+    .why-card .card-icon ion-icon { font-size: 28px; --ionicon-stroke-width: 40px; }
+    .why-card .card-title { color: #1e293b; font-family: 'Nunito', sans-serif; font-size: 22px; font-weight: 700; margin: 0;
+      background: linear-gradient(135deg, #1e293b, #334155); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .why-description { color: #64748b; font-size: 16px; line-height: 1.7; margin-bottom: 25px; font-family: 'Open Sans', sans-serif; }
+    .why-features { display: flex; flex-wrap: wrap; gap: 10px; }
+    .feature-tag {
+      background: linear-gradient(135deg, #dbeafe, #bfdbfe); color: #1e40af; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;
+      font-family: 'Nunito', sans-serif; border: 1px solid #93c5fd; transition: all 0.3s ease;
     }
-    
-    .navbar-toggler:focus {
-      box-shadow: 0 0 0 0.2rem rgba(37, 100, 235, 0.25) !important;
-    }    
-    /* Comprehensive Dark Mode Styles */
-    .dark-theme {
-      background-color: #0f0f0f !important;
-      color: #e5e7eb !important;
+    .feature-tag:hover { background: linear-gradient(135deg, #bfdbfe, #93c5fd); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(30, 64, 175, 0.2); }
+
+    /* Message Display Styling */
+    #messageDisplay {
+      position: fixed; top: 20px; right: 20px; background: #28a745; color: white; padding: 15px 20px; border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 1000; display: none; max-width: 300px;
     }
-    
-    .dark-theme body {
-      background-color: #0f0f0f !important;
-      color: #e5e7eb !important;
-    }
-    
-    /* Hero Section Dark Mode */
-    .dark-theme .hero-section {
-      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%) !important;
-      color: #e5e7eb !important;
-    }
-    
-    .dark-theme .hero-title {
-      color: #ffffff !important;
-    }
-    
-    .dark-theme .hero-subtitle {
-      color: #d1d5db !important;
-    }
-    
-    /* Cards Dark Mode */
-    .dark-theme .card {
-      background-color: #1f2937 !important;
-      border: 1px solid #374151 !important;
-      color: #e5e7eb !important;
-    }
-    
-    .dark-theme .card-header {
-      background-color: #111827 !important;
-      border-bottom: 1px solid #374151 !important;
-      color: #ffffff !important;
-    }
-    
-    .dark-theme .card-body {
-      background-color: #1f2937 !important;
-      color: #e5e7eb !important;
-    }
-    
-    /* Text Colors Dark Mode */
-    .dark-theme h1, .dark-theme h2, .dark-theme h3, .dark-theme h4, .dark-theme h5, .dark-theme h6 {
-      color: #ffffff !important;
-    }
-    
-    .dark-theme p {
-      color: #d1d5db !important;
-    }
-    
-    .dark-theme .text-muted {
-      color: #9ca3af !important;
-    }
-    
-    /* Buttons Dark Mode */
-    .dark-theme .btn-primary {
-      background-color: #2563eb !important;
-      border-color: #2563eb !important;
-      color: #ffffff !important;
-    }
-    
-    .dark-theme .btn-primary:hover {
-      background-color: #1d4ed8 !important;
-      border-color: #1d4ed8 !important;
-    }
-    
-    .dark-theme .btn-outline-primary {
-      color: #60a5fa !important;
-      border-color: #60a5fa !important;
-    }
-    
-    .dark-theme .btn-outline-primary:hover {
-      background-color: #60a5fa !important;
-      color: #1f2937 !important;
-    }
-    
-    /* Sections Dark Mode */
-    .dark-theme .section {
-      background-color: #111827 !important;
-    }
-    
-    .dark-theme .section-alt {
-      background-color: #0f0f0f !important;
-    }
-    
-    /* Testimonials Dark Mode */
-    .dark-theme .testimonial-card {
-      background-color: #1f2937 !important;
-      border: 1px solid #374151 !important;
-      color: #e5e7eb !important;
-    }
-    
-    .dark-theme .testimonial-author {
-      color: #ffffff !important;
-    }
-    
-    .dark-theme .testimonial-role {
-      color: #9ca3af !important;
-    }
-    
-    /* Footer Dark Mode */
-    .dark-theme .footer {
-      background-color: #111827 !important;
-      color: #e5e7eb !important;
-    }
-    
-    .dark-theme .footer h5 {
-      color: #ffffff !important;
-    }
-    
-    .dark-theme .footer-link {
-      color: #d1d5db !important;
-    }
-    
-    .dark-theme .footer-link:hover {
-      color: #60a5fa !important;
-    }
-    
-    /* Form Elements Dark Mode */
-    .dark-theme .form-control {
-      background-color: #374151 !important;
-      border-color: #4b5563 !important;
-      color: #e5e7eb !important;
-    }
-    
-    .dark-theme .form-control:focus {
-      background-color: #374151 !important;
-      border-color: #60a5fa !important;
-      color: #e5e7eb !important;
-      box-shadow: 0 0 0 0.2rem rgba(96, 165, 250, 0.25) !important;
-    }
-    
-    .dark-theme .form-label {
-      color: #d1d5db !important;
-    }
-    
-    /* Badges Dark Mode */
-    .dark-theme .badge {
-      background-color: #374151 !important;
-      color: #e5e7eb !important;
-    }
-    
-    .dark-theme .badge-primary {
-      background-color: #2563eb !important;
-      color: #ffffff !important;
-    }
-    
-    /* Alerts Dark Mode */
-    .dark-theme .alert {
-      background-color: #1f2937 !important;
-      border-color: #374151 !important;
-      color: #e5e7eb !important;
-    }
-    
-    .dark-theme .alert-success {
-      background-color: #064e3b !important;
-      border-color: #065f46 !important;
-      color: #a7f3d0 !important;
-    }
-    
-    .dark-theme .alert-danger {
-      background-color: #7f1d1d !important;
-      border-color: #991b1b !important;
-      color: #fca5a5 !important;
-    }
-    
-    /* Tables Dark Mode */
-    .dark-theme .table {
-      color: #e5e7eb !important;
-    }
-    
-    .dark-theme .table-striped tbody tr:nth-of-type(odd) {
-      background-color: rgba(55, 65, 81, 0.3) !important;
-    }
-    
-    .dark-theme .table-hover tbody tr:hover {
-      background-color: rgba(55, 65, 81, 0.5) !important;
-    }
-    
-    /* Progress Bars Dark Mode */
-    .dark-theme .progress {
-      background-color: #374151 !important;
-    }
-    
-    .dark-theme .progress-bar {
-      background-color: #2563eb !important;
-    }
-    
-    /* List Groups Dark Mode */
-    .dark-theme .list-group-item {
-      background-color: #1f2937 !important;
-      border-color: #374151 !important;
-      color: #e5e7eb !important;
-    }
-    
-    .dark-theme .list-group-item:hover {
-      background-color: #374151 !important;
-    }
-    
-    /* Modals Dark Mode */
-    .dark-theme .modal-content {
-      background-color: #1f2937 !important;
-      border-color: #374151 !important;
-      color: #e5e7eb !important;
-    }
-    
-    .dark-theme .modal-header {
-      border-bottom-color: #374151 !important;
-    }
-    
-    .dark-theme .modal-footer {
-      border-top-color: #374151 !important;
-    }
-    
-    /* Dropdowns Dark Mode */
-    .dark-theme .dropdown-menu {
-      background-color: #1f2937 !important;
-      border-color: #374151 !important;
-    }
-    
-    .dark-theme .dropdown-item {
-      color: #e5e7eb !important;
-    }
-    
-    .dark-theme .dropdown-item:hover {
-      background-color: #374151 !important;
-      color: #ffffff !important;
-    }
-    
-    /* Nav Pills Dark Mode */
-    .dark-theme .nav-pills .nav-link {
-      color: #d1d5db !important;
-    }
-    
-    .dark-theme .nav-pills .nav-link.active {
-      background-color: #2563eb !important;
-      color: #ffffff !important;
-    }
-    
-    /* Breadcrumb Dark Mode */
-    .dark-theme .breadcrumb {
-      background-color: #1f2937 !important;
-    }
-    
-    .dark-theme .breadcrumb-item a {
-      color: #60a5fa !important;
-    }
-    
-    .dark-theme .breadcrumb-item.active {
-      color: #9ca3af !important;
-    }
-    
-    /* Pagination Dark Mode */
-    .dark-theme .page-link {
-      background-color: #1f2937 !important;
-      border-color: #374151 !important;
-      color: #e5e7eb !important;
-    }
-    
-    .dark-theme .page-link:hover {
-      background-color: #374151 !important;
-      border-color: #4b5563 !important;
-      color: #ffffff !important;
-    }
-    
-    .dark-theme .page-item.active .page-link {
-      background-color: #2563eb !important;
-      border-color: #2563eb !important;
-      color: #ffffff !important;
+
+    .animate-card { opacity: 0; transform: translateY(30px); transition: all 0.6s ease; }
+    .animate-card.in-view { opacity: 1; transform: translateY(0); }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .why-grid { grid-template-columns: 1fr; gap: 20px; margin-top: 30px; }
+      .about-section .container { flex-direction: column; text-align: center; padding: 40px 20px; }
+      .about-content { max-width: 100%; margin-bottom: 30px; }
+      .about-content h1 { font-size: 2.5rem; }
+      .about-content .hero-text { font-size: 1.25rem; }
+      .testimonials-container { flex-direction: column; }
+      .testimonial-card { min-width: auto; }
     }
   </style>
 </head>
 
 <body>
-  <div id="preloader">
-    <div class="spinner"></div>
-  </div>
+  <div id="preloader"><div class="spinner"></div></div>
   
   <div id="app">
     <!-- Message Display for Login Success -->
-    <div id="messageDisplay" style="
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        padding: 12px 20px;
-        border-radius: 8px;
-        color: white;
-        font-weight: 600;
-        z-index: 1000;
-        display: none;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        transition: all 0.3s ease;
-      ">
+    <div id="messageDisplay">
       <span id="messageText"></span>
-      <button onclick="closeMessage()" style="
-          background: none;
-          border: none;
-          color: white;
-          margin-left: 10px;
-          cursor: pointer;
-          font-size: 16px;
-          font-weight: bold;
-        ">&times;</button>
+      <button onclick="closeMessage()" style="float: right; background: none; border: none; color: white; font-size: 18px; cursor: pointer;">&times;</button>
     </div>
 
     <!-- Header -->
@@ -532,28 +267,59 @@
         <section class="section why-section modern-section">
           <div class="container">
             <h2 data-aos="fade-up" data-aos-delay="100" class="h2 section-title gradient-text">🚗 Why Choose VehiGo?</h2>
-            <ul data-aos="fade-up" data-aos-delay="100" class="why-list">
-              <li class="why-card modern-card animate-card">
-                <div class="card-icon"><ion-icon name="car-outline"></ion-icon></div>
-                <h3 class="h3 card-title">Diverse Fleet</h3>
-                <p>From compact Swift Dzire to spacious Toyota Fortuner, choose from a wide range of vehicles.</p>
-              </li>
-              <li class="why-card modern-card animate-card">
-                <div class="card-icon"><ion-icon name="cash-outline"></ion-icon></div>
-                <h3 class="h3 card-title">Transparent Pricing</h3>
-                <p>No hidden fees—just pay for what you rent, with clear and competitive rates.</p>
-              </li>
-              <li class="why-card modern-card animate-card">
-                <div class="card-icon"><ion-icon name="location-outline"></ion-icon></div>
-                <h3 class="h3 card-title">Flexible Locations</h3>
-                <p>Convenient pickup and drop-off options across Bhopal, Indore, and Ujjain.</p>
-              </li>
-              <li class="why-card modern-card animate-card">
-                <div class="card-icon"><ion-icon name="headset-outline"></ion-icon></div>
-                <h3 class="h3 card-title">Top-Notch Support</h3>
-                <p>Our friendly team is available to assist you 24/7, ensuring a hassle-free experience.</p>
-              </li>
-            </ul>
+            <div class="why-grid">
+              <div data-aos="fade-up" data-aos-delay="100" class="why-card modern-card animate-card">
+                <div class="why-card-header">
+                  <div class="card-icon"><ion-icon name="car-outline"></ion-icon></div>
+                  <h3 class="h3 card-title">Diverse Fleet</h3>
+                </div>
+                <p class="why-description">From compact Swift Dzire to spacious Toyota Fortuner, choose from a wide range of vehicles.</p>
+                <div class="why-features">
+                  <span class="feature-tag">Economy</span>
+                  <span class="feature-tag">Luxury</span>
+                  <span class="feature-tag">SUV</span>
+                </div>
+              </div>
+
+              <div data-aos="fade-up" data-aos-delay="200" class="why-card modern-card animate-card">
+                <div class="why-card-header">
+                  <div class="card-icon"><ion-icon name="cash-outline"></ion-icon></div>
+                  <h3 class="h3 card-title">Transparent Pricing</h3>
+                </div>
+                <p class="why-description">No hidden fees—just pay for what you rent, with clear and competitive rates that fit your budget.</p>
+                <div class="why-features">
+                  <span class="feature-tag">No Surprises</span>
+                  <span class="feature-tag">Best Rates</span>
+                  <span class="feature-tag">Flexible Plans</span>
+                </div>
+              </div>
+
+              <div data-aos="fade-up" data-aos-delay="300" class="why-card modern-card animate-card">
+                <div class="why-card-header">
+                  <div class="card-icon"><ion-icon name="location-outline"></ion-icon></div>
+                  <h3 class="h3 card-title">Flexible Locations</h3>
+                </div>
+                <p class="why-description">Convenient pickup and drop-off options across Bhopal, Indore, and Ujjain with strategic locations.</p>
+                <div class="why-features">
+                  <span class="feature-tag">3 Cities</span>
+                  <span class="feature-tag">Easy Access</span>
+                  <span class="feature-tag">24/7 Service</span>
+                </div>
+              </div>
+
+              <div data-aos="fade-up" data-aos-delay="400" class="why-card modern-card animate-card">
+                <div class="why-card-header">
+                  <div class="card-icon"><ion-icon name="headset-outline"></ion-icon></div>
+                  <h3 class="h3 card-title">Top-Notch Support</h3>
+                </div>
+                <p class="why-description">Our friendly team is available to assist you 24/7, ensuring a hassle-free experience every time.</p>
+                <div class="why-features">
+                  <span class="feature-tag">24/7 Help</span>
+                  <span class="feature-tag">Expert Team</span>
+                  <span class="feature-tag">Quick Response</span>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -562,15 +328,11 @@
           <div class="container">
             <h2 data-aos="fade-up" class="h2 section-title gradient-text">💬 What Our Customers Say</h2>
             <div data-aos="fade-up" data-aos-delay="100" class="testimonials-carousel">
-              <button class="carousel-btn prev-btn" id="prevBtn">
-                <ion-icon name="chevron-back-outline"></ion-icon>
-              </button>
+              <button class="carousel-btn prev-btn" id="prevBtn"><ion-icon name="chevron-back-outline"></ion-icon></button>
               <div data-aos="fade-up" data-aos-delay="100" class="testimonials-container">
                 <div class="testimonial-card modern-card animate-card">
                   <div class="testimonial-header">
-                    <div class="customer-avatar">
-                      <img src="https://placehold.co/60x60/007BFF/white?text=RS" alt="Rahul Sharma" />
-                    </div>
+                    <div class="customer-avatar"><img src="https://placehold.co/60x60/007BFF/white?text=RS" alt="Rahul Sharma" /></div>
                     <div class="customer-info">
                       <h4 class="customer-name">Rahul Sharma</h4>
                       <p class="customer-role">Verified Customer</p>
@@ -581,11 +343,10 @@
                     <p>"I recently rented a car from VehiGo, and I couldn't be happier with the experience. The staff was incredibly friendly and helpful throughout the entire process."</p>
                   </div>
                 </div>
+
                 <div class="testimonial-card modern-card animate-card">
                   <div class="testimonial-header">
-                    <div class="customer-avatar">
-                      <img src="https://placehold.co/60x60/28a745/white?text=AP" alt="Alok Patel" />
-                    </div>
+                    <div class="customer-avatar"><img src="https://placehold.co/60x60/28a745/white?text=AP" alt="Alok Patel" /></div>
                     <div class="customer-info">
                       <h4 class="customer-name">Alok Patel</h4>
                       <p class="customer-role">Verified Customer</p>
@@ -596,11 +357,10 @@
                     <p>"Renting a car from VehiGo was a breeze! The staff was friendly, the car was clean and well-maintained, and the whole process was seamless."</p>
                   </div>
                 </div>
+
                 <div class="testimonial-card modern-card animate-card">
                   <div class="testimonial-header">
-                    <div class="customer-avatar">
-                      <img src="https://placehold.co/60x60/ffc107/black?text=AG" alt="Aaru Gupta" />
-                    </div>
+                    <div class="customer-avatar"><img src="https://placehold.co/60x60/ffc107/black?text=AG" alt="Aaru Gupta" /></div>
                     <div class="customer-info">
                       <h4 class="customer-name">Aaru Gupta</h4>
                       <p class="customer-role">Verified Customer</p>
@@ -611,11 +371,10 @@
                     <p>"VehiGo is my top choice for renting a car. Their service is consistently outstanding and professional. Highly recommended!"</p>
                   </div>
                 </div>
+
                 <div class="testimonial-card modern-card animate-card">
                   <div class="testimonial-header">
-                    <div class="customer-avatar">
-                      <img src="https://placehold.co/60x60/dc3545/white?text=PJ" alt="Prateeksha Joshi" />
-                    </div>
+                    <div class="customer-avatar"><img src="https://placehold.co/60x60/dc3545/white?text=PJ" alt="Prateeksha Joshi" /></div>
                     <div class="customer-info">
                       <h4 class="customer-name">Prateeksha Joshi</h4>
                       <p class="customer-role">Verified Customer</p>
@@ -623,68 +382,18 @@
                     </div>
                   </div>
                   <div class="testimonial-content">
-                    <p>"Overall a wonderful experience! The car was spacious, comfortable, and fuel-efficient. The booking process was simple and quick."</p>
-                  </div>
-                </div>
-                <div class="testimonial-card modern-card animate-card">
-                  <div class="testimonial-header">
-                    <div class="customer-avatar">
-                      <img src="https://placehold.co/60x60/6f42c1/white?text=RM" alt="Rohit Mehta" />
-                    </div>
-                    <div class="customer-info">
-                      <h4 class="customer-name">Rohit Mehta</h4>
-                      <p class="customer-role">Verified Customer</p>
-                      <div class="rating">⭐⭐⭐⭐⭐</div>
-                    </div>
-                  </div>
-                  <div class="testimonial-content">
-                    <p>"I have been a loyal customer for several years. Their diverse fleet and exceptional customer service are unmatched in the region."</p>
+                    <p>"Excellent service and great customer support. The car was in perfect condition and the booking process was very smooth."</p>
                   </div>
                 </div>
               </div>
-              <button class="carousel-btn next-btn" id="nextBtn">
-                <ion-icon name="chevron-forward-outline"></ion-icon>
-              </button>
+              <button class="carousel-btn next-btn" id="nextBtn"><ion-icon name="chevron-forward-outline"></ion-icon></button>
             </div>
-          </div>
-        </section>
-
-        <!-- TEAM SECTION -->
-        <section class="section team-section modern-section">
-          <div class="container">
-            <h2 data-aos="fade-up" class="h2 section-title gradient-text">👥 Meet Our Team</h2>
-            <ul class="team-list has-scrollbar">
-              <li data-aos="fade-up">
-                <div class="team-member modern-card animate-card">
-                  <img src="../assets/images/guy1.jpg" alt="John, Financial Head" class="team-img w-100" />
-                  <h3 class="h3 card-title">John</h3>
-                  <p>Financial Head</p>
-                  <p class="team-bio">With a passion for travel and innovation, John founded VehiGo to make car rentals accessible and seamless for everyone.</p>
-                </div>
-              </li>
-              <li data-aos="fade-up">
-                <div class="team-member modern-card animate-card">
-                  <img src="../assets/images/girl1.jpg" alt="Janice, Executive Head" class="team-img w-100" />
-                  <h3 class="h3 card-title">Janice</h3>
-                  <p>Executive Head</p>
-                  <p class="team-bio">Janice ensures our fleet is always ready and our operations run smoothly, delivering top-quality service to every customer.</p>
-                </div>
-              </li>
-              <li data-aos="fade-up">
-                <div class="team-member modern-card animate-card">
-                  <img src="../assets/images/girl2.jpg" alt="Amrita, Team Manager" class="team-img w-100" />
-                  <h3 class="h3 card-title">Amrita</h3>
-                  <p>Team Manager</p>
-                  <p class="team-bio">Amrita leads our support team with dedication, ensuring every customer has a hassle-free and memorable experience.</p>
-                </div>
-              </li>
-            </ul>
           </div>
         </section>
 
         <!-- LOCATIONS SECTION -->
         <section class="section locations-section modern-section">
-          <div data-aos="flip-right" data-aos-delay="50" class="container" >
+          <div data-aos="flip-right" data-aos-delay="50" class="container">
             <h2 class="h2 section-title gradient-text" style="margin-bottom: 20px;">🗺️ Where We Operate</h2>
             <div class="locations-list">
               <a href="../../index.html" class="location-card modern-card animate-card">
@@ -714,100 +423,53 @@
       </article>
     </main>
 
+    <!-- Footer -->
     <footer class="footer">
       <div class="container">
-        <div class="footer-top">
+        <div class="footer-content">
           <div class="footer-brand">
-            <a href="#" class="logo">
-              <img data-aos="fade-up" src="../assets/images/vehigologo.png" alt="VehiGo logo" class="logo_header"/>
+            <a href="../../index.html" class="logo">
+              <img src="../../assets/images/Vehigo.svg" alt="Vehigo logo" />
             </a>
-            <p data-aos="fade-up" class="footer-text">
-              Search for cheap rental cars in Madhya Pradesh. We offer our
-              customers an attractive and fun selection of vehicles as well as
-              an opportunity to rent their cars when not in use. Experience
-              reliable, affordable, and convenient car rental services across
-              Bhopal, Indore, and Ujjain.
+            <p class="footer-text">
+              Your trusted partner for seamless car rentals across Madhya Pradesh.
             </p>
           </div>
-          <ul class="footer-list">
-            <li data-aos="fade-up">
-              <p class="footer-list-title">Company</p>
-            </li>
-            <li data-aos="fade-up"><a href="about.html" class="footer-link">About us</a></li>
-            <li data-aos="fade-up"><a href="pricing.html" class="footer-link">Pricing plans</a></li>
-            <li data-aos="fade-up"><a href="../blog.html" class="footer-link">Our blog</a></li>
-            <li data-aos="fade-up"><a href="../../ContactUs.html" class="footer-link">Contact Us</a></li>
-          </ul>
-          <ul class="footer-list">
-            <li data-aos="fade-up">
-              <p class="footer-list-title">Support</p>
-            </li>
-            <li data-aos="fade-up"><a href="help-center.html" class="footer-link">Help center</a></li>
-            <li data-aos="fade-up"><a href="Askaques.html" class="footer-link">Ask a question</a></li>
-            <li data-aos="fade-up"><a href="../../privacypolicy.html" class="footer-link">Privacy policy</a></li>
-            <li data-aos="fade-up"><a href="tandc.html" class="footer-link">Terms & conditions</a></li>
-          </ul>
+          <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="../../index.html">Home</a></li>
+              <li><a href="../../buy.html">Buy</a></li>
+              <li><a href="../../rentcar.html">Rent</a></li>
+              <li><a href="../../blog.html">Blog</a></li>
+            </ul>
+          </div>
+          <div class="footer-contact">
+            <h4>Contact Info</h4>
+            <p>📧 info@vehigo.com</p>
+            <p>📞 +91 9876543210</p>
+            <p>📍 Bhopal, Indore, Ujjain</p>
+          </div>
         </div>
         <div class="footer-bottom">
-          <ul data-aos="fade-up" class="social-list">
-            <li><a href="#" class="social-link"><ion-icon name="logo-facebook"></ion-icon></a></li>
-            <li><a href="#" class="social-link"><ion-icon name="logo-instagram"></ion-icon></a></li>
-            <li><a href="#" class="social-link"><ion-icon name="logo-twitter"></ion-icon></a></li>
-            <li><a href="#" class="social-link"><ion-icon name="logo-linkedin"></ion-icon></a></li>
-            <li><a href="#" class="social-link"><ion-icon name="logo-github"></ion-icon></a></li>
-            <li><a href="#" class="social-link"><ion-icon name="mail-outline"></ion-icon></a></li>
-          </ul>
-          <p class="copyright">
-            © 2024 <a href="#">VehiGo</a>. All Rights Reserved.
-          </p>
+          <p>&copy; <span id="copyright-year">2024</span> VehiGo. All rights reserved.</p>
         </div>
       </div>
     </footer>
   </div>
 
-  <!-- Scroll to Top Button -->
-  <a href="./about.html" style="
-    position: fixed;
-    bottom: 30px;
-    left: 30px;
-    background-color: #007BFF;
-    color: white;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    z-index: 999;
-    transition: background-color 0.3s;
-  " onmouseover="this.style.backgroundColor='#0056b3'" onmouseout="this.style.backgroundColor='#007BFF'">
-    <ion-icon name="chevron-up-outline" style="font-size: 24px;"></ion-icon>
-  </a>
-
-  <!-- Scroll Buttons -->
-  <button id="scrollTopBtn" style="
-    position: fixed; bottom: 80px; right: 20px; background: #007bff; color: white;
-    border: none; outline: none; width: 50px; height: 50px; border-radius: 50%;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2); cursor: pointer; font-size: 20px;
-    display: none; z-index: 999;">&#9650;</button>
-
-  <button id="scrollBottomBtn" style="
-    position: fixed; bottom: 20px; right: 20px; background: #007bff; color: white;
-    border: none; outline: none; width: 50px; height: 50px; border-radius: 50%;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2); cursor: pointer; font-size: 20px;
-    display: none; z-index: 999;">&#9660;</button>
-
   <script>
+    // Initialize AOS
+    AOS.init({ duration: 650, easing: 'ease-in-out', once: true });
+
+    // Theme toggle functionality (button version)
     document.addEventListener('DOMContentLoaded', function () {
       const themeToggle = document.getElementById('themeToggle');
       if (themeToggle) {
-        // Load theme from localStorage
-        if (localStorage.getItem('theme') === 'dark') {
+        const saved = localStorage.getItem('theme');
+        if (saved === 'dark') {
           document.body.classList.add('dark-theme');
           themeToggle.innerHTML = '<i class="fa-solid fa-gear"></i><span class="label">Light</span>';
-          
           themeToggle.classList.remove('btn-outline-secondary');
           themeToggle.classList.add('btn-outline-light');
         } else {
@@ -817,11 +479,9 @@
           themeToggle.classList.add('btn-outline-secondary');
         }
 
-        // Add event listener
         themeToggle.addEventListener('click', function (e) {
           e.preventDefault();
           const isDark = document.body.classList.contains('dark-theme');
-          
           if (isDark) {
             document.body.classList.remove('dark-theme');
             localStorage.setItem('theme', 'light');
@@ -837,20 +497,17 @@
           }
         });
       } else {
-        // Apply theme if toggle is not present
         if (localStorage.getItem('theme') === 'dark') {
           document.body.classList.add('dark-theme');
         }
       }
 
-      // Check for URL parameters and display messages
+      // URL message handler
       const urlParams = new URLSearchParams(window.location.search);
       const message = urlParams.get('message');
       const type = urlParams.get('type');
-
       if (message) {
         showMessage(message, type);
-        // Clean up URL
         const url = new URL(window.location);
         url.searchParams.delete('message');
         url.searchParams.delete('type');
@@ -863,93 +520,55 @@
       const testimonialsContainer = document.querySelector('.testimonials-container');
       if (prevBtn && nextBtn && testimonialsContainer) {
         let scrollAmount = 0;
-        const cardWidth = testimonialsContainer.querySelector('.testimonial-card').offsetWidth + 30; // card width + gap
+        const cardWidth = testimonialsContainer.querySelector('.testimonial-card').offsetWidth + 30;
         const maxScroll = testimonialsContainer.scrollWidth - testimonialsContainer.clientWidth;
 
         nextBtn.addEventListener('click', () => {
           scrollAmount = Math.min(scrollAmount + cardWidth, maxScroll);
           testimonialsContainer.style.transform = `translateX(-${scrollAmount}px)`;
         });
-
         prevBtn.addEventListener('click', () => {
           scrollAmount = Math.max(scrollAmount - cardWidth, 0);
           testimonialsContainer.style.transform = `translateX(-${scrollAmount}px)`;
         });
       }
 
-      // Intersection Observer for animations
+      // Intersection Observer
       const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('in-view');
-          }
-        });
+        entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('in-view'); });
       }, { threshold: 0.1 });
+      document.querySelectorAll('.animate-card, .animate-section').forEach(el => observer.observe(el));
 
-      document.querySelectorAll('.animate-card, .animate-section').forEach(el => {
-        observer.observe(el);
-      });
+      // Year
+      const yearSpan = document.getElementById('copyright-year');
+      if (yearSpan) yearSpan.textContent = new Date().getFullYear();
     });
 
     // Message display functions
     function showMessage(message, type = 'success') {
       const messageDisplay = document.getElementById('messageDisplay');
       const messageText = document.getElementById('messageText');
-
       messageText.textContent = message;
 
-      // Set background color based on type
-      if (type === 'success') {
-        messageDisplay.style.backgroundColor = '#28a745';
-      } else if (type === 'error') {
-        messageDisplay.style.backgroundColor = '#dc3545';
-      } else {
-        messageDisplay.style.backgroundColor = '#007bff';
-      }
+      if (type === 'success') messageDisplay.style.backgroundColor = '#28a745';
+      else if (type === 'error') messageDisplay.style.backgroundColor = '#dc3545';
+      else messageDisplay.style.backgroundColor = '#007bff';
 
       messageDisplay.style.display = 'block';
-
-      // Auto-hide after 5 seconds
-      setTimeout(() => {
-        closeMessage();
-      }, 5000);
+      setTimeout(() => closeMessage(), 5000);
     }
-
     function closeMessage() {
       const messageDisplay = document.getElementById('messageDisplay');
       messageDisplay.style.display = 'none';
     }
-
-    // Scroll button functionality
-    const topBtn = document.getElementById("scrollTopBtn");
-    const bottomBtn = document.getElementById("scrollBottomBtn");
-
-    window.addEventListener("scroll", () => {
-      topBtn.style.display = window.scrollY > 200 ? "block" : "none";
-      bottomBtn.style.display = (window.innerHeight + window.scrollY < document.body.scrollHeight - 200) ? "block" : "none";
-    });
-
-    topBtn.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-
-    bottomBtn.addEventListener("click", () => {
-      window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
-    });
   </script>
 
-  <!-- Bootstrap JS -->
+  <!-- Bootstrap JS and other scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="../../scripts/logout.js"></script>
   <script src="../assets/js/script.js"></script>
   <script src="../../preloader.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 650,
-      easing: 'ease-in-out', 
-      once: true,
-    });
-  </script>
+  <script> AOS.init({ duration: 650, easing: 'ease-in-out', once: true }); </script>
 </body>
 </html>
