@@ -34,6 +34,7 @@
         
       }
       
+      
       .dark-theme .header {
         background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%) !important;
         box-shadow: 0 2px 20px rgba(0,0,0,0.3) !important;
@@ -74,16 +75,22 @@
       }
 
       .card-badge{
-        padding: 10px;
+        padding: 7px;
         background-color: #1d4ed8;
         color: white;
         border-radius: 20px;
       }
 
       .card-badge:hover{
-        background-color: #2563eb;
-        transform: scale3d(1.3);
+        background-color: #1d4ed8;
+        transform: translateY(-8px);
         border:1px solid black;
+      }
+
+      .section-title{
+        color: #1d4ed8 !important;
+        font-weight: 700 !important;
+        font-size: 32px !important;
       }
       
       /* Theme Toggle Button */
@@ -130,6 +137,7 @@
         color: white !important;
         transition: all 0.3s ease !important;
         box-shadow: 0 2px 8px rgba(37, 100, 235, 0.3) !important;
+        margin-left: 13px;
       }
       
       .btn-vehigo:hover {
@@ -511,7 +519,7 @@
               <i class="fa-solid fa-gear"></i><span class="label">Light</span>
             </button>
           </li>
-
+          
           <!-- Login & Logout -->
           <li class="nav-item">
             <a href="./src/pages/login.html" class="btn btn-vehigo" id="loginBtn">
@@ -528,7 +536,7 @@
     </nav>
   </header>
 
-    <br>
+    
     <main>
         <article>
             <section class="section blog" id="blog">
