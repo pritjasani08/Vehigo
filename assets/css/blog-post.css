@@ -21,7 +21,9 @@ body {
   padding: 20px 0;
 }
 
-
+body.dark-theme{
+  background-color: #1a202c;
+}
 .header{
   background-color: whitesmoke;
   padding: 10px 0;
