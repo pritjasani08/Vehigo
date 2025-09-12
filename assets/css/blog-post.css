@@ -262,8 +262,16 @@ body.dark-theme{
   margin: 32px 0 16px 0;
   font-weight: 600;
 }
+body.dark-theme .author{
+  background-color: #2d3748;
+  color: white;
+}
 
-/* Author section */
+body.dark-theme .back-btn{
+  background-color: #2d3748;
+  color: white;
+}
+
 .author {
   background: #4299e1;
   color: white;
