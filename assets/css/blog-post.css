@@ -20,9 +20,13 @@ body {
   min-height: 100vh;
   padding: 20px 0;
 }
-.blog-container.dark-theme{
-  background-color: green;
+body.dark-theme .header {
+  background-color: rgba(0, 0, 0, 0.792);
 }
+body.dark-theme .navbar-links a{
+  color: white;
+}
+
 
 body.dark-theme{
   background-color: #1a202c;
