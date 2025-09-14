@@ -118,49 +118,52 @@
     </div>
 
     <header class="header">
-      <nav class="navbar navbar-expand-xl container py-2">
-        <a class="navbar-brand d-flex align-items-center gap-2" href="../../index.html" aria-label="Vehigo Home">
-          <img src="../assets/images/vehigologo.png" alt="Vehigo" />
-        </a>
+    <nav class="navbar navbar-expand-xl container py-2">
+      <a class="navbar-brand d-flex align-items-center gap-1" href="index.html" aria-label="Vehigo Home">
+        <img src="./assets/images/vehigologo.png" alt="Vehigo" />
+      </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain"
+        aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-        <div class="collapse navbar-collapse" id="navMain">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="../../index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="../../featured-car.html">Explore cars</a></li>
-            <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
-            <li class="nav-item"><a class="nav-link" href="../../blog.html">Blog</a></li>
-            <li class="nav-item"><a class="nav-link" href="../../ContactUs.html">Contact Us</a></li>
-            <li class="nav-item"><a class="nav-link" href="../../offline.html">Offline Centers</a></li>
-            <li class="nav-item"><a class="nav-link" href="../../rentcar.html">Rent Your Car</a></li>
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#featured-car">Explore cars</a></li>
+          <li class="nav-item"><a class="nav-link" href="./src/pages/about.html">About us</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="offline.html">Offline Centers</a></li>
+          <li class="nav-item"><a class="nav-link" href="rentcar.html">Rent Your Car</a></li>
 
-            <li class="nav-item">
-              <button id="themeToggle" class="btn btn-outline-light theme-toggle-btn" type="button">
-                <i class="fa-solid fa-gear"></i><span class="label">Light</span>
-              </button>
-            </li>
+          <!-- Theme switch -->
+          <li class="nav-item">
+            <button id="themeToggle" class="btn btn-outline-secondary theme-toggle-btn" type="button">
+              <i class="fa-solid fa-gear"></i><span class="label">Light</span>
+            </button>
+          </li>
 
-            <li class="nav-item">
-              <a href="./login.html" class="btn btn-vehigo" id="loginBtn">
-                <i class="fa-regular fa-user"></i> <span>Login</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <button id="logoutBtn" class="btn btn-outline-light d-none" aria-label="Logout">
-                <i class="fa-solid fa-right-from-bracket"></i>
-              </button>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </header>
+          <!-- Login & Logout -->
+          <li class="nav-item">
+            <a href="./src/pages/login.html" class="btn btn-vehigo" id="loginBtn">
+              <i class="fa-regular fa-user"></i> <span>Login</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <button id="logoutBtn" class="btn btn-outline-light d-none" aria-label="Logout">
+              <i class="fa-solid fa-right-from-bracket"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
 
     <main class="aboutus-container">
       <article>
-        <!-- ABOUT SECTION -->
+
         <section class="section about-section modern-section animate-section">
           <div class="container1">
             <div class="about-content animate-card">
