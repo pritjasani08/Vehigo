@@ -124,14 +124,13 @@ body.dark-mode .social-link ion-icon {
   fill: white;
 }
 
-/* Remove the unwanted black background around inline elements */
 body.dark-mode .copyright a,
 body.dark-mode .footer-link {
   background: transparent !important;
 }
 
 
-/* Navbar link styles */
+
 .navbar-list .navbar-link {
   color: var(--independence);
   font-family: var(--ff-nunito);
