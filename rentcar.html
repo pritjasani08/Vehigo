@@ -10,6 +10,7 @@
   <link rel="icon" href="favicon.svg">
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Open+Sans&display=swap" rel="stylesheet"/>
   
   <style>
@@ -151,6 +152,14 @@
       gap: 1rem;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       margin-bottom: 2rem;
+    }
+    .btn-outline-light{
+      width: 80px;
+      height: 40px;
+      border: 2px solid black;
+      border-radius: 25px;
+      font-style: oblique;
+
     }
     .car-card {
       background: var(--card-light);
@@ -321,7 +330,7 @@
     <label class="theme-switch">
       <input type="checkbox" id="theme-toggle"/>
       <span class="slider">
-        <button class="btn-outline-light" id="themebtn">Dark</button>
+        <button class="btn-outline-light" id="themebtn"><i class="fa-solid fa-gear"></i> Dark</button>
         <!-- <button class="btn-outline-light" id="darkbtn">Dark</button> -->
         
       </span>
@@ -424,12 +433,13 @@
       if(document.body.classList.contains("dark-theme")){
         document.body.classList.remove('dark-theme');
         localStorage.setItem("theme","light");
-        themebtn.textContent="Dark";
+        themebtn.textContent='<i class="fa-solid fa-gear"></i>Dark';
       }
       else{
         document.body.classList.add('dark-theme');
         localStorage.setItem("theme","dark");
-        themebtn.textContent="Light";
+        themebtn.textContent='<i class="fa-solid fa-gear"></i>Light';
+        themebtn.innerHTML='<style background-color: black; color: black; border-radius: 25px; padding: 5px;>';
       }
     })
   </script>
