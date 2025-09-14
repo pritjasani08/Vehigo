@@ -5,18 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ask a Question - Car Rental</title>
 
-
-   <link rel="stylesheet" href="../assets/styles/style.css">
-
+  <link rel="stylesheet" href="../assets/styles/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
   <style>
     /* Global Reset & Base */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       line-height: 1.6;
@@ -25,190 +19,86 @@
       overflow-x: hidden;
       animation: fadeInBody 1s ease-in;
     }
+    @keyframes fadeInBody { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes slideDown { from { transform: translateY(-100px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
 
-    @keyframes fadeInBody {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-
-    @keyframes slideDown {
-      from { transform: translateY(-100px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-
-    h1 {
-      font-size: 2.2em;
-      text-align: center;
-      color: #fff;
-    }
+    h1 { font-size: 2.2em; text-align: center; color: #fff; }
 
     main {
-      max-width: 700px;
-      margin: 30px auto;
-      background-color: #fff;
-      padding: 30px 40px;
-      border-radius: 20px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-      animation: fadeInForm 1.3s ease;
+      max-width: 700px; margin: 30px auto; background-color: #fff;
+      padding: 30px 40px; border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1); animation: fadeInForm 1.3s ease;
     }
+    @keyframes fadeInForm { from { opacity: 0; transform: translateY(30px);} to { opacity: 1; transform: translateY(0);} }
 
-    @keyframes fadeInForm {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    h2 { font-size: 1.5em; margin-bottom: 30px; color: hsl(204, 91%, 53%); text-align: center; }
 
-    h2 {
-      font-size: 1.5em;
-      margin-bottom: 30px;
-      color: hsl(204, 91%, 53%);
-      text-align: center;
-    }
-
-    form label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: bold;
-      color: hsl(204, 91%, 40%);
-    }
-
-    form input[type="text"],
-    form input[type="email"],
-    form textarea {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 20px;
-      border: 1px solid hsl(204, 91%, 80%);
-      border-radius: 15px;
-      font-size: 1em;
+    form label { display: block; margin-bottom: 8px; font-weight: bold; color: hsl(204, 91%, 40%); }
+    form input[type="text"], form input[type="email"], form textarea {
+      width: 100%; padding: 12px; margin-bottom: 20px;
+      border: 1px solid hsl(204, 91%, 80%); border-radius: 15px; font-size: 1em;
       transition: border-color 0.3s, box-shadow 0.3s;
     }
-
-    form input[type="text"],
-    form input[type="email"]{
-      border-radius: 30px;
-    }
-
-    form input:focus,
-    form textarea:focus {
-      border-color: hsl(204, 91%, 60%);
-      box-shadow: 0 0 8px rgba(0, 153, 255, 0.2);
-      outline: none;
-    }
-
-    form textarea {
-      min-height: 100px;
-      resize: vertical;
-    }
+    form input[type="text"], form input[type="email"] { border-radius: 30px; }
+    form input:focus, form textarea:focus { border-color: hsl(204, 91%, 60%); box-shadow: 0 0 8px rgba(0,153,255,0.2); outline: none; }
+    form textarea { min-height: 100px; resize: vertical; }
 
     form button {
-      background-color: hsl(204, 91%, 53%);
-      color: #fff;
-      padding: 12px 25px;
-      border: none;
-      border-radius: 30px;
-      font-size: 1em;
-      cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.2s;
-      text-align: center;
+      background-color: hsl(204, 91%, 53%); color: #fff; padding: 12px 25px;
+      border: none; border-radius: 30px; font-size: 1em; cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s; text-align: center;
     }
+    form button:hover { background-color: hsl(204, 91%, 43%); transform: scale(1.05); }
+    button[type="submit"] { margin: auto; }
 
-    form button:hover {
-      background-color: hsl(204, 91%, 43%);
-      transform: scale(1.05);
-    }
+    footer { margin-top: 40px; text-align: center; font-size: 0.9em; color: #ffffff; padding: 20px 10px; }
 
-    button[type="submit"] {
-      margin: auto;
-    }
-
-    footer {
-      margin-top: 40px;
-      text-align: center;
-      font-size: 0.9em;
-      color: #ffffff;
-      padding: 20px 10px;
-    }
-
-    /* Responsive Design */
+    /* Responsive */
     @media (max-width: 768px) {
-      main {
-        width: 90%;
-        padding: 25px 20px;
-      }
-
-      h1 {
-        font-size: 1.8em;
-      }
-
-      h2 {
-        font-size: 1.3em;
-      }
+      main { width: 90%; padding: 25px 20px; }
+      h1 { font-size: 1.8em; }
+      h2 { font-size: 1.3em; }
     }
   </style>
 </head>
 
 <body>
-    <header class="header" data-header>
+  <header class="header" data-header>
     <div class="container">
-
       <div class="overlay" data-overlay></div>
 
-      <a href="index.html" class="logo">
+      <a href="../index.html" class="logo">
         <img src="../assets/images/vehigologo.png" alt="VehiGo logo">
       </a>
 
-<nav class="navbar" data-navbar>
-  <ul class="navbar-list">
-
-    <li>
-      <a href="../index.html" class="navbar-link" data-nav-link>Home</a>
-    </li>
-
-    <li>
-      <a href="../../featured-car.html" class="navbar-link" data-nav-link>Explore cars</a>
-    </li>
-
-    <li>
-      <a href="./about.html" class="navbar-link" data-nav-link>About us</a>
-    </li>
-
-    <li>
-      <a href="../../blog.html" class="navbar-link" data-nav-link>Blog</a>
-    </li>
-
-    <li>
-      <a href="./bill.html" class="navbar-link" data-nav-link>Fare Calculator</a>
-    </li>
-
-  </ul>
-</nav>
-
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
+          <li><a href="../index.html" class="navbar-link" data-nav-link>Home</a></li>
+          <li><a href="../../featured-car.html" class="navbar-link" data-nav-link>Explore cars</a></li>
+          <li><a href="./about.html" class="navbar-link" data-nav-link>About us</a></li>
+          <li><a href="../../blog.html" class="navbar-link" data-nav-link>Blog</a></li>
+          <li><a href="./bill.html" class="navbar-link" data-nav-link>Fare Calculator</a></li>
+        </ul>
+      </nav>
 
       <div class="header-actions">
-
         <div class="header-contact">
           <a href="tel:1800100100" class="contact-link">1800-100-100</a>
-
           <span class="contact-time">Mon - Sat: 9:00 am - 6:00 pm</span>
         </div>
 
-        <a href="./pages/login.html" class="btn user-btn" aria-label="Profile">
+        <a href="./login.html" class="btn user-btn" aria-label="Profile">
           <ion-icon name="person-outline"></ion-icon>
         </a>
 
         <button class="nav-toggle-btn" data-nav-toggle-btn aria-label="Toggle Menu">
-          <span class="one"></span>
-          <span class="two"></span>
-          <span class="three"></span>
+          <span class="one"></span><span class="two"></span><span class="three"></span>
         </button>
-
       </div>
-
     </div>
   </header>
 
-    <h1>Ask a Question</h1>
+  <h1>Ask a Question</h1>
 
   <main>
     <section>
@@ -234,7 +124,7 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container" style="max-width: 1200px; margin: auto;">
-      <!-- Main Footer Section -->
+      <!-- Top Section -->
       <div class="footer-top" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2.5rem;">
         <!-- Brand Section -->
         <div class="footer-brand" style="flex: 1 1 300px;">
@@ -247,39 +137,34 @@
           </p>
         </div>
 
-        <!-- Company and Support Section -->
-        <div style="display: flex; gap: 3rem;">
-          <!-- Company Section -->
-          <ul class="footer-list">
-            <li><p class="footer-list-title">Company</p></li>
-            <li><a href="about.html" class="footer-link">About us</a></li>
-            <li><a href="pricing.html" class="footer-link">Pricing plans</a></li>
-            <li><a href="../../blog.html" class="footer-link">Our blog</a></li>
-            <li><a href="../../ContactUs.html" class="footer-link">Contact us</a></li>
-          </ul>
+        <!-- Company Section -->
+        <ul class="footer-list">
+          <li><p class="footer-list-title">Company</p></li>
+          <li><a href="about.html" class="footer-link">About us</a></li>
+          <li><a href="pricing.html" class="footer-link">Pricing plans</a></li>
+          <li><a href="../../blog.html" class="footer-link">Our blog</a></li>
+          <li><a href="../../ContactUs.html" class="footer-link">Contact us</a></li>
+        </ul>
 
-          <!-- Support Section -->
-          <ul class="footer-list">
-            <li><p class="footer-list-title">Support</p></li>
-            <li><a href="help-center.html" class="footer-link">Help center</a></li>
-            <li><a href="Askaques.html" class="footer-link">Ask a question</a></li>
-            <li><a href="../../privacypolicy.html" class="footer-link">Privacy policy</a></li>
-            <li><a href="tandc.html" class="footer-link">Terms & conditions</a></li>
-          </ul>
-        </div>
-
-        <!-- Social Icons Section -->
-        <div class="social-icons" style="display: flex; flex-direction: column; gap: 8px; align-items: center;">
-          <a href="https://www.linkedin.com" target="_blank" style="font-size: 24px; color: #0077b5;"><i class="fab fa-linkedin"></i></a>
-          <a href="https://www.twitter.com" target="_blank" style="font-size: 24px; color: #1da1f2;"><i class="fab fa-twitter"></i></a>
-          <a href="https://www.instagram.com" target="_blank" style="font-size: 24px; color: #e1306c;"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.facebook.com" target="_blank" style="font-size: 24px; color: #3b5998;"><i class="fab fa-facebook"></i></a>
-        </div>
+        <!-- Support Section -->
+        <ul class="footer-list">
+          <li><p class="footer-list-title">Support</p></li>
+          <li><a href="help-center.html" class="footer-link">Help center</a></li>
+          <li><a href="Askaques.html" class="footer-link">Ask a question</a></li>
+          <li><a href="../../privacypolicy.html" class="footer-link">Privacy policy</a></li>
+          <li><a href="tandc.html" class="footer-link">Terms & conditions</a></li>
+        </ul>
       </div>
 
-      <!-- Copyright Section -->
-      <div style="text-align: center; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb;">
-        <p style="font-size: 14px; color: #333;">© <span id="copyright-year">2023</span> Vehigo — All rights reserved.</p>
+      <!-- Bottom Section -->
+      <div class="footer-bottom">
+        <div class="social-icons" style="text-align: center; margin-bottom: 10px;">
+          <a href="https://www.linkedin.com" target="_blank" style="margin: 0 10px; font-size: 24px; color: #0077b5;"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.twitter.com" target="_blank" style="margin: 0 10px; font-size: 24px; color: #1da1f2;"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com" target="_blank" style="margin: 0 10px; font-size: 24px; color: #e1306c;"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com" target="_blank" style="margin: 0 10px; font-size: 24px; color: #3b5998;"><i class="fab fa-facebook"></i></a>
+        </div>
+        <p style="text-align: center; font-size: 14px; color: #333;">© <span id="copyright-year">2023</span> Vehigo — All rights reserved.</p>
       </div>
     </div>
   </footer>

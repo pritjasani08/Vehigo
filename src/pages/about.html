@@ -17,6 +17,62 @@
   <link rel="stylesheet" href="../../modern-improvements.css" />
   <link rel="stylesheet" href="../../about-animations.css" />
 
+  <!-- Bootstrap & Icons for unified navbar UI -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root { --vehigo-blue: #3b82f6; --vehigo-blue-dark: #2563eb; }
+    .header { background: linear-gradient(180deg, var(--vehigo-blue) 0%, var(--vehigo-blue-dark) 100%) !important; top: 0; z-index: 1000; box-shadow: 0 2px 0 rgba(0,0,0,0.15); }
+    .navbar { padding-top: 8px !important; padding-bottom: 8px !important; margin-left: 20px; }
+    .navbar-brand img { height: 40px; }
+    .navbar-nav { gap: 6px; align-items: center; }
+    .nav-link { color: #eaf2ff !important; font-weight: 600; border-radius: 10px; padding: 8px 12px !important; }
+    .nav-link:hover { background: rgba(255,255,255,0.14); color: #ffffff !important; }
+    .nav-link[href$='featured-car.html'] {  border-radius: 9999px; padding: 8px 16px !important; }
+    .nav-link[href$='featured-car.html']:hover { background: rgba(255,255,255,0.3); }
+    .theme-toggle-btn { border-radius: 9999px; padding: 8px 12px; font-weight: 700; backdrop-filter: blur(6px); }
+    .theme-toggle-btn.btn-outline-light { border-color: rgba(255,255,255,0.35); background: rgba(255,255,255,0.12); color: #fff !important; }
+    .theme-toggle-btn.btn-outline-light:hover { background: rgba(255,255,255,0.2); }
+    .btn-vehigo { background: #1d4ed8; color: #fff; border-radius: 9999px; padding: 8px 16px; font-weight: 800; border: none; }
+    .btn-vehigo:hover { background: #1e40af; }
+    .navbar-toggler { border: none; }
+    .dark-theme .header { background: linear-gradient(180deg,#0f172a 0%,#111827 100%) !important; box-shadow: 0 2px 0 rgba(0,0,0,0.6); }
+    .dark-theme .nav-link { color: #e5edff !important; }
+    .dark-theme .nav-link:hover { background: rgba(255,255,255,0.08); }
+    .dark-theme .nav-link[href$='featured-car.html'] { background: rgba(255,255,255,0.16); }
+
+    /* Prevent header overlap */
+    body { padding-top: 70px; }
+
+    /* Dark theme coverage for About page */
+    .dark-theme { background-color: #0f0f14; color: #e5e7eb; }
+    .dark-theme h1, .dark-theme h2, .dark-theme h3, .dark-theme h4, .dark-theme h5, .dark-theme h6 { color: #ffffff; }
+    .dark-theme p { color: #d1d5db; }
+
+    /* Section backgrounds */
+    .section { background: #ffffff; }
+    .dark-theme .section { background: #0f1218; }
+
+    /* Modern cards and containers */
+    .modern-card, .testimonial-card, .team-member, .location-card, .why-card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 18px; }
+    .dark-theme .modern-card, .dark-theme .testimonial-card, .dark-theme .team-member, .dark-theme .location-card, .dark-theme .why-card { background: #141a22 !important; border-color: #263241 !important; }
+    .dark-theme .card-icon { color: #93c5fd; }
+
+    /* Buttons */
+    .btn { background: #2563eb; color: #fff; border-radius: 9999px; padding: 10px 18px; border: none; }
+    .btn:hover { background: #1e40af; }
+    .dark-theme .btn { background: #3b82f6; }
+
+    /* Footer */
+    .footer { background: #f4f7fb; color: #111827; }
+    .dark-theme .footer { background: #0b0f14; color: #e5e7eb; }
+    .dark-theme .footer .footer-link { color: #cbd5e1; }
+    .dark-theme .footer .footer-link:hover { color: #60a5fa; }
+    .dark-theme .social-link { color: #cbd5e1; }
+  </style>
+  </style>
+
   <!-- google font link -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -61,56 +117,45 @@
         ">&times;</button>
     </div>
 
-    <header class="header" data-header>
-      <div class="container">
-        <a href="../index.html" class="logo">
-          <img src="../assets/images/vehigologo.png" alt="VehiGo logo" />
+    <header class="header">
+      <nav class="navbar navbar-expand-xl container py-2">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="../../index.html" aria-label="Vehigo Home">
+          <img src="../assets/images/vehigologo.png" alt="Vehigo" />
         </a>
 
-        <div class="header_nav">
-          <label class="theme-switch" for="theme-toggle">
-            <input type="checkbox" id="theme-toggle" />
-            <span class="slider">
-              <span class="icon sun" aria-label="Light mode">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="orange" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="5" />
-                  <line x1="12" y1="1" x2="12" y2="3" />
-                  <line x1="12" y1="21" x2="12" y2="23" />
-                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-                  <line x1="1" y1="12" x2="3" y2="12" />
-                  <line x1="21" y1="12" x2="23" y2="12" />
-                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-                </svg>
-              </span>
-              <span class="icon moon" aria-label="Dark mode">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f5f5f5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" />
-                </svg>
-              </span>
-            </span>
-          </label>
-          
-          <button id="logoutBtn" class="btn user-btn" style="display: none;" aria-label="Logout">
-            <ion-icon name="log-out-outline"></ion-icon>
-          </button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-          <a href="#featured-car" class="btn_explore" aria-labelledby="aria-label-txt">
-            <span id="aria-label-txt">Explore cars</span>
-          </a>
-          
-          <a href="./login.html" class="btn user-btn" id="loginBtn" aria-label="Profile">
-            <ion-icon name="person-outline"></ion-icon>
-          </a>
-          
-          <button class="nav-toggle-btn" data-nav-toggle-btn aria-label="Toggle Menu">
-            <span class="one"></span>
-            <span class="two"></span>
-            <span class="three"></span>
-          </button>
+        <div class="collapse navbar-collapse" id="navMain">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="../../index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="../../featured-car.html">Explore cars</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
+            <li class="nav-item"><a class="nav-link" href="../../blog.html">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="../../ContactUs.html">Contact Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="../../offline.html">Offline Centers</a></li>
+            <li class="nav-item"><a class="nav-link" href="../../rentcar.html">Rent Your Car</a></li>
+
+            <li class="nav-item">
+              <button id="themeToggle" class="btn btn-outline-light theme-toggle-btn" type="button">
+                <i class="fa-solid fa-gear"></i><span class="label">Light</span>
+              </button>
+            </li>
+
+            <li class="nav-item">
+              <a href="./login.html" class="btn btn-vehigo" id="loginBtn">
+                <i class="fa-regular fa-user"></i> <span>Login</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <button id="logoutBtn" class="btn btn-outline-light d-none" aria-label="Logout">
+                <i class="fa-solid fa-right-from-bracket"></i>
+              </button>
+            </li>
+          </ul>
         </div>
-      </div>
+      </nav>
     </header>
 
     <main class="aboutus-container">
@@ -131,7 +176,7 @@
                 every need. With transparent pricing and exceptional customer
                 support, VehiGo is your trusted partner for every journey.
               </p>
-              <a href="../index.html#featured-car" class="btn">Explore Our Cars</a>
+              <a href="../../featured-car.html" class="btn">Explore Our Cars</a>
             </div>
             <div class="about-banner">
               <img src="../assets/images/vehigo-homepage.png" alt="VehiGo car rental" loading="lazy" class="w-100" />
@@ -298,21 +343,21 @@
           <div data-aos="flip-right" data-aos-delay="50" class="container" >
             <h2 class="h2 section-title gradient-text" style="margin-bottom: 20px;">🗺️ Where We Operate</h2>
             <div class="locations-list">
-              <a href="../index.html#home" class="location-card modern-card animate-card">
+              <a href="../../index.html" class="location-card modern-card animate-card">
                 <div class="location-card-content">
                   <h3 class="h3 card-title">Bhopal</h3>
                   <p>Explore the city of lakes with our reliable rental cars, perfect for urban adventures and business trips.</p>
                   <span class="card-link modern-btn">Rent in Bhopal</span>
                 </div>
               </a>
-              <a href="../index.html#home" class="location-card modern-card animate-card">
+              <a href="../../index.html" class="location-card modern-card animate-card">
                 <div class="location-card-content">
                   <h3 class="h3 card-title">Indore</h3>
                   <p>Navigate Indore's vibrant streets with our diverse fleet, from compact city cars to luxury vehicles for special occasions.</p>
                   <span class="card-link modern-btn">Rent in Indore</span>
                 </div>
               </a>
-              <a href="../index.html#home" class="location-card modern-card animate-card">
+              <a href="../../index.html" class="location-card modern-card animate-card">
                 <div class="location-card-content">
                   <h3 class="h3 card-title">Ujjain</h3>
                   <p>Discover Ujjain's spiritual and cultural heritage with our convenient rental options for pilgrims and tourists.</p>
@@ -412,27 +457,39 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      const themeToggle = document.getElementById('theme-toggle');
-      if (themeToggle) {
-        // Load theme from localStorage
-        if (localStorage.getItem('theme') === 'dark') {
-          document.body.classList.add('dark-mode');
-          themeToggle.checked = true;
+      const themeToggleBtn = document.getElementById('themeToggle');
+      if (themeToggleBtn) {
+        const stored = localStorage.getItem('theme');
+        if (stored === 'dark') {
+          document.body.classList.add('dark-theme');
+          themeToggleBtn.classList.add('btn-outline-light');
+          themeToggleBtn.classList.remove('btn-outline-secondary');
+          themeToggleBtn.innerHTML = '<i class="fa-solid fa-gear"></i><span class="label">Light</span>';
+        } else {
+          document.body.classList.remove('dark-theme');
+          themeToggleBtn.classList.add('btn-outline-light');
+          themeToggleBtn.innerHTML = '<i class="fa-solid fa-gear"></i><span class="label">Light</span>';
         }
 
-        // Add event listener
-        themeToggle.addEventListener('change', function (e) {
-          e.stopPropagation();
-          document.body.classList.toggle('dark-mode', this.checked);
-          localStorage.setItem('theme', this.checked ? 'dark' : 'light');
+        themeToggleBtn.addEventListener('click', function (e) {
+          e.preventDefault();
+          const isDark = document.body.classList.contains('dark-theme');
+          if (isDark) {
+            document.body.classList.remove('dark-theme');
+            localStorage.setItem('theme', 'light');
+            this.classList.add('btn-outline-light');
+            this.classList.remove('btn-outline-secondary');
+            this.innerHTML = '<i class="fa-solid fa-gear"></i><span class="label">Dark</span>';
+          } else {
+            document.body.classList.add('dark-theme');
+            localStorage.setItem('theme', 'dark');
+            this.classList.add('btn-outline-light');
+            this.classList.remove('btn-outline-secondary');
+            this.innerHTML = '<i class="fa-solid fa-gear"></i><span class="label">Light</span>';
+          }
         });
-
-        document.querySelector('.theme-switch')?.addEventListener('click', e => e.stopPropagation());
-      } else {
-        // Apply theme if toggle is not present
-        if (localStorage.getItem('theme') === 'dark') {
-          document.body.classList.add('dark-mode');
-        }
+      } else if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-theme');
       }
 
       // Check for URL parameters and display messages
@@ -533,6 +590,7 @@
   <script src="../../scripts/logout.js"></script>
   <script src="../assets/js/script.js"></script>
   <script src="../../preloader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init({
