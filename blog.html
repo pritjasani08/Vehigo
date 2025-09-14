@@ -1,33 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="../../preloader.css"/>
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <title>About Us | VehiGo</title>
 
-  <!-- favicon -->
-  <link rel="shortcut icon" href="../../public/favicon.svg" type="image/svg+xml" />
+  <title>Blog — Vehigo</title>
 
-  <!-- custom css link -->
-  <link rel="stylesheet" href="../../modern-improvements.css" />
-  <link rel="stylesheet" href="../../about-animations.css" />
-
-  <!-- google font link -->
+  <!-- Icons & Fonts -->
+  <link rel="icon" href="favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
-  <!-- ionicon link -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">  
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">  
 
   <!-- Custom Navbar, Theme Toggle, and Dark Mode Styles -->
   <style>
@@ -181,47 +173,41 @@
   </style>
 </head>
 
-<body>
-  <div id="preloader"><div class="spinner"></div></div>
-  
-  <div id="app">
-    <!-- Message Display -->
-    <div id="messageDisplay">
-      <span id="messageText"></span>
-      <button onclick="closeMessage()" style="float: right; background: none; border: none; color: white; font-size: 18px; cursor: pointer;">&times;</button>
-    </div>
+<body class="dark-theme">
+  <div id="animated-bg" aria-hidden="true"></div>
 
     <!-- Header -->
     <header class="header">
       <nav class="navbar navbar-expand-xl container py-2">
-        <a class="navbar-brand d-flex align-items-center gap-2" href="../../index.html" aria-label="Vehigo Home">
-          <img src="../assets/images/vehigologo.png" alt="Vehigo" />
+      <a class="navbar-brand d-flex align-items-center gap-1" href="index.html" aria-label="Vehigo Home">
+        <img src="./assets/images/vehigologo.png" alt="Vehigo" />
         </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain"
+        aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navMain">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="../../index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="../../featured-car.html">Explore cars</a></li>
-            <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
-            <li class="nav-item"><a class="nav-link" href="../../blog.html">Blog</a></li>
-            <li class="nav-item"><a class="nav-link" href="../../ContactUs.html">Contact Us</a></li>
-            <li class="nav-item"><a class="nav-link" href="../../offline.html">Offline Centers</a></li>
-            <li class="nav-item"><a class="nav-link" href="../../rentcar.html">Rent Your Car</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="featured-car.html">Explore cars</a></li>
+          <li class="nav-item"><a class="nav-link" href="./src/pages/about.html">About us</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="offline.html">Offline Centers</a></li>
+          <li class="nav-item"><a class="nav-link" href="rentcar.html">Rent Your Car</a></li>
 
             <!-- Theme switch -->
             <li class="nav-item">
-              <button id="themeToggle" class="btn btn-outline-secondary theme-toggle-btn" type="button">
+            <button id="themeToggle" class="btn btn-outline-secondary theme-switch" type="button">
                 <i class="fa-solid fa-gear"></i><span class="label">Light</span>
               </button>
             </li>
 
             <!-- Login & Logout -->
             <li class="nav-item">
-              <a href="./login.html" class="btn btn-vehigo" id="loginBtn">
+            <a href="./src/pages/login.html" class="btn btn-vehigo" id="loginBtn">
                 <i class="fa-regular fa-user"></i> <span>Login</span>
               </a>
             </li>
@@ -235,31 +221,151 @@
       </nav>
     </header>
 
-    <main class="aboutus-container">
-      <article>
-        <!-- ABOUT SECTION -->
-        <section class="section about-section modern-section animate-section">
-          <div class="container1">
-            <div class="about-content animate-card">
-              <h1 class="h1 gradient-text">About VehiGo</h1>
-              <p class="hero-text">Seamless Rentals, Endless Adventures!</p>
-              <p>
-                Founded in 2020, VehiGo is a premier car rental service in
-                Madhya Pradesh, operating in Bhopal, Indore, and Ujjain. Our
-                mission is to make car rentals effortless, affordable, and
-                enjoyable. Whether you're exploring the vibrant streets of
-                Indore or embarking on a scenic journey to Ujjain's temples, we
-                provide a diverse fleet of well-maintained vehicles to suit
-                every need. With transparent pricing and exceptional customer
-                support, VehiGo is your trusted partner for every journey.
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="container">
+      <div class="content-container">
+        <div class="page-header">
+          <h1 class="page-title">Our Blog</h1>
+          <p class="page-subtitle">Tips, news, and essential guides for renters & hosts</p>
+        </div>
+
+        <div class="blog-grid">
+          <article class="blog-card" data-aos="fade-up">
+            <img src="./assets/images/blog-1.jpg" alt="Opening of new offices" class="blog-card-image">
+            <div class="blog-card-content">
+              <div class="blog-card-category">Company</div>
+              <h3 class="blog-card-title">Opening of new offices of the company</h3>
+              <p class="blog-card-excerpt">
+                We're excited to announce the opening of our new offices across Madhya Pradesh, 
+                bringing our services closer to you with enhanced support and convenience.
               </p>
-              <a href="../../featured-car.html" class="btn">Explore Our Cars</a>
+              <div class="blog-card-meta">
+                <div class="blog-card-date">
+                  <i class="fa-regular fa-clock"></i>
+                  Jan 14, 2022
+                </div>
+                <div class="blog-card-author">
+                  <i class="fa-regular fa-user"></i>
+                  Benialla Dsouza
+                </div>
+              </div>
             </div>
-            <div class="about-banner">
-              <img src="../assets/images/vehigo-homepage.png" alt="VehiGo car rental" loading="lazy" class="w-100" />
+          </article>
+
+          <article class="blog-card" data-aos="fade-up" data-aos-delay="100">
+            <img src="./assets/images/blog-2.jpg" alt="Vulnerable cars" class="blog-card-image">
+            <div class="blog-card-content">
+              <div class="blog-card-category">Repair</div>
+              <h3 class="blog-card-title">What cars are most vulnerable</h3>
+              <p class="blog-card-excerpt">
+                Understanding which vehicles are more susceptible to damage and how to protect 
+                your rental car investment with proper maintenance and care.
+              </p>
+              <div class="blog-card-meta">
+                <div class="blog-card-date">
+                  <i class="fa-regular fa-clock"></i>
+                  Jan 14, 2022
+                </div>
+                <div class="blog-card-author">
+                  <i class="fa-regular fa-user"></i>
+                  Siddharth Menon
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-card" data-aos="fade-up" data-aos-delay="200">
+            <img src="./assets/images/blog-3.jpg" alt="Average age stats" class="blog-card-image">
+            <div class="blog-card-content">
+              <div class="blog-card-category">Cars</div>
+              <h3 class="blog-card-title">Statistics showed which average age</h3>
+              <p class="blog-card-excerpt">
+                Discover the latest statistics on vehicle age preferences and how it impacts 
+                rental decisions and fleet management strategies.
+              </p>
+              <div class="blog-card-meta">
+                <div class="blog-card-date">
+                  <i class="fa-regular fa-clock"></i>
+                  Jan 14, 2022
+                </div>
+                <div class="blog-card-author">
+                  <i class="fa-regular fa-user"></i>
+                  Priya Deshmukh
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-card" data-aos="fade-up" data-aos-delay="300">
+            <img src="./assets/images/blog-4.jpg" alt="Renting requirements" class="blog-card-image">
+            <div class="blog-card-content">
+              <div class="blog-card-category">Cars</div>
+              <h3 class="blog-card-title">What's required when renting a car?</h3>
+              <p class="blog-card-excerpt">
+                A comprehensive guide to all the documents and requirements you need to know 
+                before renting a car with VehiGo for a smooth experience.
+              </p>
+              <div class="blog-card-meta">
+                <div class="blog-card-date">
+                  <i class="fa-regular fa-clock"></i>
+                  Jan 14, 2022
+                </div>
+                <div class="blog-card-author">
+                  <i class="fa-regular fa-user"></i>
+                  Ravi Khanna
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-card" data-aos="fade-up" data-aos-delay="400">
+            <img src="./assets/images/blog-5.jpg" alt="New rules" class="blog-card-image">
+            <div class="blog-card-content">
+              <div class="blog-card-category">Company</div>
+              <h3 class="blog-card-title">New rules for handling our cars</h3>
+              <p class="blog-card-excerpt">
+                Updated guidelines and best practices for maintaining and handling our rental 
+                vehicles to ensure safety and longevity for all users.
+              </p>
+              <div class="blog-card-meta">
+                <div class="blog-card-date">
+                  <i class="fa-regular fa-clock"></i>
+                  Jan 14, 2022
+                </div>
+                <div class="blog-card-author">
+                  <i class="fa-regular fa-user"></i>
+                  Shruti Yadav
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-card" data-aos="fade-up" data-aos-delay="500">
+            <img src="./assets/images/blog-1.jpg" alt="Future of car rentals" class="blog-card-image">
+            <div class="blog-card-content">
+              <div class="blog-card-category">Innovation</div>
+              <h3 class="blog-card-title">The Future of Car Rentals in India</h3>
+              <p class="blog-card-excerpt">
+                Exploring emerging trends and technologies that are shaping the future of 
+                car rental services in India, from electric vehicles to smart booking systems.
+              </p>
+              <div class="blog-card-meta">
+                <div class="blog-card-date">
+                  <i class="fa-regular fa-clock"></i>
+                  Jan 20, 2022
+                </div>
+                <div class="blog-card-author">
+                  <i class="fa-regular fa-user"></i>
+                  VehiGo Team
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
             </div>
           </div>
-        </section>
+  </main>
 
         <!-- WHY SECTION -->
         <section class="section why-section modern-section">
@@ -495,7 +601,7 @@
           }
         });
       } else {
-        if (localStorage.getItem('theme') === 'dark') {
+        if (localStorage.getItem('theme') ===   'dark') {
           document.body.classList.add('dark-theme');
         }
       }
