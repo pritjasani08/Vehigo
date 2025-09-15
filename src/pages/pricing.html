@@ -341,7 +341,7 @@
 <body>
     <!-- Header (Bootstrap, matches home) -->
     <header class="header">
-      <nav class="navbar navbar-expand-xl container py-2">
+      <nav class="navbar navbar-expand-xl navbar-light container py-2">
         <a class="navbar-brand d-flex align-items-center gap-2" href="../../index.html" aria-label="Vehigo Home">
           <img src="../../assets/images/vehigologo.png" alt="Vehigo" />
         </a>
@@ -364,6 +364,18 @@
             <li class="nav-item">
               <button id="themeToggle" class="btn btn-outline-secondary theme-toggle-btn" type="button">
                 <i class="fa-solid fa-gear"></i><span class="label">Light</span>
+              </button>
+            </li>
+
+            <!-- Login & Logout -->
+            <li class="nav-item">
+              <a href="../pages/login.html" class="btn btn-vehigo" id="loginBtn">
+                <i class="fa-regular fa-user"></i> <span>Login</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <button id="logoutBtn" class="btn btn-outline-light d-none" aria-label="Logout">
+                <i class="fa-solid fa-right-from-bracket"></i>
               </button>
             </li>
           </ul>
