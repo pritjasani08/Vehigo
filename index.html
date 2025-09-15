@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -11,16 +12,18 @@
   <link rel="icon" href="favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Styles -->
   <style>
-  :root {
+    :root {
       --vehigo-primary: #2563eb;
       --vehigo-primary-2: #4e7fb4;
       --vehigo-primary-3: #1e40af;
@@ -29,9 +32,9 @@
       --vehigo-text: #0f172a;
       --vehigo-card: #ffffff;
       --vehigo-border: #e5e7eb;
-      --shadow-1: 0 6px 20px rgba(37,99,235,.18);
-      --shadow-2: 0 14px 40px rgba(37,99,235,.20);
-      --shadow-3: 0 -18px 50px rgba(37,99,235,.25);
+      --shadow-1: 0 6px 20px rgba(37, 99, 235, .18);
+      --shadow-2: 0 14px 40px rgba(37, 99, 235, .20);
+      --shadow-3: 0 -18px 50px rgba(37, 99, 235, .25);
       --radius-xl: 18px;
       --radius-lg: 14px;
       --radius-md: 12px;
@@ -48,254 +51,607 @@
     }
 
     /* Dark theme */
-    .dark-theme{
-      --vehigo-bg:#0b1220;
-      --vehigo-text:#e6e6f0;
-      --vehigo-card:#101927;
-      --vehigo-border:#1f2a3a;
-      --shadow-1: 0 6px 20px rgba(0,0,0,.35);
-      --shadow-2: 0 20px 50px rgba(0,0,0,.45);
+    .dark-theme {
+      --vehigo-bg: #0b1220;
+      --vehigo-text: #e6e6f0;
+      --vehigo-card: #101927;
+      --vehigo-border: #1f2a3a;
+      --shadow-1: 0 6px 20px rgba(0, 0, 0, .35);
+      --shadow-2: 0 20px 50px rgba(0, 0, 0, .45);
     }
 
-    html,body{height:100%;}
-    body{
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
       font-family: 'Inter', 'Nunito', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       background: var(--vehigo-bg);
       color: var(--vehigo-text);
-      overflow-x:hidden;
+      overflow-x: hidden;
     }
 
     /* Animated Gradient Background + Blobs */
-    #animated-bg{
-      position: fixed; inset: 0;
-      background: radial-gradient(1200px 800px at 10% 10%, rgba(37,99,235,.15), transparent 40%),
-                  radial-gradient(1000px 700px at 90% 20%, rgba(78,127,180,.2), transparent 45%),
-                  radial-gradient(800px 600px at 30% 90%, rgba(30,64,175,.18), transparent 40%);
-      pointer-events: none; z-index: 0; filter: blur(0.5px);
+    #animated-bg {
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(1200px 800px at 10% 10%, rgba(37, 99, 235, .15), transparent 40%),
+        radial-gradient(1000px 700px at 90% 20%, rgba(78, 127, 180, .2), transparent 45%),
+        radial-gradient(800px 600px at 30% 90%, rgba(30, 64, 175, .18), transparent 40%);
+      pointer-events: none;
+      z-index: 0;
+      filter: blur(0.5px);
       animation: blobFloat 24s ease-in-out infinite alternate;
-      opacity:.9;
+      opacity: .9;
     }
+
     @keyframes blobFloat {
-      0% { transform: translate3d(0,0,0) scale(1);}
-      100%{ transform: translate3d(0,-20px,0) scale(1.02);}
+      0% {
+        transform: translate3d(0, 0, 0) scale(1);
+      }
+
+      100% {
+        transform: translate3d(0, -20px, 0) scale(1.02);
+      }
     }
 
     /* Preloader */
-    #preloader{
-      position: fixed; inset:0; display:flex; align-items:center; justify-content:center;
-      background: linear-gradient(120deg, rgba(37,99,235,.08), rgba(78,127,180,.08));
-      z-index: 9999; transition: opacity .4s ease, visibility .4s ease;
+    #preloader {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(120deg, rgba(37, 99, 235, .08), rgba(78, 127, 180, .08));
+      z-index: 9999;
+      transition: opacity .4s ease, visibility .4s ease;
     }
-    #preloader.hidden{opacity:0; visibility:hidden;}
-    .spinner{
-      width:56px; height:56px; border-radius:50%;
-      border: 4px solid rgba(37,99,235,.18);
+
+    #preloader.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .spinner {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      border: 4px solid rgba(37, 99, 235, .18);
       border-top-color: var(--vehigo-primary);
       animation: spin 0.8s linear infinite;
-      box-shadow: 0 0 0 4px rgba(37,99,235,.08) inset;
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, .08) inset;
     }
-    @keyframes spin {to{transform: rotate(360deg);} }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
 
     /* Header */
-    .header{
-      position: sticky; top:0; z-index: 100; backdrop-filter: saturate(140%) blur(8px);
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: saturate(140%) blur(8px);
       background: #fff;
       border-bottom: 1px solid var(--vehigo-border);
-      box-shadow: 0 2px 16px rgba(37,99,235,.08);
+      box-shadow: 0 2px 16px rgba(37, 99, 235, .08);
       border-radius: 0 0 18px 18px;
       transition: box-shadow .2s;
     }
-    .dark-theme .header{ background: rgba(10,15,26,.96); }
+
+    .dark-theme .header {
+      background: rgba(10, 15, 26, .96);
+    }
 
     /* NAVBAR FIXES */
-    .navbar .nav-link{
-      font-weight:600; letter-spacing:.2px; color:var(--vehigo-text);
+    .navbar .nav-link {
+      font-weight: 600;
+      letter-spacing: .2px;
+      color: var(--vehigo-text);
       white-space: nowrap;
       padding: .75rem .5rem;
       line-height: 1.1;
     }
-    .navbar .nav-link:hover{ color:var(--vehigo-primary); }
-    .navbar-brand img{height:36px;}
-    .navbar-nav{
+
+    .navbar .nav-link:hover {
+      color: var(--vehigo-primary);
+    }
+
+    .navbar-brand img {
+      height: 36px;
+    }
+
+    .navbar-nav {
       flex-wrap: nowrap;
       gap: 4px;
       align-items: center;
     }
+
     .navbar .btn,
-    .theme-switch{ white-space: nowrap; }
-    @media (max-width: 1200px){
-      .navbar-nav{ gap: 12px; }
+    .theme-switch {
+      white-space: nowrap;
     }
 
-    .navbar .btn { padding: 6px 14px; font-size: 0.9rem; }
-    .theme-switch { margin-left: 8px; }
+    @media (max-width: 1200px) {
+      .navbar-nav {
+        gap: 12px;
+      }
+    }
+
+    .navbar .btn {
+      padding: 6px 14px;
+      font-size: 0.9rem;
+    }
+
+    .theme-switch {
+      margin-left: 8px;
+    }
 
     /* Theme switch */
-    .theme-switch{
-      cursor:pointer; border:1px solid var(--vehigo-border);
+    .theme-switch {
+      cursor: pointer;
+      border: 1px solid var(--vehigo-border);
       background: var(--vehigo-card);
-      padding:6px 10px; border-radius: 999px; display:flex; align-items:center; gap:8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
       box-shadow: var(--shadow-1);
     }
-    .theme-switch .label{ font-size:.85rem; font-weight:600; opacity:.8;}
+
+    .theme-switch .label {
+      font-size: .85rem;
+      font-weight: 600;
+      opacity: .8;
+    }
 
     /* Hero */
-    .hero{ position: relative; z-index:1; padding: 72px 0 28px; }
-    .hero .badge{
-      display:inline-flex; align-items:center; gap:8px; padding:8px 12px; font-weight:700;
-      background: linear-gradient(90deg, rgba(37,99,235,.12), rgba(78,127,180,.12));
-      border:1px solid var(--vehigo-border); border-radius:999px;
+    .hero {
+      position: relative;
+      z-index: 1;
+      padding: 72px 0 28px;
     }
-    .hero-title{ font-size: clamp(2rem, 4.2vw, 3.2rem); font-weight:800; line-height:1.1; letter-spacing:.3px;}
-    .hero-sub{ font-size: clamp(1rem,1.6vw,1.2rem); opacity:.85;}
+
+    .hero .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      font-weight: 700;
+      background: linear-gradient(90deg, rgba(37, 99, 235, .12), rgba(78, 127, 180, .12));
+      border: 1px solid var(--vehigo-border);
+      border-radius: 999px;
+    }
+
+    .hero-title {
+      font-size: clamp(2rem, 4.2vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: .3px;
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 1.6vw, 1.2rem);
+      opacity: .85;
+    }
 
     /* Floating Car */
-    .float-car{
-      width:clamp(260px, 32vw, 520px);
-      filter: drop-shadow(0 12px 40px rgba(37,99,235,.25));
+    .float-car {
+      width: clamp(300px, 40vw, 600px);
+      filter: drop-shadow(0 12px 40px rgba(37, 99, 235, .25));
       animation: floatCar 3.8s ease-in-out infinite;
       transform-origin: 50% 60%;
     }
-    @keyframes floatCar { 0%, 100%{ transform: translateY(0) rotate(-.2deg);} 50%{ transform: translateY(-14px) rotate(.2deg);} }
+
+    @keyframes floatCar {
+
+      0%,
+      100% {
+        transform: translateY(0) rotate(-.2deg);
+      }
+
+      50% {
+        transform: translateY(-14px) rotate(.2deg);
+      }
+    }
 
     /* Search card */
-    .glass-form{
-      background: linear-gradient(180deg, rgba(255,255,255,.82), rgba(255,255,255,.76));
+    .glass-form {
+      background: linear-gradient(180deg, rgba(255, 255, 255, .82), rgba(255, 255, 255, .76));
       border: 1px solid var(--vehigo-border);
       border-radius: var(--radius-xl);
       padding: 18px;
       box-shadow: var(--shadow-1);
     }
-    .dark-theme .glass-form{ background: linear-gradient(180deg, rgba(16,25,39,.8), rgba(16,25,39,.7)); }
-    .chip{
-      display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px;
-      border:1px dashed var(--vehigo-border); background: var(--vehigo-card); font-weight:600; font-size:.9rem;
-      cursor: pointer; user-select:none;
+
+    .dark-theme .glass-form {
+      background: linear-gradient(180deg, rgba(16, 25, 39, .8), rgba(16, 25, 39, .7));
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px dashed var(--vehigo-border);
+      background: var(--vehigo-card);
+      font-weight: 600;
+      font-size: .9rem;
+      cursor: pointer;
+      user-select: none;
       transition: transform .15s ease, box-shadow .2s ease, background .2s ease;
     }
-    .chip:hover{ transform: translateY(-1px); box-shadow: var(--shadow-1); }
-    .chip.active{ border-style: solid; box-shadow: var(--shadow-2); background:linear-gradient(90deg,#4e7fb4,#2563eb); color:white;}
-    .form-select, .form-control{
-      border-radius: 12px; border:1px solid var(--vehigo-border); padding:10px 12px; height:46px;
-      background: var(--vehigo-card); color: var(--vehigo-text);
+
+    .chip:hover {
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-1);
+    }
+
+    .chip.active {
+      border-style: solid;
+      box-shadow: var(--shadow-2);
+      background: linear-gradient(90deg, #4e7fb4, #2563eb);
+      color: white;
+    }
+
+    .form-select,
+    .form-control {
+      border-radius: 12px;
+      border: 1px solid var(--vehigo-border);
+      padding: 10px 12px;
+      height: 46px;
+      background: var(--vehigo-card);
+      color: var(--vehigo-text);
     }
 
     /* Section titles */
-    .section-title{ font-weight:800; letter-spacing:.4px; margin-bottom:8px; }
-    .section-sub{ opacity:.7; font-weight:500; margin-bottom:18px;}
+    .section-title {
+      font-weight: 800;
+      letter-spacing: .4px;
+      margin-bottom: 8px;
+    }
+
+    .section-sub {
+      opacity: .7;
+      font-weight: 500;
+      margin-bottom: 18px;
+    }
 
     /* Cards */
-    .featured-car-list{
-      display:grid; grid-template-columns: repeat(12,1fr); gap:20px;
-      list-style:none; padding-left:0; margin:0;
+    .featured-car-list {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 20px;
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
     }
-    .featured-car-list > li{ grid-column: span 12; }
-    @media(min-width:576px){ .featured-car-list > li{ grid-column: span 6; } }
-    @media(min-width:992px){ .featured-car-list > li{ grid-column: span 4; } }
 
-    .featured-car-card{
-      background: var(--vehigo-card); border:1px solid var(--vehigo-border); border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-1); overflow:hidden; transform: translateZ(0);
+    .featured-car-list>li {
+      grid-column: span 12;
+    }
+
+    @media(min-width:576px) {
+      .featured-car-list>li {
+        grid-column: span 6;
+      }
+    }
+
+    @media(min-width:992px) {
+      .featured-car-list>li {
+        grid-column: span 4;
+      }
+    }
+
+    .featured-car-card {
+      background: var(--vehigo-card);
+      border: 1px solid var(--vehigo-border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-1);
+      overflow: hidden;
+      transform: translateZ(0);
       transition: transform .2s ease, box-shadow .25s ease, border-color .2s ease;
     }
-    .featured-car-card:hover{ transform: translateY(-6px); box-shadow: var(--shadow-2); border-color: rgba(37,99,235,.25); }
-    .featured-car-card:hover{
+
+    .featured-car-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-2);
+      border-color: rgba(37, 99, 235, .25);
+    }
+
+    .featured-car-card:hover {
       box-shadow: 0 0 5px grey;
     }
-    .card-banner{ overflow:hidden; position:relative; }
-    .card-banner img{ width:100%; height:220px; object-fit:cover; transform: scale(1); transition: transform .35s ease; }
-    .featured-car-card:hover .card-banner img{ transform: scale(1.06); }
-    .card-badges{ position:absolute; top:12px; left:12px; display:flex; gap:6px; z-index:2; }
-    .badge-soft{
-      padding:6px 10px; border-radius:999px; font-weight:700; font-size: .78rem;
-      background: rgba(37,99,235,.12); color: var(--vehigo-primary-3); border:1px solid rgba(37,99,235,.18);
+
+    .card-banner {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .card-banner img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      transform: scale(1);
+      transition: transform .35s ease;
+    }
+
+    .featured-car-card:hover .card-banner img {
+      transform: scale(1.06);
+    }
+
+    .card-badges {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      display: flex;
+      gap: 6px;
+      z-index: 2;
+    }
+
+    .badge-soft {
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: .78rem;
+      background: rgba(37, 99, 235, .12);
+      color: var(--vehigo-primary-3);
+      border: 1px solid rgba(37, 99, 235, .18);
       backdrop-filter: blur(2px);
     }
-    .card-content{ padding:14px 14px 16px; }
-    .card-title{ font-weight:800; margin:0; }
-    .card-list{ display:flex; flex-wrap:wrap; gap:10px 14px; margin:12px 0 0; padding:0; list-style:none; }
-    .card-list-item{ display:inline-flex; align-items:center; gap:8px; font-weight:600; opacity:.85; font-size:.92rem;}
-    .card-price-wrapper{ display:flex; align-items:center; justify-content:space-between; padding-top:12px; }
-    .btn-vehigo{
-      display:inline-flex; align-items:center; gap:10px; border:none; border-radius:12px; padding:10px 16px;
-      background: linear-gradient(90deg,#4e7fb4,#2563eb); color:white; font-weight:800;
-      box-shadow: var(--shadow-1); transition: transform .15s ease, box-shadow .2s ease, filter .2s ease;
+
+    .card-content {
+      padding: 14px 14px 16px;
     }
-    .btn-vehigo:hover{ transform: translateY(-2px); box-shadow: var(--shadow-2); filter: saturate(110%); }
+
+    .card-title {
+      font-weight: 800;
+      margin: 0;
+    }
+
+    .card-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 14px;
+      margin: 12px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .card-list-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      opacity: .85;
+      font-size: .92rem;
+    }
+
+    .card-price-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 12px;
+    }
+
+    .btn-vehigo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: none;
+      border-radius: 12px;
+      padding: 10px 16px;
+      background: linear-gradient(90deg, #4e7fb4, #2563eb);
+      color: white;
+      font-weight: 800;
+      box-shadow: var(--shadow-1);
+      transition: transform .15s ease, box-shadow .2s ease, filter .2s ease;
+    }
+
+    .btn-vehigo:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-2);
+      filter: saturate(110%);
+    }
 
     /* Skeleton loader */
-    .skeleton{
-      background: linear-gradient(90deg, rgba(0,0,0,.06), rgba(0,0,0,.12), rgba(0,0,0,.06));
+    .skeleton {
+      background: linear-gradient(90deg, rgba(0, 0, 0, .06), rgba(0, 0, 0, .12), rgba(0, 0, 0, .06));
       animation: shimmer 1.2s linear infinite;
       border-radius: 8px;
       background-size: 200px 100%;
     }
-    .dark-theme .skeleton{
-      background: linear-gradient(90deg, rgba(255,255,255,.05), rgba(255,255,255,.09), rgba(255,255,255,.05));
+
+    .dark-theme .skeleton {
+      background: linear-gradient(90deg, rgba(255, 255, 255, .05), rgba(255, 255, 255, .09), rgba(255, 255, 255, .05));
       background-size: 200px 100%;
     }
-    @keyframes shimmer{ 0%{ background-position: -200px 0; } 100%{ background-position: calc(200px + 100%) 0; } }
+
+    @keyframes shimmer {
+      0% {
+        background-position: -200px 0;
+      }
+
+      100% {
+        background-position: calc(200px + 100%) 0;
+      }
+    }
 
     /* Steps */
-    .get-start-list{ display:grid; grid-template-columns: repeat(12,1fr); gap:18px; list-style:none; padding:0; margin:0;}
-    .get-start-list li{ grid-column: span 12; }
-    @media(min-width:768px){ .get-start-list li{ grid-column: span 6; } }
-    @media(min-width:1200px){ .get-start-list li{ grid-column: span 3; } }
-    .get-start-card{
-      background: var(--vehigo-card); border:1px solid var(--vehigo-border); border-radius: var(--radius-lg);
-      padding:18px; height:100%; box-shadow: var(--shadow-1);
+    .get-start-list {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .get-start-list li {
+      grid-column: span 12;
+    }
+
+    @media(min-width:768px) {
+      .get-start-list li {
+        grid-column: span 6;
+      }
+    }
+
+    @media(min-width:1200px) {
+      .get-start-list li {
+        grid-column: span 3;
+      }
+    }
+
+    .get-start-card {
+      background: var(--vehigo-card);
+      border: 1px solid var(--vehigo-border);
+      border-radius: var(--radius-lg);
+      padding: 18px;
+      height: 100%;
+      box-shadow: var(--shadow-1);
       transition: transform .2s ease, box-shadow .25s ease, border-color .2s ease;
     }
-    .get-start-card:hover{ transform: translateY(-8px) scale(1.03); box-shadow: 0 8px 32px rgba(37,99,235,0.13); border-color: var(--vehigo-primary); background: linear-gradient(180deg, #f6f8fa 80%, #e5e7eb 100%); transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s, background 0.3s; }
-    .dark-theme .get-start-card:hover { transform: translateY(-8px) scale(1.03); box-shadow: 0 8px 32px rgba(37,99,235,0.22); border-color: var(--vehigo-primary-2); background: linear-gradient(180deg, #101927 80%, #1f2a3a 100%); transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s, background 0.3s; }
-    .get-start-card .card-icon{
-      width:44px; height:44px; display:grid; place-items:center; border-radius:12px; margin-bottom:10px;
-      background: linear-gradient(180deg, rgba(37,99,235,.12), rgba(37,99,235,.06));
-      border:1px solid rgba(37,99,235,.22);
+
+    .get-start-card:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 8px 32px rgba(37, 99, 235, 0.13);
+      border-color: var(--vehigo-primary);
+      background: linear-gradient(180deg, #f6f8fa 80%, #e5e7eb 100%);
+      transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s, background 0.3s;
+    }
+
+    .dark-theme .get-start-card:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 8px 32px rgba(37, 99, 235, 0.22);
+      border-color: var(--vehigo-primary-2);
+      background: linear-gradient(180deg, #101927 80%, #1f2a3a 100%);
+      transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s, background 0.3s;
+    }
+
+    .get-start-card .card-icon {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      margin-bottom: 10px;
+      background: linear-gradient(180deg, rgba(37, 99, 235, .12), rgba(37, 99, 235, .06));
+      border: 1px solid rgba(37, 99, 235, .22);
     }
 
     /* Reviews */
-    .reviews{
-      background: linear-gradient(180deg, rgba(255,255,255,.8), rgba(255,255,255,.72));
-      border:1px solid var(--vehigo-border);
+    .reviews {
+      background: linear-gradient(180deg, rgba(255, 255, 255, .8), rgba(255, 255, 255, .72));
+      border: 1px solid var(--vehigo-border);
       border-radius: var(--radius-xl);
       box-shadow: var(--shadow-1);
     }
-    .dark-theme .reviews{ background: linear-gradient(180deg, rgba(16,25,39,.8), rgba(16,25,39,.7)); }
+
+    .dark-theme .reviews {
+      background: linear-gradient(180deg, rgba(16, 25, 39, .8), rgba(16, 25, 39, .7));
+    }
 
     /* Blog (responsive) */
-    .blog-wrapper{ position:relative; }
-    .blog-list{
-      display:flex; gap:18px; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:8px; margin:0; list-style:none;
+    .blog-wrapper {
+      position: relative;
+    }
+
+    .blog-list {
+      display: flex;
+      gap: 40px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 8px;
+      margin: 0;
+      list-style: none;
       -webkit-overflow-scrolling: touch;
       scroll-behavior: smooth;
     }
-    .blog-list::-webkit-scrollbar{ height:8px; }
-    .blog-list::-webkit-scrollbar-thumb{ background: rgba(0,0,0,.15); border-radius:999px; }
-    .blog-card{
-      flex: 0 0 310px;
-      width:200px;
-      height: 400px;
-      scroll-snap-align:start;
-      background: var(--vehigo-card); border:1px solid var(--vehigo-border); border-radius: var(--radius-lg);
-      overflow:hidden; box-shadow: var(--shadow-1); transition: transform .2s ease, box-shadow .25s ease;
-    }
-    .blog-card:hover{ transform: translateY(-6px); box-shadow: var(--shadow-2); }
-    .blog-card .card-banner img{ height:180px; object-fit:cover; width:100%; }
-    @media (max-width: 992px){ .blog-card{ flex-basis: 280px; } }
-    @media (max-width: 576px){
-      .blog-card{ flex-basis: 85vw; }
-      .blog-card .card-banner img{ height: 160px; }
+
+    .blog-list::-webkit-scrollbar {
+      height: 8px;
     }
 
-    .blog-arrow{
-      position:absolute; top:50%; transform: translateY(-50%);
-      background: var(--vehigo-card); border:1px solid var(--vehigo-border); width:40px; height:40px;
-      border-radius:999px; display:grid; place-items:center; box-shadow: var(--shadow-1);
-      opacity:.95;
+    .blog-list::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, .15);
+      border-radius: 999px;
     }
-    .blog-arrow.left{ left:-6px; } .blog-arrow.right{ right:-6px; }
-    @media (max-width:576px){ .blog-arrow{ width:36px; height:36px; } }
+
+    .blog-card {
+      flex: 0 0 310px;
+      width: 250px;
+      height: 400px;
+      scroll-snap-align: start;
+      background: var(--vehigo-card);
+      border: 1px solid var(--vehigo-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-1);
+      transition: transform .2s ease, box-shadow .25s ease;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-2);
+    }
+
+    .blog-card .card-banner img {
+      height: 180px;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    @media (max-width: 992px) {
+      .blog-card {
+        flex-basis: 280px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .blog-card {
+        flex-basis: 85vw;
+      }
+
+      .blog-card .card-banner img {
+        height: 160px;
+      }
+    }
+
+    .blog-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--vehigo-card);
+      border: 1px solid var(--vehigo-border);
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      box-shadow: var(--shadow-1);
+      opacity: .95;
+    }
+
+    .blog-arrow.left {
+      left: -6px;
+    }
+
+    .blog-arrow.right {
+      right: -6px;
+    }
+
+    @media (max-width:576px) {
+      .blog-arrow {
+        width: 36px;
+        height: 36px;
+      }
+    }
 
     .modern-footer {
       background: linear-gradient(135deg, #4e7fb4 0%, #2563eb 50%, #1e40af 100%);
@@ -315,16 +671,17 @@
       left: 0;
       right: 0;
       height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
     }
 
     .footer-top {
       padding: 3rem 0 2rem;
       position: relative;
-      background:linear-gradient(360deg,white 0%, #b9cdf8 100%);
+      background: linear-gradient(360deg, white 0%, #b9cdf8 100%);
       backdrop-filter: blur(20px);
     }
-    .dark-theme .footer-top{
+
+    .dark-theme .footer-top {
       padding: 3rem 0 2rem;
       position: relative;
       background: transparent;
@@ -332,8 +689,8 @@
 
     .footer-brand-section {
       margin-bottom: 2.5rem;
-      
-    
+
+
     }
 
     .footer-logo {
@@ -395,7 +752,7 @@
     }
 
     .footer-links a {
-      color: rgba(255,255,255,0.85);
+      color: rgba(255, 255, 255, 0.85);
       text-decoration: none;
       font-weight: 500;
       transition: all 0.3s ease;
@@ -438,27 +795,27 @@
       justify-content: center;
       width: 48px;
       height: 48px;
-      background: rgba(255,255,255,0.1);
+      background: rgba(255, 255, 255, 0.1);
       color: white;
       text-decoration: none;
       border-radius: 12px;
       transition: all 0.3s ease;
       backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,0.1);
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .social-link:hover {
-      background: rgba(255,255,255,0.2);
+      background: rgba(255, 255, 255, 0.2);
       color: white;
       transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
     }
 
     .contact-info {
-      background: rgba(255,255,255,0.08);
+      background: rgba(255, 255, 255, 0.08);
       padding: 1.5rem;
       border-radius: var(--radius-lg);
-      border: 1px solid rgba(255,255,255,0.1);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(10px);
     }
 
@@ -479,7 +836,7 @@
     }
 
     .contact-text {
-      color: rgba(255,255,255,0.9);
+      color: rgba(255, 255, 255, 0.9);
       font-weight: 500;
     }
 
@@ -494,8 +851,8 @@
 
     .footer-bottom {
       padding: 1.5rem 0;
-      border-top: 1px solid rgba(255,255,255,0.15);
-      background: rgba(0,0,0,0.1);
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(0, 0, 0, 0.1);
     }
 
     .footer-bottom-content {
@@ -518,7 +875,7 @@
     }
 
     .footer-bottom-links a {
-      color: rgba(255,255,255,0.8);
+      color: rgba(255, 255, 255, 0.8);
       text-decoration: none;
       font-size: 0.9rem;
       transition: color 0.3s ease;
@@ -534,16 +891,16 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
       }
-      
+
       .social-links {
         justify-content: center;
       }
-      
+
       .footer-bottom-content {
         flex-direction: column;
         text-align: center;
       }
-      
+
       .footer-bottom-links {
         justify-content: center;
       }
@@ -553,11 +910,11 @@
       .footer-links-grid {
         grid-template-columns: 1fr;
       }
-      
+
       .footer-top {
         padding: 2rem 0 1.5rem;
       }
-      
+
       .social-link {
         width: 42px;
         height: 42px;
@@ -566,8 +923,15 @@
 
     /* Floating elements animation */
     @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
     }
 
     .floating-icon {
@@ -587,37 +951,80 @@
     }
 
     /* Light theme overrides for footer readability */
-    body:not(.dark-theme) .footer-logo{ filter: none; }
-    body:not(.dark-theme) .footer-column h6{ color: var(--vehigo-text); }
+    body:not(.dark-theme) .footer-logo {
+      filter: none;
+    }
+
+    body:not(.dark-theme) .footer-column h6 {
+      color: var(--vehigo-text);
+    }
+
     body:not(.dark-theme) .footer-description,
-    body:not(.dark-theme) .footer-tagline{ color: var(--vehigo-text); opacity: 0.95; }
-    body:not(.dark-theme) .footer-links a{ color: rgba(0,0,0,0.9); }
-    body:not(.dark-theme) .footer-links a:hover{ color: var(--vehigo-primary-3); }
-    body:not(.dark-theme) .social-link{
-      background: rgba(0,0,0,0.06);
+    body:not(.dark-theme) .footer-tagline {
       color: var(--vehigo-text);
-      border-color: rgba(0,0,0,0.08);
+      opacity: 0.95;
     }
-    body:not(.dark-theme) .social-link:hover{
-      background: rgba(0,0,0,0.12);
+
+    body:not(.dark-theme) .footer-links a {
+      color: rgba(0, 0, 0, 0.9);
+    }
+
+    body:not(.dark-theme) .footer-links a:hover {
+      color: var(--vehigo-primary-3);
+    }
+
+    body:not(.dark-theme) .social-link {
+      background: rgba(0, 0, 0, 0.06);
+      color: var(--vehigo-text);
+      border-color: rgba(0, 0, 0, 0.08);
+    }
+
+    body:not(.dark-theme) .social-link:hover {
+      background: rgba(0, 0, 0, 0.12);
       color: var(--vehigo-text);
     }
-    body:not(.dark-theme) .contact-info{
-      background: rgba(0,0,0,0.04);
-      border-color: rgba(0,0,0,0.1);
+
+    body:not(.dark-theme) .contact-info {
+      background: rgba(0, 0, 0, 0.04);
+      border-color: rgba(0, 0, 0, 0.1);
     }
-    body:not(.dark-theme) .contact-text{ color: var(--vehigo-text); }
-    body:not(.dark-theme) .contact-text a{ color: var(--vehigo-primary-3); }
-    body:not(.dark-theme) .footer-bottom{ border-top: 1px solid rgba(0,0,0,0.12); background: rgba(0,0,0,0.03); }
-    body:not(.dark-theme) .footer-bottom-links a{ color: rgba(0,0,0,0.85); }
-    body:not(.dark-theme) .footer-bottom-links a:hover{ color: var(--vehigo-primary-3); }
+
+    body:not(.dark-theme) .contact-text {
+      color: var(--vehigo-text);
+    }
+
+    body:not(.dark-theme) .contact-text a {
+      color: var(--vehigo-primary-3);
+    }
+
+    body:not(.dark-theme) .footer-bottom {
+      border-top: 1px solid rgba(0, 0, 0, 0.12);
+      background: rgba(0, 0, 0, 0.03);
+    }
+
+    body:not(.dark-theme) .footer-bottom-links a {
+      color: rgba(0, 0, 0, 0.85);
+    }
+
+    body:not(.dark-theme) .footer-bottom-links a:hover {
+      color: var(--vehigo-primary-3);
+    }
+
     /* Utility */
-    .tilt{ transform-style: preserve-3d; }
-    .no-results{
-      background: var(--vehigo-card); border:1px dashed var(--vehigo-border); border-radius: var(--radius-lg);
-      padding: 18px; text-align:center; font-weight:700; opacity:.8;
+    .tilt {
+      transform-style: preserve-3d;
     }
-    
+
+    .no-results {
+      background: var(--vehigo-card);
+      border: 1px dashed var(--vehigo-border);
+      border-radius: var(--radius-lg);
+      padding: 18px;
+      text-align: center;
+      font-weight: 700;
+      opacity: .8;
+    }
+
     /* Theme Toggle Button Styles */
     .theme-toggle-btn {
 
@@ -629,53 +1036,53 @@
       border: 2px solid #e5e7eb !important;
       background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%) !important;
       color: #374151 !important;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
     }
-    
+
     .theme-toggle-btn:hover {
       transform: translateY(-2px) !important;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.15) !important;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15) !important;
       border-color: #2563eb !important;
       background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%) !important;
       color: #2563eb !important;
     }
-    
+
     .theme-toggle-btn.btn-outline-light {
-      border-color: rgba(255,255,255,0.3) !important;
-      background: rgba(255,255,255,0.1) !important;
+      border-color: rgba(255, 255, 255, 0.3) !important;
+      background: rgba(255, 255, 255, 0.1) !important;
       color: white !important;
       backdrop-filter: blur(10px) !important;
     }
-    
+
     .theme-toggle-btn.btn-outline-light:hover {
-      background: rgba(255,255,255,0.2) !important;
-      border-color: rgba(255,255,255,0.5) !important;
+      background: rgba(255, 255, 255, 0.2) !important;
+      border-color: rgba(255, 255, 255, 0.5) !important;
       color: white !important;
     }
-    
+
     /* Navbar Styling */
     .header {
       background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
-      box-shadow: 0 2px 20px rgba(0,0,0,0.1) !important;
-      border-bottom: 1px solid rgba(0,0,0,0.05) !important;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1) !important;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
       backdrop-filter: blur(10px) !important;
     }
-    
+
     .dark-theme .header {
       background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%) !important;
-      box-shadow: 0 2px 20px rgba(0,0,0,0.3) !important;
-      border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3) !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
     }
-    
+
     .navbar-brand img {
       height: 40px !important;
       transition: transform 0.3s ease !important;
     }
-    
+
     .navbar-brand:hover img {
       transform: scale(1.05) !important;
     }
-    
+
     .nav-link {
       color: #374151 !important;
       font-weight: 500 !important;
@@ -683,22 +1090,22 @@
       border-radius: 8px !important;
       transition: all 0.3s ease !important;
     }
-    
+
     .nav-link:hover {
       color: #2563eb !important;
       background: rgba(37, 100, 235, 0.1) !important;
       transform: translateY(-1px) !important;
     }
-    
+
     .dark-theme .nav-link {
       color: #e5e7eb !important;
     }
-    
+
     .dark-theme .nav-link:hover {
       color: #60a5fa !important;
       background: rgba(96, 165, 250, 0.1) !important;
     }
-    
+
     .btn-vehigo {
       background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
       border: none !important;
@@ -709,7 +1116,7 @@
       transition: all 0.3s ease !important;
       box-shadow: 0 2px 8px rgba(37, 100, 235, 0.3) !important;
     }
-    
+
     .btn-vehigo:hover {
       transform: translateY(-2px) !important;
       box-shadow: 0 4px 15px rgba(37, 100, 235, 0.4) !important;
@@ -717,11 +1124,14 @@
     }
   </style>
 </head>
+
 <body class="dark-theme">
   <div id="animated-bg" aria-hidden="true"></div>
 
   <!-- Preloader -->
-  <div id="preloader"><div class="spinner" role="status" aria-label="Loading"></div></div>
+  <div id="preloader">
+    <div class="spinner" role="status" aria-label="Loading"></div>
+  </div>
 
   <!-- Header -->
   <header class="header">
@@ -730,7 +1140,8 @@
         <img src="./assets/images/vehigologo.png" alt="Vehigo" />
       </a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain"
+        aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
@@ -776,8 +1187,11 @@
             <i class="fa-solid fa-location-dot"></i>
             Live in <strong>Bhopal</strong>, <strong>Indore</strong> & <strong>Ujjain</strong>
           </span>
-          <h1 class="hero-title mt-3">Seamless rentals,<br><span style="background:linear-gradient(90deg,#4e7fb4,#2563eb); -webkit-background-clip:text; background-clip:text; color:transparent;">Endless Adventures.</span></h1>
-          <p class="hero-sub mt-2">Find the perfect car in minutes, from budget hatchbacks to premium SUVs — or list your car and earn.</p>
+          <h1 class="hero-title mt-3">Seamless rentals,<br><span
+              style="background:linear-gradient(90deg,#4e7fb4,#2563eb); -webkit-background-clip:text; background-clip:text; color:transparent;">Endless
+              Adventures.</span></h1>
+          <p class="hero-sub mt-2">Find the perfect car in minutes, from budget hatchbacks to premium SUVs — or list
+            your car and earn.</p>
 
           <!-- Filter chips -->
           <div class="d-flex flex-wrap gap-2 mt-3" id="quickChips">
@@ -797,7 +1211,7 @@
               </div>
               <div class="col-12 col-md-4">
                 <label for="input-2" class="form-label fw-semibold">Max rent / hour (₹)</label>
-                <input type="text" id="input-2" class="form-control" placeholder="e.g., 300" inputmode="decimal"/>
+                <input type="text" id="input-2" class="form-control" placeholder="e.g., 300" inputmode="decimal" />
               </div>
               <div class="col-6 col-md-2">
                 <label for="car-type" class="form-label fw-semibold">Car Type</label>
@@ -824,7 +1238,8 @@
 
             <div class="d-flex flex-wrap align-items-center gap-2 mt-3">
               <button class="btn btn-vehigo" type="submit"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
-              <button class="btn btn-outline-secondary" type="button" id="clearBtn"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+              <button class="btn btn-outline-secondary" type="button" id="clearBtn"><i
+                  class="fa-solid fa-rotate-left"></i> Reset</button>
               <div class="ms-auto d-flex align-items-center gap-2">
                 <label for="sortBy" class="fw-semibold me-1">Sort:</label>
                 <select id="sortBy" class="form-select" style="width:190px;">
@@ -852,7 +1267,8 @@
       <div class="d-flex align-items-end justify-content-between mb-2">
         <div>
           <h2 class="section-title" data-aos="fade-up">Featured cars</h2>
-          <p class="section-sub" data-aos="fade-up" data-aos-delay="80">Handpicked rides with great pricing and reliable hosts.</p>
+          <p class="section-sub" data-aos="fade-up" data-aos-delay="80">Handpicked rides with great pricing and reliable
+            hosts.</p>
         </div>
         <div class="d-none d-md-flex gap-2" data-aos="fade-left">
           <button class="btn btn-outline-secondary" id="btnGrid"><i class="fa-solid fa-grid-2"></i> Grid</button>
@@ -870,7 +1286,8 @@
   <section class="section get-start">
     <div class="container">
       <h2 class="section-title" data-aos="fade-up">Get started in 4 simple steps</h2>
-      <p class="section-sub" data-aos="fade-up" data-aos-delay="80">Create an account, set preferences, and ride away.</p>
+      <p class="section-sub" data-aos="fade-up" data-aos-delay="80">Create an account, set preferences, and ride away.
+      </p>
 
       <ul class="get-start-list">
         <li>
@@ -902,7 +1319,7 @@
             <p>Secure payments, verified profiles, and clear policies — effortless.</p>
           </div>
         </li>
-      </div>
+    </div>
     </div>
   </section>
 
@@ -915,9 +1332,12 @@
       </div>
       <div class="row g-3 mt-1">
         <div class="col-12 col-lg-6" data-aos="fade-up">
-          <div class="p-3 rounded-4" style="background:var(--vehigo-card); border:1px solid var(--vehigo-border); box-shadow: var(--shadow-1);">
+          <div class="p-3 rounded-4"
+            style="background:var(--vehigo-card); border:1px solid var(--vehigo-border); box-shadow: var(--shadow-1);">
             <div class="d-flex align-items-center gap-3">
-              <img src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9b910a216b198fdd21c73112d84/images/image-daniel.jpg" alt="Rahul Sharma" class="rounded-circle" width="52" height="52"/>
+              <img
+                src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9b910a216b198fdd21c73112d84/images/image-daniel.jpg"
+                alt="Rahul Sharma" class="rounded-circle" width="52" height="52" />
               <div>
                 <div class="fw-bold">Rahul Sharma</div>
                 <div class="small opacity-75">Verified Customer</div>
@@ -929,9 +1349,12 @@
         </div>
 
         <div class="col-12 col-lg-6" data-aos="fade-up" data-aos-delay="60">
-          <div class="p-3 rounded-4" style="background:var(--vehigo-card); border:1px solid var(--vehigo-border); box-shadow: var(--shadow-1);">
+          <div class="p-3 rounded-4"
+            style="background:var(--vehigo-card); border:1px solid var(--vehigo-border); box-shadow: var(--shadow-1);">
             <div class="d-flex align-items-center gap-3">
-              <img src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9b910a216b198fdd21c73112d84/images/image-jonathan.jpg" alt="Alok Patel" class="rounded-circle" width="52" height="52"/>
+              <img
+                src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9b910a216b198fdd21c73112d84/images/image-jonathan.jpg"
+                alt="Alok Patel" class="rounded-circle" width="52" height="52" />
               <div>
                 <div class="fw-bold">Alok Patel</div>
                 <div class="small opacity-75">Verified Customer</div>
@@ -943,9 +1366,12 @@
         </div>
 
         <div class="col-12 col-lg-6" data-aos="fade-up">
-          <div class="p-3 rounded-4" style="background:var(--vehigo-card); border:1px solid var(--vehigo-border); box-shadow: var(--shadow-1);">
+          <div class="p-3 rounded-4"
+            style="background:var(--vehigo-card); border:1px solid var(--vehigo-border); box-shadow: var(--shadow-1);">
             <div class="d-flex align-items-center gap-3">
-              <img src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9b910a216b198fdd21c73112d84/images/image-kira.jpg" alt="Aaru Gupta" class="rounded-circle" width="52" height="52"/>
+              <img
+                src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9b910a216b198fdd21c73112d84/images/image-kira.jpg"
+                alt="Aaru Gupta" class="rounded-circle" width="52" height="52" />
               <div>
                 <div class="fw-bold">Aaru Gupta</div>
                 <div class="small opacity-75">Verified Customer</div>
@@ -957,9 +1383,12 @@
         </div>
 
         <div class="col-12 col-lg-6" data-aos="fade-up" data-aos-delay="60">
-          <div class="p-3 rounded-4" style="background:var(--vehigo-card); border:1px solid var(--vehigo-border); box-shadow: var(--shadow-1);">
+          <div class="p-3 rounded-4"
+            style="background:var(--vehigo-card); border:1px solid var(--vehigo-border); box-shadow: var(--shadow-1);">
             <div class="d-flex align-items-center gap-3">
-              <img src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9b910a216b198fdd21c73112d84/images/image-jeanette.jpg" alt="Prateeksha Joshi" class="rounded-circle" width="52" height="52"/>
+              <img
+                src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9b910a216b198fdd21c73112d84/images/image-jeanette.jpg"
+                alt="Prateeksha Joshi" class="rounded-circle" width="52" height="52" />
               <div>
                 <div class="fw-bold">Prateeksha Joshi</div>
                 <div class="small opacity-75">Verified Customer</div>
@@ -978,18 +1407,22 @@
     <div class="container">
       <div class="blog-wrapper">
         <h2 class="section-title" data-aos="fade-up">Our Blog</h2>
-        <p class="section-sub" data-aos="fade-up" data-aos-delay="70">Tips, news, and essential guides for renters & hosts.</p>
+        <p class="section-sub" data-aos="fade-up" data-aos-delay="70">Tips, news, and essential guides for renters &
+          hosts.</p>
 
         <button class="blog-arrow left" aria-label="Scroll left"><i class="fa-solid fa-chevron-left"></i></button>
         <ul class="blog-list has-scrollbar" id="blogList">
           <li>
             <div class="blog-card" data-aos="fade-up">
               <figure class="card-banner">
-                <a href="blogs/blog1.html"><img src="./assets/images/blog-1.jpg" alt="Opening of new offices" loading="lazy"></a>
-                <a href="blogs/blog1.html" class="btn btn-vehigo position-absolute" style="top:12px;right:12px; padding:6px 10px;"><i class="fa-solid fa-building"></i> Company</a>
+                <a href="blogs/blog1.html"><img src="./assets/images/blog-1.jpg" alt="Opening of new offices"
+                    loading="lazy"></a>
+                <a href="blogs/blog1.html" class="btn btn-vehigo position-absolute"
+                  style="top:12px;right:12px; padding:6px 10px;"><i class="fa-solid fa-building"></i> Company</a>
               </figure>
               <div class="p-3">
-                <h3 class="h5 fw-bold"><a href="blogs/blog1.html" class="text-decoration-none">Opening of new offices of the company</a></h3>
+                <h3 class="h5 fw-bold"><a href="blogs/blog1.html" class="text-decoration-none">Opening of new offices of
+                    the company</a></h3>
                 <div class="d-flex align-items-center justify-content-between mt-2 small opacity-75">
                   <span><i class="fa-regular fa-clock"></i> Jan 14, 2022</span>
                   <span><i class="fa-regular fa-comments"></i> 114</span>
@@ -1005,11 +1438,15 @@
           <li>
             <div class="blog-card" data-aos="fade-up" data-aos-delay="50">
               <figure class="card-banner">
-                <a href="blogs/blog2.html"><img src="./assets/images/blog-2.jpg" alt="Vulnerable cars" loading="lazy"></a>
-                <a href="blogs/blog2.html" class="btn btn-vehigo position-absolute" style="top:12px;right:12px; padding:6px 10px;"><i class="fa-solid fa-screwdriver-wrench"></i> Repair</a>
+                <a href="blogs/blog2.html"><img src="./assets/images/blog-2.jpg" alt="Vulnerable cars"
+                    loading="lazy"></a>
+                <a href="blogs/blog2.html" class="btn btn-vehigo position-absolute"
+                  style="top:12px;right:12px; padding:6px 10px;"><i class="fa-solid fa-screwdriver-wrench"></i>
+                  Repair</a>
               </figure>
               <div class="p-3">
-                <h3 class="h5 fw-bold"><a href="blogs/blog2.html" class="text-decoration-none">What cars are most vulnerable</a></h3>
+                <h3 class="h5 fw-bold"><a href="blogs/blog2.html" class="text-decoration-none">What cars are most
+                    vulnerable</a></h3>
                 <div class="d-flex align-items-center justify-content-between mt-2 small opacity-75">
                   <span><i class="fa-regular fa-clock"></i> Jan 14, 2022</span>
                   <span><i class="fa-regular fa-comments"></i> 114</span>
@@ -1025,11 +1462,14 @@
           <li>
             <div class="blog-card" data-aos="fade-up" data-aos-delay="80">
               <figure class="card-banner">
-                <a href="blogs/blog3.html"><img src="./assets/images/blog-3.jpg" alt="Average age stats" loading="lazy"></a>
-                <a href="blogs/blog3.html" class="btn btn-vehigo position-absolute" style="top:12px;right:12px; padding:6px 10px;"><i class="fa-solid fa-car-side"></i> Cars</a>
+                <a href="blogs/blog3.html"><img src="./assets/images/blog-3.jpg" alt="Average age stats"
+                    loading="lazy"></a>
+                <a href="blogs/blog3.html" class="btn btn-vehigo position-absolute"
+                  style="top:12px;right:12px; padding:6px 10px;"><i class="fa-solid fa-car-side"></i> Cars</a>
               </figure>
               <div class="p-3">
-                <h3 class="h5 fw-bold"><a href="blogs/blog3.html" class="text-decoration-none">Statistics showed which average age</a></h3>
+                <h3 class="h5 fw-bold"><a href="blogs/blog3.html" class="text-decoration-none">Statistics showed which
+                    average age</a></h3>
                 <div class="d-flex align-items-center justify-content-between mt-2 small opacity-75">
                   <span><i class="fa-regular fa-clock"></i> Jan 14, 2022</span>
                   <span><i class="fa-regular fa-comments"></i> 114</span>
@@ -1045,11 +1485,14 @@
           <li>
             <div class="blog-card" data-aos="fade-up" data-aos-delay="110">
               <figure class="card-banner">
-                <a href="blogs/blog4.html"><img src="./assets/images/blog-4.jpg" alt="Renting requirements" loading="lazy"></a>
-                <a href="blogs/blog4.html" class="btn btn-vehigo position-absolute" style="top:12px;right:12px; padding:6px 10px;"><i class="fa-solid fa-car"></i> Cars</a>
+                <a href="blogs/blog4.html"><img src="./assets/images/blog-4.jpg" alt="Renting requirements"
+                    loading="lazy"></a>
+                <a href="blogs/blog4.html" class="btn btn-vehigo position-absolute"
+                  style="top:12px;right:12px; padding:6px 10px;"><i class="fa-solid fa-car"></i> Cars</a>
               </figure>
               <div class="p-3">
-                <h3 class="h5 fw-bold"><a href="blogs/blog4.html" class="text-decoration-none">What's required when renting a car?</a></h3>
+                <h3 class="h5 fw-bold"><a href="blogs/blog4.html" class="text-decoration-none">What's required when
+                    renting a car?</a></h3>
                 <div class="d-flex align-items-center justify-content-between mt-2 small opacity-75">
                   <span><i class="fa-regular fa-clock"></i> Jan 14, 2022</span>
                   <span><i class="fa-regular fa-comments"></i> 114</span>
@@ -1066,10 +1509,12 @@
             <div class="blog-card" data-aos="fade-up" data-aos-delay="140">
               <figure class="card-banner">
                 <a href="blogs/blog5.html"><img src="./assets/images/blog-5.jpg" alt="New rules" loading="lazy"></a>
-                <a href="blogs/blog5.html" class="btn btn-vehigo position-absolute" style="top:12px;right:12px; padding:6px 10px;"><i class="fa-solid fa-building"></i> Company</a>
+                <a href="blogs/blog5.html" class="btn btn-vehigo position-absolute"
+                  style="top:12px;right:12px; padding:6px 10px;"><i class="fa-solid fa-building"></i> Company</a>
               </figure>
               <div class="p-3">
-                <h3 class="h5 fw-bold"><a href="blogs/blog5.html" class="text-decoration-none">New rules for handling our cars</a></h3>
+                <h3 class="h5 fw-bold"><a href="blogs/blog5.html" class="text-decoration-none">New rules for handling
+                    our cars</a></h3>
                 <div class="d-flex align-items-center justify-content-between mt-2 small opacity-75">
                   <span><i class="fa-regular fa-clock"></i> Jan 14, 2022</span>
                   <span><i class="fa-regular fa-comments"></i> 114</span>
@@ -1089,127 +1534,134 @@
 
   <!-- Footer -->
   <!-- <footer class="modern-footer"> -->
-    <div class="footer-top">
-      <div class="container">
-        <!-- Brand Section -->
-        <div class="footer-brand-section">
-          <div class="row">
-            <div class="col-lg-6">
-              <img src="./assets/images/vehigologo.png" alt="Vehigo" class="footer-logo mb-3">
-              <div class="footer-tagline">
-                <i class="fa-solid fa-car"></i>
-                <strong>Affordable rentals across Madhya Pradesh</strong>
-              </div>
-              <p class="footer-description">
-                Choose from a wide range of vehicles — or rent your own when it's idle. Experience seamless rentals with endless adventures across Bhopal, Indore, and Ujjain.
-              </p>
+  <div class="footer-top">
+    <div class="container">
+      <!-- Brand Section -->
+      <div class="footer-brand-section">
+        <div class="row">
+          <div class="col-lg-6">
+            <img src="./assets/images/vehigologo.png" alt="Vehigo" class="footer-logo mb-3">
+            <div class="footer-tagline">
+              <i class="fa-solid fa-car"></i>
+              <strong>Affordable rentals across Madhya Pradesh</strong>
             </div>
-            <div class="col-lg-6">
-              <div class="contact-info">
-                <div class="contact-item">
-                  <i class="fa-solid fa-phone contact-icon"></i>
-                  <div class="contact-text">
-                    <a href="tel:1800100100">1800-100-100</a> • Mon–Sat: 9:00am–6:00pm
-                  </div>
-                </div>
-                <div class="contact-item">
-                  <i class="fa-solid fa-envelope contact-icon"></i>
-                  <div class="contact-text">
-                    <a href="mailto:support@vehigo.com">support@vehigo.com</a>
-                  </div>
-                </div>
-                <div class="contact-item">
-                  <i class="fa-solid fa-location-dot contact-icon"></i>
-                  <div class="contact-text">Bhopal, Indore & Ujjain, MP</div>
+            <p class="footer-description">
+              Choose from a wide range of vehicles — or rent your own when it's idle. Experience seamless rentals with
+              endless adventures across Bhopal, Indore, and Ujjain.
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <div class="contact-info">
+              <div class="contact-item">
+                <i class="fa-solid fa-phone contact-icon"></i>
+                <div class="contact-text">
+                  <a href="tel:1800100100">1800-100-100</a> • Mon–Sat: 9:00am–6:00pm
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Links Grid -->
-        <div class="footer-links-grid">
-          <div class="footer-column">
-            <h6>Company</h6>
-            <ul class="footer-links">
-              <li><a href="./src/pages/about.html"><i class="fa-solid fa-building"></i>About Us</a></li>
-              <li><a href="./src/pages/pricing.html"><i class="fa-solid fa-tags"></i>Pricing Plans</a></li>
-              <li><a href="./blog.html"><i class="fa-solid fa-blog"></i>Our Blog</a></li>
-              <li><a href="./ContactUs.html"><i class="fa-solid fa-envelope"></i>Contact Us</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-column">
-            <h6>Support</h6>
-            <ul class="footer-links">
-              <li><a href="./src/pages/help-center.html"><i class="fa-solid fa-circle-question"></i>Help Center</a></li>
-              <li><a href="./src/pages/Askaques.html"><i class="fa-solid fa-comments"></i>Ask a Question</a></li>
-              <li><a href="./privacypolicy.html"><i class="fa-solid fa-shield-halved"></i>Privacy Policy</a></li>
-              <li><a href="./tandc.html"><i class="fa-solid fa-file-contract"></i>Terms & Conditions</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-column">
-            <h6>Services</h6>
-            <ul class="footer-links">
-              <li><a href="#featured-car"><i class="fa-solid fa-car-side"></i>Explore Cars</a></li>
-              <li><a href="./rentcar.html"><i class="fa-solid fa-handshake"></i>Rent Your Car</a></li>
-              <li><a href="./offline.html"><i class="fa-solid fa-map-location-dot"></i>Offline Centers</a></li>
-              <li><a href="./src/pages/login.html"><i class="fa-solid fa-user-plus"></i>Sign Up</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-column">
-            <div class="social-section">
-              <h6>Follow Us</h6>
-              <div class="social-links">
-                <a href="https://www.linkedin.com" target="_blank" class="social-link floating-icon" aria-label="LinkedIn">
-                  <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://www.twitter.com" target="_blank" class="social-link floating-icon" aria-label="Twitter">
-                  <i class="fab fa-x-twitter"></i>
-                </a>
-                <a href="https://www.instagram.com" target="_blank" class="social-link floating-icon" aria-label="Instagram">
-                  <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://www.facebook.com" target="_blank" class="social-link floating-icon" aria-label="Facebook">
-                  <i class="fab fa-facebook"></i>
-                </a>
+              <div class="contact-item">
+                <i class="fa-solid fa-envelope contact-icon"></i>
+                <div class="contact-text">
+                  <a href="mailto:support@vehigo.com">support@vehigo.com</a>
+                </div>
+              </div>
+              <div class="contact-item">
+                <i class="fa-solid fa-location-dot contact-icon"></i>
+                <div class="contact-text">Bhopal, Indore & Ujjain, MP</div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Footer Bottom -->
-    <div class="footer-bottom">
-      <div class="container">
-        <div class="footer-bottom-content">
-          <div class="copyright">
-            © <span id="copyright-year">2025</span> Vehigo — All rights reserved.
-          </div>
-          <div class="footer-bottom-links">
-            <a href="./privacypolicy.html">Privacy</a>
-            <a href="./tandc.html">Terms</a>
-            <a href="./src/pages/help-center.html">Support</a>
-            <a href="./sitemap.html">Sitemap</a>
+      <!-- Links Grid -->
+      <div class="footer-links-grid">
+        <div class="footer-column">
+          <h6>Company</h6>
+          <ul class="footer-links">
+            <li><a href="./src/pages/about.html"><i class="fa-solid fa-building"></i>About Us</a></li>
+            <li><a href="./src/pages/pricing.html"><i class="fa-solid fa-tags"></i>Pricing Plans</a></li>
+            <li><a href="./blog.html"><i class="fa-solid fa-blog"></i>Our Blog</a></li>
+            <li><a href="./ContactUs.html"><i class="fa-solid fa-envelope"></i>Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h6>Support</h6>
+          <ul class="footer-links">
+            <li><a href="./src/pages/help-center.html"><i class="fa-solid fa-circle-question"></i>Help Center</a></li>
+            <li><a href="./src/pages/Askaques.html"><i class="fa-solid fa-comments"></i>Ask a Question</a></li>
+            <li><a href="./privacypolicy.html"><i class="fa-solid fa-shield-halved"></i>Privacy Policy</a></li>
+            <li><a href="./tandc.html"><i class="fa-solid fa-file-contract"></i>Terms & Conditions</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h6>Services</h6>
+          <ul class="footer-links">
+            <li><a href="#featured-car"><i class="fa-solid fa-car-side"></i>Explore Cars</a></li>
+            <li><a href="./rentcar.html"><i class="fa-solid fa-handshake"></i>Rent Your Car</a></li>
+            <li><a href="./offline.html"><i class="fa-solid fa-map-location-dot"></i>Offline Centers</a></li>
+            <li><a href="./src/pages/login.html"><i class="fa-solid fa-user-plus"></i>Sign Up</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <div class="social-section">
+            <h6>Follow Us</h6>
+            <div class="social-links">
+              <a href="https://www.linkedin.com" target="_blank" class="social-link floating-icon"
+                aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a href="https://www.twitter.com" target="_blank" class="social-link floating-icon" aria-label="Twitter">
+                <i class="fab fa-x-twitter"></i>
+              </a>
+              <a href="https://www.instagram.com" target="_blank" class="social-link floating-icon"
+                aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="https://www.facebook.com" target="_blank" class="social-link floating-icon"
+                aria-label="Facebook">
+                <i class="fab fa-facebook"></i>
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="footer-bottom-content">
+        <div class="copyright">
+          © <span id="copyright-year">2025</span> Vehigo — All rights reserved.
+        </div>
+        <div class="footer-bottom-links">
+          <a href="./privacypolicy.html">Privacy</a>
+          <a href="./tandc.html">Terms</a>
+          <a href="./src/pages/help-center.html">Support</a>
+          <a href="./sitemap.html">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </div>
   </footer>
 
   <!-- Floating nav buttons -->
-  <a href="./index.html" class="position-fixed d-inline-flex align-items-center justify-content-center"
-     style="bottom:30px; left:30px; background-color: var(--vehigo-primary); color: white; border-radius: 50%;
+  <a href="./index.html" class="position-fixed d-inline-flex align-items-center justify-content-center" style="bottom:30px; left:30px; background-color: var(--vehigo-primary); color: white; border-radius: 50%;
      width: 50px; height: 50px; box-shadow: var(--shadow-2);" aria-label="Home">
     <i class="fa-solid fa-house"></i>
   </a>
-  <button id="scrollTopBtn" class="position-fixed" style="bottom: 90px; right: 20px; background: var(--vehigo-primary); color: white; border: none; width: 50px; height: 50px; border-radius: 50%; box-shadow: var(--shadow-2); cursor: pointer; display: none;" aria-label="Scroll to top">
+  <button id="scrollTopBtn" class="position-fixed"
+    style="bottom: 90px; right: 20px; background: var(--vehigo-primary); color: white; border: none; width: 50px; height: 50px; border-radius: 50%; box-shadow: var(--shadow-2); cursor: pointer; display: none;"
+    aria-label="Scroll to top">
     <i class="fa-solid fa-arrow-up"></i>
   </button>
-  <button id="scrollBottomBtn" class="position-fixed" style="bottom: 30px; right: 20px; background: var(--vehigo-primary); color: white; border: none; width: 50px; height: 50px; border-radius: 50%; box-shadow: var(--shadow-2); cursor: pointer;" aria-label="Scroll to bottom">
+  <button id="scrollBottomBtn" class="position-fixed"
+    style="bottom: 30px; right: 20px; background: var(--vehigo-primary); color: white; border: none; width: 50px; height: 50px; border-radius: 50%; box-shadow: var(--shadow-2); cursor: pointer;"
+    aria-label="Scroll to bottom">
     <i class="fa-solid fa-arrow-down"></i>
   </button>
 
@@ -1232,12 +1684,12 @@
     ];
 
     // --------- Utilities ----------
-    const $ = (q,ctx=document)=>ctx.querySelector(q);
-    const $$= (q,ctx=document)=>[...ctx.querySelectorAll(q)];
+    const $ = (q, ctx = document) => ctx.querySelector(q);
+    const $$ = (q, ctx = document) => [...ctx.querySelectorAll(q)];
     const container = $('#carList');
 
-    const createSkeletons = (count=6)=>{
-      const items = Array.from({length:count}).map(()=>`
+    const createSkeletons = (count = 6) => {
+      const items = Array.from({ length: count }).map(() => `
         <li>
           <div class="featured-car-card">
             <div class="card-banner">
@@ -1266,23 +1718,23 @@
     };
 
     const sorters = {
-      recommended: (a,b)=> (b.year - a.year) || (a.price - b.price),
-      priceAsc: (a,b)=> a.price - b.price,
-      priceDesc:(a,b)=> b.price - a.price,
-      yearDesc:(a,b)=> b.year - a.year,
-      yearAsc: (a,b)=> a.year - b.year
+      recommended: (a, b) => (b.year - a.year) || (a.price - b.price),
+      priceAsc: (a, b) => a.price - b.price,
+      priceDesc: (a, b) => b.price - a.price,
+      yearDesc: (a, b) => b.year - a.year,
+      yearAsc: (a, b) => a.year - b.year
     };
 
-    const formatPrice = (n)=> `₹${n} / hour`;
+    const formatPrice = (n) => `₹${n} / hour`;
 
-    const carBadge = (car)=> {
-      if(car.type==='luxury') return 'Luxury';
-      if(car.type==='suv' && car.seats>=7) return 'Family';
-      if(car.fuel==='ev') return 'EV';
+    const carBadge = (car) => {
+      if (car.type === 'luxury') return 'Luxury';
+      if (car.type === 'suv' && car.seats >= 7) return 'Family';
+      if (car.fuel === 'ev') return 'EV';
       return 'Popular';
     };
 
-    function cardHTML(car){
+    function cardHTML(car) {
       return `
         <li>
           <div class="featured-car-card tilt" data-tilt>
@@ -1314,46 +1766,46 @@
       `;
     }
 
-    function renderCars(list, view='grid'){
-      if(!list.length){
+    function renderCars(list, view = 'grid') {
+      if (!list.length) {
         container.innerHTML = `<div class="no-results"><i class="fa-regular fa-face-frown"></i> No cars match your search criteria.</div>`;
         return;
       }
-      container.classList.toggle('featured-car-list--list', view==='list');
+      container.classList.toggle('featured-car-list--list', view === 'list');
       container.innerHTML = list.map(cardHTML).join('');
       enableTilt();
     }
 
     // Simple hover-tilt effect
-    function enableTilt(){
-      $$('.tilt').forEach(card=>{
-        card.addEventListener('mousemove', (e)=>{
+    function enableTilt() {
+      $$('.tilt').forEach(card => {
+        card.addEventListener('mousemove', (e) => {
           const r = card.getBoundingClientRect();
           const x = e.clientX - r.left, y = e.clientY - r.top;
-          const rx = ((y/r.height) - .5) * -6;
-          const ry = ((x/r.width)  - .5) *  6;
+          const rx = ((y / r.height) - .5) * -6;
+          const ry = ((x / r.width) - .5) * 6;
           card.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-6px)`;
         });
-        card.addEventListener('mouseleave', ()=>{ card.style.transform = ''; });
+        card.addEventListener('mouseleave', () => { card.style.transform = ''; });
       });
     }
 
     // --------- Search/Filter ----------
-    const state = { view:'grid', sort:'recommended', activeChip:'' };
+    const state = { view: 'grid', sort: 'recommended', activeChip: '' };
 
     const getValue = id => {
       const el = document.getElementById(id);
       return el ? el.value.trim() : '';
     };
 
-    function filterCars(){
+    function filterCars() {
       const locationInput = getValue('input-1').toLowerCase();
       const rentInputRaw = getValue('input-2').replace(/[^\d.]/g, '');
       const rentMax = rentInputRaw ? parseFloat(rentInputRaw) : NaN;
       const typeSel = getValue('car-type').toLowerCase() || state.activeChip;
       const fuelSel = getValue('fuel-type').toLowerCase();
 
-      let filtered = cars.filter(car=>{
+      let filtered = cars.filter(car => {
         if (locationInput && !car.location.toLowerCase().includes(locationInput)) return false;
         if (!Number.isNaN(rentMax) && car.price > rentMax) return false;
         if (typeSel && car.type.toLowerCase() !== typeSel) return false;
@@ -1366,11 +1818,11 @@
     }
 
     // --------- Events ----------
-    document.addEventListener('DOMContentLoaded', ()=>{
+    document.addEventListener('DOMContentLoaded', () => {
       // Theme
       const themeToggle = document.getElementById('themeToggle');
       const savedTheme = localStorage.getItem('theme');
-      if(savedTheme==='light'){
+      if (savedTheme === 'light') {
         document.body.classList.remove('dark-theme');
         themeToggle.innerHTML = '<i class="fa-solid fa-gear"></i><span class="label">Dark</span>';
         themeToggle.classList.remove('btn-outline-light');
@@ -1382,11 +1834,11 @@
         themeToggle.classList.add('btn-outline-light');
       }
 
-      themeToggle.addEventListener('click', ()=>{
+      themeToggle.addEventListener('click', () => {
         document.body.classList.toggle('dark-theme');
         const isDark = document.body.classList.contains('dark-theme');
         localStorage.setItem('theme', isDark ? 'dark' : 'light');
-        
+
         if (isDark) {
           themeToggle.innerHTML = '<i class="fa-solid fa-gear"></i><span class="label">Light</span>';
           themeToggle.classList.remove('btn-outline-secondary');
@@ -1399,43 +1851,43 @@
       });
 
       // Preloader
-      setTimeout(()=> document.getElementById('preloader').classList.add('hidden'), 500);
+      setTimeout(() => document.getElementById('preloader').classList.add('hidden'), 500);
 
       // AOS
       AOS.init({ duration: 650, easing: 'ease-in-out', once: true });
 
       // Initial load with skeletons then render
       createSkeletons(6);
-      setTimeout(()=> renderCars(cars.sort(sorters.recommended)), 450);
+
 
       // Form submit
-      document.getElementById('searchForm').addEventListener('submit', (e)=>{ e.preventDefault(); filterCars(); });
+      document.getElementById('searchForm').addEventListener('submit', (e) => { e.preventDefault(); filterCars(); });
 
       // Clear
-      document.getElementById('clearBtn').addEventListener('click', ()=>{
-        document.getElementById('input-1').value='';
-        document.getElementById('input-2').value='';
-        document.getElementById('car-type').value='';
-        document.getElementById('fuel-type').value='';
-        state.activeChip='';
-        document.querySelectorAll('#quickChips .chip').forEach(c=>c.classList.remove('active'));
-        state.sort='recommended'; document.getElementById('sortBy').value='recommended';
+      document.getElementById('clearBtn').addEventListener('click', () => {
+        document.getElementById('input-1').value = '';
+        document.getElementById('input-2').value = '';
+        document.getElementById('car-type').value = '';
+        document.getElementById('fuel-type').value = '';
+        state.activeChip = '';
+        document.querySelectorAll('#quickChips .chip').forEach(c => c.classList.remove('active'));
+        state.sort = 'recommended'; document.getElementById('sortBy').value = 'recommended';
         renderCars(cars.sort(sorters.recommended), state.view);
       });
 
       // Sort
-      document.getElementById('sortBy').addEventListener('change', (e)=>{ state.sort = e.target.value; filterCars(); });
+      document.getElementById('sortBy').addEventListener('change', (e) => { state.sort = e.target.value; filterCars(); });
 
       // View toggle
-      document.getElementById('btnGrid').addEventListener('click', ()=>{ state.view='grid'; filterCars(); });
-      document.getElementById('btnList').addEventListener('click', ()=>{ state.view='list'; filterCars(); });
+      document.getElementById('btnGrid').addEventListener('click', () => { state.view = 'grid'; filterCars(); });
+      document.getElementById('btnList').addEventListener('click', () => { state.view = 'list'; filterCars(); });
 
       // Chips
-      document.querySelectorAll('#quickChips .chip').forEach(ch=>{
-        ch.addEventListener('click', ()=>{
+      document.querySelectorAll('#quickChips .chip').forEach(ch => {
+        ch.addEventListener('click', () => {
           const val = ch.dataset.chip;
-          if(state.activeChip===val){ state.activeChip=''; ch.classList.remove('active'); }
-          else { state.activeChip=val; document.querySelectorAll('#quickChips .chip').forEach(c=>c.classList.remove('active')); ch.classList.add('active'); }
+          if (state.activeChip === val) { state.activeChip = ''; ch.classList.remove('active'); }
+          else { state.activeChip = val; document.querySelectorAll('#quickChips .chip').forEach(c => c.classList.remove('active')); ch.classList.add('active'); }
           filterCars();
         });
       });
@@ -1446,44 +1898,44 @@
       // Alerts via query params (?message=&type=)
       const urlParams = new URLSearchParams(window.location.search);
       const message = urlParams.get('message'); const type = urlParams.get('type');
-      if(message){
+      if (message) {
         const alertDiv = document.createElement('div');
-        alertDiv.className = `alert alert-${type==='success'?'success':'danger'} alert-dismissible fade show`;
+        alertDiv.className = `alert alert-${type === 'success' ? 'success' : 'danger'} alert-dismissible fade show`;
         alertDiv.style.cssText = 'position: fixed; top: 20px; right: 20px; z-index: 9999; min-width: 300px;';
         alertDiv.innerHTML = `${message}<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>`;
         document.body.appendChild(alertDiv);
-        setTimeout(()=> alertDiv.remove(), 5000);
+        setTimeout(() => alertDiv.remove(), 5000);
         window.history.replaceState({}, document.title, window.location.pathname);
       }
 
       // Scroll buttons
       const topBtn = document.getElementById('scrollTopBtn');
       const bottomBtn = document.getElementById('scrollBottomBtn');
-      window.addEventListener('scroll', ()=>{
+      window.addEventListener('scroll', () => {
         const y = window.scrollY;
         const total = document.body.scrollHeight - window.innerHeight;
         topBtn.style.display = y > 200 ? 'block' : 'none';
         bottomBtn.style.display = y < total - 200 ? 'block' : 'none';
       });
-      topBtn.addEventListener('click', ()=> window.scrollTo({ top:0, behavior:'smooth' }));
-      bottomBtn.addEventListener('click', ()=> window.scrollTo({ top: document.body.scrollHeight, behavior:'smooth' }));
+      topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+      bottomBtn.addEventListener('click', () => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' }));
 
       // Blog arrows + responsive behavior
       const blogList = document.getElementById('blogList');
       const leftArrow = document.querySelector('.blog-arrow.left');
       const rightArrow = document.querySelector('.blog-arrow.right');
 
-      function updateBlogArrows(){
+      function updateBlogArrows() {
         const canScroll = blogList.scrollWidth > blogList.clientWidth + 4;
         leftArrow.style.display = canScroll ? 'grid' : 'none';
         rightArrow.style.display = canScroll ? 'grid' : 'none';
       }
-      leftArrow.addEventListener('click', ()=> blogList.scrollBy({left:-340, behavior:'smooth'}));
-      rightArrow.addEventListener('click',()=> blogList.scrollBy({left: 340, behavior:'smooth'}));
+      leftArrow.addEventListener('click', () => blogList.scrollBy({ left: -340, behavior: 'smooth' }));
+      rightArrow.addEventListener('click', () => blogList.scrollBy({ left: 340, behavior: 'smooth' }));
 
       // Wheel horizontally on desktop
-      blogList.addEventListener('wheel', (e)=>{
-        if(Math.abs(e.deltaY) > Math.abs(e.deltaX)){
+      blogList.addEventListener('wheel', (e) => {
+        if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
           blogList.scrollLeft += e.deltaY;
         }
       }, { passive: true });
@@ -1494,5 +1946,5 @@
     });
   </script>
 </body>
-</html>
 
+</html>

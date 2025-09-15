@@ -20,10 +20,128 @@ body {
   min-height: 100vh;
   padding: 20px 0;
 }
+body.dark-theme .header {
+  background-color: rgba(0, 0, 0, 0.792);
+}
+body.dark-theme .navbar-links a{
+  color: white;
+}
+
+
+body.dark-theme{
+  background-color: #1a202c;
+}
+.header{
+  background-color: whitesmoke;
+  padding: 10px 0;
+  margin-bottom: 20px;
+  border-radius: 0 0 10px 10px;
+  z-index: 1000;
+  /* display: flex; */
+  /* flex-direction: row; */
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.1);
+}
+
+
+.navbar {
+  display: flex;
+  flex-direction: row !important;
+  justify-content: space-between;
+  width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+  align-items: center;
+}
+
+.navbar-links{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.navbar-links ul{
+  list-style: none;
+  padding: 0 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.navbar-links a{
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  
+}
+
+.navbar-links a:hover{
+  color: #4299e1;
+  transition: all 0.3s ease;
+}
+.theme-toggle-btn {
+  text-align: center;
+  background: linear-gradient(135deg, #0077ff, #00c6ff); /* gradient look */
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 50px; /* pill button */
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(0, 119, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.theme-toggle-btn i {
+  font-size: 16px;
+}
+
+.theme-toggle-btn:hover {
+  background: linear-gradient(135deg, #005cd6, #00a6d6);
+  box-shadow: 0 6px 16px rgba(0, 119, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+.theme-toggle-btn:active {
+  transform: scale(0.95);
+}
+
+.btn-outline-light{
+  text-align: center;
+  background: linear-gradient(135deg, #0077ff, #00c6ff); /* gradient look */
+  color: white;
+  padding: 8px 16px;
+  border: none;
+
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(0, 119, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+
+.btn-vehigo{
+  background-color: #2d6c9f;
+  color: black;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 20px;
+  box-shadow: 4px 4px 8px rgba(0,0,0,0.1);
+}
 
 .blog-container {
   max-width: 800px;
   margin: 0 auto;
+  margin-top: 100px;
   background: #ffffff;
   border-radius: 16px;
   overflow: hidden;
@@ -144,8 +262,16 @@ body {
   margin: 32px 0 16px 0;
   font-weight: 600;
 }
+body.dark-theme .author{
+  background-color: #2d3748;
+  color: white;
+}
 
-/* Author section */
+body.dark-theme .back-btn{
+  background-color: #2d3748;
+  color: white;
+}
+
 .author {
   background: #4299e1;
   color: white;
