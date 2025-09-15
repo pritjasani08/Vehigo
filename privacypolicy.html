@@ -147,6 +147,9 @@
             .navbar {
                 display: none;
             }
+            .navbar.active {
+                display: flex !important;
+            }
             .header-contact {
                 display: none;
             }
@@ -278,6 +281,98 @@
             box-shadow: 0 6px 20px rgba(0, 153, 255, 0.4);
         }
 
+        /* Language Dropdown */
+        .language-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .language-btn {
+            cursor: pointer;
+            border: 1px solid #e5e7eb;
+            background: #fff;
+            padding: 6px 10px;
+            border-radius: 999px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .language-btn:hover {
+            background: hsl(204, 91%, 53%);
+            color: white;
+            transform: translateY(-1px);
+        }
+
+        .language-btn .label {
+            font-size: .85rem;
+            font-weight: 600;
+            opacity: .8;
+        }
+
+        .language-dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 100%;
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            z-index: 1000;
+            min-width: 150px;
+            margin-top: 8px;
+            overflow: hidden;
+        }
+
+        .language-dropdown-content.show {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        .language-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 16px;
+            cursor: pointer;
+            transition: background 0.2s ease;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .language-option:last-child {
+            border-bottom: none;
+        }
+
+        .language-option:hover {
+            background: rgba(37, 99, 235, 0.1);
+        }
+
+        .language-option.active {
+            background: hsl(204, 91%, 53%);
+            color: white;
+        }
+
+        .language-flag {
+            width: 20px;
+            height: 15px;
+            border-radius: 2px;
+            object-fit: cover;
+        }
+
+        .language-name {
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .language-code {
+            font-size: 0.8rem;
+            opacity: 0.7;
+            margin-left: auto;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             main {
@@ -316,6 +411,35 @@
       <div class="header-contact">
         <a href="tel:1800100100" class="contact-link">1800-100-100</a>
         <span class="contact-time">Mon - Sat: 9:00 am - 6:00 pm</span>
+      </div>
+
+      <!-- Language Dropdown -->
+      <div class="language-dropdown">
+        <button class="language-btn" id="languageBtn" type="button">
+          <i class="fa-solid fa-globe"></i><span class="label" id="currentLang">English</span>
+        </button>
+        <div class="language-dropdown-content" id="languageDropdown">
+          <div class="language-option active" data-lang="en">
+            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAyMCAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjE1IiBmaWxsPSIjMDEyMTY5Ii8+CjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIxLjE1IiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHk9IjIuMzEiIHdpZHRoPSIyMCIgaGVpZ2h0PSIxLjE1IiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHk9IjQuNjIiIHdpZHRoPSIyMCIgaGVpZ2h0PSIxLjE1IiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHk9IjYuOTMiIHdpZHRoPSIyMCIgaGVpZ2h0PSIxLjE1IiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHk9IjkuMjQiIHdpZHRoPSIyMCIgaGVpZ2h0PSIxLjE1IiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHk9IjExLjU1IiB3aWR0aD0iMjAiIGhlaWdodD0iMS4xNSIgZmlsbD0iI0ZGRkZGRiIvPgo8cmVjdCB5PSIxMy44NiIgd2lkdGg9IjIwIiBoZWlnaHQ9IjEuMTUiIGZpbGw9IiNGRkZGRkYiLz4KPHJlY3QgeD0iNy41IiB3aWR0aD0iNSIgaGVpZ2h0PSIxNSIgZmlsbD0iI0ZGRkZGRiIvPgo8cmVjdCB4PSI3LjUiIHk9IjAiIHdpZHRoPSI1IiBoZWlnaHQ9IjE1IiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHg9IjAiIHk9IjciIHdpZHRoPSIyMCIgaGVpZ2h0PSIxIiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHg9IjcuNSIgeT0iNyIgd2lkdGg9IjUiIGhlaWdodD0iMSIgZmlsbD0iIzAxMjE2OSIvPgo8cmVjdCB4PSI3LjUiIHk9IjAiIHdpZHRoPSI1IiBoZWlnaHQ9IjE1IiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHg9IjAiIHk9IjciIHdpZHRoPSIyMCIgaGVpZ2h0PSIxIiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHg9IjcuNSIgeT0iNyIgd2lkdGg9IjUiIGhlaWdodD0iMSIgZmlsbD0iIzAxMjE2OSIvPgo8L3N2Zz4K" alt="US" class="language-flag">
+            <span class="language-name">English</span>
+            <span class="language-code">EN</span>
+          </div>
+          <div class="language-option" data-lang="hi">
+            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAyMCAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjUiIGZpbGw9IiNGRkY1MDAiLz4KPHJlY3QgeT0iNSIgd2lkdGg9IjIwIiBoZWlnaHQ9IjUiIGZpbGw9IiNGRkZGRkYiLz4KPHJlY3QgeT0iMTAiIHdpZHRoPSIyMCIgaGVpZ2h0PSI1IiBmaWxsPSIjMDA5QzAwIi8+CjxjaXJjbGUgY3g9IjEwIiBjeT0iNy41IiByPSIxLjUiIGZpbGw9IiMwMDAwMDAiLz4KPHN2ZyB4PSI4LjUiIHk9IjYiIHdpZHRoPSIzIiBoZWlnaHQ9IjMiPgo8Y2lyY2xlIGN4PSIxLjUiIGN5PSIxLjUiIHI9IjAuNSIgZmlsbD0iIzAwMDAwMCIvPgo8L3N2Zz4KPC9zdmc+Cg==" alt="IN" class="language-flag">
+            <span class="language-name">हिन्दी</span>
+            <span class="language-code">HI</span>
+          </div>
+          <div class="language-option" data-lang="es">
+            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAyMCAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjMuNzUiIGZpbGw9IiNGRkY1MDAiLz4KPHJlY3QgeT0iMy43NSIgd2lkdGg9IjIwIiBoZWlnaHQ9IjcuNSIgZmlsbD0iI0ZGRkZGRiIvPgo8cmVjdCB5PSIxMS4yNSIgd2lkdGg9IjIwIiBoZWlnaHQ9IjMuNzUiIGZpbGw9IiNGRkY1MDAiLz4KPC9zdmc+Cg==" alt="ES" class="language-flag">
+            <span class="language-name">Español</span>
+            <span class="language-code">ES</span>
+          </div>
+          <div class="language-option" data-lang="fr">
+            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAyMCAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjYuNjciIGhlaWdodD0iMTUiIGZpbGw9IiMwMDI2OTUiLz4KPHJlY3QgeD0iNi42NyIgd2lkdGg9IjYuNjciIGhlaWdodD0iMTUiIGZpbGw9IiNGRkZGRkYiLz4KPHJlY3QgeD0iMTMuMzMiIHdpZHRoPSI2LjY3IiBoZWlnaHQ9IjE1IiBmaWxsPSIjRkYwMDAwIi8+Cjwvc3ZnPgo=" alt="FR" class="language-flag">
+            <span class="language-name">Français</span>
+            <span class="language-code">FR</span>
+          </div>
+        </div>
       </div>
 
                 <a href="src/pages/login.html" class="btn user-btn" aria-label="Profile">
@@ -494,10 +618,124 @@
     </button>
 
 <script>
+        // Language data for privacy policy
+        const languageData = {
+            en: {
+                home: 'Home',
+                exploreCars: 'Explore cars',
+                aboutUs: 'About us',
+                blog: 'Blog',
+                fareCalculator: 'Fare Calculator',
+                privacyPolicy: 'Privacy Policy',
+                heroTitle: 'Privacy Policy'
+            },
+            hi: {
+                home: 'होम',
+                exploreCars: 'कार देखें',
+                aboutUs: 'हमारे बारे में',
+                blog: 'ब्लॉग',
+                fareCalculator: 'किराया कैलकुलेटर',
+                privacyPolicy: 'गोपनीयता नीति',
+                heroTitle: 'गोपनीयता नीति'
+            },
+            es: {
+                home: 'Inicio',
+                exploreCars: 'Explorar autos',
+                aboutUs: 'Acerca de nosotros',
+                blog: 'Blog',
+                fareCalculator: 'Calculadora de tarifas',
+                privacyPolicy: 'Política de privacidad',
+                heroTitle: 'Política de privacidad'
+            },
+            fr: {
+                home: 'Accueil',
+                exploreCars: 'Explorer les voitures',
+                aboutUs: 'À propos de nous',
+                blog: 'Blog',
+                fareCalculator: 'Calculateur de tarifs',
+                privacyPolicy: 'Politique de confidentialité',
+                heroTitle: 'Politique de confidentialité'
+            }
+        };
+
+        function setLanguage(lang) {
+            const data = languageData[lang];
+            if (!data) return;
+
+            // Update navigation
+            document.querySelectorAll('.navbar-link').forEach((link, index) => {
+                const keys = ['home', 'exploreCars', 'aboutUs', 'blog', 'fareCalculator'];
+                if (keys[index]) {
+                    link.textContent = data[keys[index]];
+                }
+            });
+
+            // Update hero title
+            const heroTitle = document.querySelector('h1');
+            if (heroTitle) heroTitle.textContent = data.heroTitle;
+
+            // Update current language display
+            const currentLang = document.getElementById('currentLang');
+            const languageNames = { en: 'English', hi: 'हिन्दी', es: 'Español', fr: 'Français' };
+            if (currentLang) currentLang.textContent = languageNames[lang];
+
+            // Update active language option
+            document.querySelectorAll('.language-option').forEach(option => {
+                option.classList.remove('active');
+                if (option.dataset.lang === lang) {
+                    option.classList.add('active');
+                }
+            });
+
+            // Save language preference
+            localStorage.setItem('language', lang);
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
             var yearSpan = document.getElementById('copyright-year');
             if (yearSpan) {
                 yearSpan.textContent = new Date().getFullYear();
+            }
+
+            // Mobile nav toggle
+            var navToggleBtn = document.querySelector('[data-nav-toggle-btn]');
+            var navbar = document.querySelector('[data-navbar]');
+            if (navToggleBtn && navbar) {
+                navToggleBtn.addEventListener('click', function() {
+                    navbar.classList.toggle('active');
+                });
+            }
+
+            // Language functionality
+            const languageBtn = document.getElementById('languageBtn');
+            const languageDropdown = document.getElementById('languageDropdown');
+            const savedLanguage = localStorage.getItem('language') || 'en';
+            
+            // Set initial language
+            setLanguage(savedLanguage);
+
+            // Language dropdown toggle
+            if (languageBtn && languageDropdown) {
+                languageBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    languageDropdown.classList.toggle('show');
+                });
+
+                // Language option selection
+                document.querySelectorAll('.language-option').forEach(option => {
+                    option.addEventListener('click', () => {
+                        const lang = option.dataset.lang;
+                        setLanguage(lang);
+                        languageDropdown.classList.remove('show');
+                    });
+                });
+
+                // Close dropdown when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (!languageBtn.contains(e.target) && !languageDropdown.contains(e.target)) {
+                        languageDropdown.classList.remove('show');
+                    }
+                });
             }
         });
 

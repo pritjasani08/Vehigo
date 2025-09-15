@@ -209,6 +209,109 @@
       opacity: .8;
     }
 
+    /* Language Dropdown */
+    .language-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .language-btn {
+      cursor: pointer;
+      border: 1px solid var(--vehigo-border);
+      background: var(--vehigo-card);
+      padding: 6px 10px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: var(--shadow-1);
+      transition: all 0.3s ease;
+    }
+
+    .language-btn:hover {
+      background: var(--vehigo-primary);
+      color: white;
+      transform: translateY(-1px);
+    }
+
+    .language-btn .label {
+      font-size: .85rem;
+      font-weight: 600;
+      opacity: .8;
+    }
+
+    .language-dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 100%;
+      background: var(--vehigo-card);
+      border: 1px solid var(--vehigo-border);
+      border-radius: 12px;
+      box-shadow: var(--shadow-2);
+      z-index: 1000;
+      min-width: 150px;
+      margin-top: 8px;
+      overflow: hidden;
+    }
+
+    .language-dropdown-content.show {
+      display: block;
+      animation: slideDown 0.3s ease;
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .language-option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+      border-bottom: 1px solid var(--vehigo-border);
+    }
+
+    .language-option:last-child {
+      border-bottom: none;
+    }
+
+    .language-option:hover {
+      background: rgba(37, 99, 235, 0.1);
+    }
+
+    .language-option.active {
+      background: var(--vehigo-primary);
+      color: white;
+    }
+
+    .language-flag {
+      width: 20px;
+      height: 15px;
+      border-radius: 2px;
+      object-fit: cover;
+    }
+
+    .language-name {
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+
+    .language-code {
+      font-size: 0.8rem;
+      opacity: 0.7;
+      margin-left: auto;
+    }
+
     /* Hero */
     .hero {
       position: relative;
@@ -1155,6 +1258,37 @@
           <li class="nav-item"><a class="nav-link" href="offline.html">Offline Centers</a></li>
           <li class="nav-item"><a class="nav-link" href="rentcar.html">Rent Your Car</a></li>
 
+          <!-- Language Dropdown -->
+          <li class="nav-item">
+            <div class="language-dropdown">
+              <button class="language-btn" id="languageBtn" type="button">
+                <i class="fa-solid fa-globe"></i><span class="label" id="currentLang">English</span>
+              </button>
+              <div class="language-dropdown-content" id="languageDropdown">
+                <div class="language-option active" data-lang="en">
+                  <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAyMCAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjE1IiBmaWxsPSIjMDEyMTY5Ii8+CjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIxLjE1IiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHk9IjIuMzEiIHdpZHRoPSIyMCIgaGVpZ2h0PSIxLjE1IiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHk9IjQuNjIiIHdpZHRoPSIyMCIgaGVpZ2h0PSIxLjE1IiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHk9IjYuOTMiIHdpZHRoPSIyMCIgaGVpZ2h0PSIxLjE1IiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHk9IjkuMjQiIHdpZHRoPSIyMCIgaGVpZ2h0PSIxLjE1IiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHk9IjExLjU1IiB3aWR0aD0iMjAiIGhlaWdodD0iMS4xNSIgZmlsbD0iI0ZGRkZGRiIvPgo8cmVjdCB5PSIxMy44NiIgd2lkdGg9IjIwIiBoZWlnaHQ9IjEuMTUiIGZpbGw9IiNGRkZGRkYiLz4KPHJlY3QgeD0iNy41IiB3aWR0aD0iNSIgaGVpZ2h0PSIxNSIgZmlsbD0iI0ZGRkZGRiIvPgo8cmVjdCB4PSI3LjUiIHk9IjAiIHdpZHRoPSI1IiBoZWlnaHQ9IjE1IiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHg9IjAiIHk9IjciIHdpZHRoPSIyMCIgaGVpZ2h0PSIxIiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHg9IjcuNSIgeT0iNyIgd2lkdGg9IjUiIGhlaWdodD0iMSIgZmlsbD0iIzAxMjE2OSIvPgo8cmVjdCB4PSI3LjUiIHk9IjAiIHdpZHRoPSI1IiBoZWlnaHQ9IjE1IiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHg9IjAiIHk9IjciIHdpZHRoPSIyMCIgaGVpZ2h0PSIxIiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHg9IjcuNSIgeT0iNyIgd2lkdGg9IjUiIGhlaWdodD0iMSIgZmlsbD0iIzAxMjE2OSIvPgo8L3N2Zz4K" alt="US" class="language-flag">
+                  <span class="language-name">English</span>
+                  <span class="language-code">EN</span>
+                </div>
+                <div class="language-option" data-lang="hi">
+                  <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAyMCAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjUiIGZpbGw9IiNGRkY1MDAiLz4KPHJlY3QgeT0iNSIgd2lkdGg9IjIwIiBoZWlnaHQ9IjUiIGZpbGw9IiNGRkZGRkYiLz4KPHJlY3QgeT0iMTAiIHdpZHRoPSIyMCIgaGVpZ2h0PSI1IiBmaWxsPSIjMDA5QzAwIi8+CjxjaXJjbGUgY3g9IjEwIiBjeT0iNy41IiByPSIxLjUiIGZpbGw9IiMwMDAwMDAiLz4KPHN2ZyB4PSI4LjUiIHk9IjYiIHdpZHRoPSIzIiBoZWlnaHQ9IjMiPgo8Y2lyY2xlIGN4PSIxLjUiIGN5PSIxLjUiIHI9IjAuNSIgZmlsbD0iIzAwMDAwMCIvPgo8L3N2Zz4KPC9zdmc+Cg==" alt="IN" class="language-flag">
+                  <span class="language-name">हिन्दी</span>
+                  <span class="language-code">HI</span>
+                </div>
+                <div class="language-option" data-lang="es">
+                  <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAyMCAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjMuNzUiIGZpbGw9IiNGRkY1MDAiLz4KPHJlY3QgeT0iMy43NSIgd2lkdGg9IjIwIiBoZWlnaHQ9IjcuNSIgZmlsbD0iI0ZGRkZGRiIvPgo8cmVjdCB5PSIxMS4yNSIgd2lkdGg9IjIwIiBoZWlnaHQ9IjMuNzUiIGZpbGw9IiNGRkY1MDAiLz4KPC9zdmc+Cg==" alt="ES" class="language-flag">
+                  <span class="language-name">Español</span>
+                  <span class="language-code">ES</span>
+                </div>
+                <div class="language-option" data-lang="fr">
+                  <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAyMCAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjYuNjciIGhlaWdodD0iMTUiIGZpbGw9IiMwMDI2OTUiLz4KPHJlY3QgeD0iNi42NyIgd2lkdGg9IjYuNjciIGhlaWdodD0iMTUiIGZpbGw9IiNGRkZGRkYiLz4KPHJlY3QgeD0iMTMuMzMiIHdpZHRoPSI2LjY3IiBoZWlnaHQ9IjE1IiBmaWxsPSIjRkYwMDAwIi8+Cjwvc3ZnPgo=" alt="FR" class="language-flag">
+                  <span class="language-name">Français</span>
+                  <span class="language-code">FR</span>
+                </div>
+              </div>
+            </div>
+          </li>
+
           <!-- Theme switch -->
           <li class="nav-item">
             <button id="themeToggle" class="btn btn-outline-secondary theme-toggle-btn" type="button">
@@ -1817,8 +1951,234 @@
       renderCars(filtered, state.view);
     }
 
+    // Language data
+    const languageData = {
+      en: {
+        home: 'Home',
+        exploreCars: 'Explore cars',
+        aboutUs: 'About us',
+        blog: 'Blog',
+        contactUs: 'Contact Us',
+        offlineCenters: 'Offline Centers',
+        rentYourCar: 'Rent Your Car',
+        login: 'Login',
+        heroTitle: 'Seamless Rentals, Endless Adventures',
+        heroSub: 'Find the perfect car for your journey across Madhya Pradesh',
+        searchPlaceholder: 'Where are you going?',
+        rentPlaceholder: 'Max rent per day',
+        carType: 'Car Type',
+        fuelType: 'Fuel Type',
+        searchBtn: 'Search Cars',
+        clearBtn: 'Clear',
+        featuredCars: 'Featured Cars',
+        viewAll: 'View All',
+        recommended: 'Recommended',
+        priceLow: 'Price: Low to High',
+        priceHigh: 'Price: High to Low',
+        rating: 'Rating',
+        perDay: '/day',
+        rentNow: 'Rent Now',
+        viewDetails: 'View Details'
+      },
+      hi: {
+        home: 'होम',
+        exploreCars: 'कार देखें',
+        aboutUs: 'हमारे बारे में',
+        blog: 'ब्लॉग',
+        contactUs: 'संपर्क करें',
+        offlineCenters: 'ऑफलाइन केंद्र',
+        rentYourCar: 'अपनी कार किराए पर दें',
+        login: 'लॉगिन',
+        heroTitle: 'सहज किराया, अनंत रोमांच',
+        heroSub: 'मध्य प्रदेश में अपनी यात्रा के लिए सही कार खोजें',
+        searchPlaceholder: 'आप कहाँ जा रहे हैं?',
+        rentPlaceholder: 'प्रति दिन अधिकतम किराया',
+        carType: 'कार का प्रकार',
+        fuelType: 'ईंधन का प्रकार',
+        searchBtn: 'कार खोजें',
+        clearBtn: 'साफ करें',
+        featuredCars: 'विशेष कारें',
+        viewAll: 'सभी देखें',
+        recommended: 'अनुशंसित',
+        priceLow: 'कीमत: कम से ज्यादा',
+        priceHigh: 'कीमत: ज्यादा से कम',
+        rating: 'रेटिंग',
+        perDay: '/दिन',
+        rentNow: 'अभी किराए पर लें',
+        viewDetails: 'विवरण देखें'
+      },
+      es: {
+        home: 'Inicio',
+        exploreCars: 'Explorar autos',
+        aboutUs: 'Acerca de nosotros',
+        blog: 'Blog',
+        contactUs: 'Contáctanos',
+        offlineCenters: 'Centros offline',
+        rentYourCar: 'Renta tu auto',
+        login: 'Iniciar sesión',
+        heroTitle: 'Alquileres perfectos, aventuras infinitas',
+        heroSub: 'Encuentra el auto perfecto para tu viaje por Madhya Pradesh',
+        searchPlaceholder: '¿A dónde vas?',
+        rentPlaceholder: 'Alquiler máximo por día',
+        carType: 'Tipo de auto',
+        fuelType: 'Tipo de combustible',
+        searchBtn: 'Buscar autos',
+        clearBtn: 'Limpiar',
+        featuredCars: 'Autos destacados',
+        viewAll: 'Ver todo',
+        recommended: 'Recomendado',
+        priceLow: 'Precio: Menor a mayor',
+        priceHigh: 'Precio: Mayor a menor',
+        rating: 'Calificación',
+        perDay: '/día',
+        rentNow: 'Alquilar ahora',
+        viewDetails: 'Ver detalles'
+      },
+      fr: {
+        home: 'Accueil',
+        exploreCars: 'Explorer les voitures',
+        aboutUs: 'À propos de nous',
+        blog: 'Blog',
+        contactUs: 'Nous contacter',
+        offlineCenters: 'Centres hors ligne',
+        rentYourCar: 'Louez votre voiture',
+        login: 'Se connecter',
+        heroTitle: 'Locations parfaites, aventures infinies',
+        heroSub: 'Trouvez la voiture parfaite pour votre voyage à travers Madhya Pradesh',
+        searchPlaceholder: 'Où allez-vous?',
+        rentPlaceholder: 'Loyer maximum par jour',
+        carType: 'Type de voiture',
+        fuelType: 'Type de carburant',
+        searchBtn: 'Rechercher des voitures',
+        clearBtn: 'Effacer',
+        featuredCars: 'Voitures en vedette',
+        viewAll: 'Voir tout',
+        recommended: 'Recommandé',
+        priceLow: 'Prix: Bas à élevé',
+        priceHigh: 'Prix: Élevé à bas',
+        rating: 'Note',
+        perDay: '/jour',
+        rentNow: 'Louer maintenant',
+        viewDetails: 'Voir les détails'
+      }
+    };
+
+    // Language functions
+    function setLanguage(lang) {
+      const data = languageData[lang];
+      if (!data) return;
+
+      // Update navigation
+      document.querySelectorAll('.nav-link').forEach((link, index) => {
+        const keys = ['home', 'exploreCars', 'aboutUs', 'blog', 'contactUs', 'offlineCenters', 'rentYourCar'];
+        if (keys[index]) {
+          link.textContent = data[keys[index]];
+        }
+      });
+
+      // Update login button
+      const loginBtn = document.getElementById('loginBtn');
+      if (loginBtn) {
+        loginBtn.innerHTML = `<i class="fa-regular fa-user"></i> <span>${data.login}</span>`;
+      }
+
+      // Update hero section
+      const heroTitle = document.querySelector('.hero-title');
+      const heroSub = document.querySelector('.hero-sub');
+      if (heroTitle) heroTitle.textContent = data.heroTitle;
+      if (heroSub) heroSub.textContent = data.heroSub;
+
+      // Update search form
+      const searchInput = document.getElementById('input-1');
+      const rentInput = document.getElementById('input-2');
+      const searchBtn = document.querySelector('button[type="submit"]');
+      const clearBtn = document.getElementById('clearBtn');
+      
+      if (searchInput) searchInput.placeholder = data.searchPlaceholder;
+      if (rentInput) rentInput.placeholder = data.rentPlaceholder;
+      if (searchBtn) searchBtn.textContent = data.searchBtn;
+      if (clearBtn) clearBtn.textContent = data.clearBtn;
+
+      // Update car type and fuel type options
+      const carTypeSelect = document.getElementById('car-type');
+      const fuelTypeSelect = document.getElementById('fuel-type');
+      
+      if (carTypeSelect) {
+        carTypeSelect.querySelector('option[value=""]').textContent = data.carType;
+      }
+      if (fuelTypeSelect) {
+        fuelTypeSelect.querySelector('option[value=""]').textContent = data.fuelType;
+      }
+
+      // Update featured cars section
+      const featuredTitle = document.querySelector('.section-title');
+      const viewAllBtn = document.querySelector('.btn-outline-primary');
+      if (featuredTitle) featuredTitle.textContent = data.featuredCars;
+      if (viewAllBtn) viewAllBtn.textContent = data.viewAll;
+
+      // Update sort options
+      const sortSelect = document.getElementById('sortBy');
+      if (sortSelect) {
+        const options = sortSelect.querySelectorAll('option');
+        const sortKeys = ['recommended', 'priceLow', 'priceHigh', 'rating'];
+        options.forEach((option, index) => {
+          if (sortKeys[index]) {
+            option.textContent = data[sortKeys[index]];
+          }
+        });
+      }
+
+      // Update current language display
+      const currentLang = document.getElementById('currentLang');
+      const languageNames = { en: 'English', hi: 'हिन्दी', es: 'Español', fr: 'Français' };
+      if (currentLang) currentLang.textContent = languageNames[lang];
+
+      // Update active language option
+      document.querySelectorAll('.language-option').forEach(option => {
+        option.classList.remove('active');
+        if (option.dataset.lang === lang) {
+          option.classList.add('active');
+        }
+      });
+
+      // Save language preference
+      localStorage.setItem('language', lang);
+    }
+
     // --------- Events ----------
     document.addEventListener('DOMContentLoaded', () => {
+      // Language
+      const languageBtn = document.getElementById('languageBtn');
+      const languageDropdown = document.getElementById('languageDropdown');
+      const savedLanguage = localStorage.getItem('language') || 'en';
+      
+      // Set initial language
+      setLanguage(savedLanguage);
+
+      // Language dropdown toggle
+      if (languageBtn && languageDropdown) {
+        languageBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          languageDropdown.classList.toggle('show');
+        });
+
+        // Language option selection
+        document.querySelectorAll('.language-option').forEach(option => {
+          option.addEventListener('click', () => {
+            const lang = option.dataset.lang;
+            setLanguage(lang);
+            languageDropdown.classList.remove('show');
+          });
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+          if (!languageBtn.contains(e.target) && !languageDropdown.contains(e.target)) {
+            languageDropdown.classList.remove('show');
+          }
+        });
+      }
+
       // Theme
       const themeToggle = document.getElementById('themeToggle');
       const savedTheme = localStorage.getItem('theme');
