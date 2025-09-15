@@ -11,11 +11,8 @@
   <!-- favicon -->
   <link rel="shortcut icon" href="../../public/favicon.svg" type="image/svg+xml" />
 
-  <!-- custom css link -->
-  <!-- <link rel="stylesheet" href="../assets/styles/style.css" /> -->
   <link rel="stylesheet" href="../assets/styles/about.css" />
-  <link rel="stylesheet" href="../../modern-improvements.css" />
-  <link rel="stylesheet" href="../../about-animations.css" />
+
 
   <!-- Bootstrap & Icons for unified navbar UI -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -23,7 +20,7 @@
 
   <style>
     :root { --vehigo-blue: #3b82f6; --vehigo-blue-dark: #2563eb; }
-    .header { background: linear-gradient(180deg, var(--vehigo-blue) 0%, var(--vehigo-blue-dark) 100%) !important; top: 0; z-index: 1000; box-shadow: 0 2px 0 rgba(0,0,0,0.15); }
+    <!-- .header { background: linear-gradient(180deg, rgb(2, 9, 88) 0%, rgb(2, 9, 88) 100%) !important; top: 0; z-index: 1000; box-shadow: 0 2px 0 rgba(0,0,0,0.15); } -->
     .navbar { padding-top: 8px !important; padding-bottom: 8px !important; margin-left: 20px; }
     .navbar-brand img { height: 40px; }
     .navbar-nav { gap: 6px; align-items: center; }
@@ -71,7 +68,7 @@
     .dark-theme .footer .footer-link:hover { color: #60a5fa; }
     .dark-theme .social-link { color: #cbd5e1; }
   </style>
-  </style>
+
 
   <!-- google font link -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -91,7 +88,7 @@
   </div>
   
   <div id="app">
-    <!-- Message Display for Login Success -->
+
     <div id="messageDisplay" style="
         position: fixed;
         top: 20px;
@@ -118,49 +115,52 @@
     </div>
 
     <header class="header">
-      <nav class="navbar navbar-expand-xl container py-2">
-        <a class="navbar-brand d-flex align-items-center gap-2" href="../../index.html" aria-label="Vehigo Home">
-          <img src="../assets/images/vehigologo.png" alt="Vehigo" />
-        </a>
+    <nav class="navbar navbar-expand-xl container py-2">
+      <a class="navbar-brand d-flex align-items-center gap-1" href="index.html" aria-label="Vehigo Home">
+        <img src="../assets/images/vehigologo.png" alt="Vehigo" />
+      </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain"
+        aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-        <div class="collapse navbar-collapse" id="navMain">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="../../index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="../../featured-car.html">Explore cars</a></li>
-            <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
-            <li class="nav-item"><a class="nav-link" href="../../blog.html">Blog</a></li>
-            <li class="nav-item"><a class="nav-link" href="../../ContactUs.html">Contact Us</a></li>
-            <li class="nav-item"><a class="nav-link" href="../../offline.html">Offline Centers</a></li>
-            <li class="nav-item"><a class="nav-link" href="../../rentcar.html">Rent Your Car</a></li>
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="../index.html">Explore cars</a></li>
+          <li class="nav-item"><a class="nav-link" href="../pages/about.html">About us</a></li>
+          <li class="nav-item"><a class="nav-link" href="../blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="../../ContactUs.html">Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="../../offline.html">Offline Centers</a></li>
+          <li class="nav-item"><a class="nav-link" href="../../rentcar.html">Rent Your Car</a></li>
 
-            <li class="nav-item">
-              <button id="themeToggle" class="btn btn-outline-light theme-toggle-btn" type="button">
-                <i class="fa-solid fa-gear"></i><span class="label">Light</span>
-              </button>
-            </li>
+          <!-- Theme switch -->
+          <li class="nav-item">
+            <button id="themeToggle" class="btn btn-outline-secondary theme-toggle-btn" type="button">
+              <i class="fa-solid fa-gear"></i><span class="label">Light</span>
+            </button>
+          </li>
 
-            <li class="nav-item">
-              <a href="./login.html" class="btn btn-vehigo" id="loginBtn">
-                <i class="fa-regular fa-user"></i> <span>Login</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <button id="logoutBtn" class="btn btn-outline-light d-none" aria-label="Logout">
-                <i class="fa-solid fa-right-from-bracket"></i>
-              </button>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </header>
+          <!-- Login & Logout -->
+          <li class="nav-item">
+            <a href="../pages/login.html" class="btn btn-vehigo" id="loginBtn">
+              <i class="fa-regular fa-user"></i> <span>Login</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <button id="logoutBtn" class="btn btn-outline-light d-none" aria-label="Logout">
+              <i class="fa-solid fa-right-from-bracket"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
 
     <main class="aboutus-container">
       <article>
-        <!-- ABOUT SECTION -->
+
         <section class="section about-section modern-section animate-section">
           <div class="container1">
             <div class="about-content animate-card">
