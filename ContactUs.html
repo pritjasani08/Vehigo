@@ -25,7 +25,147 @@
       rel="stylesheet"
     />
 
-    
+<style>
+  /* Dark Mode Styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode header,
+body.dark-mode .footer {
+  background-color: #1f1f1f;
+}
+
+body.dark-mode .contact-container,
+body.dark-mode .contact-form,
+body.dark-mode .contact-info {
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+body.dark-mode input,
+body.dark-mode textarea {
+  background-color: #2c2c2c;
+  color: #f1f1f1;
+  border: 1px solid #444;
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+  color: #bbb;
+}
+
+body.dark-mode button,
+body.dark-mode .btn,
+body.dark-mode .theme-toggle-btn {
+  background-color: #333;
+  color: #fff;
+  border: none;
+}
+
+body.dark-mode a {
+  color: #d3d3d0;
+}
+
+body.dark-mode .footer-link {
+  color: #ccc;
+}
+
+body.dark-mode .social-link {
+  color: #ccc;
+}
+
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button.theme-toggle-btn {
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+}
+
+body.dark-mode button.theme-toggle-btn {
+  color: #fff;
+}
+.footer-text {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #555; /* Dark gray for light mode */
+  max-width: 400px;
+  margin-top: 1rem;
+}
+
+/* Dark mode version */
+body.dark-mode .footer-text {
+  color: #ccc; /* Light gray text in dark mode */
+}
+
+body.dark-mode .footer-bottom{
+  color:white;
+}
+/* Header Actions - Light Mode (default) */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.header-contact {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-link {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.contact-time {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+/* Dark Mode overrides */
+body.dark-mode .header-actions {
+  background-color: #1f1f1f;
+}
+
+body.dark-mode .contact-link {
+  color: #4dabf7; /* Slightly lighter blue for contrast */
+}
+
+body.dark-mode .contact-time {
+  color: #ccc;
+}
+
+body.dark-mode .btn.user-btn {
+  background-color: #c3c0c0;
+  color: #e4e6eb;
+}
+
+body.dark-mode .nav-toggle-btn span {
+  background-color: #ccc;
+}
+
+/* Dark Mode Text Color for ContactUs Cards */
+body.dark-mode #ContactUscards,
+body.dark-mode #ContactUscards h3,
+body.dark-mode #ContactUscards .contact-card,
+body.dark-mode #ContactUscards .contact-card h4,
+body.dark-mode #ContactUscards .contact-card p {
+  color: #030404; 
+}
+body.dark-mode .footer-list-title{
+  color:rgb(242, 242, 160);
+}
+
+</style>
 </head>
  <body>
   
@@ -43,7 +183,7 @@
       <div class="overlay" data-overlay></div>
 
       <a href="index.html" class="logo">
-        <img src="./assets/images/vehigologo.png" alt="VehiGo logo">
+        <img src="./assets/images/vehigologo.png" alt="VehiGo logo" style="background-color: aliceblue;">
       </a>
 
 <nav class="navbar" data-navbar>
@@ -72,6 +212,12 @@
     <li>
       <a href="src/pages/bill.html" class="navbar-link" data-nav-link>Fare Calculator</a>
     </li>
+
+    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Dark Mode">
+  <ion-icon id="theme-icon" name="moon-outline"></ion-icon>
+</button>
+
+
 
   </ul>
 </nav>
@@ -249,7 +395,7 @@
           </ul>
 
           <p class="copyright">
-            &copy; <span id="copyright-year"></span> <a href="#">VehiGo</a> Contact us through
+            &copy; <span id="copyright-year"></span> <a href="index.html">VehiGo</a> Contact us through
           </p>
         </div>
       </div>
@@ -292,6 +438,32 @@
   const yearEl = document.getElementById('copyright-year');
   if(yearEl) yearEl.textContent = new Date().getFullYear();
 </script>
+<script>
+  const themeToggleBtn = document.getElementById('theme-toggle');
+  const themeIcon = document.getElementById('theme-icon');
+  const body = document.body;
+
+  // Initialize based on saved theme
+  if (localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark-mode');
+    themeIcon.setAttribute('name', 'sunny-outline');
+  }
+
+  themeToggleBtn.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+
+    if (body.classList.contains('dark-mode')) {
+      localStorage.setItem('theme', 'dark');
+      themeIcon.setAttribute('name', 'sunny-outline'); // Sun icon when dark mode is active
+    } else {
+      localStorage.setItem('theme', 'light');
+      themeIcon.setAttribute('name', 'moon-outline'); // Moon icon when light mode is active
+    }
+  });
+</script>
+
+
+
 <script src="preloader.js"></script>
 </body>
 </html>
