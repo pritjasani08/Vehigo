@@ -9,6 +9,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
+        /* Fix: override site-wide drawer .navbar styles from style.css on this page */
+        .header .navbar {
+            position: static !important;
+            top: auto !important;
+            right: auto !important;
+            bottom: auto !important;
+            max-width: 100% !important;
+            width: 100% !important;
+            padding: .5rem 0 !important;
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            visibility: visible !important;
+            transform: none !important;
+        }
+        .header .navbar .navbar-nav { gap: 12px; }
+        .header .navbar .navbar-collapse { justify-content: flex-end; }
+        /* Ensure toggler icon visible on dark header */
+        .navbar-light .navbar-toggler { border-color: rgba(0,0,0,.1); }
+        .navbar-light .navbar-toggler-icon { filter: none; }
         /* Global Reset & Base */
         * {
             margin: 0;
@@ -355,6 +375,7 @@
             <li class="nav-item"><a class="nav-link" href="../../index.html">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="../../featured-car.html">Explore cars</a></li>
             <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="pricing.html">Pricing Plans</a></li>
             <li class="nav-item"><a class="nav-link" href="../../blog.html">Blog</a></li>
             <li class="nav-item"><a class="nav-link" href="../../ContactUs.html">Contact Us</a></li>
             <li class="nav-item"><a class="nav-link" href="../../offline.html">Offline Centers</a></li>
