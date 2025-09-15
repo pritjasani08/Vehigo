@@ -15,10 +15,10 @@
   <title>Vehigo Offline Centers</title>
   
   <!-- custom css links -->
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="stylesheet" href="assets/css/dark.css" />
+  <!-- <link rel="stylesheet" href="assets/css/style.css" /> -->
+  <!-- <link rel="stylesheet" href="assets/css/dark.css" /> -->
   <link rel="stylesheet" href="./styles/offline.css" />
-  <link rel="stylesheet" href="./modern-improvements.css" />
+  <!-- <link rel="stylesheet" href="./modern-improvements.css" /> -->
   <link rel="stylesheet" href="./offline-animations.css" />
   
   <!-- Leaflet CSS -->
@@ -36,125 +36,53 @@
     <div class="spinner"></div>
   </div>
   <div id="app">
-  <header class="header" data-header>
-    <div class="container" style="background-color: #4e7fb4">
-      <div class="overlay" data-overlay></div>
-      <a href="index.html" class="logo">
-        <img src="./assets/images/vehigologo.png" alt="VehiGo logo">
+  <header class="header">
+    <nav class="navbar navbar-expand-xl container py-2">
+      
+
+      <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain"
+        aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button> -->
+
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav ms-auto">
+          <a class="navbar-brand d-flex align-items-center gap-1" href="index.html" aria-label="Vehigo Home">
+        <img src="./assets/images/vehigologo.png" alt="Vehigo" />
       </a>
-      <nav class="navbar" data-navbar>
-        <ul class="navbar-list">
-          <li>
-            <a href="index.html" class="navbar-link" data-nav-link>Home</a>
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#featured-car">Explore cars</a></li>
+          <li class="nav-item"><a class="nav-link" href="./src/pages/about.html">About us</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="offline.html">Offline Centers</a></li>
+          <li class="nav-item"><a class="nav-link" href="rentcar.html">Rent Your Car</a></li>
+
+          <!-- Theme switch -->
+          <li class="nav-item">
+            <button id="themeToggle" class="btn btn-outline-secondary theme-toggle-btn" type="button">
+              <i class="fa-solid fa-gear"></i><span class="label"> Light</span>
+            </button>
           </li>
 
-          <li>
-            <a href="featured-car.html" class="navbar-link" data-nav-link>Explore cars</a>
+          <!-- Login & Logout -->
+          <li class="nav-item">
+            <a href="./src/pages/login.html" class="btn btn-vehigo" id="loginBtn">
+              <i class="fa-regular fa-user"></i> <span>Login</span>
+            </a>
           </li>
-
-          <li>
-            <a href="./src/pages/about.html" class="navbar-link" data-nav-link>About us</a>
-          </li>
-
-          <li>
-            <a href="blog.html" class="navbar-link" data-nav-link>Blog</a>
-          </li>
-          <!-- changes -->
-          <li>
-            <a href="ContactUs.html" class="navbar-link" data-nav-link>Contact Us</a>
-          </li>
-
-          <li>
-            <a href="offline.html" class="navbar-link" data-nav-link>Offline Centers</a>
-          </li>
-
-          <li>
-            <a href="rentcar.html" class="navbar-link" data-nav-link>Rent Your Car</a>
+          <li class="nav-item">
+            <button id="logoutBtn" class="btn btn-outline-light d-none" aria-label="Logout">
+              <i class="fa-solid fa-right-from-bracket"></i>
+            </button>
           </li>
         </ul>
-      </nav>
-      <div class="header-actions">
-        <div class="header-contact">
-          <a href="tel:1800100100" class="contact-link">1800-100-100</a>
-          <span class="contact-time">Mon - Sat: 9:00 am - 6:00 pm</span>
-        </div>
-
-        <!-- Theme Toggle Switch with SVG icons -->
-        <style>
-          .theme-switch { position: fixed; top: 1rem; right: calc(1rem + 1cm); cursor: pointer; z-index: 1000; }
-          .theme-switch input { display: none; }
-          .slider { display: flex; align-items: center; gap: 8px; }
-          .icon svg { transition: transform 0.3s ease; }
-          .theme-switch .icon.moon { display: none; }
-          .theme-switch input:checked~.slider .sun { display: none; }
-          .theme-switch input:checked~.slider .moon { display: inline; }
-          body.dark-theme { background-color: #121212; color: #f5f5f5; }
-        </style>
-
-        <label class="theme-switch" for="theme-toggle">
-          <input type="checkbox" id="theme-toggle" />
-          <span class="slider">
-            <span class="icon sun" aria-label="Light mode">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="orange" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="5" />
-                <line x1="12" y1="1" x2="12" y2="3" />
-                <line x1="12" y1="21" x2="12" y2="23" />
-                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-                <line x1="1" y1="12" x2="3" y2="12" />
-                <line x1="21" y1="12" x2="23" y2="12" />
-                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-              </svg>
-            </span>
-            <span class="icon moon" aria-label="Dark mode">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f5f5f5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" />
-              </svg>
-            </span>
-          </span>
-        </label>
-
-        <script>
-          const toggle = document.getElementById("theme-toggle");
-          if (localStorage.getItem("theme") === "dark") {
-            document.body.classList.add("dark-theme");
-            toggle.checked = true;
-          }
-          toggle.addEventListener("change", () => {
-            document.body.classList.toggle("dark-theme");
-            if (document.body.classList.contains("dark-theme")) {
-              localStorage.setItem("theme", "dark");
-            } else {
-              localStorage.setItem("theme", "light");
-            }
-          });
-        </script>
-
-        <a href="index.html#featured-car" class="btn" aria-labelledby="aria-label-txt">
-          <ion-icon name="car-outline"></ion-icon>
-          <span id="aria-label-txt">Explore cars</span>
-        </a>
-
-        <a href="./src/pages/login.html" class="btn user-btn" id="loginBtn" aria-label="Profile">
-          <ion-icon name="person-outline"></ion-icon>
-        </a>
-
-        <button id="logoutBtn" class="btn user-btn" style="display: none;" aria-label="Logout">
-          <ion-icon name="log-out-outline"></ion-icon>
-        </button>
-
-        <button class="nav-toggle-btn" data-nav-toggle-btn aria-label="Toggle Menu">
-          <span class="one"></span>
-          <span class="two"></span>
-          <span class="three"></span>
-        </button>
       </div>
-    </div>
+    </nav>
   </header>
 
   <!-- Quick Links Bar -->
-  <nav aria-label="Section links" style="background:#ffffff; border-bottom:1px solid #e5e7eb; margin-top:70px; position:sticky; top:70px; z-index:3;">
+  <!-- <nav aria-label="Section links" style="background:#ffffff; border-bottom:1px solid #e5e7eb; margin-top:70px; position:sticky; top:70px; z-index:3;">
     <div class="container quick-links" style="display:flex; flex-wrap:wrap; gap:36px; align-items:center; justify-content:center; padding:12px 20px;">
       <a href="index.html" class="navbar-link ql" style="text-decoration:none; color:#29465b; font-weight:600; padding:6px 10px; border-radius:8px;">Home</a>
       <a href="featured-car.html" class="navbar-link ql" style="text-decoration:none; color:#29465b; font-weight:600; padding:6px 10px; border-radius:8px;">Explore cars</a>
@@ -168,7 +96,7 @@
       .offline-main-content { margin-top: 0; }
       .offline-hero-section { padding-top: 8px; }
     </style>
-  </nav>
+  </nav> -->
 
   <main class="offline-main-content modern-section">
     <div class="offline-hero-section">
