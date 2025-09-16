@@ -165,11 +165,18 @@
                 />
                 <i class="bx bx-hide eye-icon"></i>
               </div>
+              <ul id="passwordChecklist" class="password-checklist">
+              <li id="check-length" class="invalid">✔ At least 8 characters</li>
+              <li id="check-uppercase" class="invalid">✔ At least one uppercase letter</li>
+              <li id="check-lowercase" class="invalid">✔ At least one lowercase letter</li>
+              <li id="check-number" class="invalid">✔ At least one number</li>
+              <li id="check-special" class="invalid">✔ At least one special character (!@#$%^&*)</li>
+              </ul>
               <div class="field input-field">
                 <input
                   id="confirmPassword"
                   name="confirm_password"
-                  type="password"
+                  type="password"  
                   placeholder="Confirm password"
                   class="password"
                   required
@@ -229,6 +236,61 @@
     const loginForm = document.getElementById("loginForm");
     const signupErrorMessage = document.getElementById("errorMessage");
     const loginMessage = document.getElementById("loginMessage");
+        // ✅ Password Checklist Validation
+    const passwordInput = document.getElementById("signupPassword");
+    const checklist = {
+      length: document.getElementById("check-length"),
+      uppercase: document.getElementById("check-uppercase"),
+      lowercase: document.getElementById("check-lowercase"),
+      number: document.getElementById("check-number"),
+      special: document.getElementById("check-special"),
+    };
+
+    passwordInput.addEventListener("input", () => {
+      const value = passwordInput.value;
+
+      // Length check
+      if (value.length >= 8) {
+        checklist.length.classList.add("valid");
+        checklist.length.classList.remove("invalid");
+      } else {
+        checklist.length.classList.add("invalid");
+        checklist.length.classList.remove("valid");
+      }
+
+      // Uppercase check
+      if (/[A-Z]/.test(value)) {
+        checklist.uppercase.classList.add("valid");
+        checklist.uppercase.classList.remove("invalid");
+      } else {
+        checklist.uppercase.classList.add("invalid");
+        checklist.uppercase.classList.remove("valid");
+      }
+      if (/[a-z]/.test(value)) {
+        checklist.lowercase.classList.add("valid");
+        checklist.lowercase.classList.remove("invalid");
+      } else {
+        checklist.lowercase.classList.add("invalid");
+        checklist.lowercase.classList.remove("valid");
+      }
+      // Number check
+      if (/\d/.test(value)) {
+        checklist.number.classList.add("valid");
+        checklist.number.classList.remove("invalid");
+      } else {
+        checklist.number.classList.add("invalid");
+        checklist.number.classList.remove("valid");
+      }
+
+      // Special char check
+      if (/[!@#$%^&*]/.test(value)) {
+        checklist.special.classList.add("valid");
+        checklist.special.classList.remove("invalid");
+      } else {
+        checklist.special.classList.add("invalid");
+        checklist.special.classList.remove("valid");
+      }
+    });
 
     // Show/Hide password functionality
     eyeIcons.forEach((eyeIcon) => {

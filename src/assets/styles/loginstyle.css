@@ -14,6 +14,27 @@
   min-height: 100vh;
 }
 
+.password-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+  font-size: 0.9rem;
+}
+
+.password-checklist li {
+  margin-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+.password-checklist li.valid {
+  color: green;
+  font-weight: 600;
+}
+
+.password-checklist li.invalid {
+  color: red;
+}
+
 
 .container {
     height: 100vh;
