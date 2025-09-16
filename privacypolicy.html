@@ -53,6 +53,8 @@
         /* Ensure navbar is visible regardless of legacy styles */
         header.header nav.navbar { display: flex !important; visibility: visible !important; opacity: 1 !important; }
         header.header .navbar-collapse { align-items: center; }
+        /* Override legacy fixed width/box-shadow applied to header .container in global CSS */
+        header.header .container { width: 100% !important; max-width: 100% !important; margin: 0; height: auto; box-shadow: none; padding-left: 4px; padding-right: 8px; }
         .navbar-toggler { border-color: rgba(0,0,0,.15); }
         .navbar-toggler-icon { background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0,0,0,0.7)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
         .dark-theme .navbar-toggler-icon { background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.85)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
@@ -76,18 +78,19 @@
         /* Center entire navbar content */
         header.header .navbar {
           display: flex;
-          justify-content: center;
+          justify-content: flex-start;
           align-items: center;
           position: relative;
-          padding: 0 16px;
+          padding: 0 4px;
         }
         header.header .navbar .navbar-brand {
-          position: absolute;
-          left: 16px;
+          position: static;
+          margin-right: 12px;
+          margin-left: 0;
         }
         header.header .navbar .navbar-collapse {
           display: flex;
-          justify-content: center;
+          justify-content: flex-start;
           flex: 1;
         }
         header.header .navbar .navbar-nav {
