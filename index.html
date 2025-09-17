@@ -1152,13 +1152,29 @@
 
       <div class="collapse navbar-collapse" id="navMain">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#featured-car">Explore cars</a></li>
-          <li class="nav-item"><a class="nav-link" href="./src/pages/about.html">About us</a></li>
-          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-          <li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="offline.html">Offline Centers</a></li>
-          <li class="nav-item"><a class="nav-link" href="rentcar.html">Rent Your Car</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html" data-translate="nav-home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#featured-car" data-translate="nav-explore">Explore cars</a></li>
+          <li class="nav-item"><a class="nav-link" href="./src/pages/about.html" data-translate="nav-about">About us</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html" data-translate="nav-blog">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="ContactUs.html" data-translate="nav-contact">Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="offline.html" data-translate="nav-offline">Offline Centers</a></li>
+          <li class="nav-item"><a class="nav-link" href="rentcar.html" data-translate="nav-rent">Rent Your Car</a></li>
+
+          <!-- Language switch -->
+          <li class="nav-item">
+            <div class="dropdown">
+              <button id="languageToggle" class="btn btn-outline-secondary language-toggle-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa-solid fa-globe"></i><span class="label" id="currentLang">EN</span>
+              </button>
+              <ul class="dropdown-menu language-dropdown">
+                <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
+                <li><a class="dropdown-item" href="#" data-lang="hi">हिन्दी</a></li>
+                <li><a class="dropdown-item" href="#" data-lang="es">Español</a></li>
+                <li><a class="dropdown-item" href="#" data-lang="fr">Français</a></li>
+                <li><a class="dropdown-item" href="#" data-lang="de">Deutsch</a></li>
+              </ul>
+            </div>
+          </li>
 
           <!-- Theme switch -->
           <li class="nav-item">
@@ -1168,11 +1184,11 @@
           </li>
 
           <!-- Login & Logout -->
-          <li class="nav-item">
-            <a href="./src/pages/login.html" class="btn btn-vehigo" id="loginBtn">
-              <i class="fa-regular fa-user"></i> <span>Login</span>
-            </a>
-          </li>
+            <li class="nav-item">
+              <a href="./src/pages/login.html" class="btn btn-vehigo" id="loginBtn">
+                <i class="fa-regular fa-user"></i> <span data-translate="nav-login">Login</span>
+              </a>
+            </li>
           <li class="nav-item">
             <button id="logoutBtn" class="btn btn-outline-light d-none" aria-label="Logout">
               <i class="fa-solid fa-right-from-bracket"></i>
@@ -1190,43 +1206,43 @@
         <div class="col-lg-7" data-aos="fade-right">
           <span class="badge">
             <i class="fa-solid fa-location-dot"></i>
-            Live in <strong>Bhopal</strong>, <strong>Indore</strong> & <strong>Ujjain</strong>
+            <span data-translate="hero-location">Live in</span> <strong data-translate="hero-location-bhopal">Bhopal</strong>, <strong data-translate="hero-location-indore">Indore</strong> & <strong data-translate="hero-location-ujjain">Ujjain</strong>
           </span>
-          <h1 class="hero-title mt-3">Seamless rentals,<br><span
-              style="background:linear-gradient(90deg,#4e7fb4,#2563eb); -webkit-background-clip:text; background-clip:text; color:transparent;">Endless
+          <h1 class="hero-title mt-3"><span data-translate="hero-title-1">Seamless rentals,</span><br><span
+              style="background:linear-gradient(90deg,#4e7fb4,#2563eb); -webkit-background-clip:text; background-clip:text; color:transparent;" data-translate="hero-title-2">Endless
               Adventures.</span></h1>
-          <p class="hero-sub mt-2">Find the perfect car in minutes, from budget hatchbacks to premium SUVs — or list
+          <p class="hero-sub mt-2" data-translate="hero-subtitle">Find the perfect car in minutes, from budget hatchbacks to premium SUVs — or list
             your car and earn.</p>
 
           <!-- Filter chips -->
           <div class="d-flex flex-wrap gap-2 mt-3" id="quickChips">
-            <span class="chip" data-chip="suv"><i class="fa-solid fa-truck-monster"></i> SUV</span>
-            <span class="chip" data-chip="sedan"><i class="fa-solid fa-car-side"></i> Sedan</span>
-            <span class="chip" data-chip="hatchback"><i class="fa-solid fa-car"></i> Hatchback</span>
-            <span class="chip" data-chip="mpv"><i class="fa-solid fa-van-shuttle"></i> MPV</span>
-            <span class="chip" data-chip="luxury"><i class="fa-solid fa-gem"></i> Luxury</span>
+            <span class="chip" data-chip="suv"><i class="fa-solid fa-truck-monster"></i> <span data-translate="car-suv">SUV</span></span>
+            <span class="chip" data-chip="sedan"><i class="fa-solid fa-car-side"></i> <span data-translate="car-sedan">Sedan</span></span>
+            <span class="chip" data-chip="hatchback"><i class="fa-solid fa-car"></i> <span data-translate="car-hatchback">Hatchback</span></span>
+            <span class="chip" data-chip="mpv"><i class="fa-solid fa-van-shuttle"></i> <span data-translate="car-mpv">MPV</span></span>
+            <span class="chip" data-chip="luxury"><i class="fa-solid fa-gem"></i> <span data-translate="car-luxury">Luxury</span></span>
           </div>
 
           <!-- Search form -->
           <form class="glass-form mt-3" id="searchForm">
             <div class="row g-2">
               <div class="col-12 col-md-4">
-                <label for="input-1" class="form-label fw-semibold">Location</label>
-                <input type="text" id="input-1" class="form-control" placeholder="e.g., Bhopal" />
+                <label for="input-1" class="form-label fw-semibold" data-translate="search-location">Location</label>
+                <input type="text" id="input-1" class="form-control" data-translate-placeholder="search-location-placeholder" placeholder="e.g., Bhopal" />
               </div>
               <div class="col-12 col-md-4">
-                <label for="input-2" class="form-label fw-semibold">Max rent / hour (₹)</label>
-                <input type="text" id="input-2" class="form-control" placeholder="e.g., 300" inputmode="decimal" />
+                <label for="input-2" class="form-label fw-semibold" data-translate="search-price">Max rent / hour (₹)</label>
+                <input type="text" id="input-2" class="form-control" data-translate-placeholder="search-price-placeholder" placeholder="e.g., 300" inputmode="decimal" />
               </div>
               <div class="col-6 col-md-2">
-                <label for="car-type" class="form-label fw-semibold">Car Type</label>
+                <label for="car-type" class="form-label fw-semibold" data-translate="search-car-type">Car Type</label>
                 <select id="car-type" class="form-select">
-                  <option value="">Any</option>
-                  <option value="suv">SUV</option>
-                  <option value="sedan">Sedan</option>
-                  <option value="hatchback">Hatchback</option>
-                  <option value="mpv">MPV</option>
-                  <option value="luxury">Luxury</option>
+                  <option value="" data-translate="search-car-any">Any</option>
+                  <option value="suv" data-translate="car-suv">SUV</option>
+                  <option value="sedan" data-translate="car-sedan">Sedan</option>
+                  <option value="hatchback" data-translate="car-hatchback">Hatchback</option>
+                  <option value="mpv" data-translate="car-mpv">MPV</option>
+                  <option value="luxury" data-translate="car-luxury">Luxury</option>
                 </select>
               </div>
               <div class="col-6 col-md-2">
@@ -1242,7 +1258,7 @@
             </div>
 
             <div class="d-flex flex-wrap align-items-center gap-2 mt-3">
-              <button class="btn btn-vehigo" type="submit"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+              <button class="btn btn-vehigo" type="submit"><i class="fa-solid fa-magnifying-glass"></i> <span data-translate="search-button">Search</span></button>
               <button class="btn btn-outline-secondary" type="button" id="clearBtn"><i
                   class="fa-solid fa-rotate-left"></i> Reset</button>
               <div class="ms-auto d-flex align-items-center gap-2">
@@ -1948,6 +1964,209 @@
       updateBlogArrows();
       window.addEventListener('resize', updateBlogArrows);
       blogList.addEventListener('scroll', updateBlogArrows);
+
+      // Language switching functionality
+      const translations = {
+        en: {
+          'nav-home': 'Home',
+          'nav-explore': 'Explore cars',
+          'nav-about': 'About us',
+          'nav-blog': 'Blog',
+          'nav-contact': 'Contact Us',
+          'nav-offline': 'Offline Centers',
+          'nav-rent': 'Rent Your Car',
+          'nav-login': 'Login',
+          'hero-location': 'Live in',
+          'hero-title-1': 'Seamless rentals,',
+          'hero-title-2': 'Endless Adventures.',
+          'hero-subtitle': 'Find the perfect car in minutes, from budget hatchbacks to premium SUVs — or list your car and earn.',
+          'hero-location-bhopal': 'Bhopal',
+          'hero-location-indore': 'Indore',
+          'hero-location-ujjain': 'Ujjain',
+          'search-location': 'Location',
+          'search-location-placeholder': 'e.g., Bhopal',
+          'search-price': 'Max rent / hour (₹)',
+          'search-price-placeholder': 'e.g., 300',
+          'search-car-type': 'Car Type',
+          'search-car-any': 'Any',
+          'search-button': 'Search',
+          'car-suv': 'SUV',
+          'car-sedan': 'Sedan',
+          'car-hatchback': 'Hatchback',
+          'car-mpv': 'MPV',
+          'car-luxury': 'Luxury'
+        },
+        hi: {
+          'nav-home': 'होम',
+          'nav-explore': 'कार देखें',
+          'nav-about': 'हमारे बारे में',
+          'nav-blog': 'ब्लॉग',
+          'nav-contact': 'संपर्क करें',
+          'nav-offline': 'ऑफलाइन केंद्र',
+          'nav-rent': 'अपनी कार किराए पर दें',
+          'nav-login': 'लॉगिन',
+          'hero-location': 'रहते हैं',
+          'hero-title-1': 'सहज किराया,',
+          'hero-title-2': 'अंतहीन रोमांच।',
+          'hero-subtitle': 'बजट हैचबैक से लेकर प्रीमियम SUV तक, मिनटों में सही कार खोजें — या अपनी कार सूचीबद्ध करके कमाएं।',
+          'hero-location-bhopal': 'भोपाल',
+          'hero-location-indore': 'इंदौर',
+          'hero-location-ujjain': 'उज्जैन',
+          'search-location': 'स्थान',
+          'search-location-placeholder': 'जैसे, भोपाल',
+          'search-price': 'अधिकतम किराया / घंटा (₹)',
+          'search-price-placeholder': 'जैसे, 300',
+          'search-car-type': 'कार प्रकार',
+          'search-car-any': 'कोई भी',
+          'search-button': 'खोजें',
+          'car-suv': 'SUV',
+          'car-sedan': 'सेडान',
+          'car-hatchback': 'हैचबैक',
+          'car-mpv': 'MPV',
+          'car-luxury': 'लक्जरी'
+        },
+        es: {
+          'nav-home': 'Inicio',
+          'nav-explore': 'Explorar autos',
+          'nav-about': 'Acerca de nosotros',
+          'nav-blog': 'Blog',
+          'nav-contact': 'Contáctanos',
+          'nav-offline': 'Centros offline',
+          'nav-rent': 'Renta tu auto',
+          'nav-login': 'Iniciar sesión',
+          'hero-location': 'Vive en',
+          'hero-title-1': 'Alquileres perfectos,',
+          'hero-title-2': 'Aventuras infinitas.',
+          'hero-subtitle': 'Encuentra el auto perfecto en minutos, desde hatchbacks económicos hasta SUV premium — o lista tu auto y gana.',
+          'hero-location-bhopal': 'Bhopal',
+          'hero-location-indore': 'Indore',
+          'hero-location-ujjain': 'Ujjain',
+          'search-location': 'Ubicación',
+          'search-location-placeholder': 'ej., Bhopal',
+          'search-price': 'Alquiler máximo / hora (₹)',
+          'search-price-placeholder': 'ej., 300',
+          'search-car-type': 'Tipo de auto',
+          'search-car-any': 'Cualquiera',
+          'search-button': 'Buscar',
+          'car-suv': 'SUV',
+          'car-sedan': 'Sedán',
+          'car-hatchback': 'Hatchback',
+          'car-mpv': 'MPV',
+          'car-luxury': 'Lujo'
+        },
+        fr: {
+          'nav-home': 'Accueil',
+          'nav-explore': 'Explorer les voitures',
+          'nav-about': 'À propos de nous',
+          'nav-blog': 'Blog',
+          'nav-contact': 'Nous contacter',
+          'nav-offline': 'Centres hors ligne',
+          'nav-rent': 'Louez votre voiture',
+          'nav-login': 'Se connecter',
+          'hero-location': 'Vivez à',
+          'hero-title-1': 'Locations parfaites,',
+          'hero-title-2': 'Aventures infinies.',
+          'hero-subtitle': 'Trouvez la voiture parfaite en quelques minutes, des citadines économiques aux SUV premium — ou listez votre voiture et gagnez.',
+          'hero-location-bhopal': 'Bhopal',
+          'hero-location-indore': 'Indore',
+          'hero-location-ujjain': 'Ujjain',
+          'search-location': 'Emplacement',
+          'search-location-placeholder': 'ex., Bhopal',
+          'search-price': 'Loyer maximum / heure (₹)',
+          'search-price-placeholder': 'ex., 300',
+          'search-car-type': 'Type de voiture',
+          'search-car-any': 'N\'importe lequel',
+          'search-button': 'Rechercher',
+          'car-suv': 'SUV',
+          'car-sedan': 'Berline',
+          'car-hatchback': 'Citadine',
+          'car-mpv': 'MPV',
+          'car-luxury': 'Luxe'
+        },
+        de: {
+          'nav-home': 'Startseite',
+          'nav-explore': 'Autos erkunden',
+          'nav-about': 'Über uns',
+          'nav-blog': 'Blog',
+          'nav-contact': 'Kontakt',
+          'nav-offline': 'Offline-Zentren',
+          'nav-rent': 'Ihr Auto vermieten',
+          'nav-login': 'Anmelden',
+          'hero-location': 'Leben in',
+          'hero-title-1': 'Nahtlose Vermietungen,',
+          'hero-title-2': 'Endlose Abenteuer.',
+          'hero-subtitle': 'Finden Sie das perfekte Auto in Minuten, von günstigen Kleinwagen bis zu Premium-SUVs — oder listen Sie Ihr Auto auf und verdienen Sie.',
+          'hero-location-bhopal': 'Bhopal',
+          'hero-location-indore': 'Indore',
+          'hero-location-ujjain': 'Ujjain',
+          'search-location': 'Standort',
+          'search-location-placeholder': 'z.B. Bhopal',
+          'search-price': 'Max. Miete / Stunde (₹)',
+          'search-price-placeholder': 'z.B. 300',
+          'search-car-type': 'Autotyp',
+          'search-car-any': 'Beliebig',
+          'search-button': 'Suchen',
+          'car-suv': 'SUV',
+          'car-sedan': 'Limousine',
+          'car-hatchback': 'Kleinwagen',
+          'car-mpv': 'MPV',
+          'car-luxury': 'Luxus'
+        }
+      };
+
+      let currentLanguage = localStorage.getItem('language') || 'en';
+      
+      function updateLanguage(lang) {
+        currentLanguage = lang;
+        localStorage.setItem('language', lang);
+        
+        // Update language button
+        const langButton = document.getElementById('currentLang');
+        const langMap = {
+          'en': 'EN',
+          'hi': 'HI',
+          'es': 'ES',
+          'fr': 'FR',
+          'de': 'DE'
+        };
+        if (langButton) {
+          langButton.textContent = langMap[lang] || 'EN';
+        }
+        
+        // Update all translatable elements
+        const elements = document.querySelectorAll('[data-translate]');
+        elements.forEach(element => {
+          const key = element.getAttribute('data-translate');
+          if (translations[lang] && translations[lang][key]) {
+            element.textContent = translations[lang][key];
+          }
+        });
+        
+        // Update placeholder attributes
+        const placeholderElements = document.querySelectorAll('[data-translate-placeholder]');
+        placeholderElements.forEach(element => {
+          const key = element.getAttribute('data-translate-placeholder');
+          if (translations[lang] && translations[lang][key]) {
+            element.placeholder = translations[lang][key];
+          }
+        });
+        
+        // Update HTML lang attribute
+        document.documentElement.lang = lang;
+      }
+      
+      // Initialize language on page load
+      updateLanguage(currentLanguage);
+      
+      // Add language switching event listeners
+      const langItems = document.querySelectorAll('.language-dropdown .dropdown-item');
+      langItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+          e.preventDefault();
+          const lang = this.getAttribute('data-lang');
+          updateLanguage(lang);
+        });
+      });
     });
   </script>
 </body>
