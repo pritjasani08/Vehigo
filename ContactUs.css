@@ -1,176 +1,138 @@
+/* BODY & TRANSITIONS */
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Nunito', 'Segoe UI', sans-serif;
   background-color: #f9fafb;
   color: #333;
+  transition: background-color 0.3s, color 0.3s;
 }
+
+/* NAVBAR */
 .navbar-nav {
   background-color: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   display: flex;
-  flex-direction: row;
   justify-content: flex-end;
   list-style: none;
   margin: 0;
   padding: 0;
-  position: fixed; /* keeps navbar on top */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
 }
 
-.nav-item {
-  display: flex;
-  align-items: center;
-}
-
 .nav-item a,
 .nav-item button {
-  color: black;
-  text-decoration: none;
+  color: #333;
   padding: 1rem 1.2rem;
-  display: flex;
-  align-items: center;
-  border: none;
-  background: none;
-  font-size: 1rem;
-  cursor: pointer;
+  font-weight: 600;
+  transition: color 0.3s, background 0.3s;
 }
 
 .nav-item a:hover,
 .nav-item button:hover {
   color: #007bff;
-
-  /* background-color: rgba(0, 123, 255, 0.1); */
-  
-  border-radius: 5px;
+  background-color: rgba(0,123,255,0.1);
+  border-radius: 6px;
 }
 
 .btn-vehigo {
   background-color: #007bff;
-  color: white;
-  border-radius: 5px;
+  color: #fff;
   padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background 0.3s;
 }
 
 .btn-vehigo:hover {
-  
-  color: white;
-}
-.navbar-brand{
-  margin-right: auto;
-  padding: 0.5rem 1rem;
-}
-.hero {
-  background: linear-gradient(to right, #2563eb, #1e40af, #1e3a8a);
-  color: white;
-  padding: 5rem 1rem;
-  text-align: center;
-  height: 5px;
+  background-color: #0056b3;
 }
 
-.no-inherit{
-    all:unset;
-}
-.highlight {
-  color: #facc15;
-}
-
-.main {
-  padding: 4rem 1rem;
-  position: relative;
-  z-index: 1;
-}
-
+/* CONTACT CONTAINER */
 .contact-container {
   max-width: 1200px;
-  margin: auto;
+  margin: 6rem auto 4rem auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
+/* CONTACT CARDS */
 .contact-info,
 .contact-form {
-  background: white;
+  background-color: white;
   border-radius: 1rem;
-  padding: 2rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2.5rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.contact-info h3,
-.contact-form h2 {
-  text-align: center;
-  margin-bottom: 2rem;
+.contact-info:hover,
+.contact-form:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
 }
 
+/* Cards */
 .card {
   display: flex;
-  padding: 1rem;
-  border-radius: 1rem;
-  margin-bottom: 1rem;
   align-items: center;
-  transition: 0.3s ease;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
 }
 
 .card .icon {
   width: 3rem;
   height: 3rem;
+  border-radius: 0.75rem;
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  border-radius: 0.75rem;
-  font-size: 1.5rem;
   margin-right: 1rem;
+  font-size: 1.3rem;
 }
 
-.card-blue {
-  background: #eff6ff;
-}
+.card-blue { background: #eff6ff; }
+.card-green { background: #ecfdf5; }
+.card-purple { background: #f5f3ff; }
 
-.card-green {
-  background: #ecfdf5;
-}
+.icon-blue { background: linear-gradient(to right, #3b82f6, #1e3a8a); }
+.icon-green { background: linear-gradient(to right, #10b981, #047857); }
+.icon-purple { background: linear-gradient(to right, #8b5cf6, #6b21a8); }
 
-.card-purple {
-  background: #f5f3ff;
-}
-
-.icon-blue {
-  background: linear-gradient(to right, #3b82f6, #1e3a8a);
-}
-
-.icon-green {
-  background: linear-gradient(to right, #10b981, #047857);
-}
-
-.icon-purple {
-  background: linear-gradient(to right, #8b5cf6, #6b21a8);
-}
-
-.form label {
-  display: block;
-  margin: 1rem 0 0.5rem;
-  font-weight: 600;
-}
-
+/* FORM */
+.form label { font-weight: 600; margin: 0.8rem 0 0.3rem; display: block; }
 .form input,
 .form textarea {
-  width: 94%;
-  padding: 0.75rem 1rem;
+  width: 100%;
+  padding: 0.8rem 1rem;
   border: 2px solid #3b789e;
   border-radius: 0.75rem;
   outline: none;
-  background: white;
-  transition: 0.3s;
+  background-color: white;
+  color: #333;
+  transition: border-color 0.3s, box-shadow 0.3s, background 0.3s, color 0.3s;
+}
+
+.form input::placeholder,
+.form textarea::placeholder {
+  color: #888;
 }
 
 .form input:focus,
 .form textarea:focus {
   border-color: #5d86ac;
-  box-shadow: 0 0 0 4px #fce7f3;
+  box-shadow: 0 0 0 4px rgba(59,120,158,0.1);
 }
 
 button[type="submit"] {
@@ -178,44 +140,62 @@ button[type="submit"] {
   width: 100%;
   padding: 1rem;
   background: linear-gradient(to right, #5d7295, #6eaff4);
-  color: rgb(253, 254, 255);
+  color: white;
   font-weight: bold;
   border: none;
   border-radius: 0.75rem;
-  transition: 0.3s;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 button[type="submit"]:hover {
   transform: scale(1.03);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
 
-#successMessage {
-  text-align: center;
-  padding: 2rem 1rem;
-}
-
+/* SUCCESS MESSAGE */
+#successMessage { text-align: center; padding: 2rem 1rem; }
 .success-icon {
   width: 5rem;
   height: 5rem;
-  background: linear-gradient(to right, #10b981, #047857);
-  border-radius: 9999px;
   margin: auto;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+  background: linear-gradient(to right, #10b981, #047857);
   color: white;
   font-size: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1rem;
 }
 
-.hidden {
-  display: none;
+/* DARK MODE */
+body.dark-mode {
+  background-color: #121212;
+  color: #f1f1f1;
 }
 
+body.dark-mode .navbar-nav { background-color: #1e1e1e; }
+body.dark-mode .nav-item a,
+body.dark-mode .nav-item button { color: #f1f1f1; }
+body.dark-mode .contact-info,
+body.dark-mode .contact-form { background-color: #1e1e1e; color: #f1f1f1; }
+body.dark-mode .card-blue { background: #1f2a40; }
+body.dark-mode .card-green { background: #1a2b22; }
+body.dark-mode .card-purple { background: #2d1a3f; }
 
-
-.btn{
-  border-radius: 50%;
+body.dark-mode .form input,
+body.dark-mode .form textarea {
+  background-color: #2a2a2a;
+  color: #f1f1f1;
+  border-color: #555;
 }
 
+body.dark-mode .form input::placeholder,
+body.dark-mode .form textarea::placeholder {
+  color: #bbb;
+}
+
+body.dark-mode button[type="submit"] {
+  background: linear-gradient(to right, #3b82f6, #1e3a8a);
+}
