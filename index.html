@@ -955,6 +955,11 @@
       filter: none;
     }
 
+    /* Light theme: improve visibility of hero location badge text */
+    body:not(.dark-theme) .hero .badge {
+      color: #000;
+    }
+
     body:not(.dark-theme) .footer-column h6 {
       color: var(--vehigo-text);
     }
@@ -1122,6 +1127,32 @@
       box-shadow: 0 4px 15px rgba(37, 100, 235, 0.4) !important;
       background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%) !important;
     }
+
+    /* Chatbot widget */
+    .chatbot-toggle {
+      position: fixed; bottom: 30px; right: 90px; width: 56px; height: 56px; border-radius: 50%;
+      display: grid; place-items: center; border: none; cursor: pointer; z-index: 1050;
+      background: linear-gradient(135deg, #4e7fb4, #2563eb); color: #fff; box-shadow: var(--shadow-2);
+    }
+    .chatbot-window {
+      position: fixed; bottom: 100px; right: 20px; width: min(360px, 92vw);
+      background: var(--vehigo-card); border: 1px solid var(--vehigo-border); border-radius: 16px;
+      box-shadow: var(--shadow-2); overflow: hidden; display: none; z-index: 1050;
+    }
+    .chatbot-header { display: flex; align-items: center; justify-content: space-between; gap: 8px;
+      padding: 10px 12px; background: linear-gradient(90deg, rgba(37,99,235,.12), rgba(78,127,180,.12));
+      border-bottom: 1px solid var(--vehigo-border); font-weight: 800; }
+    .chatbot-messages { height: 300px; overflow-y: auto; padding: 12px; display: flex; flex-direction: column; gap: 8px; }
+    .bubble { max-width: 85%; padding: 10px 12px; border-radius: 12px; font-size: .95rem; }
+    .bot { background: rgba(37,99,235,.10); border: 1px solid var(--vehigo-border); align-self: flex-start; }
+    .user { background: #2563eb; color: #fff; align-self: flex-end; }
+    .chatbot-input { display: flex; gap: 8px; padding: 10px; border-top: 1px solid var(--vehigo-border); }
+    .chatbot-input input { flex: 1; border: 1px solid var(--vehigo-border); border-radius: 10px; padding: 10px 12px; background: var(--vehigo-card); color: var(--vehigo-text); }
+    .chatbot-input button { border: none; background: #2563eb; color: #fff; border-radius: 10px; padding: 10px 14px; font-weight: 700; }
+    .quick-actions { display: flex; flex-wrap: wrap; gap: 6px; padding: 8px 10px 2px; }
+    .quick-actions .qa { padding: 6px 10px; border-radius: 999px; border: 1px dashed var(--vehigo-border); background: var(--vehigo-card); cursor: pointer; font-weight: 600; font-size: .85rem; }
+    .dark-theme .bot { background: rgba(96,165,250,.10); border-color: rgba(96,165,250,.25); }
+    .dark-theme .chatbot-header { background: linear-gradient(90deg, rgba(16,25,39,.9), rgba(16,25,39,.8)); }
   </style>
 </head>
 
@@ -1665,6 +1696,25 @@
     <i class="fa-solid fa-arrow-down"></i>
   </button>
 
+  <!-- Chatbot UI -->
+  <button id="chatbotToggle" class="chatbot-toggle" aria-label="Open chat"><i class="fa-solid fa-message"></i></button>
+  <div id="chatbotWindow" class="chatbot-window" role="dialog" aria-labelledby="chatbotTitle" aria-modal="false">
+    <div class="chatbot-header"><span id="chatbotTitle"><i class="fa-solid fa-robot"></i> Vehigo Assistant</span>
+      <button id="chatbotClose" class="btn btn-sm btn-outline-secondary" style="border-radius:8px">Close</button></div>
+    <div class="quick-actions">
+      <button class="qa" data-msg="How are you?">How are you?</button>
+      <button class="qa" data-msg="How can I help you?">How can I help you?</button>
+      <button class="qa" data-msg="rent a car">Rent a car</button>
+      <button class="qa" data-msg="pricing">Pricing</button>
+      <button class="qa" data-msg="contact">Contact</button>
+    </div>
+    <div id="chatbotMessages" class="chatbot-messages"></div>
+    <div class="chatbot-input">
+      <input id="chatbotInput" type="text" placeholder="Type your message..." />
+      <button id="chatbotSend">Send</button>
+    </div>
+  </div>
+
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
@@ -1943,6 +1993,52 @@
       updateBlogArrows();
       window.addEventListener('resize', updateBlogArrows);
       blogList.addEventListener('scroll', updateBlogArrows);
+
+      // Chatbot logic
+      const botToggle = document.getElementById('chatbotToggle');
+      const botWin = document.getElementById('chatbotWindow');
+      const botClose = document.getElementById('chatbotClose');
+      const botMsgs = document.getElementById('chatbotMessages');
+      const botInput = document.getElementById('chatbotInput');
+      const botSend = document.getElementById('chatbotSend');
+
+      const replies = [
+        { k: /^(hi|hello|hey|how are you)/i, v: "Hello! I'm great, thanks for asking. How can I help you today?" },
+        { k: /(how can i help)|(help)/i, v: "I can assist with renting a car, pricing, locations, and account help. What do you need?" },
+        { k: /(rent a car|rent)/i, v: "Sure! To rent a car, browse Featured cars or go to Rent Your Car page. Quick link: rentcar.html" },
+        { k: /(pricing|price|cost)/i, v: "Pricing starts from ₹120/hour for hatchbacks and varies by model and city. Use filters to find the best deal." },
+        { k: /(contact|support|help center)/i, v: "You can reach us at support@vehigo.com or 1800-100-100. Visit Contact Us for more." },
+        { k: /(location|city|where)/i, v: "We currently operate in Bhopal, Indore and Ujjain." }
+      ];
+
+      function push(type, text) {
+        const div = document.createElement('div');
+        div.className = `bubble ${type}`;
+        div.textContent = text;
+        botMsgs.appendChild(div);
+        botMsgs.scrollTop = botMsgs.scrollHeight;
+      }
+
+      function respond(input) {
+        const msg = input.trim();
+        if (!msg) return;
+        push('user', msg);
+        const match = replies.find(r => r.k.test(msg));
+        const ans = match ? match.v : "I'm a simple assistant. Try: 'rent a car', 'pricing', 'contact'.";
+        setTimeout(() => push('bot', ans), 250);
+      }
+
+      botSend.addEventListener('click', () => respond(botInput.value));
+      botInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') { respond(botInput.value); botInput.value=''; } });
+      botSend.addEventListener('click', () => { botInput.value=''; });
+      document.querySelectorAll('.quick-actions .qa').forEach(b => b.addEventListener('click', () => {
+        botInput.value = b.dataset.msg; respond(botInput.value); botInput.value='';
+      }));
+
+      function openBot() { botWin.style.display = 'block'; if (!botMsgs.childElementCount) { push('bot', "Hi! I'm your Vehigo Assistant. Ask me about renting a car, pricing, or support."); } }
+      function closeBot() { botWin.style.display = 'none'; }
+      botToggle.addEventListener('click', openBot);
+      botClose.addEventListener('click', closeBot);
     });
   </script>
 </body>

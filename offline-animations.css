@@ -3,7 +3,7 @@
 /* Hero Section Styling */
 .offline-hero-section {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  padding: 60px 0 40px;
+  /* padding: 60px 0 40px; */
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -427,7 +427,7 @@
 
 /* Main content styling */
 .offline-main-content {
-  padding-top: 120px;
+  /* padding-top: 120px; */
   position: relative;
   z-index: 1;
   animation: pageLoad 1.5s ease-out;
