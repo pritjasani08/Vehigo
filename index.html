@@ -1178,13 +1178,29 @@
 
       <div class="collapse navbar-collapse" id="navMain">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#featured-car">Explore cars</a></li>
-          <li class="nav-item"><a class="nav-link" href="./src/pages/about.html">About us</a></li>
-          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-          <li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="offline.html">Offline Centers</a></li>
-          <li class="nav-item"><a class="nav-link" href="rentcar.html">Rent Your Car</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html" data-translate="nav-home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#featured-car" data-translate="nav-explore">Explore cars</a></li>
+          <li class="nav-item"><a class="nav-link" href="./src/pages/about.html" data-translate="nav-about">About us</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html" data-translate="nav-blog">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="ContactUs.html" data-translate="nav-contact">Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="offline.html" data-translate="nav-offline">Offline Centers</a></li>
+          <li class="nav-item"><a class="nav-link" href="rentcar.html" data-translate="nav-rent">Rent Your Car</a></li>
+
+          <!-- Language switch -->
+          <li class="nav-item">
+            <div class="dropdown">
+              <button id="languageToggle" class="btn btn-outline-secondary language-toggle-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa-solid fa-globe"></i><span class="label" id="currentLang">EN</span>
+              </button>
+              <ul class="dropdown-menu language-dropdown">
+                <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
+                <li><a class="dropdown-item" href="#" data-lang="hi">हिन्दी</a></li>
+                <li><a class="dropdown-item" href="#" data-lang="es">Español</a></li>
+                <li><a class="dropdown-item" href="#" data-lang="fr">Français</a></li>
+                <li><a class="dropdown-item" href="#" data-lang="de">Deutsch</a></li>
+              </ul>
+            </div>
+          </li>
 
           <!-- Theme switch -->
           <li class="nav-item">
@@ -1194,11 +1210,11 @@
           </li>
 
           <!-- Login & Logout -->
-          <li class="nav-item">
-            <a href="./src/pages/login.html" class="btn btn-vehigo" id="loginBtn">
-              <i class="fa-regular fa-user"></i> <span>Login</span>
-            </a>
-          </li>
+            <li class="nav-item">
+              <a href="./src/pages/login.html" class="btn btn-vehigo" id="loginBtn">
+                <i class="fa-regular fa-user"></i> <span data-translate="nav-login">Login</span>
+              </a>
+            </li>
           <li class="nav-item">
             <button id="logoutBtn" class="btn btn-outline-light d-none" aria-label="Logout">
               <i class="fa-solid fa-right-from-bracket"></i>
@@ -1216,43 +1232,43 @@
         <div class="col-lg-7" data-aos="fade-right">
           <span class="badge">
             <i class="fa-solid fa-location-dot"></i>
-            Live in <strong>Bhopal</strong>, <strong>Indore</strong> & <strong>Ujjain</strong>
+            <span data-translate="hero-location">Live in</span> <strong data-translate="hero-location-bhopal">Bhopal</strong>, <strong data-translate="hero-location-indore">Indore</strong> & <strong data-translate="hero-location-ujjain">Ujjain</strong>
           </span>
-          <h1 class="hero-title mt-3">Seamless rentals,<br><span
-              style="background:linear-gradient(90deg,#4e7fb4,#2563eb); -webkit-background-clip:text; background-clip:text; color:transparent;">Endless
+          <h1 class="hero-title mt-3"><span data-translate="hero-title-1">Seamless rentals,</span><br><span
+              style="background:linear-gradient(90deg,#4e7fb4,#2563eb); -webkit-background-clip:text; background-clip:text; color:transparent;" data-translate="hero-title-2">Endless
               Adventures.</span></h1>
-          <p class="hero-sub mt-2">Find the perfect car in minutes, from budget hatchbacks to premium SUVs — or list
+          <p class="hero-sub mt-2" data-translate="hero-subtitle">Find the perfect car in minutes, from budget hatchbacks to premium SUVs — or list
             your car and earn.</p>
 
           <!-- Filter chips -->
           <div class="d-flex flex-wrap gap-2 mt-3" id="quickChips">
-            <span class="chip" data-chip="suv"><i class="fa-solid fa-truck-monster"></i> SUV</span>
-            <span class="chip" data-chip="sedan"><i class="fa-solid fa-car-side"></i> Sedan</span>
-            <span class="chip" data-chip="hatchback"><i class="fa-solid fa-car"></i> Hatchback</span>
-            <span class="chip" data-chip="mpv"><i class="fa-solid fa-van-shuttle"></i> MPV</span>
-            <span class="chip" data-chip="luxury"><i class="fa-solid fa-gem"></i> Luxury</span>
+            <span class="chip" data-chip="suv"><i class="fa-solid fa-truck-monster"></i> <span data-translate="car-suv">SUV</span></span>
+            <span class="chip" data-chip="sedan"><i class="fa-solid fa-car-side"></i> <span data-translate="car-sedan">Sedan</span></span>
+            <span class="chip" data-chip="hatchback"><i class="fa-solid fa-car"></i> <span data-translate="car-hatchback">Hatchback</span></span>
+            <span class="chip" data-chip="mpv"><i class="fa-solid fa-van-shuttle"></i> <span data-translate="car-mpv">MPV</span></span>
+            <span class="chip" data-chip="luxury"><i class="fa-solid fa-gem"></i> <span data-translate="car-luxury">Luxury</span></span>
           </div>
 
           <!-- Search form -->
           <form class="glass-form mt-3" id="searchForm">
             <div class="row g-2">
               <div class="col-12 col-md-4">
-                <label for="input-1" class="form-label fw-semibold">Location</label>
-                <input type="text" id="input-1" class="form-control" placeholder="e.g., Bhopal" />
+                <label for="input-1" class="form-label fw-semibold" data-translate="search-location">Location</label>
+                <input type="text" id="input-1" class="form-control" data-translate-placeholder="search-location-placeholder" placeholder="e.g., Bhopal" />
               </div>
               <div class="col-12 col-md-4">
-                <label for="input-2" class="form-label fw-semibold">Max rent / hour (₹)</label>
-                <input type="text" id="input-2" class="form-control" placeholder="e.g., 300" inputmode="decimal" />
+                <label for="input-2" class="form-label fw-semibold" data-translate="search-price">Max rent / hour (₹)</label>
+                <input type="text" id="input-2" class="form-control" data-translate-placeholder="search-price-placeholder" placeholder="e.g., 300" inputmode="decimal" />
               </div>
               <div class="col-6 col-md-2">
-                <label for="car-type" class="form-label fw-semibold">Car Type</label>
+                <label for="car-type" class="form-label fw-semibold" data-translate="search-car-type">Car Type</label>
                 <select id="car-type" class="form-select">
-                  <option value="">Any</option>
-                  <option value="suv">SUV</option>
-                  <option value="sedan">Sedan</option>
-                  <option value="hatchback">Hatchback</option>
-                  <option value="mpv">MPV</option>
-                  <option value="luxury">Luxury</option>
+                  <option value="" data-translate="search-car-any">Any</option>
+                  <option value="suv" data-translate="car-suv">SUV</option>
+                  <option value="sedan" data-translate="car-sedan">Sedan</option>
+                  <option value="hatchback" data-translate="car-hatchback">Hatchback</option>
+                  <option value="mpv" data-translate="car-mpv">MPV</option>
+                  <option value="luxury" data-translate="car-luxury">Luxury</option>
                 </select>
               </div>
               <div class="col-6 col-md-2">
@@ -1268,7 +1284,7 @@
             </div>
 
             <div class="d-flex flex-wrap align-items-center gap-2 mt-3">
-              <button class="btn btn-vehigo" type="submit"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+              <button class="btn btn-vehigo" type="submit"><i class="fa-solid fa-magnifying-glass"></i> <span data-translate="search-button">Search</span></button>
               <button class="btn btn-outline-secondary" type="button" id="clearBtn"><i
                   class="fa-solid fa-rotate-left"></i> Reset</button>
               <div class="ms-auto d-flex align-items-center gap-2">
@@ -1993,52 +2009,6 @@
       updateBlogArrows();
       window.addEventListener('resize', updateBlogArrows);
       blogList.addEventListener('scroll', updateBlogArrows);
-
-      // Chatbot logic
-      const botToggle = document.getElementById('chatbotToggle');
-      const botWin = document.getElementById('chatbotWindow');
-      const botClose = document.getElementById('chatbotClose');
-      const botMsgs = document.getElementById('chatbotMessages');
-      const botInput = document.getElementById('chatbotInput');
-      const botSend = document.getElementById('chatbotSend');
-
-      const replies = [
-        { k: /^(hi|hello|hey|how are you)/i, v: "Hello! I'm great, thanks for asking. How can I help you today?" },
-        { k: /(how can i help)|(help)/i, v: "I can assist with renting a car, pricing, locations, and account help. What do you need?" },
-        { k: /(rent a car|rent)/i, v: "Sure! To rent a car, browse Featured cars or go to Rent Your Car page. Quick link: rentcar.html" },
-        { k: /(pricing|price|cost)/i, v: "Pricing starts from ₹120/hour for hatchbacks and varies by model and city. Use filters to find the best deal." },
-        { k: /(contact|support|help center)/i, v: "You can reach us at support@vehigo.com or 1800-100-100. Visit Contact Us for more." },
-        { k: /(location|city|where)/i, v: "We currently operate in Bhopal, Indore and Ujjain." }
-      ];
-
-      function push(type, text) {
-        const div = document.createElement('div');
-        div.className = `bubble ${type}`;
-        div.textContent = text;
-        botMsgs.appendChild(div);
-        botMsgs.scrollTop = botMsgs.scrollHeight;
-      }
-
-      function respond(input) {
-        const msg = input.trim();
-        if (!msg) return;
-        push('user', msg);
-        const match = replies.find(r => r.k.test(msg));
-        const ans = match ? match.v : "I'm a simple assistant. Try: 'rent a car', 'pricing', 'contact'.";
-        setTimeout(() => push('bot', ans), 250);
-      }
-
-      botSend.addEventListener('click', () => respond(botInput.value));
-      botInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') { respond(botInput.value); botInput.value=''; } });
-      botSend.addEventListener('click', () => { botInput.value=''; });
-      document.querySelectorAll('.quick-actions .qa').forEach(b => b.addEventListener('click', () => {
-        botInput.value = b.dataset.msg; respond(botInput.value); botInput.value='';
-      }));
-
-      function openBot() { botWin.style.display = 'block'; if (!botMsgs.childElementCount) { push('bot', "Hi! I'm your Vehigo Assistant. Ask me about renting a car, pricing, or support."); } }
-      function closeBot() { botWin.style.display = 'none'; }
-      botToggle.addEventListener('click', openBot);
-      botClose.addEventListener('click', closeBot);
     });
   </script>
 </body>
