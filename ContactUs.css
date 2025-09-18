@@ -7,7 +7,15 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 .main{
-  margin-top: 90px;
+  padding: 4rem;
+}
+
+.heading {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #222;
+  font-weight: 700;
 }
 /* NAVBAR */
 .navbar-nav {
@@ -199,7 +207,7 @@ body.dark-mode {
   background-color: #121212;
   color: #f1f1f1;
 }
-
+body.dark-mode .heading{color: white;}
 body.dark-mode .navbar-nav { background-color: #1e1e1e; }
 body.dark-mode .nav-item a,
 body.dark-mode .nav-item button { color: #f1f1f1; }
