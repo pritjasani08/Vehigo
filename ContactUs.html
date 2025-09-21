@@ -28,6 +28,28 @@
       rel="stylesheet"
     />
 
+    <style>
+      /* Dark mode logo visibility */
+      .dark-mode .navbar-brand img {
+        filter: brightness(0) invert(1);
+        opacity: 1;
+        transition: opacity 0.3s ease;
+      }
+
+      .dark-mode .navbar-brand:hover img {
+        opacity: 0.8;
+      }
+
+      .dark-mode .logo img {
+        filter: brightness(0) invert(1);
+        opacity: 1;
+        transition: opacity 0.3s ease;
+      }
+
+      .dark-mode .logo:hover img {
+        opacity: 0.8;
+      }
+    </style>
     
 </head>
  <body>
