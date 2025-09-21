@@ -92,12 +92,10 @@
     .footer-top {
       padding: 3rem 0 2rem;
       position: relative;
-      background: linear-gradient(135deg, #4e7fb4 0%, #2563eb 50%, #1e40af 100%);
-      color: white;
+      background: var(--card);
+      color: var(--text);
       margin-top: auto;
-      border-top-left-radius: 18px;
-      border-top-right-radius: 18px;
-      box-shadow: 0 -18px 50px rgba(37, 99, 235, .25);
+      border-top: 1px solid var(--glass-brd);
       position: relative;
       overflow: hidden;
     }
@@ -117,9 +115,18 @@
     }
 
     .footer-logo {
-      height: 48px;
+      height: 40px;
+      width: auto;
       margin-bottom: 1rem;
-      filter: brightness(0) invert(1);
+      filter: none;
+      transition: all 0.3s ease;
+      display: block;
+      max-width: 200px;
+    }
+
+    .footer-logo:hover {
+      transform: scale(1.05);
+      filter: drop-shadow(0 0 10px rgba(124, 58, 237, 0.3));
     }
 
     .footer-tagline {
@@ -129,12 +136,14 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      color: var(--text);
     }
 
     .footer-description {
-      opacity: 0.9;
+      opacity: 0.8;
       line-height: 1.6;
       max-width: 400px;
+      color: var(--muted);
     }
 
     .footer-links-grid {
@@ -148,7 +157,7 @@
       font-weight: 700;
       font-size: 1.1rem;
       margin-bottom: 1rem;
-      color: white;
+      color: var(--text);
       position: relative;
       padding-bottom: 0.5rem;
     }
@@ -160,7 +169,7 @@
       left: 0;
       width: 30px;
       height: 2px;
-      background: #ffd700;
+      background: var(--brand);
       border-radius: 1px;
     }
 
@@ -175,7 +184,7 @@
     }
 
     .footer-links a {
-      color: rgba(255, 255, 255, 0.85);
+      color: var(--muted);
       text-decoration: none;
       font-weight: 500;
       transition: all 0.3s ease;
@@ -185,7 +194,7 @@
     }
 
     .footer-links a:hover {
-      color: white;
+      color: var(--brand);
       transform: translateX(5px);
     }
 
@@ -203,7 +212,7 @@
       font-weight: 700;
       font-size: 1.1rem;
       margin-bottom: 1rem;
-      color: white;
+      color: var(--text);
     }
 
     .social-links {
@@ -218,28 +227,27 @@
       justify-content: center;
       width: 48px;
       height: 48px;
-      background: rgba(255, 255, 255, 0.1);
-      color: white;
+      background: var(--card-2);
+      color: var(--text);
       text-decoration: none;
       border-radius: 12px;
       transition: all 0.3s ease;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid var(--glass-brd);
     }
 
     .social-link:hover {
-      background: rgba(255, 255, 255, 0.2);
+      background: var(--brand);
       color: white;
       transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 8px 25px rgba(124, 58, 237, 0.3);
     }
 
     .contact-info {
-      background: rgba(255, 255, 255, 0.08);
+      background: var(--card-2);
       padding: 1.5rem;
       border-radius: 14px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
+      border: 1px solid var(--glass-brd);
+      box-shadow: var(--shadow);
     }
 
     .contact-item {
@@ -259,12 +267,12 @@
     }
 
     .contact-text {
-      color: rgba(255, 255, 255, 0.9);
+      color: var(--text);
       font-weight: 500;
     }
 
     .contact-text a {
-      color: white;
+      color: var(--brand);
       text-decoration: none;
     }
 
@@ -274,8 +282,8 @@
 
     .footer-bottom {
       padding: 1.5rem 0;
-      border-top: 1px solid rgba(255, 255, 255, 0.15);
-      background: rgba(0, 0, 0, 0.1);
+      border-top: 1px solid var(--glass-brd);
+      background: var(--bg-soft);
     }
 
     .footer-bottom-content {
@@ -298,14 +306,14 @@
     }
 
     .footer-bottom-links a {
-      color: rgba(255, 255, 255, 0.8);
+      color: var(--muted);
       text-decoration: none;
       font-size: 0.9rem;
       transition: color 0.3s ease;
     }
 
     .footer-bottom-links a:hover {
-      color: white;
+      color: var(--brand);
     }
 
     /* Responsive Design */
@@ -342,6 +350,16 @@
         width: 42px;
         height: 42px;
       }
+
+      .footer-logo-with-text {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      .footer-logo-text {
+        font-size: 1.5rem;
+      }
     }
 
     /* Floating elements animation */
@@ -368,6 +386,110 @@
 
     .floating-icon:nth-child(4) {
       animation-delay: 1.5s;
+    }
+
+    /* Enhanced footer logo styling */
+    .footer-brand-section .footer-logo {
+      display: block !important;
+      width: auto !important;
+      height: 40px !important;
+      margin-bottom: 1rem !important;
+      filter: none !important;
+      transition: all 0.3s ease !important;
+      max-width: 200px !important;
+      object-fit: contain !important;
+    }
+
+    .footer-brand-section .footer-logo:hover {
+      transform: scale(1.05) !important;
+      filter: drop-shadow(0 0 15px rgba(124, 58, 237, 0.4)) !important;
+    }
+
+    /* Footer tagline enhancement */
+    .footer-tagline {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text);
+    }
+
+    .footer-tagline i {
+      color: var(--brand);
+      font-size: 1.2rem;
+    }
+
+    /* Footer description enhancement */
+    .footer-description {
+      opacity: 0.8;
+      line-height: 1.6;
+      max-width: 400px;
+      color: var(--muted);
+    }
+
+    /* Debug and ensure logo visibility */
+    .footer-brand-section {
+      position: relative;
+    }
+
+    .footer-brand-section .footer-logo {
+      background: var(--card-2);
+      border-radius: 8px;
+      padding: 8px;
+      border: 1px solid var(--glass-brd);
+    }
+
+    /* Ensure logo container has proper dimensions */
+    .footer-brand-section .col-lg-6:first-child {
+      min-height: 120px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    /* Logo container styling */
+    .footer-logo-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .footer-logo-with-text {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 1rem;
+    }
+
+    .footer-logo-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .footer-logo-icon:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
+    }
+
+    .footer-logo-text {
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: -0.02em;
+      font-weight: 700;
+      font-size: 1.8rem;
     }
 
     /* Additional footer utility classes */
@@ -903,9 +1025,18 @@
       <div class="footer-brand-section">
         <div class="row">
           <div class="col-lg-6">
-            <img src="./assets/images/vehigologo.png" alt="Vehigo" class="footer-logo mb-3">
+            <div class="footer-logo-container">
+              <div class="footer-logo-with-text">
+                <div class="footer-logo-icon">
+                  <i class="fa-solid fa-car"></i>
+                </div>
+                <div class="footer-logo-text">
+                  VehiGo
+                </div>
+              </div>
+            </div>
             <div class="footer-tagline">
-              <i class="fa-solid fa-car"></i>
+              <i class="fa-solid fa-map-marker-alt"></i>
               <strong>Affordable rentals across Madhya Pradesh</strong>
             </div>
             <p class="footer-description">
