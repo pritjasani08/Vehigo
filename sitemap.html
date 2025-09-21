@@ -199,6 +199,122 @@
             opacity: 0.8;
         }
 
+        /* Navigation Header */
+        .nav-header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--vehigo-border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: var(--shadow-1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: var(--vehigo-primary);
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        .nav-logo i {
+            font-size: 1.5rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            color: var(--vehigo-text);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-link:hover {
+            color: var(--vehigo-primary);
+            background-color: rgba(37, 99, 235, 0.1);
+        }
+
+        .nav-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border: 1px solid var(--vehigo-border);
+            border-radius: 8px;
+            box-shadow: var(--shadow-2);
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1001;
+        }
+
+        .nav-item:hover .nav-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-item {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: var(--vehigo-text);
+            text-decoration: none;
+            border-bottom: 1px solid var(--vehigo-border);
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-item:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-item:hover {
+            background-color: var(--vehigo-bg-light);
+            color: var(--vehigo-primary);
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--vehigo-text);
+            cursor: pointer;
+        }
+
         @media (max-width: 768px) {
             .header h1 {
                 font-size: 2rem;
@@ -211,10 +327,170 @@
             .section-content {
                 padding: 1rem;
             }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                border: 1px solid var(--vehigo-border);
+                border-radius: 8px;
+                box-shadow: var(--shadow-2);
+                flex-direction: column;
+                padding: 1rem;
+                gap: 0.5rem;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .nav-toggle {
+                display: block;
+            }
+
+            .nav-dropdown {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                border: none;
+                margin-top: 0.5rem;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Navigation Header -->
+    <nav class="nav-header">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <i class="fa-solid fa-car"></i>
+                Vehigo
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        <i class="fa-solid fa-home"></i>
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fa-solid fa-car"></i>
+                        Services
+                    </a>
+                    <div class="nav-dropdown">
+                        <a href="featured-car.html" class="dropdown-item">
+                            <i class="fa-solid fa-star"></i>
+                            Featured Cars
+                        </a>
+                        <a href="rentcar.html" class="dropdown-item">
+                            <i class="fa-solid fa-handshake"></i>
+                            Rent Your Car
+                        </a>
+                        <a href="carPage.html" class="dropdown-item">
+                            <i class="fa-solid fa-car-side"></i>
+                            Car Details
+                        </a>
+                        <a href="src/carfilter.html" class="dropdown-item">
+                            <i class="fa-solid fa-filter"></i>
+                            Car Filter
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fa-solid fa-user"></i>
+                        Account
+                    </a>
+                    <div class="nav-dropdown">
+                        <a href="src/pages/login.html" class="dropdown-item">
+                            <i class="fa-solid fa-sign-in-alt"></i>
+                            Login
+                        </a>
+                        <a href="src/pages/login.html" class="dropdown-item">
+                            <i class="fa-solid fa-user-plus"></i>
+                            Sign Up
+                        </a>
+                        <a href="accountpage.html" class="dropdown-item">
+                            <i class="fa-solid fa-user"></i>
+                            My Account
+                        </a>
+                        <a href="hostPage.html" class="dropdown-item">
+                            <i class="fa-solid fa-home"></i>
+                            Host Dashboard
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fa-solid fa-info-circle"></i>
+                        About
+                    </a>
+                    <div class="nav-dropdown">
+                        <a href="src/pages/about.html" class="dropdown-item">
+                            <i class="fa-solid fa-building"></i>
+                            About Us
+                        </a>
+                        <a href="blog.html" class="dropdown-item">
+                            <i class="fa-solid fa-blog"></i>
+                            Our Blog
+                        </a>
+                        <a href="ContactUs.html" class="dropdown-item">
+                            <i class="fa-solid fa-envelope"></i>
+                            Contact Us
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fa-solid fa-life-ring"></i>
+                        Support
+                    </a>
+                    <div class="nav-dropdown">
+                        <a href="src/pages/help-center.html" class="dropdown-item">
+                            <i class="fa-solid fa-circle-question"></i>
+                            Help Center
+                        </a>
+                        <a href="feedbackForm.html" class="dropdown-item">
+                            <i class="fa-solid fa-comment-dots"></i>
+                            Feedback
+                        </a>
+                        <a href="offline.html" class="dropdown-item">
+                            <i class="fa-solid fa-map-marker-alt"></i>
+                            Offline Centers
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fa-solid fa-gavel"></i>
+                        Legal
+                    </a>
+                    <div class="nav-dropdown">
+                        <a href="tandc.html" class="dropdown-item">
+                            <i class="fa-solid fa-file-signature"></i>
+                            Terms & Conditions
+                        </a>
+                        <a href="privacypolicy.html" class="dropdown-item">
+                            <i class="fa-solid fa-shield-alt"></i>
+                            Privacy Policy
+                        </a>
+                    </div>
+                </li>
+            </ul>
+            
+            <button class="nav-toggle" id="navToggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
     <!-- Header -->
     <div class="header">
         <div class="sitemap-container">
@@ -408,6 +684,44 @@
                     behavior: 'smooth'
                 });
             });
+        });
+
+        // Mobile navigation toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.getElementById('navToggle');
+            const navMenu = document.getElementById('navMenu');
+            
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                    
+                    // Change icon
+                    const icon = navToggle.querySelector('i');
+                    if (navMenu.classList.contains('active')) {
+                        icon.className = 'fa-solid fa-times';
+                    } else {
+                        icon.className = 'fa-solid fa-bars';
+                    }
+                });
+
+                // Close menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+                        navMenu.classList.remove('active');
+                        const icon = navToggle.querySelector('i');
+                        icon.className = 'fa-solid fa-bars';
+                    }
+                });
+
+                // Close menu when clicking on a link
+                navMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', function() {
+                        navMenu.classList.remove('active');
+                        const icon = navToggle.querySelector('i');
+                        icon.className = 'fa-solid fa-bars';
+                    });
+                });
+            }
         });
     </script>
 </body>
