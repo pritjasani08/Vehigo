@@ -44,66 +44,113 @@
         }
 
         /* Header Styles */
-        .header { position: sticky; top: 0; z-index: 100; backdrop-filter: saturate(140%) blur(8px); background: #fff; border-bottom: 1px solid var(--vehigo-border); box-shadow: 0 2px 16px rgba(37, 99, 235, .08); border-radius: 0 0 18px 18px; }
-        .dark-theme .header { background: rgba(10, 15, 26, .96); }
+        .header { position: sticky; top: 0; z-index: 100; backdrop-filter: saturate(140%) blur(8px); background: transparent; border-bottom: none; box-shadow: none; border-radius: 0; }
+        .dark-theme .header { background: transparent; }
         .dark-theme .nav-link { color: #e6e6f0 !important; }
         .dark-theme .nav-link:hover { color: #60a5fa !important; }
         /* NAVBAR FIXES */
-        .navbar .nav-link { font-weight: 600; letter-spacing: .2px; color: #374151 !important; white-space: nowrap; padding: .75rem .5rem; line-height: 1.1; }
+        .navbar .nav-link { font-weight: 600; letter-spacing: .2px; color: #ffffff !important; white-space: nowrap; padding: .75rem .5rem; line-height: 1.1; }
         /* Ensure navbar is visible regardless of legacy styles */
-        header.header nav.navbar { display: flex !important; visibility: visible !important; opacity: 1 !important; }
-        header.header .navbar-collapse { align-items: center; }
+        header.header nav.navbar { display: flex !important; visibility: visible !important; opacity: 1 !important; background: transparent !important; }
+        header.header .navbar-collapse { align-items: center; background: transparent !important; }
         /* Override legacy fixed width/box-shadow applied to header .container in global CSS */
-        header.header .container { width: 100% !important; max-width: 100% !important; margin: 0; height: auto; box-shadow: none; padding-left: 4px; padding-right: 8px; }
-        .navbar-toggler { border-color: rgba(0,0,0,.15); }
-        .navbar-toggler-icon { background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0,0,0,0.7)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
+        header.header .container { width: 100% !important; max-width: 100% !important; margin: 0; height: auto; box-shadow: none; padding-left: 4px; padding-right: 8px; background: transparent !important; }
+        .navbar-toggler { border-color: rgba(255,255,255,.15); }
+        .navbar-toggler-icon { background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.85)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
         .dark-theme .navbar-toggler-icon { background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.85)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
-        .navbar .nav-link:hover { color: var(--vehigo-primary); }
+        .navbar .nav-link:hover { color: #60a5fa !important; }
         .navbar-brand img { height: 36px; }
         .navbar-nav { flex-wrap: nowrap; gap: 16px; align-items: center; }
         .navbar .btn, .theme-toggle-btn { white-space: nowrap; }
         @media (max-width: 1200px) { .navbar-nav { gap: 12px; } }
         .navbar .btn { padding: 6px 14px; font-size: 0.9rem; }
         /* Theme toggle button (compact, no white pill) */
-        .theme-toggle-btn { border-radius: 22px !important; padding: 6px 12px !important; font-size: 13px !important; font-weight: 600 !important; transition: all 0.2s ease !important; border: 1px solid #e5e7eb !important; background: transparent !important; color: #374151 !important; box-shadow: none !important; }
-        .theme-toggle-btn:hover { transform: translateY(-1px) !important; border-color: #2563eb !important; color: #2563eb !important; }
+        .theme-toggle-btn { border-radius: 22px !important; padding: 6px 12px !important; font-size: 13px !important; font-weight: 600 !important; transition: all 0.2s ease !important; border: 1px solid rgba(255,255,255,0.35) !important; background: transparent !important; color: #ffffff !important; box-shadow: none !important; }
+        .theme-toggle-btn:hover { transform: translateY(-1px) !important; border-color: #60a5fa !important; color: #60a5fa !important; }
         .theme-toggle-btn.btn-outline-light { border-color: rgba(255,255,255,0.35) !important; background: transparent !important; color: #fff !important; backdrop-filter: none !important; }
         .theme-toggle-btn.btn-outline-light:hover { background: rgba(255,255,255,0.08) !important; border-color: rgba(255,255,255,0.55) !important; color: #fff !important; }
         /* Login button visibility */
-        .btn-vehigo { background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important; color: #fff !important; border: none !important; border-radius: 25px !important; }
-        .btn-vehigo:hover { filter: saturate(110%); box-shadow: 0 4px 12px rgba(37,99,235,.35); }
-        .dark-theme .btn-vehigo { color: #fff !important; }
+        .btn-vehigo { background: transparent !important; color: #ffffff !important; border: 1px solid rgba(255,255,255,0.35) !important; border-radius: 25px !important; }
+        .btn-vehigo:hover { background: rgba(255,255,255,0.1) !important; border-color: #60a5fa !important; color: #60a5fa !important; }
+        .dark-theme .btn-vehigo { color: #fff !important; background: transparent !important; border: 1px solid rgba(255,255,255,0.35) !important; }
         .dark-theme .theme-toggle-btn { color: #fff !important; border-color: rgba(255,255,255,.35) !important; background: rgba(255,255,255,.08) !important; }
         .dark-theme .theme-toggle-btn:hover { background: rgba(255,255,255,.16) !important; }
-        /* Center entire navbar content */
+        /* Right-align navbar content */
         header.header .navbar {
           display: flex;
-          justify-content: flex-start;
+          justify-content: flex-end;
           align-items: center;
           position: relative;
           padding: 0 4px;
         }
         header.header .navbar .navbar-brand {
           position: static;
-          margin-right: 12px;
+          margin-right: auto;
           margin-left: 0;
         }
         header.header .navbar .navbar-collapse {
           display: flex;
-          justify-content: flex-start;
+          justify-content: flex-end;
           flex: 1;
         }
         header.header .navbar .navbar-nav {
           display: flex;
           align-items: center;
-          justify-content: center;
+          justify-content: flex-end;
           margin: 0;
+          gap: 16px;
         }
         header.header .navbar .btn-vehigo { margin-left: 8px; }
 
         /* Ensure header strip aligns cleanly in both themes */
         .header { border-radius: 0; }
         .dark-theme .header { border-bottom-color: rgba(255,255,255,0.08); }
+        
+        /* Right-align navbar items */
+        .navbar-nav {
+          display: flex !important;
+          align-items: center !important;
+          gap: 10px !important;
+          margin-left: auto !important;
+          margin-right: 0 !important;
+          background: transparent !important;
+        }
+
+        .navbar-brand {
+          margin-right: auto !important;
+        }
+        
+        /* Ensure buttons are visible and styled properly */
+        .navbar-nav .nav-item {
+          background: transparent !important;
+        }
+        
+        .navbar-nav .btn {
+          background: transparent !important;
+          border: 1px solid rgba(255,255,255,0.35) !important;
+          color: #ffffff !important;
+        }
+        
+        .navbar-nav .btn:hover {
+          background: rgba(255,255,255,0.1) !important;
+          border-color: #60a5fa !important;
+          color: #60a5fa !important;
+        }
+        
+        /* Force remove all white backgrounds */
+        .navbar, .navbar-collapse, .navbar-nav, .nav-item, .nav-link, .btn, .theme-toggle-btn, .btn-vehigo {
+          background: transparent !important;
+          background-color: transparent !important;
+        }
+        
+        /* Override Bootstrap defaults */
+        .navbar-expand-xl .navbar-collapse {
+          background: transparent !important;
+        }
+        
+        .navbar-expand-xl .navbar-nav {
+          background: transparent !important;
+        }
 
     /* Hero */
     .hero {
@@ -157,10 +204,10 @@
         main {
             max-width: 900px;
             margin: 30px auto;
-            background: var(--vehigo-card);
+            background: transparent;
             padding: 30px 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border-radius: 0;
+            box-shadow: none;
             animation: fadeInForm 1.3s ease;
         }
 
@@ -208,7 +255,7 @@
         }
 
         .highlight-box {
-            background: linear-gradient(135deg, #e0f2fe, #f0f9ff);
+            background: transparent;
             border-left: 4px solid hsl(204, 91%, 53%);
             padding: 20px;
             margin: 20px 0;
@@ -225,7 +272,7 @@
         .dark-theme .highlight-box strong { color: #93c5fd; }
 
         .contact-info {
-            background: linear-gradient(135deg, #fef3c7, #fef7cd);
+            background: transparent;
             border: 1px solid #f59e0b;
             border-radius: 12px;
             padding: 25px;
@@ -288,7 +335,7 @@
 <body class="dark-theme">
 <header class="header">
 
-  <nav class="navbar navbar-expand-xl container py-2">
+  <nav class="navbar navbar-expand-xl container-fluid px-4 py-2">
     <a class="navbar-brand d-flex align-items-center gap-1" href="index.html" aria-label="Vehigo Home">
       <img src="./assets/images/vehigologo.png" alt="Vehigo" />
     </a>
@@ -316,7 +363,7 @@
         </li>
         <li class="nav-item">
           <button id="logoutBtn" class="btn btn-outline-light d-none" aria-label="Logout">
-            <i class="fa-solid fa-right-from-bracket"></i>
+            <i class="fa-solid fa-right-from-bracket"></i><span></span>
       </button>
         </li>
       </ul>
