@@ -36,6 +36,25 @@ window.addEventListener("scroll", function () {
 });
 
 /**
+ * Theme toggle
+ */
+document.addEventListener('DOMContentLoaded', function () {
+  const toggleBtn = document.getElementById('theme-toggle');
+  const toggleIcon = document.getElementById('theme-toggle-icon');
+  const toggleText = document.getElementById('theme-toggle-text');
+  if (!toggleBtn) return;
+  toggleBtn.addEventListener('click', function(){
+    document.body.classList.toggle('dark');
+    const isDark = document.body.classList.contains('dark');
+    localStorage.setItem('vehigo-theme', isDark ? 'dark' : 'light');
+    if (toggleIcon) toggleIcon.setAttribute('name', isDark ? 'sunny-outline' : 'moon-outline');
+     if (toggleText) toggleText.textContent = isDark ? 'Light' : 'Dark';
+     toggleBtn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+     toggleBtn.setAttribute('title', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+  });
+});
+
+/**
  * Triggering navigation buttons scroll
  */
 
