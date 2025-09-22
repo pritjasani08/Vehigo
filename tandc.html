@@ -422,6 +422,12 @@
       background: rgba(0, 0, 0, 0.03);
     }
 
+    /* Light mode: ensure contact info (phone/location) is readable */
+    body:not(.dark-theme) .contact-text,
+    body:not(.dark-theme) .contact-text a {
+      color: #0f172a !important;
+    }
+
     /* Responsive Design */
     @media (max-width: 768px) {
       .content-container {
