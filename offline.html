@@ -16,7 +16,7 @@
   
   <!-- custom css links -->
   <!-- <link rel="stylesheet" href="assets/css/style.css" /> -->
-  <!-- <link rel="stylesheet" href="assets/css/dark.css" /> -->
+  <link rel="stylesheet" href="assets/css/dark.css" />
   <link rel="stylesheet" href="./styles/offline.css" />
   <!-- <link rel="stylesheet" href="./modern-improvements.css" /> -->
   <link rel="stylesheet" href="./offline-animations.css" />
@@ -187,6 +187,37 @@
           mapElement.style.opacity = '1';
           mapElement.style.transform = 'scale(1)';
         }, 100);
+      });
+    });
+  </script>
+  <script>
+    // Dark Mode: initialize and persist theme using the existing button
+    document.addEventListener('DOMContentLoaded', function() {
+      var themeToggle = document.getElementById('themeToggle');
+      if (!themeToggle) return;
+
+      function applyTheme(theme) {
+        var label = themeToggle.querySelector('.label');
+        if (theme === 'dark') {
+          document.body.classList.add('dark-theme');
+          document.body.classList.add('dark-mode');
+          themeToggle.classList.add('btn-outline-light');
+          if (label) label.textContent = ' Dark';
+        } else {
+          document.body.classList.remove('dark-theme');
+          document.body.classList.remove('dark-mode');
+          themeToggle.classList.remove('btn-outline-light');
+          if (label) label.textContent = ' Light';
+        }
+      }
+
+      var current = localStorage.getItem('theme') || 'light';
+      applyTheme(current);
+
+      themeToggle.addEventListener('click', function() {
+        var next = document.body.classList.contains('dark-theme') ? 'light' : 'dark';
+        localStorage.setItem('theme', next);
+        applyTheme(next);
       });
     });
   </script>
