@@ -76,6 +76,17 @@
       font-weight: 700;
     }
     .logo img{ height:36px; width:auto; }
+    
+    /* Dark mode logo visibility - when not light theme */
+    :not(.light) .logo img {
+      filter: brightness(0) invert(1);
+      opacity: 1;
+      transition: opacity 0.3s ease;
+    }
+
+    :not(.light) .logo:hover img {
+      opacity: 0.8;
+    }
     .navbar-list{
       display:flex; list-style:none; gap:14px; padding:0; margin:0; align-items:center;
     }
