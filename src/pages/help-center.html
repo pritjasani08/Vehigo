@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Help Center | VehiGo</title>
-    <link rel="stylesheet" href="../../assets/css/style.css">
-    <link rel="stylesheet" href="../../assets/styles/pricing-help.css">
+    <!-- <link rel="stylesheet" href="../../assets/css/style.css"> -->
+    <!-- <link rel="stylesheet" href="../../assets/styles/pricing-help.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="../../assets/css/dark.css">
+    <!-- <link rel="stylesheet" href="../../assets/css/dark.css"> -->
     <style>
         /* Hero */
         .help-hero {
@@ -157,6 +157,84 @@
             background-color: #0f172a !important;
             color: #e2e8f0 !important;
         }
+        .header {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 10px 0;
+  display: flex;
+  justify-content: center; /* center navbar */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  max-width: 1300px; /* keep nav contained */
+}
+
+/* Brand Logo */
+.navbar-brand img {
+  height: 50px;
+  width: auto;
+}
+
+/* Nav items */
+.navbar-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-item a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px 12px;
+  transition: color 0.3s, background 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-item a:hover {
+  color: #00bfff;
+}
+
+.btn-vehigo {
+  background: #2563eb;
+  color: #fff;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-weight: 600;
+}
+
+.btn-vehigo:hover {
+  background: #1d4ed8;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .navbar-nav {
+    gap: 12px;
+    font-size: 14px;
+  }
+  .navbar-brand img {
+    height: 45px;
+  }
+}
+        
+
 
         .dark-theme .header {
             background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%) !important;
@@ -283,16 +361,16 @@
 </head>
 <body>
     <!-- Header -->
-     <header class="header">
-    <nav class="navbar navbar-expand-xl container py-1 px-1">
+     <header class="header" >
+    <nav class="navbar navbar-expand-xl container px-1 m-3 z-70">
       <a class="navbar-brand d-flex align-items-center" href="index.html" aria-label="Vehigo Home">
-        <img src="./assets/images/vehigologo.png" alt="Vehigo" />
+        <img src="../assets/images/vehigologo.png" alt="Vehigo" />
       </a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain"
+      <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain"
         aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-      </button>
+      </button> -->
 
       <div class="collapse navbar-collapse" id="navMain">
         <ul class="navbar-nav ms-auto">
@@ -304,8 +382,8 @@
           <li class="nav-item"><a class="nav-link" href="offline.html" data-translate="nav-offline">Offline Centers</a></li>
           <li class="nav-item"><a class="nav-link" href="rentcar.html" data-translate="nav-rent">Rent Your Car</a></li>
 
-          <!-- Language switch -->
-          <li class="nav-item">
+
+          <!-- <li class="nav-item">
             <div class="dropdown">
               <button id="languageToggle" class="btn btn-outline-secondary language-toggle-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="fa-solid fa-globe"></i><span class="label" id="currentLang">EN</span>
@@ -318,16 +396,15 @@
                 <li><a class="dropdown-item" href="#" data-lang="de">Deutsch</a></li>
               </ul>
             </div>
-          </li>
+          </li> -->
 
-          <!-- Theme switch -->
-          <li class="nav-item">
+
+          <!-- <li class="nav-item">
             <button id="themeToggle" class="btn btn-outline-secondary theme-toggle-btn" type="button">
               <i class="fa-solid fa-gear"></i><span class="label">Light</span>
             </button>
-          </li>
+          </li> -->
 
-          <!-- Login & Logout -->
             <li class="nav-item">
               <a href="./src/pages/login.html" class="btn btn-vehigo" id="loginBtn">
                 <i class="fa-regular fa-user"></i> <span data-translate="nav-login">Login</span>
@@ -343,7 +420,7 @@
     </nav>
   </header>
     <!-- Quick Links Bar -->
-    <nav aria-label="Section links" style="background:#ffffff; border-bottom:1px solid #e5e7eb; position:sticky; top:70px; z-index:3;">
+    <!-- <nav aria-label="Section links" style="background:#ffffff; border-bottom:1px solid #e5e7eb; position:sticky; top:70px; z-index:3;">
         <div class="container" style="display:flex; flex-wrap:wrap; gap:36px; align-items:center; justify-content:center; padding:12px 20px;">
             <a href="../../index.html" class="navbar-link" style="text-decoration:none; color:#29465b; font-weight:600; padding:6px 10px; border-radius:8px;">Home</a>
             <a href="../../featured-car.html" class="navbar-link" style="text-decoration:none; color:#29465b; font-weight:600; padding:6px 10px; border-radius:8px;">Explore cars</a>
@@ -355,7 +432,7 @@
         <style>
             nav[aria-label="Section links"] a:hover { background:#e9f2ff; color:#1f3a56; }
         </style>
-    </nav>
+    </nav> -->
 
     <!-- Hero Section -->
     <section class="help-hero">
