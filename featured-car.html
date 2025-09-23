@@ -76,6 +76,467 @@
       font-weight: 700;
     }
     .logo img{ height:36px; width:auto; }
+    
+    /* Dark mode logo visibility - when not light theme */
+    :not(.light) .logo img {
+      filter: brightness(0) invert(1);
+      opacity: 1;
+      transition: opacity 0.3s ease;
+    }
+
+    :not(.light) .logo:hover img {
+      opacity: 0.8;
+    }
+
+    /* Footer Styles */
+    .footer-top {
+      padding: 3rem 0 2rem;
+      position: relative;
+      background: var(--card);
+      color: var(--text);
+      margin-top: auto;
+      border-top: 1px solid var(--glass-brd);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .footer-top::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    }
+
+    .footer-brand-section {
+      margin-bottom: 2.5rem;
+    }
+
+    .footer-logo {
+      height: 40px;
+      width: auto;
+      margin-bottom: 1rem;
+      filter: none;
+      transition: all 0.3s ease;
+      display: block;
+      max-width: 200px;
+    }
+
+    .footer-logo:hover {
+      transform: scale(1.05);
+      filter: drop-shadow(0 0 10px rgba(124, 58, 237, 0.3));
+    }
+
+    .footer-tagline {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text);
+    }
+
+    .footer-description {
+      opacity: 0.8;
+      line-height: 1.6;
+      max-width: 400px;
+      color: var(--muted);
+    }
+
+    .footer-links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-column h6 {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: var(--text);
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+
+    .footer-column h6::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 30px;
+      height: 2px;
+      background: var(--brand);
+      border-radius: 1px;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--brand);
+      transform: translateX(5px);
+    }
+
+    .footer-links a i {
+      width: 16px;
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
+    }
+
+    .footer-links a:hover i {
+      opacity: 1;
+    }
+
+    .social-section h6 {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      background: var(--card-2);
+      color: var(--text);
+      text-decoration: none;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      border: 1px solid var(--glass-brd);
+    }
+
+    .social-link:hover {
+      background: var(--brand);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(124, 58, 237, 0.3);
+    }
+
+    .contact-info {
+      background: var(--card-2);
+      padding: 1.5rem;
+      border-radius: 14px;
+      border: 1px solid var(--glass-brd);
+      box-shadow: var(--shadow);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .contact-icon {
+      width: 20px;
+      opacity: 0.8;
+    }
+
+    .contact-text {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .contact-text a {
+      color: var(--brand);
+      text-decoration: none;
+    }
+
+    .contact-text a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      padding: 1.5rem 0;
+      border-top: 1px solid var(--glass-brd);
+      background: var(--bg-soft);
+    }
+
+    .footer-bottom-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .copyright {
+      opacity: 0.8;
+      font-size: 0.9rem;
+    }
+
+    .footer-bottom-links {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-bottom-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s ease;
+    }
+
+    .footer-bottom-links a:hover {
+      color: var(--brand);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .footer-links-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+      }
+
+      .social-links {
+        justify-content: center;
+      }
+
+      .footer-bottom-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-bottom-links {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .footer-links-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-top {
+        padding: 2rem 0 1.5rem;
+      }
+
+      .social-link {
+        width: 42px;
+        height: 42px;
+      }
+
+      .footer-logo-with-text {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      .footer-logo-text {
+        font-size: 1.5rem;
+      }
+    }
+
+    /* Floating elements animation */
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .floating-icon {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .floating-icon:nth-child(2) {
+      animation-delay: 0.5s;
+    }
+
+    .floating-icon:nth-child(3) {
+      animation-delay: 1s;
+    }
+
+    .floating-icon:nth-child(4) {
+      animation-delay: 1.5s;
+    }
+
+    /* Enhanced footer logo styling */
+    .footer-brand-section .footer-logo {
+      display: block !important;
+      width: auto !important;
+      height: 40px !important;
+      margin-bottom: 1rem !important;
+      filter: none !important;
+      transition: all 0.3s ease !important;
+      max-width: 200px !important;
+      object-fit: contain !important;
+    }
+
+    .footer-brand-section .footer-logo:hover {
+      transform: scale(1.05) !important;
+      filter: drop-shadow(0 0 15px rgba(124, 58, 237, 0.4)) !important;
+    }
+
+    /* Footer tagline enhancement */
+    .footer-tagline {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text);
+    }
+
+    .footer-tagline i {
+      color: var(--brand);
+      font-size: 1.2rem;
+    }
+
+    /* Footer description enhancement */
+    .footer-description {
+      opacity: 0.8;
+      line-height: 1.6;
+      max-width: 400px;
+      color: var(--muted);
+    }
+
+    /* Debug and ensure logo visibility */
+    .footer-brand-section {
+      position: relative;
+    }
+
+    .footer-brand-section .footer-logo {
+      background: var(--card-2);
+      border-radius: 8px;
+      padding: 8px;
+      border: 1px solid var(--glass-brd);
+    }
+
+    /* Ensure logo container has proper dimensions */
+    .footer-brand-section .col-lg-6:first-child {
+      min-height: 120px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    /* Logo container styling */
+    .footer-logo-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .footer-logo-with-text {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 1rem;
+    }
+
+    .footer-logo-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .footer-logo-icon:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
+    }
+
+    .footer-logo-text {
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: -0.02em;
+      font-weight: 700;
+      font-size: 1.8rem;
+    }
+
+    /* Additional footer utility classes */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -15px;
+    }
+
+    .col-lg-6 {
+      flex: 0 0 50%;
+      max-width: 50%;
+      padding: 0 15px;
+    }
+
+    @media (max-width: 992px) {
+      .col-lg-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }
+
+    .mb-3 {
+      margin-bottom: 1rem;
+    }
+
+    .position-fixed {
+      position: fixed;
+    }
+
+    .d-inline-flex {
+      display: inline-flex;
+    }
+
+    .align-items-center {
+      align-items: center;
+    }
+
+    .justify-content-center {
+      justify-content: center;
+    }
     .navbar-list{
       display:flex; list-style:none; gap:14px; padding:0; margin:0; align-items:center;
     }
@@ -193,6 +654,17 @@
     }
     .card:hover .card-banner img{ transform: scale(1.08); }
 
+    /* Wishlist heart */
+    .wish-btn{
+      position:absolute; top:12px; right:12px; z-index: 2;
+      width:40px; height:40px; display:grid; place-items:center; border-radius:999px;
+      border:1px solid var(--glass-brd); background: rgba(15, 15, 30, .55); color:#fff; cursor:pointer;
+      backdrop-filter: blur(8px); transition: transform .2s ease, background .2s ease;
+    }
+    .light .wish-btn{ background: rgba(255,255,255,.7); color:#0b1324; }
+    .wish-btn:hover{ transform: scale(1.06); }
+    .wish-btn.active{ background: linear-gradient(135deg, #ef4444, #f97316); color:#fff; border-color: transparent; }
+
     .badge-year{
       position:absolute; top:12px; left:12px;
       background: rgba(15, 15, 30, .65);
@@ -268,7 +740,6 @@
       <nav class="nav">
         <a href="index.html" class="logo" aria-label="VehiGo home">
           <img src="./assets/images/vehigologo.png" alt="VehiGo logo" />
-          <span>VehiGo</span>
         </a>
 
         <ul class="navbar-list" role="menubar" aria-label="Primary">
@@ -278,6 +749,7 @@
           <li><a href="blog.html" class="navbar-link" role="menuitem">Blog</a></li>
           <li><a href="offline.html" class="navbar-link" role="menuitem">Offline Centers</a></li>
           <li><a href="rentcar.html" class="navbar-link" role="menuitem">Rent Your Car</a></li>
+          <li><a href="wishlist.html" class="navbar-link" role="menuitem">Wishlist</a></li>
           <li>
             <label class="theme-switch" for="theme-toggle" title="Toggle theme">
               <input type="checkbox" id="theme-toggle" aria-label="Toggle dark mode"/>
@@ -320,9 +792,10 @@
         <ul class="featured-grid">
           <!-- 1 -->
           <li class="reveal">
-            <article class="card" tabindex="0" data-tilt>
+            <article class="card" tabindex="0" data-tilt data-car-id="creta-2022" data-car-title="Hyundai Creta" data-car-image="./assets/images/creta.jpeg" data-car-price="₹283 / hour">
               <figure class="card-banner">
                 <img src="./assets/images/creta.jpeg" alt="Hyundai Creta silver on a scenic road"/>
+                <button class="wish-btn" type="button" aria-label="Save Hyundai Creta" data-wish><ion-icon name="heart-outline"></ion-icon></button>
                 <span class="badge-year">2022</span>
                 <span class="badge-fuel">Petrol</span>
               </figure>
@@ -345,9 +818,10 @@
 
           <!-- 2 -->
           <li class="reveal">
-            <article class="card" tabindex="0" data-tilt>
+            <article class="card" tabindex="0" data-tilt data-car-id="nexon-2019" data-car-title="Tata Nexon" data-car-image="./assets/images/nexon.jpg" data-car-price="₹210 / hour">
               <figure class="card-banner">
                 <img src="./assets/images/nexon.jpg" alt="Tata Nexon blue parked in city"/>
+                <button class="wish-btn" type="button" aria-label="Save Tata Nexon" data-wish><ion-icon name="heart-outline"></ion-icon></button>
                 <span class="badge-year">2019</span>
                 <span class="badge-fuel">Petrol</span>
               </figure>
@@ -368,9 +842,10 @@
 
           <!-- 3 -->
            <li class="reveal">
-            <article class="card" tabindex="0" data-tilt>
+            <article class="card" tabindex="0" data-tilt data-car-id="dzire-2018" data-car-title="Swift Dzire" data-car-image="./assets/images/swift desire.jpg" data-car-price="₹180 / hour">
               <figure class="card-banner">
                 <img src="./assets/images/swift desire.jpg" alt="Maruti Swift Dzire white, side view"/>
+                <button class="wish-btn" type="button" aria-label="Save Swift Dzire" data-wish><ion-icon name="heart-outline"></ion-icon></button>
                 <span class="badge-year">2018</span>
                 <span class="badge-fuel">Petrol</span>
               </figure>
@@ -389,9 +864,10 @@
             </article>
           </li>
           <li class="reveal">
-            <article class="card" tabindex="0" data-tilt>
+            <article class="card" tabindex="0" data-tilt data-car-id="alto-2020" data-car-title="Maruti Alto" data-car-image="./assets/images/maruti alto.jpg" data-car-price="₹120 / hour">
               <figure class="card-banner">
                 <img src="./assets/images/maruti alto.jpg" alt="Maruti Alto white hatchback"/>
+                <button class="wish-btn" type="button" aria-label="Save Maruti Alto" data-wish><ion-icon name="heart-outline"></ion-icon></button>
                 <span class="badge-year">2020</span>
                 <span class="badge-fuel">CNG</span>
               </figure>
@@ -412,9 +888,10 @@
 
           <!-- 4 -->
           <li class="reveal">
-            <article class="card" tabindex="0" data-tilt >
+            <article class="card" tabindex="0" data-tilt data-car-id="fortuner-2020" data-car-title="Toyota Fortuner" data-car-image="./assets/images/fortuner.jpg" data-car-price="₹490 / hour">
               <figure class="card-banner">
                 <img src="./assets/images/fortuner.jpg" alt="Toyota Fortuner black SUV"/>
+                <button class="wish-btn" type="button" aria-label="Save Toyota Fortuner" data-wish><ion-icon name="heart-outline"></ion-icon></button>
                 <span class="badge-year">2020</span>
                 <span class="badge-fuel">Diesel</span>
               </figure>
@@ -435,9 +912,10 @@
 
           <!-- 5 -->
           <li class="reveal">
-            <article class="card" tabindex="0" data-tilt>
+            <article class="card" tabindex="0" data-tilt data-car-id="innova-2021" data-car-title="Toyota Innova Crysta" data-car-image="./assets/images/innova.jpeg" data-car-price="₹355 / hour">
               <figure class="card-banner">
                 <img src="./assets/images/innova.jpeg" alt="Toyota Innova Crysta silver MPV"/>
+                <button class="wish-btn" type="button" aria-label="Save Toyota Innova Crysta" data-wish><ion-icon name="heart-outline"></ion-icon></button>
                 <span class="badge-year">2021</span>
                 <span class="badge-fuel">Diesel</span>
               </figure>
@@ -458,9 +936,10 @@
 
           <!-- 6 -->
           <li class="reveal">
-            <article class="card" tabindex="0" data-tilt>
+            <article class="card" tabindex="0" data-tilt data-car-id="scorpio-2019" data-car-title="Mahindra Scorpio" data-car-image="./assets/images/mahindra-scorpio.jpg" data-car-price="₹315 / hour">
               <figure class="card-banner">
                 <img src="./assets/images/mahindra-scorpio.jpg" alt="Mahindra Scorpio red SUV"/>
+                <button class="wish-btn" type="button" aria-label="Save Mahindra Scorpio" data-wish><ion-icon name="heart-outline"></ion-icon></button>
                 <span class="badge-year">2019</span>
                 <span class="badge-fuel">Diesel</span>
               </figure>
@@ -556,6 +1035,211 @@
         }
       });
     });
+
+    // Wishlist (localStorage)
+    (function(){
+      const STORAGE_KEY = 'vehigo_wishlist_v1';
+      const getList = () => {
+        try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'); } catch { return []; }
+      };
+      const saveList = (list) => localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
+      const exists = (id) => getList().some(x => x.id === id);
+
+      function toggleWish(card){
+        const id = card.getAttribute('data-car-id');
+        const title = card.getAttribute('data-car-title');
+        const image = card.getAttribute('data-car-image');
+        const price = card.getAttribute('data-car-price');
+        let list = getList();
+        if(exists(id)){
+          list = list.filter(x => x.id !== id);
+        } else {
+          list.push({ id, title, image, price });
+        }
+        saveList(list);
+        renderHearts();
+      }
+
+      function renderHearts(){
+        document.querySelectorAll('[data-wish]').forEach(btn => {
+          const card = btn.closest('.card');
+          const id = card?.getAttribute('data-car-id');
+          const active = id && exists(id);
+          btn.classList.toggle('active', !!active);
+          btn.innerHTML = active ? '<ion-icon name="heart"></ion-icon>' : '<ion-icon name="heart-outline"></ion-icon>';
+          btn.setAttribute('aria-pressed', String(!!active));
+        });
+      }
+
+      // Bind events
+      document.querySelectorAll('[data-wish]').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const card = btn.closest('.card');
+          if(card) toggleWish(card);
+          e.stopPropagation();
+        });
+      });
+
+      // Initialize state on load
+      renderHearts();
+    })();
+  </script>
+
+  <!-- Footer -->
+  <div class="footer-top">
+    <div class="container">
+      <!-- Brand Section -->
+      <div class="footer-brand-section">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="footer-logo-container">
+              <div class="footer-logo-with-text">
+                <div class="footer-logo-icon">
+                  <i class="fa-solid fa-car"></i>
+                </div>
+                <div class="footer-logo-text">
+                  VehiGo
+                </div>
+              </div>
+            </div>
+            <div class="footer-tagline">
+              <i class="fa-solid fa-map-marker-alt"></i>
+              <strong>Affordable rentals across Madhya Pradesh</strong>
+            </div>
+            <p class="footer-description">
+              Choose from a wide range of vehicles — or rent your own when it's idle. Experience seamless rentals with
+              endless adventures across Bhopal, Indore, and Ujjain.
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <div class="contact-info">
+              <div class="contact-item">
+                <i class="fa-solid fa-phone contact-icon"></i>
+                <div class="contact-text">
+                  <a href="tel:1800100100">1800-100-100</a> • Mon–Sat: 9:00am–6:00pm
+                </div>
+              </div>
+              <div class="contact-item">
+                <i class="fa-solid fa-envelope contact-icon"></i>
+                <div class="contact-text">
+                  <a href="mailto:support@vehigo.com">support@vehigo.com</a>
+                </div>
+              </div>
+              <div class="contact-item">
+                <i class="fa-solid fa-location-dot contact-icon"></i>
+                <div class="contact-text">Bhopal, Indore & Ujjain, MP</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Links Grid -->
+      <div class="footer-links-grid">
+        <div class="footer-column">
+          <h6>Company</h6>
+          <ul class="footer-links">
+            <li><a href="./src/pages/about.html"><i class="fa-solid fa-building"></i>About Us</a></li>
+            <li><a href="./src/pages/pricing.html"><i class="fa-solid fa-tags"></i>Pricing Plans</a></li>
+            <li><a href="./blog.html"><i class="fa-solid fa-blog"></i>Our Blog</a></li>
+            <li><a href="./ContactUs.html"><i class="fa-solid fa-envelope"></i>Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h6>Support</h6>
+          <ul class="footer-links">
+            <li><a href="./src/pages/help-center.html"><i class="fa-solid fa-circle-question"></i>Help Center</a></li>
+            <li><a href="./src/pages/Askaques.html"><i class="fa-solid fa-comments"></i>Ask a Question</a></li>
+            <li><a href="./privacypolicy.html"><i class="fa-solid fa-shield-halved"></i>Privacy Policy</a></li>
+            <li><a href="./tandc.html"><i class="fa-solid fa-file-contract"></i>Terms & Conditions</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h6>Services</h6>
+          <ul class="footer-links">
+            <li><a href="featured-car.html"><i class="fa-solid fa-car-side"></i>Explore Cars</a></li>
+            <li><a href="./rentcar.html"><i class="fa-solid fa-handshake"></i>Rent Your Car</a></li>
+            <li><a href="./offline.html"><i class="fa-solid fa-map-location-dot"></i>Offline Centers</a></li>
+            <li><a href="./src/pages/login.html"><i class="fa-solid fa-user-plus"></i>Login</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <div class="social-section">
+            <h6>Follow Us</h6>
+            <div class="social-links">
+              <a href="https://www.linkedin.com" target="_blank" class="social-link floating-icon"
+                aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a href="https://www.twitter.com" target="_blank" class="social-link floating-icon" aria-label="Twitter">
+                <i class="fab fa-x-twitter"></i>
+              </a>
+              <a href="https://www.instagram.com" target="_blank" class="social-link floating-icon"
+                aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="https://www.facebook.com" target="_blank" class="social-link floating-icon"
+                aria-label="Facebook">
+                <i class="fab fa-facebook"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="footer-bottom-content">
+        <div class="copyright">
+          © <span id="copyright-year">2025</span> Vehigo — All rights reserved.
+        </div>
+        <div class="footer-bottom-links">
+          <a href="./privacypolicy.html">Privacy</a>
+          <a href="./tandc.html">Terms</a>
+          <a href="./src/pages/help-center.html">Support</a>
+          <a href="./sitemap.html">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating nav buttons -->
+  <a href="./index.html" class="position-fixed d-inline-flex align-items-center justify-content-center" style="bottom:30px; left:30px; background-color: var(--brand); color: white; border-radius: 50%;
+     width: 50px; height: 50px; box-shadow: var(--shadow);" aria-label="Home">
+    <i class="fa-solid fa-house"></i>
+  </a>
+  <button id="scrollTopBtn" class="position-fixed"
+    style="bottom: 90px; right: 20px; background: var(--brand); color: white; border: none; width: 50px; height: 50px; border-radius: 50%; box-shadow: var(--shadow); cursor: pointer; display: none;"
+    aria-label="Scroll to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+  <button id="scrollBottomBtn" class="position-fixed"
+    style="bottom: 30px; right: 20px; background: var(--brand); color: white; border: none; width: 50px; height: 50px; border-radius: 50%; box-shadow: var(--shadow); cursor: pointer;"
+    aria-label="Scroll to bottom">
+    <i class="fa-solid fa-arrow-down"></i>
+  </button>
+
+  <script>
+    // Footer year
+    document.getElementById('copyright-year').textContent = new Date().getFullYear();
+
+    // Scroll buttons
+    const topBtn = document.getElementById('scrollTopBtn');
+    const bottomBtn = document.getElementById('scrollBottomBtn');
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      const total = document.body.scrollHeight - window.innerHeight;
+      topBtn.style.display = y > 200 ? 'block' : 'none';
+      bottomBtn.style.display = y < total - 200 ? 'block' : 'none';
+    });
+    topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    bottomBtn.addEventListener('click', () => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' }));
   </script>
 </body>
 </html>

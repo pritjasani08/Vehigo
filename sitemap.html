@@ -220,16 +220,23 @@
 
         .footer {
             background: var(--vehigo-text);
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
+            color: #ffffff;
+            padding: 3rem 0 2rem;
             margin-top: 3rem;
         }
 
-        .footer p {
-            margin: 0;
-            opacity: 0.8;
-        }
+        .footer-top { display:grid; grid-template-columns: 1.5fr 1fr 1fr; gap:2rem; margin-bottom:1.5rem; }
+        .footer-brand img { height: 42px; border-radius: 8px; background: #fff; padding:6px; }
+        .footer-text { opacity:.9; margin-top:.75rem; }
+        .footer-list { list-style:none; padding:0; margin:0; }
+        .footer-list-title { font-weight:700; margin-bottom:.75rem; }
+        .footer-link { color:#e5e7eb; text-decoration:none; display:block; margin:.4rem 0; }
+        .footer-link:hover { color:#60a5fa; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,.18); margin-top:1.5rem; padding-top:1rem; text-align:center; opacity:.9; }
+        .social-list { list-style:none; display:flex; gap:12px; justify-content:center; padding:0; margin:0 0 .6rem; }
+        .social-link { color:#e5e7eb; font-size:1.2rem; }
+        .social-link:hover { color:#60a5fa; }
+        @media (max-width: 768px){ .footer-top{ grid-template-columns: 1fr; } }
 
         /* Navigation Header - Matching Project UI */
         .nav-header {
@@ -529,6 +536,13 @@
                         </ul>
                     </div>
                     <div class="sitemap-category">
+                        <h3 class="category-title"><i class="fa-solid fa-heart"></i> Saved & Compared</h3>
+                        <ul class="sitemap-links">
+                            <li><a href="wishlist.html" class="sitemap-link"><i class="fa-solid fa-heart"></i> Wishlist</a></li>
+                            <li><a href="#" class="sitemap-link"><i class="fa-solid fa-code-compare"></i> Compare Cars</a></li>
+                        </ul>
+                    </div>
+                    <div class="sitemap-category">
                         <h3 class="category-title"><i class="fa-solid fa-user-circle"></i> User Dashboard</h3>
                         <ul class="sitemap-links">
                             <li><a href="accountpage.html" class="sitemap-link"><i class="fa-solid fa-user"></i> My Account</a></li>
@@ -625,11 +639,45 @@
     </div>
 
     <!-- Footer -->
-    <div class="footer">
-        <div class="sitemap-container">
-            <p>&copy; 2025 Vehigo. All rights reserved. | Last updated: <span id="currentDate"></span></p>
+    <footer class="footer">
+      <div class="sitemap-container">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <a href="index.html" class="logo">
+              <img src="./assets/images/vehigologo.png" alt="VehiGo logo" />
+            </a>
+            <p class="footer-text">Search for affordable rental cars in Madhya Pradesh. Rent your car when not in use.</p>
+          </div>
+
+          <ul class="footer-list">
+            <li><p class="footer-list-title">Company</p></li>
+            <li><a href="src/pages/about.html" class="footer-link">About us</a></li>
+            <li><a href="featured-car.html" class="footer-link">Pricing plans</a></li>
+            <li><a href="blog.html" class="footer-link">Our blog</a></li>
+            <li><a href="ContactUs.html" class="footer-link">Contact Us</a></li>
+          </ul>
+
+          <ul class="footer-list">
+            <li><p class="footer-list-title">Support</p></li>
+            <li><a href="src/pages/help-center.html" class="footer-link">Help center</a></li>
+            <li><a href="src/pages/Askaques.html" class="footer-link">Ask a question</a></li>
+            <li><a href="privacypolicy.html" class="footer-link">Privacy policy</a></li>
+            <li><a href="tandc.html" class="footer-link">Terms & conditions</a></li>
+          </ul>
         </div>
-    </div>
+
+        <div class="footer-bottom">
+          <ul class="social-list">
+            <li><a href="https://www.facebook.com/" class="social-link"><i class="fa-brands fa-facebook"></i></a></li>
+            <li><a href="https://www.instagram.com/" class="social-link"><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href="https://x.com/" class="social-link"><i class="fa-brands fa-x-twitter"></i></a></li>
+            <li><a href="https://www.linkedin.com/" class="social-link"><i class="fa-brands fa-linkedin"></i></a></li>
+            <li><a href="#" class="social-link"><i class="fa-brands fa-github"></i></a></li>
+          </ul>
+          <p>&copy; 2025 VehiGo &middot; Last updated: <span id="currentDate"></span></p>
+        </div>
+      </div>
+    </footer>
 
     <script>
         // Set current date

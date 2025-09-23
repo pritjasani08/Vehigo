@@ -99,6 +99,17 @@
       transform: scale(1.05);
     }
 
+    /* Dark mode logo visibility */
+    .dark-theme .logo img {
+      filter: brightness(0) invert(1);
+      opacity: 1;
+      transition: opacity 0.3s ease;
+    }
+
+    .dark-theme .logo:hover img {
+      opacity: 0.8;
+    }
+
     .navbar .navbar-list {
       display: flex;
       gap: 2rem;
@@ -719,6 +730,7 @@
         
       </span>
     </label>
+    <a href="./src/pages/login.html" class="btn-outline-light" id="loginBtn" style="margin-left: 0.75rem;"><i class="fa-regular fa-user"></i> Login</a>
   </header>
 
   <!-- ANIMATED BACKGROUND -->

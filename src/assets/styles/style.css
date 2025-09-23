@@ -148,6 +148,45 @@ body {
   padding-top: 100px;
 }
 
+/* Dark theme overrides */
+body.dark {
+  --alice-blue-1: hsl(220, 15%, 12%);
+  --alice-blue-2: hsl(220, 15%, 16%);
+  --alice-blue-3: hsl(220, 15%, 14%);
+  --alice-blue-4: hsl(220, 15%, 18%);
+  --white: hsl(220, 20%, 12%);
+  --space-cadet: hsl(220, 20%, 90%);
+  --eerie-black: hsl(0, 0%, 98%);
+  --independence: hsl(220, 15%, 75%);
+  --gradient: linear-gradient(to top, var(--alice-blue-2), var(--alice-blue-3));
+}
+
+body.dark .header,
+body.dark .navbar,
+body.dark .hero-form,
+body.dark .featured-car-card,
+body.dark .blog-card,
+body.dark .footer {
+  background: var(--alice-blue-2);
+  color: var(--eerie-black);
+}
+
+body.dark .navbar-link,
+body.dark .card-item-text,
+body.dark .footer-text,
+body.dark .copyright,
+body.dark .footer-link { color: var(--independence); }
+
+body.dark .h1,
+body.dark .h2,
+body.dark .h3 { color: var(--space-cadet); }
+
+body.dark .header.active { box-shadow: var(--shadow-1); }
+
+body.dark .user-btn ion-icon { color: var(--eerie-black); }
+
+body.dark .overlay { background: var(--alice-blue-2); }
+
 ::-webkit-scrollbar {
   width: 15px;
   height: 10px;
