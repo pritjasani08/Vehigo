@@ -524,6 +524,11 @@
           <ion-icon name="person-outline"></ion-icon>
         </a>
 
+        <button class="btn" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme" style="min-width:40px;min-height:40px;display:flex;align-items:center;gap:8px;padding-inline:10px;">
+          <ion-icon id="theme-toggle-icon" name="moon-outline"></ion-icon>
+          <span id="theme-toggle-text">Dark</span>
+        </button>
+
         <button class="nav-toggle-btn" data-nav-toggle-btn aria-label="Toggle Menu">
           <span class="one"></span>
           <span class="two"></span>
@@ -1769,6 +1774,25 @@
 
 
   <script src="./assets/js/script.js"></script>
+  <script>
+    // Initialize theme based on saved preference or system preference
+    (function(){
+      const saved = localStorage.getItem('vehigo-theme');
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const enableDark = (saved === 'dark') || (saved === null && prefersDark);
+      if (enableDark) document.body.classList.add('dark');
+      const icon = document.getElementById('theme-toggle-icon');
+      const text = document.getElementById('theme-toggle-text');
+      const btn = document.getElementById('theme-toggle');
+      const isDark = document.body.classList.contains('dark');
+      if (icon) icon.setAttribute('name', isDark ? 'sunny-outline' : 'moon-outline');
+      if (text) text.textContent = isDark ? 'Light' : 'Dark';
+      if (btn) {
+        btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+        btn.setAttribute('title', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+      }
+    })();
+  </script>
 
   <!-- 
     - ionicon link
