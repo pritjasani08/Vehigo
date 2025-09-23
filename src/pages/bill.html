@@ -25,6 +25,12 @@
       padding: 40px;
       color: #333;
     }
+    /* Dark mode base */
+    .dark-theme body,
+    body.dark-theme {
+      background-color: #0b1220;
+      color: #e6e6f0;
+    }
 
     h2 {
       color: #145ea8;
@@ -41,6 +47,12 @@
       margin: auto;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
     }
+    .dark-theme form,
+    body.dark-theme form {
+      background-color: #101927;
+      border-color: #1f2a3a;
+      box-shadow: 0 14px 40px rgba(0,0,0,.45);
+    }
 
     .form-group {
       margin-bottom: 16px;
@@ -52,6 +64,8 @@
       font-weight: 600;
       color: #145ea8;
     }
+    .dark-theme label,
+    body.dark-theme label { color: #93c5fd; }
 
     input {
       width: 100%;
@@ -61,12 +75,20 @@
       font-size: 14px;
       outline-color: #145ea8;
     }
+    .dark-theme input,
+    body.dark-theme input {
+      background-color: #0f172a;
+      color: #e6e6f0;
+      border-color: #334155;
+      outline-color: #60a5fa;
+    }
 
     input::placeholder {
       color: #9e9e9e;
     }
 
-    button {
+    /* Submit button (scoped to form) */
+    #billingForm button[type="submit"] {
       width: 100%;
       background-color: #145ea8;
       color: white;
@@ -77,6 +99,8 @@
       cursor: pointer;
       margin-top: 10px;
     }
+    .dark-theme #billingForm button[type="submit"],
+    body.dark-theme #billingForm button[type="submit"] { background-color: #2563eb; }
 
     .bill {
       background-color: #ffffff;
@@ -86,6 +110,12 @@
       margin: 40px auto 0;
       padding: 25px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .dark-theme .bill,
+    body.dark-theme .bill {
+      background-color: #101927;
+      border-color: #1f2a3a;
+      box-shadow: 0 20px 50px rgba(0,0,0,.45);
     }
 
     .bill-header {
@@ -100,6 +130,8 @@
       color: #145ea8;
       margin: 0;
     }
+    .dark-theme .bill-header h3,
+    body.dark-theme .bill-header h3 { color: #93c5fd; }
 
     .bill-section {
       margin-bottom: 12px;
@@ -109,6 +141,8 @@
       font-weight: bold;
       color: #145ea8;
     }
+    .dark-theme .bill-section span,
+    body.dark-theme .bill-section span { color: #93c5fd; }
 
     .bill-total {
       border-top: 2px dashed #ccc;
@@ -124,6 +158,30 @@
     .bill-total div span {
       float: right;
       color: #145ea8;
+    }
+    .dark-theme .bill-total div span,
+    body.dark-theme .bill-total div span { color: #93c5fd; }
+
+    /* Theme toggle button */
+    .theme-toggle-btn {
+      border-radius: 9999px;
+      padding: 4px 8px;
+      font-weight: 700;
+      font-size: 12px;
+      border: 1px solid #cce0ff;
+      background: #ffffff;
+      color: #145ea8;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      width: auto;
+    }
+    .theme-toggle-btn ion-icon{ font-size: 12px; }
+    body.dark-theme .theme-toggle-btn {
+      border-color: #334155;
+      background: #0f172a;
+      color: #e6e6f0;
     }
   </style>
 </head>
@@ -170,6 +228,10 @@
         <a href="./pages/login.html" class="btn user-btn" aria-label="Profile">
           <ion-icon name="person-outline"></ion-icon>
         </a>
+
+        <button id="themeToggle" class="theme-toggle-btn" type="button" aria-label="Toggle theme">
+          <ion-icon name="moon"></ion-icon> <span class="label">Dark</span>
+        </button>
 
         <button class="nav-toggle-btn" data-nav-toggle-btn aria-label="Toggle Menu">
           <span class="one"></span>
@@ -394,5 +456,20 @@
   const yearEl = document.getElementById('copyright-year');
   if(yearEl) yearEl.textContent = new Date().getFullYear();
 </script>
+
+<script>
+  // Dark/Light toggle persist
+  (function(){
+    const btn = document.getElementById('themeToggle');
+    const label = btn?.querySelector('.label');
+    const saved = localStorage.getItem('bill_theme');
+    if(saved === 'dark'){ document.body.classList.add('dark-theme'); label && (label.textContent = 'Dark'); }
+    btn?.addEventListener('click', ()=>{
+      const isDark = document.body.classList.toggle('dark-theme');
+      localStorage.setItem('bill_theme', isDark ? 'dark' : 'light');
+      if(label) label.textContent = isDark ? 'Dark' : 'Light';
+    });
+  })();
+  </script>
 
 </html>
