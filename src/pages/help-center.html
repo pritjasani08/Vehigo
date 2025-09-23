@@ -157,9 +157,22 @@
             background-color: #0f172a !important;
             color: #e2e8f0 !important;
         }
-        .header {
+        .dark-theme .header {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.9);
+  padding: 10px 0;
+  display: flex;
+  justify-content: center; /* center navbar */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header {
+  width: 100%;
+  background-color: white;
+  
   padding: 10px 0;
   display: flex;
   justify-content: center; /* center navbar */
@@ -196,8 +209,18 @@
   list-style: none;
 }
 
-.nav-item a {
+.dark-theme .nav-item a {
   color: white;
+  text-decoration: none;
+  font-size: 17px;
+  padding: 10px 12px;
+  transition: color 0.3s, background 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.nav-item a {
+  color: black;
   text-decoration: none;
   font-size: 17px;
   padding: 10px 12px;
@@ -376,11 +399,17 @@
       opacity: 1;
     }
 
-    .social-section h6 {
+    .dark-theme .social-section{
       font-weight: 700;
       font-size: 1.1rem;
       margin-bottom: 1rem;
       color: white;
+    }
+    .social-section{
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: black;
     }
 
     .social-links {
@@ -389,7 +418,7 @@
       margin-bottom: 1.5rem;
     }
 
-    .social-link {
+    .dark-theme .social-link {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -397,6 +426,20 @@
       height: 48px;
       background: rgba(255, 255, 255, 0.1);
       color: white;
+      text-decoration: none;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      background: rgba(11, 0, 0, 0.1);
+      color: black;
       text-decoration: none;
       border-radius: 12px;
       transition: all 0.3s ease;
@@ -1049,7 +1092,8 @@
               </a>
               <a href="https://www.instagram.com" target="_blank" class="social-link floating-icon"
                 aria-label="Instagram">
-                <i class="fab fa-instagram"></i>
+                <i class="fa-brands fa-instagram"></i>
+
               </a>
               <a href="https://www.facebook.com" target="_blank" class="social-link floating-icon"
                 aria-label="Facebook">
