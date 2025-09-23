@@ -654,6 +654,17 @@
     }
     .card:hover .card-banner img{ transform: scale(1.08); }
 
+    /* Wishlist heart */
+    .wish-btn{
+      position:absolute; top:12px; right:12px; z-index: 2;
+      width:40px; height:40px; display:grid; place-items:center; border-radius:999px;
+      border:1px solid var(--glass-brd); background: rgba(15, 15, 30, .55); color:#fff; cursor:pointer;
+      backdrop-filter: blur(8px); transition: transform .2s ease, background .2s ease;
+    }
+    .light .wish-btn{ background: rgba(255,255,255,.7); color:#0b1324; }
+    .wish-btn:hover{ transform: scale(1.06); }
+    .wish-btn.active{ background: linear-gradient(135deg, #ef4444, #f97316); color:#fff; border-color: transparent; }
+
     .badge-year{
       position:absolute; top:12px; left:12px;
       background: rgba(15, 15, 30, .65);
@@ -738,6 +749,7 @@
           <li><a href="blog.html" class="navbar-link" role="menuitem">Blog</a></li>
           <li><a href="offline.html" class="navbar-link" role="menuitem">Offline Centers</a></li>
           <li><a href="rentcar.html" class="navbar-link" role="menuitem">Rent Your Car</a></li>
+          <li><a href="wishlist.html" class="navbar-link" role="menuitem">Wishlist</a></li>
           <li>
             <label class="theme-switch" for="theme-toggle" title="Toggle theme">
               <input type="checkbox" id="theme-toggle" aria-label="Toggle dark mode"/>
@@ -780,9 +792,10 @@
         <ul class="featured-grid">
           <!-- 1 -->
           <li class="reveal">
-            <article class="card" tabindex="0" data-tilt>
+            <article class="card" tabindex="0" data-tilt data-car-id="creta-2022" data-car-title="Hyundai Creta" data-car-image="./assets/images/creta.jpeg" data-car-price="₹283 / hour">
               <figure class="card-banner">
                 <img src="./assets/images/creta.jpeg" alt="Hyundai Creta silver on a scenic road"/>
+                <button class="wish-btn" type="button" aria-label="Save Hyundai Creta" data-wish><ion-icon name="heart-outline"></ion-icon></button>
                 <span class="badge-year">2022</span>
                 <span class="badge-fuel">Petrol</span>
               </figure>
@@ -805,9 +818,10 @@
 
           <!-- 2 -->
           <li class="reveal">
-            <article class="card" tabindex="0" data-tilt>
+            <article class="card" tabindex="0" data-tilt data-car-id="nexon-2019" data-car-title="Tata Nexon" data-car-image="./assets/images/nexon.jpg" data-car-price="₹210 / hour">
               <figure class="card-banner">
                 <img src="./assets/images/nexon.jpg" alt="Tata Nexon blue parked in city"/>
+                <button class="wish-btn" type="button" aria-label="Save Tata Nexon" data-wish><ion-icon name="heart-outline"></ion-icon></button>
                 <span class="badge-year">2019</span>
                 <span class="badge-fuel">Petrol</span>
               </figure>
@@ -828,9 +842,10 @@
 
           <!-- 3 -->
            <li class="reveal">
-            <article class="card" tabindex="0" data-tilt>
+            <article class="card" tabindex="0" data-tilt data-car-id="dzire-2018" data-car-title="Swift Dzire" data-car-image="./assets/images/swift desire.jpg" data-car-price="₹180 / hour">
               <figure class="card-banner">
                 <img src="./assets/images/swift desire.jpg" alt="Maruti Swift Dzire white, side view"/>
+                <button class="wish-btn" type="button" aria-label="Save Swift Dzire" data-wish><ion-icon name="heart-outline"></ion-icon></button>
                 <span class="badge-year">2018</span>
                 <span class="badge-fuel">Petrol</span>
               </figure>
@@ -849,9 +864,10 @@
             </article>
           </li>
           <li class="reveal">
-            <article class="card" tabindex="0" data-tilt>
+            <article class="card" tabindex="0" data-tilt data-car-id="alto-2020" data-car-title="Maruti Alto" data-car-image="./assets/images/maruti alto.jpg" data-car-price="₹120 / hour">
               <figure class="card-banner">
                 <img src="./assets/images/maruti alto.jpg" alt="Maruti Alto white hatchback"/>
+                <button class="wish-btn" type="button" aria-label="Save Maruti Alto" data-wish><ion-icon name="heart-outline"></ion-icon></button>
                 <span class="badge-year">2020</span>
                 <span class="badge-fuel">CNG</span>
               </figure>
@@ -872,9 +888,10 @@
 
           <!-- 4 -->
           <li class="reveal">
-            <article class="card" tabindex="0" data-tilt >
+            <article class="card" tabindex="0" data-tilt data-car-id="fortuner-2020" data-car-title="Toyota Fortuner" data-car-image="./assets/images/fortuner.jpg" data-car-price="₹490 / hour">
               <figure class="card-banner">
                 <img src="./assets/images/fortuner.jpg" alt="Toyota Fortuner black SUV"/>
+                <button class="wish-btn" type="button" aria-label="Save Toyota Fortuner" data-wish><ion-icon name="heart-outline"></ion-icon></button>
                 <span class="badge-year">2020</span>
                 <span class="badge-fuel">Diesel</span>
               </figure>
@@ -895,9 +912,10 @@
 
           <!-- 5 -->
           <li class="reveal">
-            <article class="card" tabindex="0" data-tilt>
+            <article class="card" tabindex="0" data-tilt data-car-id="innova-2021" data-car-title="Toyota Innova Crysta" data-car-image="./assets/images/innova.jpeg" data-car-price="₹355 / hour">
               <figure class="card-banner">
                 <img src="./assets/images/innova.jpeg" alt="Toyota Innova Crysta silver MPV"/>
+                <button class="wish-btn" type="button" aria-label="Save Toyota Innova Crysta" data-wish><ion-icon name="heart-outline"></ion-icon></button>
                 <span class="badge-year">2021</span>
                 <span class="badge-fuel">Diesel</span>
               </figure>
@@ -918,9 +936,10 @@
 
           <!-- 6 -->
           <li class="reveal">
-            <article class="card" tabindex="0" data-tilt>
+            <article class="card" tabindex="0" data-tilt data-car-id="scorpio-2019" data-car-title="Mahindra Scorpio" data-car-image="./assets/images/mahindra-scorpio.jpg" data-car-price="₹315 / hour">
               <figure class="card-banner">
                 <img src="./assets/images/mahindra-scorpio.jpg" alt="Mahindra Scorpio red SUV"/>
+                <button class="wish-btn" type="button" aria-label="Save Mahindra Scorpio" data-wish><ion-icon name="heart-outline"></ion-icon></button>
                 <span class="badge-year">2019</span>
                 <span class="badge-fuel">Diesel</span>
               </figure>
@@ -1016,6 +1035,54 @@
         }
       });
     });
+
+    // Wishlist (localStorage)
+    (function(){
+      const STORAGE_KEY = 'vehigo_wishlist_v1';
+      const getList = () => {
+        try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'); } catch { return []; }
+      };
+      const saveList = (list) => localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
+      const exists = (id) => getList().some(x => x.id === id);
+
+      function toggleWish(card){
+        const id = card.getAttribute('data-car-id');
+        const title = card.getAttribute('data-car-title');
+        const image = card.getAttribute('data-car-image');
+        const price = card.getAttribute('data-car-price');
+        let list = getList();
+        if(exists(id)){
+          list = list.filter(x => x.id !== id);
+        } else {
+          list.push({ id, title, image, price });
+        }
+        saveList(list);
+        renderHearts();
+      }
+
+      function renderHearts(){
+        document.querySelectorAll('[data-wish]').forEach(btn => {
+          const card = btn.closest('.card');
+          const id = card?.getAttribute('data-car-id');
+          const active = id && exists(id);
+          btn.classList.toggle('active', !!active);
+          btn.innerHTML = active ? '<ion-icon name="heart"></ion-icon>' : '<ion-icon name="heart-outline"></ion-icon>';
+          btn.setAttribute('aria-pressed', String(!!active));
+        });
+      }
+
+      // Bind events
+      document.querySelectorAll('[data-wish]').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const card = btn.closest('.card');
+          if(card) toggleWish(card);
+          e.stopPropagation();
+        });
+      });
+
+      // Initialize state on load
+      renderHearts();
+    })();
   </script>
 
   <!-- Footer -->
