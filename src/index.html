@@ -610,6 +610,31 @@
         </div>
       </section>
 
+      <!-- Footer FAQ -->
+      <section class="section" aria-labelledby="footer-faq-title" style="background:#0b1220;">
+        <div class="container" style="padding:40px 20px 20px; color:#cbd5e1;">
+          <h2 id="footer-faq-title" class="h2 section-title" style="color:#e2e8f0; text-align:center; margin-bottom:20px;">Frequently Asked Questions</h2>
+          <div class="footer-faq" style="max-width:900px; margin:0 auto; display:grid; gap:10px;">
+            <details style="background:rgba(255,255,255,0.06); border:1px solid rgba(148,163,184,.2); border-radius:12px; padding:12px 14px;">
+              <summary style="cursor:pointer; list-style:none; font-weight:700; color:#e5e7eb;">How do I book a car?</summary>
+              <div style="margin-top:8px; color:#94a3b8;">Choose a car, select dates, and confirm your booking. You’ll get an instant confirmation.</div>
+            </details>
+            <details style="background:rgba(255,255,255,0.06); border:1px solid rgba(148,163,184,.2); border-radius:12px; padding:12px 14px;">
+              <summary style="cursor:pointer; list-style:none; font-weight:700; color:#e5e7eb;">What documents are required?</summary>
+              <div style="margin-top:8px; color:#94a3b8;">A valid driving license and a government ID. International users may need an international driving permit.</div>
+            </details>
+            <details style="background:rgba(255,255,255,0.06); border:1px solid rgba(148,163,184,.2); border-radius:12px; padding:12px 14px;">
+              <summary style="cursor:pointer; list-style:none; font-weight:700; color:#e5e7eb;">Is there a security deposit?</summary>
+              <div style="margin-top:8px; color:#94a3b8;">Yes, a refundable deposit may apply based on the car category. It’s released after return checks.</div>
+            </details>
+            <details style="background:rgba(255,255,255,0.06); border:1px solid rgba(148,163,184,.2); border-radius:12px; padding:12px 14px;">
+              <summary style="cursor:pointer; list-style:none; font-weight:700; color:#e5e7eb;">Can I cancel or modify my booking?</summary>
+              <div style="margin-top:8px; color:#94a3b8;">Yes. Free cancellation windows vary by plan. You can also modify dates if the car is available.</div>
+            </details>
+          </div>
+        </div>
+      </section>
+
   <!--featured-car-->
         <section class="section featured-car" id="featured-car">
           <div class="container">
@@ -619,7 +644,7 @@
           
             </div>
 
-            <ul class="featured-car-list">
+            <ul class="featured-car-list" id="featured-car-list">
               <li>
                 <div class="featured-car-card">
                   <figure class="card-banner">
@@ -975,21 +1000,11 @@
     const SUPABASE_URL = 'https://lpqxhwvjafhoxlhldmad.supabase.co';
     const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxwcXhod3ZqYWZob3hsaGxkbWFkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDUzOTEwOTUsImV4cCI6MjA2MDk2NzA5NX0.76inH5xouMvUl4jaUJH_1OI7Kesc9DFpeHpKHoIt2As'; // 🔒Use anon key for frontend
 
-    const supabaseClient = createClient(SUPABASE_URL, SUPABASE_KEY);
+    const featuredCarList = document.getElementById('featured-car-list');
+    if (!featuredCarList) return;
 
-    try {
-      const { data: cars, error } = await supabaseClient
-        .from('Cars')
-        .select('*');
-
-      if (error) {
-        console.error('Error fetching cars:', error.message);
-        return;
-      }
-
-      const featuredCarList = document.getElementById('featured-car-list');
+    const renderCars = (cars) => {
       featuredCarList.innerHTML = '';
-
       cars.forEach(car => {
         const carCard = document.createElement('li');
         carCard.innerHTML = `
@@ -1000,36 +1015,71 @@
             <div class="card-content">
               <div class="card-title-wrapper">
                 <h3 class="h3 card-title"><a href="#">${car.Car}</a></h3>
+                ${car.year ? `<data class="year" value="${car.year}">${car.year}</data>` : ''}
               </div>
               <ul class="card-list">
                 <li class="card-list-item">
                   <ion-icon name="people-outline"></ion-icon>
-                  <span class="card-item-text">${car["Number of people"]} People</span>
+                  <span class="card-item-text">${car.people} People</span>
                 </li>
                 <li class="card-list-item">
                   <ion-icon name="flash-outline"></ion-icon>
-                  <span class="card-item-text">${car.Fuel}</span>
+                  <span class="card-item-text">${car.fuel}</span>
                 </li>
                 <li class="card-list-item">
                   <ion-icon name="speedometer-outline"></ion-icon>
-                  <span class="card-item-text">${car.Mileage}</span>
+                  <span class="card-item-text">${car.mileage}</span>
                 </li>
                 <li class="card-list-item">
                   <ion-icon name="hardware-chip-outline"></ion-icon>
-                  <span class="card-item-text">${car["Gear Type"]}</span>
+                  <span class="card-item-text">${car.gear}</span>
                 </li>
               </ul>
               <div class="card-price-wrapper">
-                <p class="card-price"><strong>₹${car.Price}</strong> / hour</p>
-                <button class="btn">Rent now</button>
+                <p class="card-price"><strong>₹${car.price}</strong> / hour</p>
+                <a href="rentCarForm.html" class="btn">Rent now</a>
               </div>
             </div>
           </div>
         `;
         featuredCarList.appendChild(carCard);
       });
+    };
+
+    const defaultCars = [
+      { Car: 'Hyundai Creta', picture: './assets/images/creta.jpeg', year: 2022, people: 5, fuel: 'Petrol', mileage: '17.2km / 1-litre', gear: 'Manual', price: 283 },
+      { Car: 'Tata Nexon', picture: './assets/images/nexon.jpg', year: 2019, people: 5, fuel: 'Petrol', mileage: '17.4km / 1-litre', gear: 'Manual', price: 210 },
+      { Car: 'Swift Dzire', picture: './assets/images/swift desire.jpg', year: 2018, people: 5, fuel: 'Petrol', mileage: '23.3km / 1-litre', gear: 'Automatic', price: 180 },
+      { Car: 'Toyota Fortuner', picture: './assets/images/fortuner.jpg', year: 2020, people: 7, fuel: 'Diesel', mileage: '12.9km / 1-litre', gear: 'Automatic', price: 490 },
+      { Car: 'Toyota Innova Crysta', picture: './assets/images/innova.jpeg', year: 2021, people: 7, fuel: 'Diesel', mileage: '14.3km / 1-litre', gear: 'Automatic', price: 355 }
+    ];
+
+    try {
+      const supabaseClient = createClient(SUPABASE_URL, SUPABASE_KEY);
+      const { data, error } = await supabaseClient.from('Cars').select('*');
+      if (error) {
+        console.warn('Cars fetch failed, using defaults:', error.message);
+        renderCars(defaultCars);
+        return;
+      }
+      if (!data || data.length === 0) {
+        renderCars(defaultCars);
+        return;
+      }
+      const mapped = data.map(c => ({
+        Car: c.Car,
+        picture: c.picture,
+        year: c.year || '',
+        people: c["Number of people"] || 5,
+        fuel: c.Fuel || 'Petrol',
+        mileage: c.Mileage || '-',
+        gear: c["Gear Type"] || '-',
+        price: c.Price || 0
+      }));
+      renderCars(mapped);
     } catch (err) {
-      console.error('Unexpected error:', err);
+      console.warn('Unexpected error, using default cars:', err);
+      renderCars(defaultCars);
     }
   });
 </script>

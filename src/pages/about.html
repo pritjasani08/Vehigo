@@ -23,6 +23,27 @@
     <!-- .header { background: linear-gradient(180deg, rgb(2, 9, 88) 0%, rgb(2, 9, 88) 100%) !important; top: 0; z-index: 1000; box-shadow: 0 2px 0 rgba(0,0,0,0.15); } -->
     .navbar { padding-top: 8px !important; padding-bottom: 8px !important; margin-left: 20px; }
     .navbar-brand img { height: 40px; }
+    
+    /* Dark mode logo visibility */
+    .dark-theme .navbar-brand img {
+      filter: brightness(0) invert(1);
+      opacity: 1;
+      transition: opacity 0.3s ease;
+    }
+
+    .dark-theme .navbar-brand:hover img {
+      opacity: 0.8;
+    }
+
+    .dark-theme .logo img {
+      filter: brightness(0) invert(1);
+      opacity: 1;
+      transition: opacity 0.3s ease;
+    }
+
+    .dark-theme .logo:hover img {
+      opacity: 0.8;
+    }
     .navbar-nav { gap: 6px; align-items: center; }
     .nav-link { color: #eaf2ff !important; font-weight: 600; border-radius: 10px; padding: 8px 12px !important; }
     .nav-link:hover { background: rgba(255,255,255,0.14); color: #ffffff !important; }
@@ -67,6 +88,52 @@
     .dark-theme .footer .footer-link { color: #cbd5e1; }
     .dark-theme .footer .footer-link:hover { color: #60a5fa; }
     .dark-theme .social-link { color: #cbd5e1; }
+
+    /* New Footer UI */
+    .footer {
+      padding: 60px 0 20px;
+    }
+    .footer .container { max-width: 1200px; margin-inline: auto; }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr 1.2fr;
+      gap: 32px;
+      align-items: start;
+    }
+    .footer-brand .logo { display: inline-flex; align-items: center; gap: 8px; }
+    .footer-brand .logo img { height: 44px; }
+    .footer-text { margin-top: 12px; color: #475569; }
+    .dark-theme .footer-text { color: #94a3b8; }
+    .footer .social-list { display: flex; gap: 12px; margin-top: 14px; }
+    .footer .social-link { font-size: 22px; color: #1f2937; }
+    .footer .social-link:hover { color: #2563eb; }
+    .dark-theme .footer .social-link { color: #cbd5e1; }
+    .footer-list-title { font-weight: 800; margin-bottom: 10px; color: #0f172a; }
+    .dark-theme .footer-list-title { color: #e2e8f0; }
+    .footer-link { color: #374151; font-weight: 500; }
+    .footer-link:hover { color: #2563eb; transform: translateX(2px); }
+    .newsletter { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 16px; padding: 16px; }
+    .dark-theme .newsletter { background: #111827; border-color: #263241; }
+    .newsletter h4 { margin-bottom: 8px; font-weight: 800; }
+    .newsletter p { font-size: 0.95rem; color: #475569; margin-bottom: 12px; }
+    .dark-theme .newsletter p { color: #94a3b8; }
+    .newsletter .form { display: flex; gap: 8px; }
+    .newsletter input { flex: 1; padding: 10px 12px; border-radius: 10px; border: 1px solid #e5e7eb; outline: none; }
+    .dark-theme .newsletter input { background: #0f1218; color: #e5e7eb; border-color: #263241; }
+    .newsletter button { padding: 10px 14px; border-radius: 10px; background: #2563eb; color: #fff; border: none; font-weight: 700; }
+    .newsletter button:hover { background: #1e40af; }
+    .footer-bottom { margin-top: 32px; border-top: 1px solid #e5e7eb; padding-top: 16px; display: flex; align-items: center; justify-content: space-between; }
+    .dark-theme .footer-bottom { border-color: #263241; }
+    .footer-bottom .mini-links { display: flex; gap: 12px; }
+    .footer-bottom .mini-links a { color: #475569; font-size: 0.95rem; }
+    .footer-bottom .mini-links a:hover { color: #2563eb; }
+    @media (max-width: 992px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 576px) {
+      .footer-grid { grid-template-columns: 1fr; }
+      .newsletter .form { flex-direction: column; }
+    }
   </style>
 
 
@@ -372,38 +439,49 @@
 
     <footer class="footer">
       <div class="container">
-        <div class="footer-top">
+        <div class="footer-grid">
           <div class="footer-brand">
             <a href="#" class="logo">
-              <img data-aos="fade-up" src="../assets/images/vehigologo.png" alt="VehiGo logo" class="logo_header"/>
+              <img src="../assets/images/vehigologo.png" alt="VehiGo logo" />
             </a>
-            <p data-aos="fade-up" class="footer-text">
-              Search for cheap rental cars in Madhya Pradesh. We offer our
-              customers an attractive and fun selection of vehicles as well as
-              an opportunity to rent their cars when not in use. Experience
-              reliable, affordable, and convenient car rental services across
-              Bhopal, Indore, and Ujjain.
+            <p class="footer-text">
+              Seamless rentals across Bhopal, Indore and Ujjain. Reliable, affordable and convenient car rental services for every journey.
             </p>
+            <div class="social-list">
+              <a href="#" class="social-link"><ion-icon name="logo-facebook"></ion-icon></a>
+              <a href="#" class="social-link"><ion-icon name="logo-instagram"></ion-icon></a>
+              <a href="#" class="social-link"><ion-icon name="logo-twitter"></ion-icon></a>
+              <a href="#" class="social-link"><ion-icon name="logo-linkedin"></ion-icon></a>
+              <a href="#" class="social-link"><ion-icon name="logo-github"></ion-icon></a>
+            </div>
           </div>
+
           <ul class="footer-list">
-            <li data-aos="fade-up">
-              <p class="footer-list-title">Company</p>
-            </li>
-            <li data-aos="fade-up"><a href="about.html" class="footer-link">About us</a></li>
-            <li data-aos="fade-up"><a href="pricing.html" class="footer-link">Pricing plans</a></li>
-            <li data-aos="fade-up"><a href="../../blog.html" class="footer-link">Our blog</a></li>
-            <li data-aos="fade-up"><a href="../../ContactUs.html" class="footer-link">Contact Us</a></li>
+            <li><p class="footer-list-title">Company</p></li>
+            <li><a href="about.html" class="footer-link">About us</a></li>
+            <li><a href="pricing.html" class="footer-link">Pricing plans</a></li>
+            <li><a href="../../blog.html" class="footer-link">Our blog</a></li>
+            <li><a href="../../ContactUs.html" class="footer-link">Contact Us</a></li>
           </ul>
+
           <ul class="footer-list">
-            <li data-aos="fade-up">
-              <p class="footer-list-title">Support</p>
-            </li>
-            <li data-aos="fade-up"><a href="help-center.html" class="footer-link">Help center</a></li>
-            <li data-aos="fade-up"><a href="Askaques.html" class="footer-link">Ask a question</a></li>
-            <li data-aos="fade-up"><a href="../../privacypolicy.html" class="footer-link">Privacy policy</a></li>
-            <li data-aos="fade-up"><a href="tandc.html" class="footer-link">Terms & conditions</a></li>
+            <li><p class="footer-list-title">Support</p></li>
+            <li><a href="help-center.html" class="footer-link">Help center</a></li>
+            <li><a href="Askaques.html" class="footer-link">Ask a question</a></li>
+            <li><a href="../../privacypolicy.html" class="footer-link">Privacy policy</a></li>
+            <li><a href="tandc.html" class="footer-link">Terms & conditions</a></li>
           </ul>
+
+          <div class="newsletter">
+            <h4>Stay in the loop</h4>
+            <p>Subscribe to get updates about new cars and offers.</p>
+            <div class="form">
+              <input type="email" placeholder="Enter your email" aria-label="Email address" />
+              <button type="button">Subscribe</button>
+            </div>
+          </div>
         </div>
+
         <div class="footer-bottom">
           <ul data-aos="fade-up" class="social-list">
             <li><a href="https://facebook.com/vehigo" class="social-link" target="_blank" rel="noopener"><ion-icon name="logo-facebook"></ion-icon></a></li>
@@ -413,9 +491,12 @@
             <li><a href="https://github.com/vehigo" class="social-link" target="_blank" rel="noopener"><ion-icon name="logo-github"></ion-icon></a></li>
             <li><a href="mailto:contact@vehigo.com" class="social-link"><ion-icon name="mail-outline"></ion-icon></a></li>
           </ul>
-          <p class="copyright">
-            © 2024 <a href="#">VehiGo</a>. All Rights Reserved.
-          </p>
+          <p class="copyright">© <span id="about-footer-year"></span> VehiGo. All rights reserved.</p>
+          <div class="mini-links">
+            <a href="../../privacypolicy.html">Privacy</a>
+            <a href="tandc.html">Terms</a>
+            <a href="../../ContactUs.html">Contact</a>
+          </div>
         </div>
       </div>
     </footer>
