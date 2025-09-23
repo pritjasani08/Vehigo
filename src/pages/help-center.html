@@ -234,18 +234,23 @@
 .nav-item a:hover {
   color: #00bfff;
 }
-
 .btn-vehigo {
-  background: #2563eb;
-  color: #fff;
-  border-radius: 6px;
+  background: #2563eb !important;
+  border-radius: 20px;
   padding: 8px 14px;
   font-weight: 600;
+  color: white !important;   /* force override bootstrap */
+  text-decoration: none;     /* remove underline */
+  display: inline-flex;      /* better alignment for icon + text */
+  align-items: center;
+  gap: 6px;                  /* spacing between icon and text */
 }
 
 .btn-vehigo:hover {
-  background: #1d4ed8;
+  background: #1d4ed8 !important;
+  color: white !important;   /* keep text white on hover */
 }
+
 
 /* Responsive */
 @media (max-width: 900px) {
