@@ -165,7 +165,15 @@
     }
 
     /* Dark mode logo visibility */
-    
+    .dark-theme .navbar-brand img {
+      filter: brightness(0) invert(1);
+      opacity: 1;
+      transition: opacity 0.3s ease;
+    }
+
+    .dark-theme .navbar-brand:hover img {
+      opacity: 0.8;
+    }
 
     .navbar-nav {
       flex-wrap: nowrap;
