@@ -14,6 +14,15 @@
   min-height: 100vh;
 }
 
+.body_tag {
+  background: linear-gradient(rgba(0, 0, 0, 0.884), rgba(0, 0, 0, 0.719)),
+              url(../images/hero_banner_mustang.png) no-repeat center center;
+  background-size: cover;
+  background-attachment: scroll;   /* ensure it scrolls with content */
+  min-height: 170vh;
+  height: 100%;                    /* allow it to grow with content */
+}
+
 .password-checklist {
   list-style: none;
   padding: 0;
@@ -100,10 +109,6 @@
     border: 2px black solid;
     
 }
-.form:hover{
-    /* transform: translateY(8px) */
-    /* transform: scale(1.2); */
-}
 
 .form.signup {
     opacity: 0;
@@ -140,9 +145,7 @@ header {
 } */
 
 
-form {
-    /* margin-top: 30px; */
-}
+
 
 .form .field {
     position: relative;
@@ -418,8 +421,7 @@ a.google span {
   border-radius: 10px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
+
 }
 
 .terms-checkbox-label {
@@ -536,3 +538,30 @@ a.google span {
     height: 20px;
   }
 }
+
+
+/* Default border (blue) */
+.field.terms-field {
+  border: none;
+  border-radius: 6px;
+  height: auto !important;
+  padding: 0;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+/* Error border (red) */
+.field.terms-field.error {
+  border-color: #ef4444; /* Tailwind red-500 type shade */
+}
+
+/* Inner container only for background + spacing */
+.terms-checkbox-container {
+  padding: 18px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 1px solid #3842c7;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+
