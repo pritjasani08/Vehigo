@@ -40,27 +40,40 @@
             line-height: 1.6;
             color: var(--vehigo-text);
             background-color: var(--vehigo-bg);
+            padding-top: 70px;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
-        .dark-theme body {
-            background-color: var(--vehigo-bg);
-        }
+        /* Header (matching About page) */
+        .site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: linear-gradient(180deg, rgba(255,255,255,.95) 0%, rgba(255,255,255,.9) 100%); box-shadow: 0 2px 0 rgba(0,0,0,0.06); border-bottom: 1px solid var(--vehigo-border); }
+        .dark-theme .site-header { background: linear-gradient(180deg,#0f172a 0%,#111827 100%) !important; box-shadow: 0 2px 0 rgba(0,0,0,0.6); }
+        .navbar { padding-top: 8px !important; padding-bottom: 8px !important; }
+        .navbar-brand img { height: 40px; }
+        .navbar-nav { gap: 6px; align-items: center; }
+        .nav-link { color: #e5edff !important; font-weight: 600; border-radius: 10px; padding: 8px 12px !important; }
+        .nav-link:hover { background: rgba(255,255,255,0.08); color: #ffffff !important; }
+        .nav-link[href$='featured-car.html'] { border-radius: 9999px; padding: 8px 16px !important; }
+        .nav-link[href$='featured-car.html']:hover { background: rgba(255,255,255,0.16); }
+        .theme-toggle-btn { border-radius: 9999px; padding: 8px 12px; font-weight: 700; backdrop-filter: blur(6px); }
+        .theme-toggle-btn.btn-outline-light { border-color: rgba(255,255,255,0.35); background: rgba(255,255,255,0.12); color: #fff !important; }
+        .theme-toggle-btn.btn-outline-light:hover { background: rgba(255,255,255,0.2); }
+        .btn-vehigo { background: #1d4ed8; color: #fff; border-radius: 9999px; padding: 8px 16px; font-weight: 800; border: none; }
+        .btn-vehigo:hover { background: #1e40af; }
 
-        .header {
+        .page-header {
             background: linear-gradient(135deg, var(--vehigo-primary) 0%, var(--vehigo-secondary) 100%);
             color: white;
             padding: 2rem 0;
             margin-bottom: 3rem;
         }
 
-        .header h1 {
+        .page-header h1 {
             font-size: 2.5rem;
             font-weight: 800;
             margin-bottom: 0.5rem;
         }
 
-        .header p {
+        .page-header p {
             font-size: 1.1rem;
             opacity: 0.9;
         }
@@ -383,7 +396,7 @@
         }
 
         @media (max-width: 768px) {
-            .header h1 {
+            .page-header h1 {
                 font-size: 2rem;
             }
             
@@ -413,52 +426,54 @@
         }
     </style>
 </head>
-<body class="dark-theme">
-    <!-- Navigation Header -->
-    <header class="nav-header">
-        <nav class="navbar navbar-expand-xl">
-            <div class="nav-container">
-                <a class="navbar-brand" href="index.html" aria-label="Vehigo Home">
-                    <i class="fa-solid fa-car"></i>
-                    Vehigo
-                </a>
+<body>
+    <!-- Navbar Header -->
+    <header class="site-header">
+        <nav class="navbar navbar-expand-xl container py-2">
+            <a class="navbar-brand d-flex align-items-center gap-1" href="index.html" aria-label="Vehigo Home">
+                <img src="./assets/images/vehigologo.png" alt="Vehigo" />
+            </a>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain"
-                    aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain"
+                aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                <div class="collapse navbar-collapse" id="navMain">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="featured-car.html">Explore Cars</a></li>
-                        <li class="nav-item"><a class="nav-link" href="src/pages/about.html">About Us</a></li>
-                        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                        <li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li>
-                        <li class="nav-item"><a class="nav-link" href="offline.html">Offline Centers</a></li>
-                        <li class="nav-item"><a class="nav-link" href="rentcar.html">Rent Your Car</a></li>
+            <div class="collapse navbar-collapse" id="navMain">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="featured-car.html">Explore cars</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./src/pages/about.html">About us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="offline.html">Offline Centers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="rentcar.html">Rent Your Car</a></li>
 
-                        <!-- Theme switch -->
-                        <li class="nav-item">
-                            <button id="themeToggle" class="btn theme-toggle-btn" type="button">
-                                <i class="fa-solid fa-gear"></i><span class="label">Light</span>
-                            </button>
-                        </li>
+                    <!-- Theme switch -->
+                    <li class="nav-item">
+                        <button id="themeToggle" class="btn btn-outline-secondary theme-toggle-btn" type="button">
+                            <i class="fa-solid fa-gear"></i><span class="label">Light</span>
+                        </button>
+                    </li>
 
-                        <!-- Login -->
-                        <li class="nav-item">
-                            <a href="src/pages/login.html" class="btn btn-vehigo">
-                                <i class="fa-regular fa-user"></i> Login
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                    <!-- Login & Logout -->
+                    <li class="nav-item">
+                        <a href="./src/pages/login.html" class="btn btn-vehigo" id="loginBtn">
+                            <i class="fa-regular fa-user"></i> <span>Login</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <button id="logoutBtn" class="btn btn-outline-light d-none" aria-label="Logout">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                        </button>
+                    </li>
+                </ul>
             </div>
         </nav>
     </header>
 
-    <!-- Header -->
-    <div class="header">
+    <!-- Page Header Banner -->
+    <div class="page-header" style="margin-top: 70px;">
         <div class="sitemap-container">
             <h1><i class="fa-solid fa-sitemap"></i> Vehigo Sitemap</h1>
             <p>Navigate through all pages and sections of our car rental platform</p>
@@ -680,6 +695,45 @@
     </footer>
 
     <script>
+        // Theme toggle behavior
+        document.addEventListener('DOMContentLoaded', function () {
+            const themeToggleBtn = document.getElementById('themeToggle');
+            if (themeToggleBtn) {
+                const stored = localStorage.getItem('theme');
+                if (stored === 'dark') {
+                    document.body.classList.add('dark-theme');
+                    themeToggleBtn.classList.add('btn-outline-light');
+                    themeToggleBtn.classList.remove('btn-outline-secondary');
+                    themeToggleBtn.innerHTML = '<i class="fa-solid fa-gear"></i><span class="label">Light</span>';
+                } else {
+                    document.body.classList.remove('dark-theme');
+                    themeToggleBtn.classList.add('btn-outline-secondary');
+                    themeToggleBtn.classList.remove('btn-outline-light');
+                    themeToggleBtn.innerHTML = '<i class="fa-solid fa-gear"></i><span class="label">Dark</span>';
+                }
+
+                themeToggleBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const isDark = document.body.classList.contains('dark-theme');
+                    if (isDark) {
+                        document.body.classList.remove('dark-theme');
+                        localStorage.setItem('theme', 'light');
+                        this.classList.add('btn-outline-secondary');
+                        this.classList.remove('btn-outline-light');
+                        this.innerHTML = '<i class="fa-solid fa-gear"></i><span class="label">Dark</span>';
+                    } else {
+                        document.body.classList.add('dark-theme');
+                        localStorage.setItem('theme', 'dark');
+                        this.classList.add('btn-outline-light');
+                        this.classList.remove('btn-outline-secondary');
+                        this.innerHTML = '<i class="fa-solid fa-gear"></i><span class="label">Light</span>';
+                    }
+                });
+            } else if (localStorage.getItem('theme') === 'dark') {
+                document.body.classList.add('dark-theme');
+            }
+        });
+
         // Set current date
         document.getElementById('currentDate').textContent = new Date().toLocaleDateString();
         
