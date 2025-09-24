@@ -31,6 +31,73 @@
       /* Compact theme toggle */
       .theme-toggle-btn{ border-radius:9999px; padding:4px 8px; font-size:12px; font-weight:700; border:1px solid rgba(255,255,255,.35); background:rgba(255,255,255,.12); color:#fff; display:inline-flex; align-items:center; gap:6px; }
       .theme-toggle-btn i{ font-size:14px; }
+
+      .forms.show-signup {
+        align-items: flex-start;
+        padding-top: 10px;
+      }
+
+      @media (max-width: 480px) {
+        .forms.show-signup {
+          padding-top: 20px;
+        }
+      }
+
+      .form .field.input-field,
+      .form .field.button-field {
+        height: 50px;
+      }
+
+      .field.terms-field {
+        height: auto !important;
+        margin: 20px 0 30px 0;
+        padding: 0;
+      }
+
+      .terms-checkbox-container {
+        display: block;
+        padding: 18px;
+        background-color: rgba(255,255,255,0.95);
+      }
+
+      .terms-error {
+        display: block;
+        margin-top: 8px;
+        color: #ff6b6b;
+        font-size: 13px;
+        font-weight: 500;
+      }
+
+      .field.button-field {
+        margin-top: 12px;
+        z-index: 2;
+      }
+
+      .header .navbar-link,
+      .header .contact-link,
+      .header .contact-time {
+        color: #ffffff !important;
+        font-weight: 600;
+      }
+
+      .header .navbar-link:hover {
+        color: #ffd700 !important;
+      }
+
+      .body_tag { 
+        padding-top: 0 !important; 
+      }
+
+      body.dark-theme .navbar-brand img {
+      filter: brightness(0) invert(1);
+      opacity: 1;
+      transition: opacity 0.3s ease;
+    }
+
+    body.dark-theme .navbar-brand:hover img {
+      opacity: 0.8;
+    }
+
     </style>
   </head>
 
@@ -43,11 +110,10 @@
     <header class="header" data-header>
       <div class="container" style="background-color: #0171d3">
         <!-- <div class="overlay" data-overlay></div> -->
-
+        <div class="navbar-brand">
         <a href="../../index.html" class="logo">
           <img src="../assets/images/vehigologo.png" alt="VehiGo logo" />
-        </a>
-
+        </a></div>
         <nav class="navbar" data-navbar>
           <ul class="navbar-list">
             <li>
@@ -86,7 +152,7 @@
         </div>
 
         <button id="themeToggle" class="theme-toggle-btn" type="button" aria-label="Toggle theme" title="Toggle theme">
-          <i class='bx bx-moon'></i><span class="label">Light</span>
+          <i class='bx bx-moon'></i><span class="label">Dark</span>
         </button>
       </div>
     </header>
@@ -180,7 +246,7 @@
                   id="signupPassword"
                   name="password"
                   type="password"
-                  placeholder="password"
+                  placeholder="Password"
                   class="password"
                   required
                 />
@@ -267,11 +333,11 @@
     const themeBtn = document.getElementById('themeToggle');
     const themeLabel = themeBtn?.querySelector('.label');
     const savedTheme = localStorage.getItem('login_theme') || 'light';
-    if(savedTheme === 'dark'){ document.body.classList.add('dark-theme'); if(themeLabel) themeLabel.textContent='Dark'; }
+    if(savedTheme === 'dark'){ document.body.classList.add('dark-theme'); if(themeLabel) themeLabel.textContent='Light'; }
     themeBtn?.addEventListener('click', ()=>{
       const isDark = document.body.classList.toggle('dark-theme');
-      localStorage.setItem('login_theme', isDark ? 'dark' : 'light');
-      if(themeLabel) themeLabel.textContent = isDark ? 'Dark' : 'Light';
+      localStorage.setItem('login_theme', isDark ? 'light' : 'dark');
+      if(themeLabel) themeLabel.textContent = isDark ? 'Light' : 'Dark';
     });
 
     const container = document.querySelector(".forms");
@@ -536,6 +602,8 @@
       }
     }
   });
+
+  
 </script>
 
   </body>
