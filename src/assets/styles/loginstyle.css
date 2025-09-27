@@ -536,3 +536,7 @@ a.google span {
     height: 20px;
   }
 }
+
+#signup-modal{
+  z-index: 500;
+}
