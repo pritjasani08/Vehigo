@@ -2153,6 +2153,230 @@
         addMessage("Hello! I'm your Vehigo assistant. How can I help you today?", 'bot');
       }, 1000);
     });
+
+    // Language Translation System
+    const translations = {
+      en: {
+        'nav-home': 'Home',
+        'nav-explore': 'Explore cars',
+        'nav-about': 'About us',
+        'nav-blog': 'Blog',
+        'nav-contact': 'Contact Us',
+        'nav-offline': 'Offline Centers',
+        'nav-rent': 'Rent Your Car',
+        'nav-login': 'Login',
+        'hero-location': 'Live in',
+        'hero-location-bhopal': 'Bhopal',
+        'hero-location-indore': 'Indore',
+        'hero-location-ujjain': 'Ujjain',
+        'hero-title-1': 'Seamless rentals,',
+        'hero-title-2': 'Endless Adventures.',
+        'hero-subtitle': 'Find the perfect car in minutes, from budget hatchbacks to premium SUVs — or list your car and earn.',
+        'car-suv': 'SUV',
+        'car-sedan': 'Sedan',
+        'car-hatchback': 'Hatchback',
+        'car-mpv': 'MPV',
+        'car-luxury': 'Luxury',
+        'search-location': 'Location',
+        'search-location-placeholder': 'e.g., Bhopal',
+        'search-price': 'Max rent / hour (₹)',
+        'search-price-placeholder': 'e.g., 300',
+        'search-car-type': 'Car Type',
+        'search-car-any': 'Any',
+        'search-button': 'Search'
+      },
+      hi: {
+        'nav-home': 'होम',
+        'nav-explore': 'कारों का अन्वेषण करें',
+        'nav-about': 'हमारे बारे में',
+        'nav-blog': 'ब्लॉग',
+        'nav-contact': 'संपर्क करें',
+        'nav-offline': 'ऑफलाइन केंद्र',
+        'nav-rent': 'अपनी कार किराए पर दें',
+        'nav-login': 'लॉगिन',
+        'hero-location': 'रहते हैं',
+        'hero-location-bhopal': 'भोपाल',
+        'hero-location-indore': 'इंदौर',
+        'hero-location-ujjain': 'उज्जैन',
+        'hero-title-1': 'सहज किराया,',
+        'hero-title-2': 'अंतहीन रोमांच।',
+        'hero-subtitle': 'बजट हैचबैक से लेकर प्रीमियम एसयूवी तक - या अपनी कार सूचीबद्ध करें और कमाएं।',
+        'car-suv': 'एसयूवी',
+        'car-sedan': 'सेडान',
+        'car-hatchback': 'हैचबैक',
+        'car-mpv': 'एमपीवी',
+        'car-luxury': 'लक्जरी',
+        'search-location': 'स्थान',
+        'search-location-placeholder': 'जैसे, भोपाल',
+        'search-price': 'अधिकतम किराया / घंटा (₹)',
+        'search-price-placeholder': 'जैसे, 300',
+        'search-car-type': 'कार प्रकार',
+        'search-car-any': 'कोई भी',
+        'search-button': 'खोजें'
+      },
+      es: {
+        'nav-home': 'Inicio',
+        'nav-explore': 'Explorar autos',
+        'nav-about': 'Acerca de nosotros',
+        'nav-blog': 'Blog',
+        'nav-contact': 'Contáctanos',
+        'nav-offline': 'Centros offline',
+        'nav-rent': 'Renta tu auto',
+        'nav-login': 'Iniciar sesión',
+        'hero-location': 'Vive en',
+        'hero-location-bhopal': 'Bhopal',
+        'hero-location-indore': 'Indore',
+        'hero-location-ujjain': 'Ujjain',
+        'hero-title-1': 'Alquileres sin problemas,',
+        'hero-title-2': 'Aventuras infinitas.',
+        'hero-subtitle': 'Encuentra el auto perfecto en minutos, desde hatchbacks económicos hasta SUVs premium — o lista tu auto y gana.',
+        'car-suv': 'SUV',
+        'car-sedan': 'Sedán',
+        'car-hatchback': 'Hatchback',
+        'car-mpv': 'MPV',
+        'car-luxury': 'Lujo',
+        'search-location': 'Ubicación',
+        'search-location-placeholder': 'ej., Bhopal',
+        'search-price': 'Alquiler máximo / hora (₹)',
+        'search-price-placeholder': 'ej., 300',
+        'search-car-type': 'Tipo de auto',
+        'search-car-any': 'Cualquiera',
+        'search-button': 'Buscar'
+      },
+      fr: {
+        'nav-home': 'Accueil',
+        'nav-explore': 'Explorer les voitures',
+        'nav-about': 'À propos de nous',
+        'nav-blog': 'Blog',
+        'nav-contact': 'Nous contacter',
+        'nav-offline': 'Centres hors ligne',
+        'nav-rent': 'Louez votre voiture',
+        'nav-login': 'Connexion',
+        'hero-location': 'Vivez à',
+        'hero-location-bhopal': 'Bhopal',
+        'hero-location-indore': 'Indore',
+        'hero-location-ujjain': 'Ujjain',
+        'hero-title-1': 'Locations sans tracas,',
+        'hero-title-2': 'Aventures infinies.',
+        'hero-subtitle': 'Trouvez la voiture parfaite en quelques minutes, des citadines économiques aux SUV premium — ou listez votre voiture et gagnez.',
+        'car-suv': 'SUV',
+        'car-sedan': 'Berline',
+        'car-hatchback': 'Citadine',
+        'car-mpv': 'MPV',
+        'car-luxury': 'Luxe',
+        'search-location': 'Localisation',
+        'search-location-placeholder': 'ex., Bhopal',
+        'search-price': 'Loyer maximum / heure (₹)',
+        'search-price-placeholder': 'ex., 300',
+        'search-car-type': 'Type de voiture',
+        'search-car-any': 'Tout',
+        'search-button': 'Rechercher'
+      },
+      de: {
+        'nav-home': 'Startseite',
+        'nav-explore': 'Autos erkunden',
+        'nav-about': 'Über uns',
+        'nav-blog': 'Blog',
+        'nav-contact': 'Kontakt',
+        'nav-offline': 'Offline-Zentren',
+        'nav-rent': 'Vermieten Sie Ihr Auto',
+        'nav-login': 'Anmelden',
+        'hero-location': 'Leben in',
+        'hero-location-bhopal': 'Bhopal',
+        'hero-location-indore': 'Indore',
+        'hero-location-ujjain': 'Ujjain',
+        'hero-title-1': 'Nahtlose Vermietungen,',
+        'hero-title-2': 'Endlose Abenteuer.',
+        'hero-subtitle': 'Finden Sie das perfekte Auto in Minuten, von Budget-Kompaktwagen bis hin zu Premium-SUVs — oder listen Sie Ihr Auto und verdienen Sie.',
+        'car-suv': 'SUV',
+        'car-sedan': 'Limousine',
+        'car-hatchback': 'Kompaktwagen',
+        'car-mpv': 'MPV',
+        'car-luxury': 'Luxus',
+        'search-location': 'Standort',
+        'search-location-placeholder': 'z.B., Bhopal',
+        'search-price': 'Max. Miete / Stunde (₹)',
+        'search-price-placeholder': 'z.B., 300',
+        'search-car-type': 'Autotyp',
+        'search-car-any': 'Beliebig',
+        'search-button': 'Suchen'
+      }
+    };
+
+    let currentLanguage = 'en';
+
+    // Function to translate text
+    function translateText() {
+      const elements = document.querySelectorAll('[data-translate]');
+      elements.forEach(element => {
+        const key = element.getAttribute('data-translate');
+        if (translations[currentLanguage] && translations[currentLanguage][key]) {
+          element.textContent = translations[currentLanguage][key];
+        }
+      });
+
+      // Handle placeholders
+      const placeholderElements = document.querySelectorAll('[data-translate-placeholder]');
+      placeholderElements.forEach(element => {
+        const key = element.getAttribute('data-translate-placeholder');
+        if (translations[currentLanguage] && translations[currentLanguage][key]) {
+          element.placeholder = translations[currentLanguage][key];
+        }
+      });
+    }
+
+    // Language toggle functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const languageToggle = document.getElementById('languageToggle');
+      const languageDropdown = document.querySelector('.language-dropdown');
+      const currentLangSpan = document.getElementById('currentLang');
+      const languageItems = document.querySelectorAll('[data-lang]');
+
+      // Load saved language or default to English
+      const savedLanguage = localStorage.getItem('vehigo-language') || 'en';
+      currentLanguage = savedLanguage;
+      translateText();
+      updateLanguageDisplay();
+
+      // Language dropdown items click handler
+      languageItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+          e.preventDefault();
+          const selectedLang = this.getAttribute('data-lang');
+          currentLanguage = selectedLang;
+          
+          // Save to localStorage
+          localStorage.setItem('vehigo-language', selectedLang);
+          
+          // Translate content
+          translateText();
+          
+          // Update display
+          updateLanguageDisplay();
+          
+          // Close dropdown
+          const dropdown = bootstrap.Dropdown.getInstance(languageToggle);
+          if (dropdown) {
+            dropdown.hide();
+          }
+        });
+      });
+    });
+
+    // Update language display
+    function updateLanguageDisplay() {
+      const currentLangSpan = document.getElementById('currentLang');
+      if (currentLangSpan) {
+        const langCodes = {
+          'en': 'EN',
+          'hi': 'HI',
+          'es': 'ES',
+          'fr': 'FR',
+          'de': 'DE'
+        };
+        currentLangSpan.textContent = langCodes[currentLanguage] || 'EN';
+      }
+    }
   </script>
 </body>
 
