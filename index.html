@@ -1301,7 +1301,19 @@
             <div class="row g-2">
               <div class="col-12 col-md-4">
                 <label for="input-1" class="form-label fw-semibold" data-translate="search-location">Location</label>
-                <input type="text" id="input-1" class="form-control" data-translate-placeholder="search-location-placeholder" placeholder="e.g., Bhopal" />
+                <input type="text" id="input-1" class="form-control" data-translate-placeholder="search-location-placeholder" placeholder="e.g., Bhopal" list="city-list" autocomplete="off" />
+                <datalist id="city-list">
+                  <option value="Bhopal"></option>
+                  <option value="Indore"></option>
+                  <option value="Ujjain"></option>
+                  <option value="Mumbai"></option>
+                  <option value="Delhi"></option>
+                  <option value="Bengaluru"></option>
+                  <option value="Pune"></option>
+                  <option value="Hyderabad"></option>
+                  <option value="Chennai"></option>
+                  <option value="Kolkata"></option>
+                </datalist>
               </div>
               <div class="col-12 col-md-4">
                 <label for="input-2" class="form-label fw-semibold" data-translate="search-price">Max rent / hour (₹)</label>
