@@ -55,16 +55,48 @@
     </nav>
   </header>
 
+  <div class="reading-progress" id="readingProgress"></div>
+  
   <div class="blog-container">
     <div class="blog-header">
       <img src="../assets/images/blog-1.jpg" alt="Opening of New Offices">
+      <div class="article-info">
+        <div class="article-category">Company News</div>
+        <div class="article-stats">
+          <div class="stat-item">
+            <i class="fas fa-clock"></i>
+            <span>5 min read</span>
+          </div>
+          <div class="stat-item">
+            <i class="fas fa-eye"></i>
+            <span>1,247 views</span>
+          </div>
+          <div class="stat-item">
+            <i class="fas fa-comment"></i>
+            <span>114 comments</span>
+          </div>
+        </div>
+      </div>
     </div>
 
 
     
 
     <h1 class="blog-title">Opening of New Offices of the Company</h1>
-    <div class="blog-meta">By <strong>Benialla Dsouza</strong> | January 14, 2022</div>
+    <div class="blog-meta">
+      <div class="meta-item">
+        <i class="fas fa-user"></i>
+        <span>By <strong>Benialla Dsouza</strong></span>
+      </div>
+      <div class="meta-item">
+        <i class="fas fa-calendar"></i>
+        <span>January 14, 2022</span>
+      </div>
+      <div class="meta-item">
+        <i class="fas fa-tag"></i>
+        <span>Company, Expansion</span>
+      </div>
+    </div>
 
     <div class="blog-content">
       <p>We are thrilled to announce the grand opening of our brand-new offices in three major metropolitan cities — Mumbai, Bengaluru, and Delhi! This expansion marks a major milestone in VehiGo’s mission to make car rentals more accessible, affordable, and innovative for users across the country.</p>
@@ -78,9 +110,37 @@
       <p>We invite all our customers, partners, and supporters to visit our new offices and witness the future of smart car rentals.</p>
     </div>
 
-    <div class="author">Written by Benialla Dsouza</div>
+    <div class="share-section">
+      <div class="share-title">Share this article</div>
+      <div class="share-buttons">
+        <a href="#" class="share-btn twitter">
+          <i class="fab fa-twitter"></i>
+          Share on Twitter
+        </a>
+        <a href="#" class="share-btn facebook">
+          <i class="fab fa-facebook"></i>
+          Share on Facebook
+        </a>
+        <a href="#" class="share-btn linkedin">
+          <i class="fab fa-linkedin"></i>
+          Share on LinkedIn
+        </a>
+        <a href="#" class="share-btn copy">
+          <i class="fas fa-link"></i>
+          Copy Link
+        </a>
+      </div>
+    </div>
 
-    <a class="back-btn" href="../index.html#blog">← Back to Blogs</a>
+    <div class="author">
+      <i class="fas fa-pen"></i>
+      Written by Benialla Dsouza - Content Writer at VehiGo
+    </div>
+
+    <a class="back-btn" href="../blog.html">
+      <i class="fas fa-arrow-left"></i>
+      Back to Blogs
+    </a>
   </div>
   <script>
 document.addEventListener('DOMContentLoaded', () => {
@@ -115,6 +175,60 @@ document.addEventListener('DOMContentLoaded', () => {
       themeToggle.classList.remove('btn-outline-light');
       themeToggle.classList.add('btn-outline-secondary');
     }
+  });
+
+  // Reading Progress Bar
+  const progressBar = document.getElementById('readingProgress');
+  
+  function updateReadingProgress() {
+    const blogContent = document.querySelector('.blog-content');
+    if (!blogContent) return;
+    
+    const contentTop = blogContent.offsetTop;
+    const contentHeight = blogContent.offsetHeight;
+    const windowHeight = window.innerHeight;
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    const startProgress = contentTop - windowHeight / 2;
+    const endProgress = contentTop + contentHeight - windowHeight / 2;
+    
+    if (scrollTop < startProgress) {
+      progressBar.style.width = '0%';
+    } else if (scrollTop > endProgress) {
+      progressBar.style.width = '100%';
+    } else {
+      const progress = ((scrollTop - startProgress) / (endProgress - startProgress)) * 100;
+      progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+    }
+  }
+  
+  window.addEventListener('scroll', updateReadingProgress);
+  updateReadingProgress(); // Initial call
+
+  // Share functionality
+  const shareButtons = document.querySelectorAll('.share-btn');
+  shareButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+      e.preventDefault();
+      const url = window.location.href;
+      const title = document.querySelector('.blog-title').textContent;
+      
+      if (button.classList.contains('twitter')) {
+        window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`, '_blank');
+      } else if (button.classList.contains('facebook')) {
+        window.open(`https://facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank');
+      } else if (button.classList.contains('linkedin')) {
+        window.open(`https://linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`, '_blank');
+      } else if (button.classList.contains('copy')) {
+        navigator.clipboard.writeText(url).then(() => {
+          const originalText = button.innerHTML;
+          button.innerHTML = '<i class="fas fa-check"></i> Copied!';
+          setTimeout(() => {
+            button.innerHTML = originalText;
+          }, 2000);
+        });
+      }
+    });
   });
 });
 </script>
