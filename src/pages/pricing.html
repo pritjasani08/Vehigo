@@ -55,7 +55,7 @@
             backdrop-filter: blur(10px) !important;
             position: sticky !important;
             top: 0 !important;
-            padding: 2px;
+            padding: 12px;
             z-index: 1000 !important;
         }
         .dark-theme .header {
@@ -78,8 +78,10 @@
 
         /* Theme Toggle Button */
         .theme-toggle-btn {
-            width: 80px;
-            
+            margin-top: 4px;
+            display: flex;
+            flex-direction: row;
+            gap: 1px;
             border-radius: 25px !important; padding: 10px 20px !important; font-size: 14px !important; font-weight: 600 !important;
             transition: all 0.3s ease !important; border: 2px solid #e5e7eb !important;
             background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%) !important; color: #374151 !important;
@@ -530,6 +532,7 @@
 
 /* Fix login button visibility in dark mode */
 .dark-theme .btn-vehigo {
+
     background: #3b82f6 !important;
     color: white !important;
     border: 1px solid #3b82f6 !important;
@@ -543,11 +546,15 @@
 
 /* Ensure the login button has proper styling in light mode as well */
 .btn-vehigo {
+    margin-top: 2px;
+    display: flex;
+    flex-direction: row;
+    border-radius: 20px;
     background: #2563eb;
     color: white;
     border: 1px solid #2563eb;
     padding: 8px 16px;
-    border-radius: 8px;
+
     text-decoration: none;
     transition: all 0.3s ease;
 }
@@ -586,7 +593,7 @@
             <!-- Theme switch -->
             <li class="nav-item">
               <button id="themeToggle" class="btn btn-outline-secondary theme-toggle-btn" type="button">
-                <i class="fa-solid fa-gear"></i><span class="label">Light</span>
+                <i class="fa-solid fa-gear"></i><span class="label"> Light</span>
               </button>
             </li>
 
