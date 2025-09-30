@@ -369,13 +369,202 @@
                 transform: translateY(-10px);
             }
         }
+
+        /* Footer (modernized) */
+        .footer {
+            background: #0b1220;
+            color: #cbd5e1;
+            margin-top: 0;
+        }
+        .footer .container { max-width: 1200px; margin: 0 auto; padding: 48px 20px; }
+        .footer-top { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1.4fr; gap: 28px; align-items: start; }
+        .footer-brand .logo img { height: 42px; }
+        .footer-text { margin-top: 12px; line-height: 1.7; color: #94a3b8; }
+        .footer-list { list-style: none; padding: 0; }
+        .footer-list-title { color: #e2e8f0; font-weight: 700; margin-bottom: 12px; }
+        .footer-link { display: inline-block; color: #cbd5e1; text-decoration: none; margin: 8px 0; transition: color .2s, transform .2s; }
+        .footer-link:hover { color: #60a5fa; transform: translateX(2px); }
+        .newsletter { background: rgba(255,255,255,0.04); border: 1px solid rgba(148,163,184,.15); padding: 14px; border-radius: 12px; }
+        .newsletter p { color: #94a3b8; margin: 0 0 10px; }
+        .newsletter-form { display: flex; gap: 8px; }
+        .newsletter-form input { flex: 1; padding: 10px 12px; border-radius: 10px; border: 1px solid rgba(148,163,184,.25); background: rgba(15,23,42,.6); color: #e2e8f0; }
+        .newsletter-form button { padding: 10px 14px; border-radius: 10px; border: 1px solid #2563eb; background: #2563eb; color: #fff; cursor: pointer; font-weight: 600; }
+        .newsletter-form button:hover { background: #1d4ed8; }
+        .footer-bottom { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-top: 28px; padding-top: 18px; border-top: 1px solid rgba(148,163,184,.15); }
+        .social-list { list-style: none; display: flex; gap: 10px; padding: 0; margin: 0; }
+        .social-link { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.06); color: #cbd5e1; text-decoration: none; transition: background .2s, transform .2s; }
+        .social-link:hover { background: rgba(37,99,235,.25); transform: translateY(-2px); }
+        .copyright { color: #94a3b8; }
+        .payments { display: flex; gap: 8px; align-items: center; }
+        .badge { background: rgba(255,255,255,0.06); border: 1px solid rgba(148,163,184,.2); color: #cbd5e1; padding: 6px 10px; border-radius: 10px; font-size: 12px; }
+        /* Dark theme adjusts (inherits well already) */
+        .dark-theme .footer { background: #0b1220; }
+        .dark-theme .newsletter-form input { background: rgba(2,6,23,.7); }
+        @media (max-width: 900px) { .footer-top { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 520px) { .footer-top { grid-template-columns: 1fr; } .payments { flex-wrap: wrap; } }
+
+        /* Dark Theme Styles */
+.dark-theme .pricing-hero {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    color: #e5e7eb;
+}
+
+.dark-theme .pricing-hero::before {
+    background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+}
+
+.dark-theme .pricing {
+    background: #1a1a1a;
+    color: #e5e7eb;
+}
+
+.dark-theme .pricing-card {
+    background: #2d2d2d;
+    color: #e5e7eb;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme .pricing-card:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.dark-theme .pricing-card.featured {
+    border-color: #60a5fa;
+}
+
+.dark-theme .pricing-header h3 {
+    color: #f3f4f6;
+}
+
+.dark-theme .price {
+    color: #60a5fa;
+}
+
+.dark-theme .pricing-features li {
+    color: #d1d5db;
+}
+
+.dark-theme .pricing-features i {
+    color: #60a5fa;
+}
+
+.dark-theme .pricing-btn {
+    background: #3b82f6;
+    color: white;
+}
+
+.dark-theme .pricing-btn:hover {
+    background: #2563eb;
+}
+
+.dark-theme .additional-services {
+    background: #1a1a1a;
+}
+
+.dark-theme .additional-services h2 {
+    color: #f3f4f6;
+}
+
+.dark-theme .service-card {
+    background: #2d2d2d;
+    color: #e5e7eb;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme .service-card h3 {
+    color: #f3f4f6;
+}
+
+.dark-theme .service-card p {
+    color: #d1d5db;
+}
+
+.dark-theme .service-card .price {
+    color: #60a5fa;
+}
+
+/* Dark theme text color adjustments */
+.dark-theme .period {
+    color: #9ca3af;
+}
+
+.dark-theme .pricing-badge {
+    background: #3b82f6;
+    color: white;
+}
+
+/* Ensure good contrast for all text elements */
+.dark-theme body {
+    background-color: #111827;
+    color: #e5e7eb;
+}
+
+.dark-theme .container {
+    color: inherit;
+}
+
+.dark-mode .navbar-brand img {
+        filter: brightness(0) invert(1);
+        opacity: 1;
+        transition: opacity 0.3s ease;
+      }
+
+      .dark-mode .navbar-brand:hover img {
+        opacity: 0.8;
+      }
+
+      .dark-mode .logo img {
+        filter: brightness(0) invert(1);
+        opacity: 1;
+        transition: opacity 0.3s ease;
+      }
+
+      .dark-mode .logo:hover img {
+        opacity: 0.8;
+      }
+
+      /* Fix header logo visibility in dark mode */
+.dark-theme .navbar-brand img {
+    filter: brightness(0) invert(1);
+}
+
+/* Fix login button visibility in dark mode */
+.dark-theme .btn-vehigo {
+    background: #3b82f6 !important;
+    color: white !important;
+    border: 1px solid #3b82f6 !important;
+}
+
+.dark-theme .btn-vehigo:hover {
+    background: #2563eb !important;
+    border-color: #2563eb !important;
+    color: white !important;
+}
+
+/* Ensure the login button has proper styling in light mode as well */
+.btn-vehigo {
+    background: #2563eb;
+    color: white;
+    border: 1px solid #2563eb;
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-vehigo:hover {
+    background: #1d4ed8;
+    border-color: #1d4ed8;
+    color: white;
+    transform: translateY(-1px);
+}
     </style>
 </head>
 <body>
     <!-- Header (Bootstrap, matches home) -->
     <header class="header">
       <nav class="navbar navbar-expand-xl navbar-light container py-2">
-        <a class="navbar-brand d-flex align-items-center gap-2" href="../../index.html" aria-label="Vehigo Home">
+        <a class="navbar-brand d-flex align-items-center gap-1" href="index.html" aria-label="Vehigo Home">
           <img src="../../assets/images/vehigologo.png" alt="Vehigo" />
         </a>
 
@@ -537,50 +726,56 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container" style="max-width: 1200px; margin: auto;">
-            <!-- Top Section -->
-            <div class="footer-top" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2.5rem;">
-                <!-- Brand Section -->
-                <div class="footer-brand" style="flex: 1 1 300px;">
-                    <a href="../../index.html" class="logo">
-                        <img src="../../assets/images/vehigologo.png" alt="VehiGo logo" style="width: 160px;" />
-                    </a>
-                    <p class="footer-text" style="margin-top: 1rem; line-height: 1.6;">
-                        🚗 <strong>Find affordable rental cars across Madhya Pradesh!</strong><br>
-                        Choose from a wide range of vehicles, or rent out your own when not in use. We make car rental easy, accessible, and efficient for everyone.
-                    </p>
-                </div>
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <a href="../../index.html" class="navbar-brand d-flex align-items-center gap-1">
+              <img src="../../assets/images/vehigologo.png" alt="VehiGo logo">
+            </a>
+            <p class="footer-text">Search for affordable rental cars across Madhya Pradesh. Rent from a wide range of vehicles or list yours to earn when not in use.</p>
+          </div>
 
-                <!-- Company Section -->
-                <ul class="footer-list">
-                    <li><p class="footer-list-title">Company</p></li>
-                    <li><a href="about.html" class="footer-link">About us</a></li>
-                    <li><a href="pricing.html" class="footer-link">Pricing plans</a></li>
-                    <li><a href="../../blog.html" class="footer-link">Our blog</a></li>
-                    <li><a href="../../ContactUs.html" class="footer-link">Contact us</a></li>
-                </ul>
+          <ul class="footer-list">
+            <li><p class="footer-list-title">Company</p></li>
+            <li><a href="about.html" class="footer-link">About us</a></li>
+            <li><a href="pricing.html" class="footer-link">Pricing plans</a></li>
+            <li><a href="../../blog.html" class="footer-link">Our blog</a></li>
+            <li><a href="../../ContactUs.html" class="footer-link">Contact us</a></li>
+          </ul>
 
-                <!-- Support Section -->
-                <ul class="footer-list">
-                    <li><p class="footer-list-title">Support</p></li>
-                    <li><a href="help-center.html" class="footer-link">Help center</a></li>
-                    <li><a href="Askaques.html" class="footer-link">Ask a question</a></li>
-                    <li><a href="../../privacypolicy.html" class="footer-link">Privacy policy</a></li>
-                    <li><a href="tandc.html" class="footer-link">Terms & conditions</a></li>
-                </ul>
-            </div>
+          <ul class="footer-list">
+            <li><p class="footer-list-title">Support</p></li>
+            <li><a href="help-center.html" class="footer-link">Help center</a></li>
+            <li><a href="Askaques.html" class="footer-link">Ask a question</a></li>
+            <li><a href="../../privacypolicy.html" class="footer-link">Privacy policy</a></li>
+            <li><a href="tandc.html" class="footer-link">Terms & conditions</a></li>
+          </ul>
 
-            <!-- Bottom Section -->
-            <div class="footer-bottom">
-                <div class="social-icons" style="text-align: center; margin-bottom: 10px;">
-                    <a href="https://www.linkedin.com" target="_blank" style="margin: 0 10px; font-size: 24px; color: #0077b5;"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://www.twitter.com" target="_blank" style="margin: 0 10px; font-size: 24px; color: #1da1f2;"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.instagram.com" target="_blank" style="margin: 0 10px; font-size: 24px; color: #e1306c;"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.facebook.com" target="_blank" style="margin: 0 10px; font-size: 24px; color: #3b5998;"><i class="fab fa-facebook"></i></a>
-                </div>
-                <p style="text-align: center; font-size: 14px; color: #333;">© <span id="copyright-year">2023</span> Vehigo — All rights reserved.</p>
-            </div>
+          <div class="newsletter">
+            <p>Get updates and special offers</p>
+            <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thanks for subscribing!');">
+              <input type="email" placeholder="Enter your email" aria-label="Email">
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
         </div>
+
+        <div class="footer-bottom">
+          <ul class="social-list">
+            <li><a class="social-link" href="https://facebook.com/vehigo" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a class="social-link" href="https://instagram.com/vehigo" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+            <li><a class="social-link" href="https://twitter.com/vehigo" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+            <li><a class="social-link" href="https://linkedin.com/company/vehigo" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+          </ul>
+          <p class="copyright">© <span id="copyright-year">2023</span> Vehigo — All rights reserved.</p>
+          <div class="payments">
+            <span class="badge">UPI</span>
+            <span class="badge">Visa</span>
+            <span class="badge">Mastercard</span>
+            <span class="badge">NetBanking</span>
+          </div>
+        </div>
+      </div>
     </footer>
 
     <script src="../../assets/js/script.js"></script>

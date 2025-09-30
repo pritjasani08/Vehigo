@@ -15,6 +15,90 @@
       href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
       rel="stylesheet"
     />
+    <style>
+      /* Dark theme overrides */
+      body.dark-theme { background:#0b1220; color:#e6e6f0; }
+      body.dark-theme .header .container{ background-color:#0f172a !important; }
+      body.dark-theme .navbar-link{ color:#e5e7eb !important; }
+      body.dark-theme .navbar-link:hover{ color:#60a5fa !important; }
+      body.dark-theme .body_tag{ background: transparent; }
+      body.dark-theme .forms .form{ background:#101927; border:1px solid #1f2a3a; box-shadow: 0 14px 40px rgba(0,0,0,.4); }
+      body.dark-theme input{ background:#0f172a; color:#e6e6f0; border-color:#334155; }
+      body.dark-theme .password-checklist{ background:#0f172a; color:#cbd5e1; border:1px solid #334155; }
+      body.dark-theme .terms-text, body.dark-theme .forgot-pass{ color:#93c5fd !important; }
+      body.dark-theme .field.button-field button{ background:#2563eb; }
+
+      /* Compact theme toggle */
+      .theme-toggle-btn{ border-radius:9999px; padding:4px 8px; font-size:12px; font-weight:700; border:1px solid rgba(255,255,255,.35); background:rgba(255,255,255,.12); color:#fff; display:inline-flex; align-items:center; gap:6px; }
+      .theme-toggle-btn i{ font-size:14px; }
+
+      .forms.show-signup {
+        align-items: flex-start;
+        padding-top: 10px;
+      }
+
+      @media (max-width: 480px) {
+        .forms.show-signup {
+          padding-top: 20px;
+        }
+      }
+
+      .form .field.input-field,
+      .form .field.button-field {
+        height: 50px;
+      }
+
+      .field.terms-field {
+        height: auto !important;
+        margin: 20px 0 30px 0;
+        padding: 0;
+      }
+
+      .terms-checkbox-container {
+        display: block;
+        padding: 18px;
+        background-color: rgba(255,255,255,0.95);
+      }
+
+      .terms-error {
+        display: block;
+        margin-top: 8px;
+        color: #ff6b6b;
+        font-size: 13px;
+        font-weight: 500;
+      }
+
+      .field.button-field {
+        margin-top: 12px;
+        z-index: 2;
+      }
+
+      .header .navbar-link,
+      .header .contact-link,
+      .header .contact-time {
+        color: #ffffff !important;
+        font-weight: 600;
+      }
+
+      .header .navbar-link:hover {
+        color: #ffd700 !important;
+      }
+
+      .body_tag { 
+        padding-top: 0 !important; 
+      }
+
+      body.dark-theme .navbar-brand img {
+      filter: brightness(0) invert(1);
+      opacity: 1;
+      transition: opacity 0.3s ease;
+    }
+
+    body.dark-theme .navbar-brand:hover img {
+      opacity: 0.8;
+    }
+
+    </style>
   </head>
 
 
@@ -26,11 +110,10 @@
     <header class="header" data-header>
       <div class="container" style="background-color: #0171d3">
         <!-- <div class="overlay" data-overlay></div> -->
-
+        <div class="navbar-brand">
         <a href="../../index.html" class="logo">
           <img src="../assets/images/vehigologo.png" alt="VehiGo logo" />
-        </a>
-
+        </a></div>
         <nav class="navbar" data-navbar>
           <ul class="navbar-list">
             <li>
@@ -67,6 +150,10 @@
             <span class="contact-time" style="color: white;">Mon - Sat: 9:00 am - 6:00 pm</span>
           </div>
         </div>
+
+        <button id="themeToggle" class="theme-toggle-btn" type="button" aria-label="Toggle theme" title="Toggle theme">
+          <i class='bx bx-moon'></i><span class="label">Dark</span>
+        </button>
       </div>
     </header>
 
@@ -127,7 +214,7 @@
           <div id="loginMessage"></div>
         </div>
 
-        <div class="form signup">
+        <div class="form signup" id="signup-modal">
           <div class="form-content">
             <header>Signup</header>
             <form id="signupForm" action="/signup" method="POST">
@@ -159,7 +246,7 @@
                   id="signupPassword"
                   name="password"
                   type="password"
-                  placeholder="password"
+                  placeholder="Password"
                   class="password"
                   required
                 />
@@ -206,8 +293,22 @@
                 />
               </div>
 
+              <!-- Terms and Conditions Checkbox -->
+              <div class="field terms-field">
+                <div class="terms-checkbox-container">
+                  <label class="terms-checkbox-label">
+                    <input type="checkbox" id="terms-checkbox" name="terms-checkbox" required />
+                    <span class="checkmark"></span>
+                    <span class="terms-text">
+                      I have read and agree to the 
+                      <a href="../../tandc.html" target="_blank" class="terms-link">Terms and Conditions of Vehigo</a>
+                    </span>
+                  </label>
+                </div>
+              </div>
+
               <div class="field button-field">
-                <button type="submit">Signup</button>
+                <button type="submit" id="signup-submit-btn">Signup</button>
               </div>
             </form>
 
@@ -228,6 +329,17 @@
 
     <script>
   document.addEventListener("DOMContentLoaded", () => {
+    // Theme persistence
+    const themeBtn = document.getElementById('themeToggle');
+    const themeLabel = themeBtn?.querySelector('.label');
+    const savedTheme = localStorage.getItem('login_theme') || 'light';
+    if(savedTheme === 'dark'){ document.body.classList.add('dark-theme'); if(themeLabel) themeLabel.textContent='Light'; }
+    themeBtn?.addEventListener('click', ()=>{
+      const isDark = document.body.classList.toggle('dark-theme');
+      localStorage.setItem('login_theme', isDark ? 'light' : 'dark');
+      if(themeLabel) themeLabel.textContent = isDark ? 'Light' : 'Dark';
+    });
+
     const container = document.querySelector(".forms");
     const signUpLink = document.querySelector(".signup-link");
     const logInLink = document.querySelector(".login-link");
@@ -317,11 +429,53 @@
       container.classList.remove("show-signup");
     });
 
+    // Terms and Conditions Checkbox Validation
+    const termsCheckbox = document.getElementById("terms-checkbox");
+    const signupSubmitBtn = document.getElementById("signup-submit-btn");
+    const termsContainer = document.querySelector(".terms-checkbox-container");
+    
+    // Initially disable submit button
+    signupSubmitBtn.disabled = true;
+    
+    // Add error message element
+    const termsErrorMessage = document.createElement("div");
+    termsErrorMessage.className = "terms-error";
+    termsErrorMessage.textContent = "You must agree to the Terms and Conditions to continue.";
+    termsContainer.appendChild(termsErrorMessage);
+    
+    // Checkbox change event
+    termsCheckbox.addEventListener("change", function() {
+      if (this.checked) {
+        signupSubmitBtn.disabled = false;
+        termsContainer.classList.remove("error");
+        termsErrorMessage.style.display = "none";
+      } else {
+        signupSubmitBtn.disabled = true;
+        termsContainer.classList.add("error");
+        termsErrorMessage.style.display = "block";
+      }
+    });
+
     // Handle Signup Form Submission
     if (signupForm) {
       signupForm.addEventListener("submit", async (e) => {
         e.preventDefault();
         signupErrorMessage.textContent = "";
+
+        // Check terms and conditions first
+        if (!termsCheckbox.checked) {
+          termsContainer.classList.add("error");
+          termsErrorMessage.style.display = "block";
+          termsCheckbox.focus();
+          
+          // Scroll to terms section
+          termsContainer.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'center' 
+          });
+          
+          return;
+        }
 
         if (!signupForm.checkValidity()) {
           signupForm.reportValidity();
@@ -448,6 +602,8 @@
       }
     }
   });
+
+  
 </script>
 
   </body>

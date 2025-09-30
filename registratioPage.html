@@ -2,17 +2,14 @@
 <html lang="en">
 
 <head>
+    <link rel="icon" href="favicon.svg">
     <title>VehiGo-User Details</title>
-
-    <link rel="icon" href="/Vehigo/public/favicon.svg" type="image/x-icon">
-
-
 
     <!-- 
     - custom css link
   -->
-    <link rel="stylesheet" href="../assets/styles/style.css">
-    <link rel="stylesheet" href="../assets/styles/registrationStyle.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./styles/registrationStyle.css">
 
     <!-- 
     - google font link
@@ -34,15 +31,15 @@
 
             <div class="overlay" data-overlay></div>
 
-            <a href="../../index.html" class="logo">
-                <img src="../assets/images/vehigologo.png" alt="VehiGo logo">
+            <a href="index.html" class="logo">
+                <img src="./assets/images/vehigologo.png" alt="VehiGo logo">
             </a>
 
             <nav class="navbar" data-navbar>
                 <ul class="navbar-list">
 
                     <li>
-                        <a href="../../index.html" class="navbar-link" data-nav-link>Home</a>
+                        <a href="index.html" class="navbar-link" data-nav-link>Home</a>
                     </li>
 
                     <li>
@@ -50,7 +47,7 @@
                     </li>
 
                     <li>
-                        <a href="./about.html" class="navbar-link" data-nav-link>About us</a>
+                        <a href="#" class="navbar-link" data-nav-link>About us</a>
                     </li>
 
                     <li>
@@ -74,7 +71,7 @@
                         <span id="aria-label-txt">Explore cars</span>
                     </a>
 
-                    <a href="./login.html" class="btn user-btn" aria-label="Profile">
+                    <a href="./src/pages/login.html" class="btn user-btn" aria-label="Profile">
                         <ion-icon name="person-outline"></ion-icon>
                     </a>
 
@@ -118,13 +115,83 @@
                     <label for="Aadhar">Upload your Aadhar Card: <input id="Aadhar" type="file" name="file"
                             class="field" /></label>
                 </fieldset>
-                <input type="submit" value="Submit" />
+                
+                <!-- Terms and Conditions Checkbox -->
+                <fieldset>
+                    <div class="terms-checkbox-container">
+                        <label class="terms-checkbox-label">
+                            <input type="checkbox" id="terms-checkbox" name="terms-checkbox" required />
+                            <span class="checkmark"></span>
+                            I have read and agree to the 
+                            <a href="tandc.html" target="_blank" class="terms-link">Terms and Conditions of Vehigo</a>
+                        </label>
+                    </div>
+                </fieldset>
+                
+                <input type="submit" value="Submit" id="submit-btn" />
             </form>
         </main>
 
     </div>
     <!-- JavaScript -->
-    <script src="../assets/js/login.js"></script>
+    <script src="scripts/loginscript.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const form = document.querySelector("form");
+            const termsCheckbox = document.getElementById("terms-checkbox");
+            const submitBtn = document.getElementById("submit-btn");
+            const termsContainer = document.querySelector(".terms-checkbox-container");
+            
+            // Initially disable submit button
+            submitBtn.disabled = true;
+            
+            // Add error message element
+            const errorMessage = document.createElement("div");
+            errorMessage.className = "terms-error";
+            errorMessage.textContent = "You must agree to the Terms and Conditions to continue.";
+            termsContainer.appendChild(errorMessage);
+            
+            // Checkbox change event
+            termsCheckbox.addEventListener("change", function() {
+                if (this.checked) {
+                    submitBtn.disabled = false;
+                    termsContainer.classList.remove("error");
+                    errorMessage.style.display = "none";
+                } else {
+                    submitBtn.disabled = true;
+                    termsContainer.classList.add("error");
+                    errorMessage.style.display = "block";
+                }
+            });
+            
+            // Form submit event
+            form.addEventListener("submit", function(e) {
+                if (!termsCheckbox.checked) {
+                    e.preventDefault();
+                    termsContainer.classList.add("error");
+                    errorMessage.style.display = "block";
+                    termsCheckbox.focus();
+                    
+                    // Scroll to terms section
+                    termsContainer.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'center' 
+                    });
+                    
+                    return false;
+                }
+            });
+            
+            // Remove error styling when user starts checking the checkbox
+            termsCheckbox.addEventListener("focus", function() {
+                if (termsContainer.classList.contains("error")) {
+                    termsContainer.classList.remove("error");
+                    errorMessage.style.display = "none";
+                }
+            });
+        });
+    </script>
 </body>
 
 

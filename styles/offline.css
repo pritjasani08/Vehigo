@@ -5,6 +5,297 @@ body {
   text-align: center;
 }
 
+/* Footer Styles */
+.footer {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  color: #1f2937;
+  padding: 3rem 0 2rem;
+  margin-top: 4rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+
+.footer-brand {
+  max-width: 400px;
+}
+
+.footer-brand .logo img {
+  width: 160px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.footer-text {
+  color: #6b7280;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.footer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-list-title {
+  color: #1f2937;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.footer-link {
+  color: #6b7280;
+  text-decoration: none;
+  display: block;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.footer-link:hover {
+  color: #60a5fa;
+}
+
+.footer-bottom {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.social-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 1rem;
+}
+
+.social-link {
+  color: #6b7280;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.social-link:hover {
+  color: #60a5fa;
+}
+
+.copyright {
+  color: #6b7280;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.copyright a {
+  color: #60a5fa;
+  text-decoration: none;
+}
+
+.copyright a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .social-list {
+    justify-content: center;
+  }
+}
+
+/* Dark Mode Styles */
+.dark-theme {
+  background-color: #000000 !important;
+  color: #e2e8f0 !important;
+}
+
+.dark-theme body {
+  background-color: #000000 !important;
+}
+
+.dark-theme #app {
+  background-color: #000000 !important;
+}
+
+.dark-theme .header {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%) !important;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.3) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+}
+
+.dark-theme .navbar-link {
+  color: #e5e7eb !important;
+}
+
+.dark-theme .navbar-link:hover {
+  color: #60a5fa !important;
+  background: rgba(96, 165, 250, 0.1) !important;
+}
+
+.dark-theme .offline-main-content {
+  background-color: #000000 !important;
+}
+
+.dark-theme .offline-hero-section {
+  background-color: #000000 !important;
+}
+
+.dark-theme .map-section {
+  background-color: #000000 !important;
+}
+
+.dark-theme .centers-section {
+  background-color: #000000 !important;
+}
+
+.dark-theme .container {
+  background-color: transparent !important;
+}
+
+.dark-theme .gradient-text {
+  color: #e2e8f0 !important;
+}
+
+.dark-theme .hero-subtitle {
+  color: #d1d5db !important;
+}
+
+.dark-theme .section-title {
+  color: #e2e8f0 !important;
+}
+
+.dark-theme .card {
+  background: linear-gradient(180deg, #374151, #4b5563) !important;
+  border: 1px solid #4b5563 !important;
+  color: #e5e7eb !important;
+}
+
+.dark-theme .card:hover {
+  background: #4b5563 !important;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.3) !important;
+}
+
+.dark-theme .card h3 {
+  color: #f3f4f6 !important;
+}
+
+.dark-theme .card p {
+  color: #d1d5db !important;
+}
+
+.dark-theme .footer {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%) !important;
+  color: #ffffff !important;
+  border-top: 1px solid #374151 !important;
+}
+
+.dark-theme .footer-text {
+  color: #d1d5db !important;
+}
+
+.dark-theme .footer-list-title {
+  color: #ffffff !important;
+}
+
+.dark-theme .footer-link {
+  color: #d1d5db !important;
+}
+
+.dark-theme .footer-link:hover {
+  color: #60a5fa !important;
+}
+
+.dark-theme .footer-bottom {
+  border-top: 1px solid #374151 !important;
+}
+
+.dark-theme .social-link {
+  color: #9ca3af !important;
+}
+
+.dark-theme .social-link:hover {
+  color: #60a5fa !important;
+}
+
+.dark-theme .copyright {
+  color: #9ca3af !important;
+}
+
+.dark-theme .copyright a {
+  color: #60a5fa !important;
+}
+
+.dark-theme #map {
+  background-color: #1a1a1a !important;
+  border: 1px solid #374151 !important;
+}
+
+.dark-theme .modern-map {
+  background-color: #1a1a1a !important;
+}
+
+/* Theme Toggle Button Styles */
+.theme-toggle-btn {
+  border-radius: 25px !important;
+  padding: 10px 20px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+  border: 2px solid #e5e7eb !important;
+  background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%) !important;
+  color: #374151 !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+}
+
+.theme-toggle-btn:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15) !important;
+  border-color: #2563eb !important;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%) !important;
+  color: #2563eb !important;
+}
+
+.theme-toggle-btn.btn-outline-light {
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: white !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+.theme-toggle-btn.btn-outline-light:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  color: white !important;
+}
+
 h1 {
   /* margin: 20px 0; */
   color: #2c3e50;
@@ -72,6 +363,24 @@ h1 {
   background: rgba(10, 15, 26, .96);
 }
 
+/* Dark theme base */
+.dark-theme {
+  background-color: #0f172a;
+  color: #e2e8f0;
+}
+
+.dark-theme body {
+  background-color: #0f172a;
+}
+
+.dark-theme .navbar .nav-link {
+  color: #e5e7eb;
+}
+
+.dark-theme .navbar .nav-link:hover {
+  color: #60a5fa;
+}
+
 /* NAVBAR FIXES */
 .navbar .nav-link {
   font-weight: 600;
@@ -130,6 +439,33 @@ h1 {
   margin: 8px 0;
   color: #555;
 }
+
+/* Dark theme cards */
+.dark-theme .card {
+  background: #374151;
+  border: 1px solid #4b5563;
+}
+
+.dark-theme .card h2,
+.dark-theme .card h3 {
+  color: #f3f4f6;
+}
+
+.dark-theme .card p {
+  color: #d1d5db;
+}
+
+.dark-theme #map {
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+.dark-theme .footer {
+  background: #111827;
+}
+
+.dark-theme .footer .footer-link { color: #d1d5db; }
+.dark-theme .footer .footer-list-title { color: #f3f4f6; }
+.dark-theme .footer .footer-text { color: #d1d5db; }
 
 .card .rating {
   color: #f39c12;

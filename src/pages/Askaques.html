@@ -18,7 +18,128 @@
       color: #333;
       overflow-x: hidden;
       animation: fadeInBody 1s ease-in;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
+    
+    /* Dark mode styles */
+    body.dark-mode {
+      background-color: #121212;
+      color: #e0e0e0;
+    }
+    
+    body.dark-mode h1 {
+      color: #ffffff;
+    }
+    
+    body.dark-mode main {
+      background-color: #1e1e1e;
+      color: #e0e0e0;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+    
+    body.dark-mode h2 {
+      color: hsl(204, 91%, 65%);
+    }
+    
+    body.dark-mode form label {
+      color: hsl(204, 91%, 65%);
+    }
+    
+    body.dark-mode form input[type="text"], 
+    body.dark-mode form input[type="email"], 
+    body.dark-mode form textarea {
+      background-color: #2d2d2d;
+      border-color: hsl(204, 91%, 40%);
+      color: #e0e0e0;
+    }
+    
+    body.dark-mode form input:focus, 
+    body.dark-mode form textarea:focus {
+      border-color: hsl(204, 91%, 60%);
+      box-shadow: 0 0 8px rgba(0,153,255,0.4);
+    }
+    
+    body.dark-mode footer {
+      color: #f7f1f1;
+      background-color:#414040;
+    }
+    
+    body.dark-mode .footer-bottom {
+      background: #2d2d2d;
+      border-color: #3d3d3d;
+    }
+    
+    body.dark-mode .footer-bottom p {
+      color: #f8f5f5;
+    }
+    
+    /* Dark mode toggle */
+    .theme-toggle {
+      display: flex;
+      align-items: center;
+      margin-left: 15px;
+      cursor: pointer;
+    }
+    
+    .theme-toggle input {
+      display: none;
+    }
+    
+    .toggle-slider {
+      position: relative;
+      width: 50px;
+      height: 24px;
+      background-color: #ccc;
+      border-radius: 34px;
+      transition: background-color 0.3s;
+    }
+    
+    .toggle-slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      border-radius: 50%;
+      transition: transform 0.3s;
+    }
+    
+    input:checked + .toggle-slider {
+      background-color: hsl(204, 91%, 53%);
+    }
+    
+    input:checked + .toggle-slider:before {
+      transform: translateX(26px);
+    }
+    
+    .toggle-label {
+      margin-left: 10px;
+      font-size: 0.9rem;
+      color: #333;
+    }
+    
+    body.dark-mode .toggle-label {
+      color: #e0e0e0;
+    }
+    
+    /* Header adjustments for dark mode */
+    body.dark-mode .header {
+      background-color: #1e1e1e;
+      color: #e0e0e0;
+    }
+    
+    body.dark-mode .navbar-link {
+      color: #e0e0e0;
+    }
+    
+    body.dark-mode .header-actions .contact-link,
+    body.dark-mode .header-actions .contact-time {
+      color: #e0e0e0;
+    }
+    
+    /* Rest of the original styles */
     @keyframes fadeInBody { from { opacity: 0; } to { opacity: 1; } }
     @keyframes slideDown { from { transform: translateY(-100px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
 
@@ -58,6 +179,35 @@
       main { width: 90%; padding: 25px 20px; }
       h1 { font-size: 1.8em; }
       h2 { font-size: 1.3em; }
+      .header-actions {
+        flex-wrap: wrap;
+      }
+      .theme-toggle {
+        margin-top: 10px;
+        margin-left: 0;
+      }
+    }
+
+    /* Light mode default */
+.footer-text {
+  color: #333; /* dark grey */
+}
+
+/* Dark mode */
+.dark-mode .footer-text {
+  color: #fff; /* white text in dark mode */
+}
+.dark-mode .footer-list-title{
+  color: hsl(204, 91%, 80%); /* white text */
+}
+.dark-mode .navbar-brand img {
+      filter: brightness(0) invert(1);
+      opacity: 1;
+      transition: opacity 0.3s ease;
+    }
+
+    .dark-mode .navbar-brand:hover img {
+      opacity: 0.8;
     }
   </style>
 </head>
@@ -66,10 +216,10 @@
   <header class="header" data-header>
     <div class="container">
       <div class="overlay" data-overlay></div>
-
-      <a href="../index.html" class="logo">
-        <img src="../assets/images/vehigologo.png" alt="VehiGo logo">
-      </a>
+      <nav class="navbar navbar-expand-xl container py-2 px-3">
+      <a class="navbar-brand d-flex align-items-center gap-1" href="../../index.html" aria-label="Vehigo Home">
+        <img src="../assets/images/vehigologo.png" alt="Vehigo" />
+      </a></nav>
 
       <nav class="navbar" data-navbar>
         <ul class="navbar-list">
@@ -86,8 +236,17 @@
           <a href="tel:1800100100" class="contact-link">1800-100-100</a>
           <span class="contact-time">Mon - Sat: 9:00 am - 6:00 pm</span>
         </div>
+        
+        <!-- Dark mode toggle -->
+        <div class="theme-toggle">
+          <label for="dark-mode-toggle">
+            <input type="checkbox" id="dark-mode-toggle">
+            <span class="toggle-slider"></span>
+          </label>
+          <span class="toggle-label">Dark Mode</span>
+        </div>
 
-        <a href="./login.html" class="btn user-btn" aria-label="Profile">
+        <a href="./login.html" class="btn user-btn" aria-label="Profile">Login
           <ion-icon name="person-outline"></ion-icon>
         </a>
 
@@ -156,25 +315,56 @@
         </ul>
       </div>
 
-      <!-- Bottom Section -->
-      <div class="footer-bottom">
-        <div class="social-icons" style="text-align: center; margin-bottom: 10px;">
-          <a href="https://www.linkedin.com" target="_blank" style="margin: 0 10px; font-size: 24px; color: #0077b5;"><i class="fab fa-linkedin"></i></a>
-          <a href="https://www.twitter.com" target="_blank" style="margin: 0 10px; font-size: 24px; color: #1da1f2;"><i class="fab fa-twitter"></i></a>
-          <a href="https://www.instagram.com" target="_blank" style="margin: 0 10px; font-size: 24px; color: #e1306c;"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.facebook.com" target="_blank" style="margin: 0 10px; font-size: 24px; color: #3b5998;"><i class="fab fa-facebook"></i></a>
+      <!-- Bottom Section - Fixed alignment -->
+      <div class="footer-bottom" style="display: flex; justify-content: space-between; align-items: center; margin-top: 2rem; padding: 10px 20px; background:#d4d6d6; border:1px solid #d4d6d6; border-radius:8px;">
+        
+        <!-- Left Side -->
+        <p style="font-size: 14px; color: #0c0202; margin: 0; display:flex; gap: 5px;">
+          © <span id="copyright-year">2025 </span> Vehigo — All rights reserved.
+        </p>
+
+        <!-- Right Side -->
+        <div class="social-icons" style="display: flex; gap: 15px;">
+          <a href="https://www.linkedin.com" target="_blank" style="font-size: 24px; color: #0077b5;"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.twitter.com" target="_blank" style="font-size: 24px; color: #1da1f2;"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com" target="_blank" style="font-size: 24px; color: #e1306c;"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com" target="_blank" style="font-size: 24px; color: #1877f2;"><i class="fab fa-facebook"></i></a>
         </div>
-        <p style="text-align: center; font-size: 14px; color: #333;">© <span id="copyright-year">2023</span> Vehigo — All rights reserved.</p>
       </div>
     </div>
   </footer>
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+      // Set copyright year
       var yearSpan = document.getElementById('copyright-year');
       if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
       }
+      
+      // Dark mode toggle functionality
+      const darkModeToggle = document.getElementById('dark-mode-toggle');
+      const body = document.body;
+      
+      // Check for saved theme preference or respect OS preference
+      const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+      const currentTheme = localStorage.getItem('theme');
+      
+      if (currentTheme === 'dark' || (!currentTheme && prefersDarkScheme.matches)) {
+        body.classList.add('dark-mode');
+        darkModeToggle.checked = true;
+      }
+      
+      // Toggle dark mode
+      darkModeToggle.addEventListener('change', function() {
+        if (this.checked) {
+          body.classList.add('dark-mode');
+          localStorage.setItem('theme', 'dark');
+        } else {
+          body.classList.remove('dark-mode');
+          localStorage.setItem('theme', 'light');
+        }
+      });
     });
   </script>
 </body>
