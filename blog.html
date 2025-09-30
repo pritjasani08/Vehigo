@@ -284,7 +284,7 @@
       
       .dark-theme .blog-card:hover {
         background-color: #374151 !important;
-        border-color: #4b5563 !important;
+        border-color: #60a5fa !important;
       }
       
       .dark-theme .blog-title {
@@ -297,6 +297,27 @@
       
       .dark-theme .blog-excerpt {
         color: #d1d5db !important;
+      }
+
+      .dark-theme .card-excerpt {
+        color: #d1d5db !important;
+      }
+
+      .dark-theme .read-more {
+        color: #60a5fa !important;
+      }
+
+      .dark-theme .read-more:hover {
+        color: #3b82f6 !important;
+      }
+
+      .dark-theme .reading-time {
+        background-color: #60a5fa !important;
+        color: #ffffff !important;
+      }
+
+      .dark-theme .author-role {
+        color: #9ca3af !important;
       }
       
       /* Footer Dark Mode */
@@ -584,6 +605,10 @@
                                                 alt="Opening of new offices of the company" loading="lazy"
                                                 class="w-100" />
                                         </a>
+                                        <div class="reading-time">
+                                            <ion-icon name="time-outline"></ion-icon>
+                                            <span>5 min read</span>
+                                        </div>
                                         <a href="blogs/blog1.html" class="btn card-badge">Company</a>
                                     </figure>
 
@@ -591,23 +616,29 @@
                                         <h3 class="h3 card-title">
                                             <a href="blogs/blog1.html">Opening of new offices of the company</a>
                                         </h3>
+                                        <p class="card-excerpt">
+                                            We are thrilled to announce the grand opening of our brand-new offices in three major metropolitan cities. This expansion marks a major milestone in VehiGo's mission to make car rentals more accessible and innovative.
+                                        </p>
+                                        <a href="blogs/blog1.html" class="read-more">
+                                            Read More
+                                            <ion-icon name="arrow-forward-outline"></ion-icon>
+                                        </a>
                                         <div class="card-meta">
                                             <div class="publish-date">
                                                 <ion-icon name="time-outline"></ion-icon>
                                                 <time datetime="2022-01-14">January 14, 2022</time>
                                             </div>
                                             <div class="comments">
-
                                                 <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
-
                                                 <data value="114">114</data>
                                             </div>
                                         </div>
                                         <div class="card-author">
-
                                             <img src="./assets/images/author.jpg" class="author-img" />
-
-                                            <div class="author-name">Benialla Dsouza</div>
+                                            <div class="author-info">
+                                                <div class="author-name">Benialla Dsouza</div>
+                                                <div class="author-role">Content Writer</div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -623,32 +654,40 @@
                                             <img src="./assets/images/blog-2.jpg" alt="What cars are most vulnerable"
                                                 loading="lazy" class="w-100" />
                                         </a>
+                                        <div class="reading-time">
+                                            <ion-icon name="time-outline"></ion-icon>
+                                            <span>7 min read</span>
+                                        </div>
                                         <a href="blogs/blog2.html" class="btn card-badge">Repair</a>
                                     </figure>
 
                                     <div class="card-content">
                                         <h3 class="h3 card-title">
-
                                             <a href="blogs/blog2.html">What cars are most vulnerable</a>
-
                                         </h3>
+                                        <p class="card-excerpt">
+                                            Understanding vehicle vulnerabilities is crucial for car owners and rental companies. Learn about the most common security risks and how to protect your vehicle from theft and damage.
+                                        </p>
+                                        <a href="blogs/blog2.html" class="read-more">
+                                            Read More
+                                            <ion-icon name="arrow-forward-outline"></ion-icon>
+                                        </a>
                                         <div class="card-meta">
                                             <div class="publish-date">
                                                 <ion-icon name="time-outline"></ion-icon>
                                                 <time datetime="2022-01-14">January 14, 2022</time>
                                             </div>
                                             <div class="comments">
-
                                                 <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
-
                                                 <data value="114">114</data>
                                             </div>
                                         </div>
                                         <div class="card-author">
-
                                             <img src="./assets/images/author.jpg" class="author-img" />
-
-                                            <div class="author-name">Siddharth Menon</div>
+                                            <div class="author-info">
+                                                <div class="author-name">Siddharth Menon</div>
+                                                <div class="author-role">Security Expert</div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -666,6 +705,10 @@
                                                 alt="Statistics showed which average age" loading="lazy"
                                                 class="w-100" />
                                         </a>
+                                        <div class="reading-time">
+                                            <ion-icon name="time-outline"></ion-icon>
+                                            <span>4 min read</span>
+                                        </div>
                                         <a href="blogs/blog3.html" class="btn card-badge">Cars</a>
                                     </figure>
 
@@ -673,22 +716,29 @@
                                         <h3 class="h3 card-title">
                                             <a href="blogs/blog3.html">Statistics showed which average age</a>
                                         </h3>
+                                        <p class="card-excerpt">
+                                            Recent market research reveals fascinating insights about car ownership patterns and average vehicle age across different demographics. Discover what this means for the rental industry.
+                                        </p>
+                                        <a href="blogs/blog3.html" class="read-more">
+                                            Read More
+                                            <ion-icon name="arrow-forward-outline"></ion-icon>
+                                        </a>
                                         <div class="card-meta">
                                             <div class="publish-date">
                                                 <ion-icon name="time-outline"></ion-icon>
                                                 <time datetime="2022-01-14">January 14, 2022</time>
                                             </div>
                                             <div class="comments">
-
                                                 <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
                                                 <data value="114">114</data>
                                             </div>
                                         </div>
                                         <div class="card-author">
-
                                             <img src="./assets/images/author.jpg" class="author-img" />
-
-                                            <div class="author-name">Priya Deshmukh</div>
+                                            <div class="author-info">
+                                                <div class="author-name">Priya Deshmukh</div>
+                                                <div class="author-role">Data Analyst</div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -704,6 +754,10 @@
                                                 alt="What's required when renting a car?" loading="lazy"
                                                 class="w-100" />
                                         </a>
+                                        <div class="reading-time">
+                                            <ion-icon name="time-outline"></ion-icon>
+                                            <span>6 min read</span>
+                                        </div>
                                         <a href="blogs/blog4.html" class="btn card-badge">Cars</a>
                                     </figure>
 
@@ -711,23 +765,29 @@
                                         <h3 class="h3 card-title">
                                             <a href="blogs/blog4.html">What's required when renting a car?</a>
                                         </h3>
+                                        <p class="card-excerpt">
+                                            Planning to rent a car? Here's everything you need to know about documentation, requirements, and the rental process to ensure a smooth and hassle-free experience.
+                                        </p>
+                                        <a href="blogs/blog4.html" class="read-more">
+                                            Read More
+                                            <ion-icon name="arrow-forward-outline"></ion-icon>
+                                        </a>
                                         <div class="card-meta">
                                             <div class="publish-date">
                                                 <ion-icon name="time-outline"></ion-icon>
                                                 <time datetime="2022-01-14">January 14, 2022</time>
                                             </div>
                                             <div class="comments">
-
                                                 <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
-
                                                 <data value="114">114</data>
                                             </div>
                                         </div>
                                         <div class="card-author">
-
                                             <img src="./assets/images/author.jpg" class="author-img" />
-
-                                            <div class="author-name">Ravi Khanna</div>
+                                            <div class="author-info">
+                                                <div class="author-name">Ravi Khanna</div>
+                                                <div class="author-role">Customer Success</div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -743,6 +803,10 @@
                                             <img src="./assets/images/blog-5.jpg" alt="New rules for handling our cars"
                                                 loading="lazy" class="w-100" />
                                         </a>
+                                        <div class="reading-time">
+                                            <ion-icon name="time-outline"></ion-icon>
+                                            <span>3 min read</span>
+                                        </div>
                                         <a href="blogs/blog5.html" class="btn card-badge">Company</a>
                                     </figure>
 
@@ -750,23 +814,29 @@
                                         <h3 class="h3 card-title">
                                             <a href="blogs/blog5.html">New rules for handling our cars</a>
                                         </h3>
+                                        <p class="card-excerpt">
+                                            We've updated our vehicle handling guidelines to ensure better maintenance, safety, and customer satisfaction. Learn about the new protocols and how they benefit our users.
+                                        </p>
+                                        <a href="blogs/blog5.html" class="read-more">
+                                            Read More
+                                            <ion-icon name="arrow-forward-outline"></ion-icon>
+                                        </a>
                                         <div class="card-meta">
                                             <div class="publish-date">
                                                 <ion-icon name="time-outline"></ion-icon>
                                                 <time datetime="2022-01-14">January 14, 2022</time>
                                             </div>
                                             <div class="comments">
-
                                                 <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
-
                                                 <data value="114">114</data>
                                             </div>
                                         </div>
                                         <div class="card-author">
-
                                             <img src="./assets/images/author.jpg" class="author-img" />
-
-                                            <div class="author-name">Shruti Yadav</div>
+                                            <div class="author-info">
+                                                <div class="author-name">Shruti Yadav</div>
+                                                <div class="author-role">Operations Manager</div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
