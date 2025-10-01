@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pricing Plans | VehiGo</title>
+    <link rel="icon" href="../assets/images/Vehigo.svg">
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/styles/pricing-help.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -17,14 +18,14 @@
             bottom: auto !important;
             max-width: 100% !important;
             width: 100% !important;
-            padding: .5rem 0 !important;
+            padding:auto;
             background: transparent !important;
             border: none !important;
             box-shadow: none !important;
             visibility: visible !important;
             transform: none !important;
         }
-        .header .navbar .navbar-nav { gap: 12px; }
+        .header .navbar .navbar-nav { gap: 4px; }
         .header .navbar .navbar-collapse { justify-content: flex-end; }
         /* Ensure toggler icon visible on dark header */
         .navbar-light .navbar-toggler { border-color: rgba(0,0,0,.1); }
@@ -43,6 +44,9 @@
             color: #333;
             overflow-x: hidden;
         }
+        body.dark-theme{
+            background-color: black;
+        }
 
         /* Navbar Styling (match home) */
         .header {
@@ -52,6 +56,7 @@
             backdrop-filter: blur(10px) !important;
             position: sticky !important;
             top: 0 !important;
+            padding: 12px;
             z-index: 1000 !important;
         }
         .dark-theme .header {
@@ -64,6 +69,9 @@
         .nav-link {
             color: #374151 !important; font-weight: 500 !important; padding: 10px 15px !important;
             border-radius: 8px !important; transition: all 0.3s ease !important; position: relative !important;
+            justify-content: center;
+            align-items: center;
+            margin-top: 5px;
         }
         .nav-link:hover { color: #2563eb !important; background: rgba(37,100,235,0.1) !important; transform: translateY(-1px) !important; }
         .dark-theme .nav-link { color: #e5e7eb !important; }
@@ -71,6 +79,10 @@
 
         /* Theme Toggle Button */
         .theme-toggle-btn {
+            margin-top: 4px;
+            display: flex;
+            flex-direction: row;
+            gap: 1px;
             border-radius: 25px !important; padding: 10px 20px !important; font-size: 14px !important; font-weight: 600 !important;
             transition: all 0.3s ease !important; border: 2px solid #e5e7eb !important;
             background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%) !important; color: #374151 !important;
@@ -110,6 +122,8 @@
             margin: 0 auto;
             padding: 0 20px;
         }
+        
+        
 
         .pricing-hero h1 {
             font-size: 3.5rem;
@@ -118,6 +132,8 @@
             text-shadow: 0 2px 4px rgba(0,0,0,0.1);
             animation: fadeInDown 1s ease;
         }
+
+        
 
         .pricing-hero p {
             font-size: 1.3rem;
@@ -517,6 +533,7 @@
 
 /* Fix login button visibility in dark mode */
 .dark-theme .btn-vehigo {
+
     background: #3b82f6 !important;
     color: white !important;
     border: 1px solid #3b82f6 !important;
@@ -530,11 +547,15 @@
 
 /* Ensure the login button has proper styling in light mode as well */
 .btn-vehigo {
+    margin-top: 4px;
+    display: flex;
+    flex-direction: row;
+    border-radius: 20px;
     background: #2563eb;
     color: white;
     border: 1px solid #2563eb;
     padding: 8px 16px;
-    border-radius: 8px;
+
     text-decoration: none;
     transition: all 0.3s ease;
 }
@@ -573,7 +594,7 @@
             <!-- Theme switch -->
             <li class="nav-item">
               <button id="themeToggle" class="btn btn-outline-secondary theme-toggle-btn" type="button">
-                <i class="fa-solid fa-gear"></i><span class="label">Light</span>
+                <i class="fa-solid fa-gear"></i><span class="label"> Light</span>
               </button>
             </li>
 
