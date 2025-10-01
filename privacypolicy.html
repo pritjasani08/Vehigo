@@ -49,14 +49,16 @@
         .dark-theme .nav-link { color: #e6e6f0 !important; }
         .dark-theme .nav-link:hover { color: #60a5fa !important; }
         /* NAVBAR FIXES */
-        .navbar .nav-link { font-weight: 600; letter-spacing: .2px; color: #ffffff !important; white-space: nowrap; padding: .75rem .5rem; line-height: 1.1; }
+        .navbar .nav-link { font-weight: 600; letter-spacing: .2px; color: #334155 !important; white-space: nowrap; padding: .75rem .5rem; line-height: 1.1; }
+        .dark-theme .navbar .nav-link { color: #ffffff !important; }
         /* Ensure navbar is visible regardless of legacy styles */
         header.header nav.navbar { display: flex !important; visibility: visible !important; opacity: 1 !important; background: transparent !important; }
         header.header .navbar-collapse { align-items: center; background: transparent !important; }
         /* Override legacy fixed width/box-shadow applied to header .container in global CSS */
         header.header .container { width: 100% !important; max-width: 100% !important; margin: 0; height: auto; box-shadow: none; padding-left: 4px; padding-right: 8px; background: transparent !important; }
-        .navbar-toggler { border-color: rgba(255,255,255,.15); }
-        .navbar-toggler-icon { background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.85)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
+        .navbar-toggler { border-color: rgba(51,65,85,.15); }
+        .navbar-toggler-icon { background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(51,65,85,0.85)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
+        .dark-theme .navbar-toggler { border-color: rgba(255,255,255,.15); }
         .dark-theme .navbar-toggler-icon { background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.85)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
         .navbar .nav-link:hover { color: #60a5fa !important; }
         .navbar-brand img { height: 36px; }
@@ -65,14 +67,19 @@
         @media (max-width: 1200px) { .navbar-nav { gap: 12px; } }
         .navbar .btn { padding: 6px 14px; font-size: 0.9rem; }
         /* Theme toggle button (compact, no white pill) */
-        .theme-toggle-btn { border-radius: 22px !important; padding: 6px 12px !important; font-size: 13px !important; font-weight: 600 !important; transition: all 0.2s ease !important; border: 1px solid rgba(255,255,255,0.35) !important; background: transparent !important; color: #ffffff !important; box-shadow: none !important; }
-        .theme-toggle-btn:hover { transform: translateY(-1px) !important; border-color: #60a5fa !important; color: #60a5fa !important; }
+        .theme-toggle-btn { border-radius: 22px !important; padding: 6px 12px !important; font-size: 13px !important; font-weight: 600 !important; transition: all 0.2s ease !important; border: 1px solid rgba(51,65,85,0.35) !important; background: transparent !important; color: #334155 !important; box-shadow: none !important; }
+        .theme-toggle-btn:hover { transform: translateY(-1px) !important; border-color: #2563eb !important; color: #2563eb !important; }
+        .theme-toggle-btn.btn-outline-secondary { border-color: rgba(51,65,85,0.35) !important; background: transparent !important; color: #334155 !important; backdrop-filter: none !important; }
+        .theme-toggle-btn.btn-outline-secondary:hover { background: rgba(51,65,85,0.08) !important; border-color: rgba(51,65,85,0.55) !important; color: #334155 !important; }
         .theme-toggle-btn.btn-outline-light { border-color: rgba(255,255,255,0.35) !important; background: transparent !important; color: #fff !important; backdrop-filter: none !important; }
         .theme-toggle-btn.btn-outline-light:hover { background: rgba(255,255,255,0.08) !important; border-color: rgba(255,255,255,0.55) !important; color: #fff !important; }
+        .dark-theme .theme-toggle-btn { border: 1px solid rgba(255,255,255,0.35) !important; color: #ffffff !important; }
+        .dark-theme .theme-toggle-btn:hover { border-color: #60a5fa !important; color: #60a5fa !important; }
         /* Login button visibility */
-        .btn-vehigo { background: transparent !important; color: #ffffff !important; border: 1px solid rgba(255,255,255,0.35) !important; border-radius: 25px !important; }
-        .btn-vehigo:hover { background: rgba(255,255,255,0.1) !important; border-color: #60a5fa !important; color: #60a5fa !important; }
+        .btn-vehigo { background: transparent !important; color: #334155 !important; border: 1px solid rgba(51,65,85,0.35) !important; border-radius: 25px !important; }
+        .btn-vehigo:hover { background: rgba(51,65,85,0.1) !important; border-color: #2563eb !important; color: #2563eb !important; }
         .dark-theme .btn-vehigo { color: #fff !important; background: transparent !important; border: 1px solid rgba(255,255,255,0.35) !important; }
+        .dark-theme .btn-vehigo:hover { background: rgba(255,255,255,0.1) !important; border-color: #60a5fa !important; color: #60a5fa !important; }
         .dark-theme .theme-toggle-btn { color: #fff !important; border-color: rgba(255,255,255,.35) !important; background: rgba(255,255,255,.08) !important; }
         .dark-theme .theme-toggle-btn:hover { background: rgba(255,255,255,.16) !important; }
         /* Right-align navbar content */
