@@ -63,19 +63,35 @@
 }
 
 .feature-card-bg-1 {
-  background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, var(--vehigo-card) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(37, 99, 235, 0.05) 0%,
+    var(--vehigo-card) 100%
+  );
 }
 
 .feature-card-bg-2 {
-  background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, var(--vehigo-card) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(16, 185, 129, 0.05) 0%,
+    var(--vehigo-card) 100%
+  );
 }
 
 .feature-card-bg-3 {
-  background: linear-gradient(135deg, rgba(245, 158, 11, 0.05) 0%, var(--vehigo-card) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(245, 158, 11, 0.05) 0%,
+    var(--vehigo-card) 100%
+  );
 }
 
 .feature-card-bg-4 {
-  background: linear-gradient(135deg, rgba(239, 68, 68, 0.05) 0%, var(--vehigo-card) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(239, 68, 68, 0.05) 0%,
+    var(--vehigo-card) 100%
+  );
 }
 
 /* Main content identifier for skip link */
@@ -117,7 +133,7 @@
     --vehigo-text: #000000;
     --vehigo-bg: #ffffff;
   }
-  
+
   .dark-theme {
     --vehigo-text: #ffffff;
     --vehigo-bg: #000000;
@@ -144,7 +160,7 @@
   .social-links {
     display: none !important;
   }
-  
+
   .main-content {
     margin: 0 !important;
     padding: 0 !important;
